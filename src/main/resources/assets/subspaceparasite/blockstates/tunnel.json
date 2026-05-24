@@ -1,0 +1,28 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "subspaceparasite:tunnel"
+  },
+  "variants": {
+    "normal": [
+      {
+        "model": "subspaceparasite:tunnel"
+      },
+      {
+        "model": "subspaceparasite:tunnel",
+        "y": 90
+      },
+      {
+        "model": "subspaceparasite:tunnel",
+        "y": 180
+      },
+      {
+        "model": "subspaceparasite:tunnel",
+        "y": 270
+      }
+    ],
+    "inventory": [
+      {}
+    ]
+  }
+}

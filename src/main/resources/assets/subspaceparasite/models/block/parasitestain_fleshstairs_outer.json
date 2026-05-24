@@ -1,0 +1,8 @@
+{
+  "parent": "block/outer_stairs",
+  "textures": {
+    "bottom": "subspaceparasite:blocks/parasitestain_flesh",
+    "top": "subspaceparasite:blocks/parasitestain_flesh",
+    "side": "subspaceparasite:blocks/parasitestain_flesh"
+  }
+}

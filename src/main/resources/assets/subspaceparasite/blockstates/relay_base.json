@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "normal": {
+      "model": "subspaceparasite:relay_base"
+    }
+  }
+}

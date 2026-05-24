@@ -1,0 +1,123 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "subspaceparasite:infestedore_co"
+  },
+  "variants": {
+    "variant=co": [
+      {
+        "model": "subspaceparasite:infestedore_co"
+      },
+      {
+        "model": "subspaceparasite:infestedore_co"
+      },
+      {
+        "model": "subspaceparasite:infestedore_co"
+      },
+      {
+        "model": "subspaceparasite:infestedore_co"
+      }
+    ],
+    "variant=dia": [
+      {
+        "model": "subspaceparasite:infestedore_dia"
+      },
+      {
+        "model": "subspaceparasite:infestedore_dia"
+      },
+      {
+        "model": "subspaceparasite:infestedore_dia"
+      },
+      {
+        "model": "subspaceparasite:infestedore_dia"
+      }
+    ],
+    "variant=eme": [
+      {
+        "model": "subspaceparasite:infestedore_eme"
+      },
+      {
+        "model": "subspaceparasite:infestedore_eme"
+      },
+      {
+        "model": "subspaceparasite:infestedore_eme"
+      },
+      {
+        "model": "subspaceparasite:infestedore_eme"
+      }
+    ],
+    "variant=gol": [
+      {
+        "model": "subspaceparasite:infestedore_gol"
+      },
+      {
+        "model": "subspaceparasite:infestedore_gol"
+      },
+      {
+        "model": "subspaceparasite:infestedore_gol"
+      },
+      {
+        "model": "subspaceparasite:infestedore_gol"
+      }
+    ],
+    "variant=iro": [
+      {
+        "model": "subspaceparasite:infestedore_iro"
+      },
+      {
+        "model": "subspaceparasite:infestedore_iro"
+      },
+      {
+        "model": "subspaceparasite:infestedore_iro"
+      },
+      {
+        "model": "subspaceparasite:infestedore_iro"
+      }
+    ],
+    "variant=lap": [
+      {
+        "model": "subspaceparasite:infestedore_lap"
+      },
+      {
+        "model": "subspaceparasite:infestedore_lap"
+      },
+      {
+        "model": "subspaceparasite:infestedore_lap"
+      },
+      {
+        "model": "subspaceparasite:infestedore_lap"
+      }
+    ],
+    "variant=red": [
+      {
+        "model": "subspaceparasite:infestedore_red"
+      },
+      {
+        "model": "subspaceparasite:infestedore_red"
+      },
+      {
+        "model": "subspaceparasite:infestedore_red"
+      },
+      {
+        "model": "subspaceparasite:infestedore_red"
+      }
+    ],
+    "variant=un": [
+      {
+        "model": "subspaceparasite:infestedore_un"
+      },
+      {
+        "model": "subspaceparasite:infestedore_un"
+      },
+      {
+        "model": "subspaceparasite:infestedore_un"
+      },
+      {
+        "model": "subspaceparasite:infestedore_un"
+      }
+    ],
+    "inventory": [
+      {}
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "particle": "subspaceparasite:blocks/parasiterubble_bone",
+    "all": "subspaceparasite:blocks/parasiterubble_bone"
+  }
+}

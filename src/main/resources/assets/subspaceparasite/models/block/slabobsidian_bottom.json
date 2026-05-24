@@ -1,0 +1,9 @@
+{
+  "parent": "block/half_slab",
+  "textures": {
+    "particle": "subspaceparasite:blocks/bleeding_obsidian",
+    "bottom": "subspaceparasite:blocks/bleeding_obsidian",
+    "top": "subspaceparasite:blocks/bleeding_obsidian",
+    "side": "subspaceparasite:blocks/bleeding_obsidian"
+  }
+}

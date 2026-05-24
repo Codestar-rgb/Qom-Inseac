@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "normal": [
+      {
+        "model": "subspaceparasite:assimilated_blossom"
+      }
+    ],
+    "inventory": [
+      {
+        "model": "subspaceparasite:assimilated_blossom"
+      }
+    ]
+  }
+}

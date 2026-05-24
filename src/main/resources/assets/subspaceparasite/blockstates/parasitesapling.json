@@ -1,0 +1,47 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "subspaceparasite:parasitestain_dirt"
+  },
+  "variants": {
+    "stage=0,variant=tree": {
+      "model": "subspaceparasite:parasitesapling_tree"
+    },
+    "stage=1,variant=tree": {
+      "model": "subspaceparasite:parasitesapling_tree"
+    },
+    "stage=0,variant=treethin": {
+      "model": "subspaceparasite:parasitesapling_treethin"
+    },
+    "stage=1,variant=treethin": {
+      "model": "subspaceparasite:parasitesapling_treethin"
+    },
+    "stage=0,variant=flowertall": {
+      "model": "subspaceparasite:parasitesapling_flowertall"
+    },
+    "stage=1,variant=flowertall": {
+      "model": "subspaceparasite:parasitesapling_flowertall"
+    },
+    "stage=0,variant=consumed": {
+      "model": "subspaceparasite:parasitesapling_consumed"
+    },
+    "stage=1,variant=consumed": {
+      "model": "subspaceparasite:parasitesapling_consumed"
+    },
+    "stage=0,variant=deadhead": {
+      "model": "subspaceparasite:parasitesapling_deadhead"
+    },
+    "stage=1,variant=deadhead": {
+      "model": "subspaceparasite:parasitesapling_deadhead"
+    },
+    "stage=0,variant=infested": {
+      "model": "subspaceparasite:parasitesapling_infested"
+    },
+    "stage=1,variant=infested": {
+      "model": "subspaceparasite:parasitesapling_infested"
+    },
+    "inventory": [
+      {}
+    ]
+  }
+}

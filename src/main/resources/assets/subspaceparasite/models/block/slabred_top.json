@@ -1,0 +1,9 @@
+{
+  "parent": "block/upper_slab",
+  "textures": {
+    "particle": "subspaceparasite:blocks/parasitestain_red",
+    "bottom": "subspaceparasite:blocks/parasitestain_red",
+    "top": "subspaceparasite:blocks/parasitestain_red",
+    "side": "subspaceparasite:blocks/parasitestain_red"
+  }
+}

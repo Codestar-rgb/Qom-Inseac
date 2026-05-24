@@ -1,0 +1,8 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+    "bottom": "subspaceparasite:blocks/infestedstain",
+    "top": "subspaceparasite:blocks/infestedstain",
+    "side": "subspaceparasite:blocks/infestedstain"
+  }
+}

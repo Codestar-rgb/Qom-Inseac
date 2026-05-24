@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "normal": [
+      {
+        "model": "subspaceparasite:residue_block_base"
+      }
+    ]
+  }
+}

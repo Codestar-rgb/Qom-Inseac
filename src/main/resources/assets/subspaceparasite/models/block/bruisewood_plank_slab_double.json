@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "particle": "subspaceparasite:blocks/brucewood_planks",
+    "all": "subspaceparasite:blocks/brucewood_planks"
+  }
+}

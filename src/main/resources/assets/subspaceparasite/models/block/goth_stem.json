@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "subspaceparasite:blocks/goth_stem_top",
+    "side": "subspaceparasite:blocks/goth_stem"
+  }
+}

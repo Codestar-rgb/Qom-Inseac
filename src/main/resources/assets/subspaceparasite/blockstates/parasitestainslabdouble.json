@@ -1,0 +1,53 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "subspaceparasite:slabbone_double"
+  },
+  "variants": {
+    "half=top,variant=dirt": {
+      "model": "subspaceparasite:slabdirt_double"
+    },
+    "half=bottom,variant=dirt": {
+      "model": "subspaceparasite:slabdirt_double"
+    },
+    "half=top,variant=mud": {
+      "model": "subspaceparasite:slabmud_double"
+    },
+    "half=bottom,variant=mud": {
+      "model": "subspaceparasite:slabmud_double"
+    },
+    "half=top,variant=sflesh": {
+      "model": "subspaceparasite:slabsflesh_double"
+    },
+    "half=bottom,variant=sflesh": {
+      "model": "subspaceparasite:slabsflesh_double"
+    },
+    "half=top,variant=feeler": {
+      "model": "subspaceparasite:slabfeeler_double"
+    },
+    "half=bottom,variant=feeler": {
+      "model": "subspaceparasite:slabfeeler_double"
+    },
+    "half=top,variant=spore": {
+      "model": "subspaceparasite:slabspore_double"
+    },
+    "half=bottom,variant=spore": {
+      "model": "subspaceparasite:slabspore_double"
+    },
+    "half=top,variant=red": {
+      "model": "subspaceparasite:slabred_double"
+    },
+    "half=bottom,variant=red": {
+      "model": "subspaceparasite:slabred_double"
+    },
+    "half=top,variant=sackflesh": {
+      "model": "subspaceparasite:slabsackflesh_double"
+    },
+    "half=bottom,variant=sackflesh": {
+      "model": "subspaceparasite:slabsackflesh_double"
+    },
+    "inventory": [
+      {}
+    ]
+  }
+}

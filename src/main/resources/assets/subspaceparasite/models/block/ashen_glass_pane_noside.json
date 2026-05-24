@@ -1,0 +1,8 @@
+{
+  "parent": "block/glass_pane_noside",
+  "textures": {
+    "pane": "subspaceparasite:blocks/ashen_glass",
+    "edge": "subspaceparasite:blocks/ashen_glass_pane",
+    "particle": "subspaceparasite:blocks/ashen_glass"
+  }
+}

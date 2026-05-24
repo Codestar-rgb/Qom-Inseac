@@ -1,0 +1,26 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "subspaceparasite:colonyoutpost"
+  },
+  "variants": {
+    "normal": {
+      "model": "subspaceparasite:colonyoutpost"
+    },
+    "active=0": {
+      "model": "subspaceparasite:colonyoutpost"
+    },
+    "active=1": {
+      "model": "subspaceparasite:colonyoutpost"
+    },
+    "active=2": {
+      "model": "subspaceparasite:colonyoutpost"
+    },
+    "active=3": {
+      "model": "subspaceparasite:colonyoutpost"
+    },
+    "inventory": [
+      {}
+    ]
+  }
+}

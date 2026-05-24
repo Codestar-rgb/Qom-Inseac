@@ -1,0 +1,26 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "subspaceparasite:items/pearl_idle"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "subspaceparasite:pearl_state": 1
+      },
+      "model": "subspaceparasite:item/pearl_assimilated"
+    },
+    {
+      "predicate": {
+        "subspaceparasite:pearl_state": 2
+      },
+      "model": "subspaceparasite:item/pearl_feral"
+    },
+    {
+      "predicate": {
+        "subspaceparasite:pearl_state": 3
+      },
+      "model": "subspaceparasite:item/pearl_assimara"
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "subspaceparasite:infestedrubble"
+  },
+  "variants": {
+    "stage=0": [
+      {
+        "model": "subspaceparasite:infestedrubble"
+      },
+      {
+        "model": "subspaceparasite:infestedrubble",
+        "y": 90
+      },
+      {
+        "model": "subspaceparasite:infestedrubble",
+        "y": 180
+      },
+      {
+        "model": "subspaceparasite:infestedrubble",
+        "y": 270
+      }
+    ],
+    "stage=1": [
+      {
+        "model": "subspaceparasite:infestedrubble"
+      },
+      {
+        "model": "subspaceparasite:infestedrubble",
+        "y": 90
+      },
+      {
+        "model": "subspaceparasite:infestedrubble",
+        "y": 180
+      },
+      {
+        "model": "subspaceparasite:infestedrubble",
+        "y": 270
+      }
+    ],
+    "stage=2": [
+      {
+        "model": "subspaceparasite:infestedrubble"
+      },
+      {
+        "model": "subspaceparasite:infestedrubble",
+        "y": 90
+      },
+      {
+        "model": "subspaceparasite:infestedrubble",
+        "y": 180
+      },
+      {
+        "model": "subspaceparasite:infestedrubble",
+        "y": 270
+      }
+    ],
+    "stage=3": [
+      {
+        "model": "subspaceparasite:infestedrubble"
+      },
+      {
+        "model": "subspaceparasite:infestedrubble",
+        "y": 90
+      },
+      {
+        "model": "subspaceparasite:infestedrubble",
+        "y": 180
+      },
+      {
+        "model": "subspaceparasite:infestedrubble",
+        "y": 270
+      }
+    ],
+    "stage=4": [
+      {
+        "model": "subspaceparasite:infestedrubble"
+      },
+      {
+        "model": "subspaceparasite:infestedrubble",
+        "y": 90
+      },
+      {
+        "model": "subspaceparasite:infestedrubble",
+        "y": 180
+      },
+      {
+        "model": "subspaceparasite:infestedrubble",
+        "y": 270
+      }
+    ],
+    "stage=5": [
+      {
+        "model": "subspaceparasite:infestedrubble"
+      },
+      {
+        "model": "subspaceparasite:infestedrubble",
+        "y": 90
+      },
+      {
+        "model": "subspaceparasite:infestedrubble",
+        "y": 180
+      },
+      {
+        "model": "subspaceparasite:infestedrubble",
+        "y": 270
+      }
+    ],
+    "inventory": [
+      {}
+    ]
+  }
+}

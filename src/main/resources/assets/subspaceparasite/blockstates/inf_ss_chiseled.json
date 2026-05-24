@@ -1,0 +1,39 @@
+{
+  "variants": {
+    "stage=0": [
+     {
+        "model": "subspaceparasite:inf_ss_chiseled"
+      }
+    ],
+    "stage=1": [
+     {
+        "model": "subspaceparasite:inf_ss_chiseled"
+      }
+    ],
+    "stage=2": [
+      {
+        "model": "subspaceparasite:inf_ss_chiseled"
+      }
+    ],
+    "stage=3": [
+     {
+        "model": "subspaceparasite:inf_ss_chiseled"
+      }
+    ],
+    "stage=4": [
+      {
+        "model": "subspaceparasite:inf_ss_chiseled"
+      }
+    ],
+    "stage=5": [
+      {
+        "model": "subspaceparasite:inf_ss_chiseled"
+      }
+    ],
+    "inventory": [
+      {
+        "model": "subspaceparasite:inf_ss_chiseled"
+      }
+    ]
+  }
+}

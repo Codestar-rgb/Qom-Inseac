@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "particle": "subspaceparasite:blocks/parasiterubbledense_colony",
+    "end": "subspaceparasite:blocks/parasiterubbledense_colony",
+    "side": "subspaceparasite:blocks/parasiterubbledense_colony"
+  }
+}

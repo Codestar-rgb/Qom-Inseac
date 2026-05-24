@@ -1,0 +1,255 @@
+/*
+ * Decompiled with CFR 0.152.
+ * 
+ * Could not load the following classes:
+ *  net.minecraft.client.model.ModelBase
+ *  net.minecraft.client.model.ModelRenderer
+ *  net.minecraft.entity.Entity
+ *  net.minecraft.util.math.MathHelper
+ */
+package com.subspaceparasite.client.model.entity.inborn;
+
+import com.subspaceparasite.client.model.ModelSRP;
+import com.subspaceparasite.entity.ai.misc.EntityParasiteBase;
+import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
+public class ModelLesh
+extends ModelSRP {
+    public ModelRenderer mainbody;
+    public ModelRenderer body;
+    public ModelRenderer jointup;
+    public ModelRenderer jointright;
+    public ModelRenderer jointtail;
+    public ModelRenderer jointleft;
+    public ModelRenderer body_1;
+    public ModelRenderer jointup1;
+    public ModelRenderer body_2;
+    public ModelRenderer body_3;
+    public ModelRenderer jointup2;
+    public ModelRenderer pop8;
+    public ModelRenderer pop7;
+    public ModelRenderer body_4;
+    public ModelRenderer body_5;
+    public ModelRenderer jointright1;
+    public ModelRenderer pop5;
+    public ModelRenderer body_6;
+    public ModelRenderer jointright2;
+    public ModelRenderer body_7;
+    public ModelRenderer body_8;
+    public ModelRenderer jointtail1;
+    public ModelRenderer pop4;
+    public ModelRenderer pop3;
+    public ModelRenderer pop6;
+    public ModelRenderer body_9;
+    public ModelRenderer jointtail2;
+    public ModelRenderer body_10;
+    public ModelRenderer body_11;
+    public ModelRenderer jointleft1;
+    public ModelRenderer pop1;
+    public ModelRenderer pop2;
+    public ModelRenderer body_12;
+    public ModelRenderer jointleft2;
+    public ModelRenderer body_13;
+
+    public ModelLesh() {
+        this.field_78090_t = 64;
+        this.field_78089_u = 50;
+        this.jointtail1 = new ModelRenderer((ModelBase)this, 58, 2);
+        this.jointtail1.func_78793_a(0.0f, 0.5f, 1.5f);
+        this.jointtail1.func_78790_a(-0.5f, -0.5f, -0.5f, 1, 1, 1, 0.0f);
+        this.pop2 = new ModelRenderer((ModelBase)this, 59, 11);
+        this.pop2.func_78793_a(0.8f, -1.0f, -2.7f);
+        this.pop2.func_78790_a(-0.5f, -1.0f, -0.5f, 1, 2, 1, 0.0f);
+        this.setRotateAngle(this.pop2, 0.0f, 0.19198622f, 0.0f);
+        this.body_5 = new ModelRenderer((ModelBase)this, 6, 19);
+        this.body_5.func_78793_a(-2.0f, 0.0f, 0.0f);
+        this.body_5.func_78790_a(-2.0f, -1.0f, -5.0f, 4, 4, 10, 0.0f);
+        this.setRotateAngle(this.body_5, 0.0f, 0.0f, -0.5235988f);
+        this.jointright2 = new ModelRenderer((ModelBase)this, 54, 2);
+        this.jointright2.func_78793_a(3.5f, -0.5f, 0.0f);
+        this.jointright2.func_78790_a(-0.5f, -0.5f, -0.5f, 1, 1, 1, 0.0f);
+        this.body_8 = new ModelRenderer((ModelBase)this, 34, 25);
+        this.body_8.func_78793_a(0.0f, 0.0f, 1.0f);
+        this.body_8.func_78790_a(-3.0f, -1.5f, -3.0f, 6, 3, 5, 0.0f);
+        this.body_10 = new ModelRenderer((ModelBase)this, 18, 33);
+        this.body_10.func_78793_a(0.0f, 0.0f, 2.0f);
+        this.body_10.func_78790_a(-1.0f, -0.5f, -3.0f, 2, 1, 5, 0.0f);
+        this.body_2 = new ModelRenderer((ModelBase)this, 44, 15);
+        this.body_2.func_78793_a(0.0f, 0.0f, 3.0f);
+        this.body_2.func_78790_a(-2.5f, -3.0f, -2.0f, 5, 6, 4, 0.0f);
+        this.setRotateAngle(this.body_2, 0.7853982f, 0.0f, 0.0f);
+        this.pop3 = new ModelRenderer((ModelBase)this, 0, 8);
+        this.pop3.func_78793_a(-0.5f, -1.5f, 0.5f);
+        this.pop3.func_78790_a(-0.5f, -1.0f, -0.5f, 1, 2, 1, 0.0f);
+        this.setRotateAngle(this.pop3, -0.33161256f, -0.17453292f, 0.0f);
+        this.pop4 = new ModelRenderer((ModelBase)this, 0, 5);
+        this.pop4.func_78793_a(-2.0f, -1.5f, 0.5f);
+        this.pop4.func_78790_a(-0.5f, -1.0f, -0.5f, 1, 2, 1, 0.0f);
+        this.setRotateAngle(this.pop4, -0.33161256f, -0.4537856f, 0.0f);
+        this.body_3 = new ModelRenderer((ModelBase)this, 0, 19);
+        this.body_3.func_78793_a(0.0f, -1.0f, 1.0f);
+        this.body_3.func_78790_a(-2.0f, -2.0f, -2.0f, 4, 5, 4, 0.0f);
+        this.setRotateAngle(this.body_3, -0.57595867f, 0.0f, 0.0f);
+        this.body_13 = new ModelRenderer((ModelBase)this, 51, 25);
+        this.body_13.func_78793_a(0.5f, 0.0f, 0.0f);
+        this.body_13.func_78790_a(-1.0f, -0.5f, -3.0f, 2, 1, 4, 0.0f);
+        this.setRotateAngle(this.body_13, 0.0f, -1.9547688f, 0.0f);
+        this.jointtail = new ModelRenderer((ModelBase)this, 34, 0);
+        this.jointtail.func_78793_a(0.0f, -0.5f, 7.0f);
+        this.jointtail.func_78790_a(-0.5f, -0.5f, -0.5f, 1, 1, 1, 0.0f);
+        this.body_1 = new ModelRenderer((ModelBase)this, 36, 0);
+        this.body_1.func_78793_a(0.0f, 0.0f, 0.0f);
+        this.body_1.func_78790_a(-3.0f, -5.0f, -3.0f, 6, 6, 6, 0.0f);
+        this.pop6 = new ModelRenderer((ModelBase)this, 3, 10);
+        this.pop6.func_78793_a(-3.0f, -0.5f, 0.5f);
+        this.pop6.func_78790_a(-0.5f, -1.0f, -0.5f, 1, 2, 1, 0.0f);
+        this.setRotateAngle(this.pop6, -0.34906584f, -0.2443461f, -1.5707964f);
+        this.body_11 = new ModelRenderer((ModelBase)this, 22, 33);
+        this.body_11.func_78793_a(2.0f, 0.0f, 0.0f);
+        this.body_11.func_78790_a(-2.0f, -1.0f, -5.0f, 4, 4, 10, 0.0f);
+        this.setRotateAngle(this.body_11, 0.0f, 0.0f, 0.5235988f);
+        this.jointleft = new ModelRenderer((ModelBase)this, 38, 0);
+        this.jointleft.func_78793_a(4.0f, -1.0f, 0.0f);
+        this.jointleft.func_78790_a(0.0f, 0.0f, 0.0f, 1, 1, 1, 0.0f);
+        this.body_12 = new ModelRenderer((ModelBase)this, 40, 33);
+        this.body_12.func_78793_a(1.2f, 0.5f, 0.4f);
+        this.body_12.func_78790_a(-2.0f, -1.0f, -1.5f, 6, 2, 3, 0.0f);
+        this.setRotateAngle(this.body_12, 0.0f, -0.7330383f, 0.0f);
+        this.jointright = new ModelRenderer((ModelBase)this, 8, 0);
+        this.jointright.func_78793_a(-4.0f, -1.0f, 0.0f);
+        this.jointright.func_78790_a(0.0f, 0.0f, 0.0f, 1, 1, 1, 0.0f);
+        this.jointright1 = new ModelRenderer((ModelBase)this, 34, 2);
+        this.jointright1.func_78793_a(-1.0f, 0.0f, -2.0f);
+        this.jointright1.func_78790_a(0.0f, 0.0f, 0.0f, 1, 1, 1, 0.0f);
+        this.setRotateAngle(this.jointright1, 0.0f, 0.0f, 0.5235988f);
+        this.jointup = new ModelRenderer((ModelBase)this, 4, 0);
+        this.jointup.func_78793_a(0.0f, -4.0f, -2.0f);
+        this.jointup.func_78790_a(-0.5f, -0.5f, -0.5f, 1, 1, 1, 0.0f);
+        this.body_4 = new ModelRenderer((ModelBase)this, 6, 3);
+        this.body_4.func_78793_a(0.0f, 0.0f, 0.5f);
+        this.body_4.func_78790_a(-1.0f, -3.0f, -1.0f, 2, 5, 2, 0.0f);
+        this.setRotateAngle(this.body_4, -0.41887903f, 0.0f, 0.0f);
+        this.jointleft2 = new ModelRenderer((ModelBase)this, 58, 4);
+        this.jointleft2.func_78793_a(3.5f, 0.5f, 0.0f);
+        this.jointleft2.func_78790_a(-0.5f, -0.5f, -0.5f, 1, 1, 1, 0.0f);
+        this.jointup2 = new ModelRenderer((ModelBase)this, 58, 0);
+        this.jointup2.func_78793_a(0.0f, -2.5f, 0.5f);
+        this.jointup2.func_78790_a(0.0f, 0.0f, 0.0f, 1, 1, 1, 0.0f);
+        this.body_6 = new ModelRenderer((ModelBase)this, 24, 19);
+        this.body_6.func_78793_a(-1.2f, 0.5f, 0.4f);
+        this.body_6.func_78790_a(-2.0f, -1.0f, -1.5f, 6, 2, 3, 0.0f);
+        this.setRotateAngle(this.body_6, 0.0f, -0.7330383f, (float)Math.PI);
+        this.body_7 = new ModelRenderer((ModelBase)this, 24, 24);
+        this.body_7.func_78793_a(0.5f, 0.0f, 0.0f);
+        this.body_7.func_78790_a(-1.0f, -0.5f, -3.0f, 2, 1, 4, 0.0f);
+        this.setRotateAngle(this.body_7, 0.0f, -1.9547688f, 0.0f);
+        this.pop7 = new ModelRenderer((ModelBase)this, 4, 2);
+        this.pop7.func_78793_a(0.0f, 0.1f, -1.7f);
+        this.pop7.func_78790_a(-0.5f, -1.0f, -0.5f, 1, 2, 1, 0.0f);
+        this.setRotateAngle(this.pop7, 1.5707964f, 0.0f, -0.33161256f);
+        this.jointleft1 = new ModelRenderer((ModelBase)this, 54, 4);
+        this.jointleft1.func_78793_a(1.0f, 0.0f, -2.0f);
+        this.jointleft1.func_78790_a(0.0f, 0.0f, 0.0f, 1, 1, 1, 0.0f);
+        this.setRotateAngle(this.jointleft1, 0.0f, 0.0f, -0.5235988f);
+        this.pop5 = new ModelRenderer((ModelBase)this, 38, 2);
+        this.pop5.func_78793_a(0.6f, -1.0f, 3.7f);
+        this.pop5.func_78790_a(-0.5f, -1.0f, -0.5f, 1, 2, 1, 0.0f);
+        this.setRotateAngle(this.pop5, 0.0f, 0.57595867f, 0.0f);
+        this.body = new ModelRenderer((ModelBase)this, 0, 0);
+        this.body.func_78793_a(0.0f, 0.0f, 0.0f);
+        this.body.func_78790_a(-5.0f, -4.0f, -7.0f, 10, 5, 14, 0.0f);
+        this.body_9 = new ModelRenderer((ModelBase)this, 0, 33);
+        this.body_9.func_78793_a(0.0f, 0.0f, 2.0f);
+        this.body_9.func_78790_a(-2.5f, -1.0f, -2.5f, 5, 2, 4, 0.0f);
+        this.pop8 = new ModelRenderer((ModelBase)this, 0, 2);
+        this.pop8.func_78793_a(1.0f, -0.9f, -1.7f);
+        this.pop8.func_78790_a(-0.5f, -1.0f, -0.5f, 1, 2, 1, 0.0f);
+        this.setRotateAngle(this.pop8, 1.5707964f, 0.0f, 0.55850536f);
+        this.jointup1 = new ModelRenderer((ModelBase)this, 54, 0);
+        this.jointup1.func_78793_a(0.0f, -5.0f, 1.0f);
+        this.jointup1.func_78790_a(0.0f, 0.0f, 0.0f, 1, 1, 1, 0.0f);
+        this.pop1 = new ModelRenderer((ModelBase)this, 7, 10);
+        this.pop1.func_78793_a(-0.5f, -1.0f, -4.0f);
+        this.pop1.func_78790_a(-0.5f, -1.0f, -0.5f, 1, 2, 1, 0.0f);
+        this.setRotateAngle(this.pop1, 0.0f, 0.6457718f, 0.0f);
+        this.jointtail2 = new ModelRenderer((ModelBase)this, 34, 4);
+        this.jointtail2.func_78793_a(0.0f, 0.5f, 1.5f);
+        this.jointtail2.func_78790_a(-0.5f, -0.5f, -0.5f, 1, 1, 1, 0.0f);
+        this.mainbody = new ModelRenderer((ModelBase)this, 0, 0);
+        this.mainbody.func_78793_a(0.0f, 23.0f, 0.0f);
+        this.mainbody.func_78790_a(-0.5f, -0.5f, -0.5f, 1, 1, 1, 0.0f);
+        this.body_8.func_78792_a(this.jointtail1);
+        this.body_11.func_78792_a(this.pop2);
+        this.jointright.func_78792_a(this.body_5);
+        this.body_6.func_78792_a(this.jointright2);
+        this.jointtail.func_78792_a(this.body_8);
+        this.jointtail2.func_78792_a(this.body_10);
+        this.body_1.func_78792_a(this.body_2);
+        this.body_8.func_78792_a(this.pop3);
+        this.body_8.func_78792_a(this.pop4);
+        this.jointup1.func_78792_a(this.body_3);
+        this.jointleft2.func_78792_a(this.body_13);
+        this.body.func_78792_a(this.jointtail);
+        this.jointup.func_78792_a(this.body_1);
+        this.body_8.func_78792_a(this.pop6);
+        this.jointleft.func_78792_a(this.body_11);
+        this.body.func_78792_a(this.jointleft);
+        this.jointleft1.func_78792_a(this.body_12);
+        this.body.func_78792_a(this.jointright);
+        this.body_5.func_78792_a(this.jointright1);
+        this.body.func_78792_a(this.jointup);
+        this.jointup2.func_78792_a(this.body_4);
+        this.body_12.func_78792_a(this.jointleft2);
+        this.body_3.func_78792_a(this.jointup2);
+        this.jointright1.func_78792_a(this.body_6);
+        this.jointright2.func_78792_a(this.body_7);
+        this.body_3.func_78792_a(this.pop7);
+        this.body_11.func_78792_a(this.jointleft1);
+        this.body_5.func_78792_a(this.pop5);
+        this.mainbody.func_78792_a(this.body);
+        this.jointtail1.func_78792_a(this.body_9);
+        this.body_3.func_78792_a(this.pop8);
+        this.body_1.func_78792_a(this.jointup1);
+        this.body_11.func_78792_a(this.pop1);
+        this.body_9.func_78792_a(this.jointtail2);
+    }
+
+    public void func_78088_a(Entity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
+        super.func_78088_a(entityIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
+        this.mainbody.func_78785_a(scale);
+    }
+
+    public void func_78087_a(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor, Entity entityIn) {
+        float f6;
+        this.mainbody.field_82908_p = 0.0f;
+        float f1 = MathHelper.func_76134_b((float)(limbSwing * 0.35f + (float)Math.PI)) * 1.0f * limbSwingAmount;
+        float f2 = MathHelper.func_76134_b((float)(limbSwing * 0.35f)) * 1.0f * limbSwingAmount;
+        float f3 = MathHelper.func_76134_b((float)(limbSwing * 0.75f)) * limbSwingAmount * 0.4f;
+        this.jointright1.field_78796_g = f1;
+        this.jointright2.field_78796_g = f2;
+        this.jointleft1.field_78796_g = f1;
+        this.jointleft2.field_78796_g = f1;
+        this.jointtail.field_78796_g = f3;
+        this.jointtail1.field_78796_g = f3;
+        this.jointtail2.field_78796_g = f3;
+        this.jointup.field_78795_f = f6 = 0.6f * MathHelper.func_76126_a((float)(ageInTicks * 0.076843f)) * 0.15f;
+        this.jointup1.field_78795_f = f6;
+        this.jointup2.field_78795_f = f6;
+        float age2f = 0.2f * MathHelper.func_76126_a((float)(ageInTicks * 0.3f + 2.0f)) / 4.0f;
+        float age4f = 0.2f * MathHelper.func_76126_a((float)(ageInTicks * 0.3f + 4.0f)) / 4.0f;
+        float age6f = 0.2f * MathHelper.func_76126_a((float)(ageInTicks * 0.3f + 6.0f)) / 4.0f;
+        this.pop1.field_82908_p = age2f / 4.0f;
+        this.pop2.field_82908_p = age4f / 4.0f;
+        this.pop3.field_82908_p = age6f / 4.0f;
+        this.pop4.field_82908_p = age2f / 4.0f;
+        this.pop5.field_82908_p = age4f / 4.0f;
+        this.pop6.field_82906_o = age6f / 4.0f;
+        this.pop7.field_82907_q = age4f / 4.0f;
+        this.pop8.field_82907_q = age6f / 4.0f;
+        this.underground((EntityParasiteBase)entityIn, ageInTicks, this.mainbody);
+    }
+}
+
