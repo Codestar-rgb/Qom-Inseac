@@ -1,28 +1,32 @@
-# Gradle
-.gradle/
-build/
-out/
+```
+# Compiled and build artifacts
+*.pyc
+__pycache__/
 
-# IDE
-.idea/
-*.iml
-*.ipr
-*.iws
+# Dependencies
+.venv/
+venv/
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+
+# Environment
+.env
+.env.local
+*.env.*
+
+# Editors
 .vscode/
-.settings/
-.classpath
-.project
-eclipse/
+.idea/
 
-# Minecraft
-run/
-logs/
+# Backup files
+*~
+*.bak
+*.backup
 
-# OS
+# OS generated files
 .DS_Store
 Thumbs.db
-
-# Other
-*.class
-*.jar
-!gradle-wrapper.jar
+```
