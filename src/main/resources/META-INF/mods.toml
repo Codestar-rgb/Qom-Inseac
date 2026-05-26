@@ -1,0 +1,39 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="srpdraconite"
+version="5.4.5"
+displayName="SRP Draconite"
+description='''
+A Minecraft Forge mod that ports the Draconite (Heblu) entity from the Scape and Run Parasites mod.
+Adds the fearsome Draconite boss mob along with its fireball, body part, and toxic cloud entities,
+as well as associated effects (Coth, Needler, Rage).
+v5.4.5 - High-fidelity restoration: ground/flying dual-state, fixed ambient sound logic,
+fixed flame skill conditions, fixed clone death behavior, vomit particles, and more.
+Powered by GeckoLib for Bedrock model and animation support.
+'''
+authors="SRP Draconite Team"
+logoFile="logo.png"
+
+[[dependencies.srpdraconite]]
+modId="forge"
+mandatory=true
+versionRange="[47,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.srpdraconite]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1,1.21)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.srpdraconite]]
+modId="geckolib"
+mandatory=true
+versionRange="[4.2,)"
+ordering="AFTER"
+side="BOTH"
