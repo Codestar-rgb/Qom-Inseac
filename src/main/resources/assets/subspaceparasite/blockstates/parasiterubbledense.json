@@ -1,0 +1,62 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "subspaceparasite:parasiterubbledense_wall"
+  },
+  "variants": {
+    "variant=wall": [
+      {
+        "model": "subspaceparasite:parasiterubbledense_wall"
+      },
+      {
+        "model": "subspaceparasite:parasiterubbledense_wall",
+        "y": 90
+      },
+      {
+        "model": "subspaceparasite:parasiterubbledense_wall",
+        "y": 180
+      },
+      {
+        "model": "subspaceparasite:parasiterubbledense_wall",
+        "y": 270
+      }
+    ],
+    "variant=biome": [
+      {
+        "model": "subspaceparasite:parasiterubbledense_biome"
+      },
+      {
+        "model": "subspaceparasite:parasiterubbledense_biome",
+        "y": 90
+      },
+      {
+        "model": "subspaceparasite:parasiterubbledense_biome",
+        "y": 180
+      },
+      {
+        "model": "subspaceparasite:parasiterubbledense_biome",
+        "y": 270
+      }
+    ],
+    "variant=colony": [
+      {
+        "model": "subspaceparasite:parasiterubbledense_colony"
+      },
+      {
+        "model": "subspaceparasite:parasiterubbledense_colony",
+        "y": 90
+      },
+      {
+        "model": "subspaceparasite:parasiterubbledense_colony",
+        "y": 180
+      },
+      {
+        "model": "subspaceparasite:parasiterubbledense_colony",
+        "y": 270
+      }
+    ],
+    "inventory": [
+      {}
+    ]
+  }
+}

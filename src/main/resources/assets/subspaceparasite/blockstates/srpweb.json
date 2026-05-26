@@ -1,0 +1,62 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "subspaceparasite:web_one"
+  },
+  "variants": {
+    "variant=one": [
+      {
+        "model": "subspaceparasite:web_one"
+      },
+      {
+        "model": "subspaceparasite:web_one",
+        "y": 90
+      },
+      {
+        "model": "subspaceparasite:web_one",
+        "y": 180
+      },
+      {
+        "model": "subspaceparasite:web_one",
+        "y": 270
+      }
+    ],
+    "variant=two": [
+      {
+        "model": "subspaceparasite:web_two"
+      },
+      {
+        "model": "subspaceparasite:web_two",
+        "y": 90
+      },
+      {
+        "model": "subspaceparasite:web_two",
+        "y": 180
+      },
+      {
+        "model": "subspaceparasite:web_two",
+        "y": 270
+      }
+    ],
+    "variant=three": [
+      {
+        "model": "subspaceparasite:web_three"
+      },
+      {
+        "model": "subspaceparasite:web_three",
+        "y": 90
+      },
+      {
+        "model": "subspaceparasite:web_three",
+        "y": 180
+      },
+      {
+        "model": "subspaceparasite:web_three",
+        "y": 270
+      }
+    ],
+    "inventory": [
+      {}
+    ]
+  }
+}

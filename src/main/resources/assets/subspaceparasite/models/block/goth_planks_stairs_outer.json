@@ -1,0 +1,8 @@
+{
+  "parent": "block/outer_stairs",
+  "textures": {
+    "bottom": "subspaceparasite:blocks/goth_planks",
+    "top": "subspaceparasite:blocks/goth_planks",
+    "side": "subspaceparasite:blocks/goth_planks"
+  }
+}

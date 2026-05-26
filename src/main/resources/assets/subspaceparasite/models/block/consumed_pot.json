@@ -1,0 +1,7 @@
+{
+  "parent": "block/flower_pot",
+  "textures": {
+    "flowerpot": "subspaceparasite:blocks/consumed_flower_pot",
+    "dirt": "subspaceparasite:blocks/infestedsand"
+  }
+}

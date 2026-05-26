@@ -1,0 +1,26 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "subspaceparasite:parasite_fog"
+  },
+  "variants": {
+    "air=0": [
+      {
+        "model": "subspaceparasite:parasite_fog"
+      }
+    ],
+    "air=1": [
+      {
+        "model": "subspaceparasite:parasite_fog"
+      }
+    ],
+    "air=2": [
+      {
+        "model": "subspaceparasite:parasite_fog"
+      }
+    ],
+    "inventory": [
+      {}
+    ]
+  }
+}

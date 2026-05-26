@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "normal": { "model": "subspaceparasite:consumed_workbench" },
+    "inventory": { "model": "subspaceparasite:consumed_workbench" }
+  }
+}

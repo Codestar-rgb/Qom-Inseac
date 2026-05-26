@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_rh",
+  "textures": {
+    "bottom": "subspaceparasite:blocks/goth_door_bottom",
+    "top": "subspaceparasite:blocks/goth_door_top"
+  }
+}

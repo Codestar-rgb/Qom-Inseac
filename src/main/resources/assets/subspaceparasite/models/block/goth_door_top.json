@@ -1,0 +1,6 @@
+{
+  "parent": "block/door_top",
+  "textures": {
+    "top": "subspaceparasite:blocks/goth_door_top"
+  }
+}

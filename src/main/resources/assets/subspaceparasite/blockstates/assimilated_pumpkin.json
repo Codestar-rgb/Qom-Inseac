@@ -1,0 +1,11 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "facing=north": { "model": "subspaceparasite:assimilated_pumpkin" },
+    "facing=east":  { "model": "subspaceparasite:assimilated_pumpkin", "y": 90 },
+    "facing=south": { "model": "subspaceparasite:assimilated_pumpkin", "y": 180 },
+    "facing=west":  { "model": "subspaceparasite:assimilated_pumpkin", "y": 270 },
+
+    "inventory": { "model": "subspaceparasite:assimilated_pumpkin" }
+  }
+}

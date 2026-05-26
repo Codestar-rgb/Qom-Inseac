@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "normal": [
+      {
+        "model": "subspaceparasite:consumed_pot"
+      }
+    ],
+    "inventory": [
+      {
+        "model": "subspaceparasite:consumed_pot"
+      }
+    ]
+  }
+}

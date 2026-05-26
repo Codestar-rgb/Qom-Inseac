@@ -1,0 +1,279 @@
+/*
+ * Decompiled with CFR 0.152.
+ * 
+ * Could not load the following classes:
+ *  javax.annotation.Nonnull
+ *  javax.annotation.Nullable
+ *  net.minecraft.entity.Entity
+ *  net.minecraft.entity.EntityCreature
+ *  net.minecraft.entity.EntityLiving
+ *  net.minecraft.entity.EntityLivingBase
+ *  net.minecraft.entity.SharedMonsterAttributes
+ *  net.minecraft.entity.ai.EntityAIBase
+ *  net.minecraft.entity.ai.EntityAIHurtByTarget
+ *  net.minecraft.entity.ai.EntityAILookIdle
+ *  net.minecraft.entity.player.EntityPlayer
+ *  net.minecraft.entity.player.EntityPlayerMP
+ *  net.minecraft.init.MobEffects
+ *  net.minecraft.inventory.EntityEquipmentSlot
+ *  net.minecraft.item.Item
+ *  net.minecraft.network.datasync.DataParameter
+ *  net.minecraft.network.datasync.DataSerializer
+ *  net.minecraft.network.datasync.DataSerializers
+ *  net.minecraft.network.datasync.EntityDataManager
+ *  net.minecraft.potion.PotionEffect
+ *  net.minecraft.util.DamageSource
+ *  net.minecraft.util.EnumHand
+ *  net.minecraft.world.World
+ *  net.minecraftforge.fml.common.network.simpleimpl.IMessage
+ *  net.minecraftforge.fml.relauncher.Side
+ *  net.minecraftforge.fml.relauncher.SideOnly
+ */
+package com.subspaceparasite.entity.monster.deterrent;
+
+import com.subspaceparasite.entity.ai.misc.EntityPDispatcher;
+import com.subspaceparasite.entity.ai.misc.EntityPStationary;
+import com.subspaceparasite.entity.projectile.EntitySPProjectile;
+import com.subspaceparasite.init.SPItems;
+import com.subspaceparasite.network.MsgQlipShake;
+import com.subspaceparasite.network.SPNetwork;
+import com.subspaceparasite.util.SPAttributes;
+import com.subspaceparasite.util.config.SPConfig;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityCreature;
+import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityAIBase;
+import net.minecraft.entity.ai.EntityAIHurtByTarget;
+import net.minecraft.entity.ai.EntityAILookIdle;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.MobEffects;
+import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.Item;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializer;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumHand;
+import net.minecraft.world.World;
+import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
+public class EntityNak
+extends EntityPStationary {
+    private float attackTimer;
+    private boolean up2;
+    private EntityPDispatcher father;
+    private static final DataParameter<Integer> TARGET_ENTITY = EntityDataManager.func_187226_a(EntityNak.class, (DataSerializer)DataSerializers.field_187192_b);
+    private EntityLivingBase targetedEntity;
+    private int tak;
+
+    public EntityNak(World worldIn) {
+        super(worldIn);
+        this.func_70105_a(0.7f, 2.5f);
+        this.field_70728_aV = 0;
+        this.type = (byte)40;
+        this.buriedT = 4.0;
+        this.damageCap = SPConfig.turretCap;
+        this.pointCap = SPConfig.turretPointCap;
+        this.pointReduction = SPConfig.turretPointRed;
+        this.chanceLearn = SPConfig.turretChanceLe;
+        this.chanceLearnFire = SPConfig.turretChanceLeFire;
+        this.DamageTypeCap = SPConfig.turretPointDamCap;
+        this.MiniDamage = SPConfig.turretMinDamage;
+        this.regen = SPConfig.turretRegen;
+        this.valueEvDeath = 0;
+    }
+
+    @Override
+    public int getParasiteIDRegister() {
+        return 72;
+    }
+
+    protected void func_184651_r() {
+        this.field_70715_bh.func_75776_a(1, (EntityAIBase)new EntityAIHurtByTarget((EntityCreature)this, true, new Class[0]));
+        this.field_70714_bg.func_75776_a(8, (EntityAIBase)new EntityAILookIdle((EntityLiving)this));
+    }
+
+    @Override
+    protected void func_70088_a() {
+        super.func_70088_a();
+        this.field_70180_af.func_187214_a(TARGET_ENTITY, (Object)0);
+    }
+
+    protected void func_110147_ax() {
+        super.func_110147_ax();
+        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(SPAttributes.NAK_HEALTH);
+        this.func_110148_a(SharedMonsterAttributes.field_188791_g).func_111128_a(SPAttributes.NAK_ARMOR);
+        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.0);
+        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(SPAttributes.NAK_ATTACK_DAMAGE);
+        this.func_110148_a(SharedMonsterAttributes.field_111266_c).func_111128_a(1.0);
+        this.func_110148_a(SharedMonsterAttributes.field_111265_b).func_111128_a(6.0);
+    }
+
+    @Override
+    public void func_70636_d() {
+        double dis;
+        super.func_70636_d();
+        if (this.func_175446_cd()) {
+            return;
+        }
+        if (this.up2) {
+            this.attackTimer += 0.15f;
+            if (this.attackTimer > 1.0f) {
+                this.up = false;
+            }
+        } else {
+            this.attackTimer -= 0.2f;
+        }
+        if (this.up || this.buried()) {
+            return;
+        }
+        if (!this.field_70170_p.field_72995_K) {
+            if (this.func_70638_az() != null) {
+                if (this.func_70638_az() instanceof EntityPlayer) {
+                    EntityPlayer pa = (EntityPlayer)this.func_70638_az();
+                    if (pa.field_71075_bZ.field_75098_d || pa.field_71075_bZ.field_75102_a) {
+                        this.func_70624_b(null);
+                        this.setTargetedEntity(0);
+                        this.setParasiteStatus(0);
+                        return;
+                    }
+                }
+                if (!this.func_70638_az().func_70089_S()) {
+                    this.func_70624_b(null);
+                    this.setTargetedEntity(0);
+                    this.setParasiteStatus(0);
+                } else {
+                    this.tak = 0;
+                    if (this.func_70685_l((Entity)this.func_70638_az()) && this.func_70068_e((Entity)this.func_70638_az()) < 25.0) {
+                        this.setParasiteStatus(3);
+                        this.func_70638_az().func_70690_d(new PotionEffect(MobEffects.field_76421_d, 80, 2, false, false));
+                        this.setTargetedEntity(this.func_70638_az().func_145782_y());
+                        this.func_70661_as().func_75497_a((Entity)this.func_70638_az(), 0.0);
+                        this.lookAt((Entity)this.func_70638_az());
+                        if (this.srpTicks == 10 && this.func_70638_az() instanceof EntityPlayerMP) {
+                            SPNetwork.CHANNEL.sendTo((IMessage)new MsgQlipShake(250, 0, true, false, 4.0f), (EntityPlayerMP)this.func_70638_az());
+                        }
+                    } else {
+                        this.setParasiteStatus(2);
+                        this.setTargetedEntity(0);
+                    }
+                }
+            } else {
+                ++this.tak;
+                if (this.tak >= 60) {
+                    this.field_70170_p.func_72960_a((Entity)this, (byte)51);
+                    this.up = true;
+                }
+                this.setParasiteStatus(0);
+                this.setTargetedEntity(0);
+            }
+        }
+        if (this.getTargetedEntity() != null && (dis = this.func_70068_e((Entity)this.getTargetedEntity())) < 25.0 && dis > 1.0) {
+            EntityLivingBase target = this.getTargetedEntity();
+            target.func_184210_p();
+            double str = 0.5;
+            target.field_70159_w += (Math.signum(this.field_70165_t - target.field_70165_t) * str - target.field_70159_w) * str;
+            target.field_70179_y += (Math.signum(this.field_70161_v - target.field_70161_v) * str - target.field_70179_y) * str;
+            target.func_70690_d(new PotionEffect(MobEffects.field_76421_d, 20, 2, false, false));
+        }
+    }
+
+    @Override
+    public boolean func_70097_a(@Nonnull DamageSource source, float amount) {
+        if (source.func_76364_f() instanceof EntitySPProjectile) {
+            EntityLivingBase target = this.getTargetedEntity();
+            if (target != null) {
+                target.func_70097_a(source, amount * 2.0f);
+            }
+            return false;
+        }
+        return super.func_70097_a(source, amount);
+    }
+
+    @Override
+    protected boolean func_184645_a(EntityPlayer player, EnumHand hand) {
+        if (this.field_70170_p.field_72995_K) {
+            return true;
+        }
+        Item wea = player.func_184582_a(EntityEquipmentSlot.MAINHAND).func_77973_b();
+        if (wea != SPItems.itembase) {
+            // empty if block
+        }
+        if (this.father != null) {
+            this.father.func_70690_d(new PotionEffect(MobEffects.field_188423_x, 100, 1, false, false));
+        }
+        return super.func_184645_a(player, hand);
+    }
+
+    private void setTargetedEntity(int entityId) {
+        this.field_70180_af.func_187227_b(TARGET_ENTITY, (Object)entityId);
+    }
+
+    public boolean hasTargetedEntity() {
+        return (Integer)this.field_70180_af.func_187225_a(TARGET_ENTITY) != 0;
+    }
+
+    public EntityPDispatcher getFather() {
+        return this.father;
+    }
+
+    public void setFather(EntityPDispatcher in) {
+        this.father = in;
+    }
+
+    @Nullable
+    public EntityLivingBase getTargetedEntity() {
+        if (!this.hasTargetedEntity()) {
+            return null;
+        }
+        if (this.field_70170_p.field_72995_K) {
+            if (this.targetedEntity != null) {
+                return this.targetedEntity;
+            }
+            Entity entity = this.field_70170_p.func_73045_a(((Integer)this.field_70180_af.func_187225_a(TARGET_ENTITY)).intValue());
+            if (entity instanceof EntityLivingBase) {
+                this.targetedEntity = (EntityLivingBase)entity;
+                return this.targetedEntity;
+            }
+            return null;
+        }
+        return this.func_70638_az();
+    }
+
+    public void func_184206_a(DataParameter<?> key) {
+        super.func_184206_a(key);
+        if (TARGET_ENTITY.equals(key)) {
+            this.targetedEntity = null;
+        }
+    }
+
+    public float func_70047_e() {
+        return 1.8f;
+    }
+
+    @SideOnly(value=Side.CLIENT)
+    public float getAttackTimer() {
+        return this.attackTimer;
+    }
+
+    @Override
+    @SideOnly(value=Side.CLIENT)
+    public void func_70103_a(byte id) {
+        if (id == 12) {
+            this.up = true;
+            this.attackTimer = 0.0f;
+        } else {
+            super.func_70103_a(id);
+        }
+    }
+}
+

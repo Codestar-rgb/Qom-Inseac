@@ -1,0 +1,246 @@
+/*
+ * Decompiled with CFR 0.152.
+ * 
+ * Could not load the following classes:
+ *  net.minecraft.client.model.ModelBase
+ *  net.minecraft.client.model.ModelRenderer
+ *  net.minecraft.entity.Entity
+ */
+package com.subspaceparasite.client.model.entity.awakened;
+
+import com.subspaceparasite.client.model.ModelSP;
+import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.entity.Entity;
+
+public class ModelOroncoAW
+extends ModelSP {
+    public ModelRenderer mainbody;
+    public ModelRenderer jointH;
+    public ModelRenderer body;
+    public ModelRenderer b;
+    public ModelRenderer head;
+    public ModelRenderer taclejointUM1;
+    public ModelRenderer taclejointDM1;
+    public ModelRenderer taclejointRM1;
+    public ModelRenderer taclejointLM1;
+    public ModelRenderer dec;
+    public ModelRenderer dec_1;
+    public ModelRenderer tentacle;
+    public ModelRenderer taclejointUM2;
+    public ModelRenderer tentacle_1;
+    public ModelRenderer taclejointUM3;
+    public ModelRenderer tentacle_2;
+    public ModelRenderer taclejointUM4;
+    public ModelRenderer tentacle_3;
+    public ModelRenderer tentacle_4;
+    public ModelRenderer taclejointDM2;
+    public ModelRenderer tentacle_5;
+    public ModelRenderer taclejointDM3;
+    public ModelRenderer tentacle_6;
+    public ModelRenderer taclejointDM4;
+    public ModelRenderer tentacle_7;
+    public ModelRenderer tentacle_8;
+    public ModelRenderer taclejointRM2;
+    public ModelRenderer tentacle_9;
+    public ModelRenderer taclejointRM3;
+    public ModelRenderer tentacle_10;
+    public ModelRenderer taclejointRM4;
+    public ModelRenderer tentacle_11;
+    public ModelRenderer tentacle_12;
+    public ModelRenderer taclejointLM2;
+    public ModelRenderer tentacle_13;
+    public ModelRenderer taclejointLM3;
+    public ModelRenderer tentacle_14;
+    public ModelRenderer taclejointLM4;
+    public ModelRenderer tentacle_15;
+
+    public ModelOroncoAW() {
+        this.field_78090_t = 64;
+        this.field_78089_u = 32;
+        this.taclejointDM2 = new ModelRenderer((ModelBase)this, 196, 48);
+        this.taclejointDM2.func_78793_a(0.0f, 0.0f, 8.0f);
+        this.taclejointDM2.func_78790_a(-0.5f, -0.5f, -0.5f, 1, 1, 1, 0.0f);
+        this.taclejointDM3 = new ModelRenderer((ModelBase)this, 352, 36);
+        this.taclejointDM3.func_78793_a(0.0f, 0.0f, 8.0f);
+        this.taclejointDM3.func_78790_a(-0.5f, -0.5f, -0.5f, 1, 1, 1, 0.0f);
+        this.tentacle = new ModelRenderer((ModelBase)this, 258, 270);
+        this.tentacle.func_78793_a(0.0f, 0.0f, 0.0f);
+        this.tentacle.func_78790_a(-3.5f, -2.5f, -2.0f, 7, 5, 13, 0.0f);
+        this.setRotateAngle(this.tentacle, -0.34906584f, 0.0f, 0.0f);
+        this.head = new ModelRenderer((ModelBase)this, 192, 182);
+        this.head.func_78793_a(0.0f, 0.0f, -9.0f);
+        this.head.func_78790_a(-6.0f, -12.0f, -10.0f, 12, 12, 18, 0.0f);
+        this.setRotateAngle(this.head, -2.5830872f, 0.0f, 0.0f);
+        this.tentacle_5 = new ModelRenderer((ModelBase)this, 399, 252);
+        this.tentacle_5.func_78793_a(0.0f, 0.0f, 1.0f);
+        this.tentacle_5.func_78790_a(-3.0f, -2.0f, -1.0f, 6, 4, 11, 0.0f);
+        this.setRotateAngle(this.tentacle_5, 0.40142572f, 0.0f, 0.0f);
+        this.taclejointUM4 = new ModelRenderer((ModelBase)this, 32, 8);
+        this.taclejointUM4.func_78793_a(0.0f, 0.0f, 9.0f);
+        this.taclejointUM4.func_78790_a(-0.5f, -0.5f, -0.5f, 1, 1, 1, 0.0f);
+        this.body = new ModelRenderer((ModelBase)this, 237, 0);
+        this.body.func_78793_a(0.0f, -10.0f, 0.0f);
+        this.body.func_78790_a(-35.0f, -1.0f, -19.5f, 70, 80, 48, 0.0f);
+        this.setRotateAngle(this.body, 0.29670596f, 0.0f, 0.0f);
+        this.taclejointDM4 = new ModelRenderer((ModelBase)this, 70, 8);
+        this.taclejointDM4.func_78793_a(0.0f, 0.0f, 8.0f);
+        this.taclejointDM4.func_78790_a(-0.5f, -0.5f, -0.5f, 1, 1, 1, 0.0f);
+        this.taclejointUM3 = new ModelRenderer((ModelBase)this, 346, 36);
+        this.taclejointUM3.func_78793_a(0.0f, 0.0f, 9.0f);
+        this.taclejointUM3.func_78790_a(-0.5f, -0.5f, -0.5f, 1, 1, 1, 0.0f);
+        this.taclejointRM1 = new ModelRenderer((ModelBase)this, 110, 48);
+        this.taclejointRM1.func_78793_a(-6.0f, -6.0f, 4.5f);
+        this.taclejointRM1.func_78790_a(-0.5f, -0.5f, -0.5f, 1, 1, 1, 0.0f);
+        this.taclejointDM1 = new ModelRenderer((ModelBase)this, 184, 48);
+        this.taclejointDM1.func_78793_a(0.0f, -11.5f, 5.5f);
+        this.taclejointDM1.func_78790_a(-0.5f, -0.5f, -0.5f, 1, 1, 1, 0.0f);
+        this.tentacle_14 = new ModelRenderer((ModelBase)this, 372, 254);
+        this.tentacle_14.func_78793_a(0.0f, 0.0f, 1.0f);
+        this.tentacle_14.func_78790_a(-3.5f, -1.5f, -1.0f, 7, 3, 13, 0.0f);
+        this.setRotateAngle(this.tentacle_14, 0.62831855f, 0.0f, 0.0f);
+        this.mainbody = new ModelRenderer((ModelBase)this, 0, 0);
+        this.mainbody.func_78793_a(0.0f, -33.0f, -23.0f);
+        this.mainbody.func_78790_a(0.0f, 0.0f, 0.0f, 1, 1, 1, 0.0f);
+        this.tentacle_3 = new ModelRenderer((ModelBase)this, 0, 250);
+        this.tentacle_3.func_78793_a(0.0f, 0.0f, 1.0f);
+        this.tentacle_3.func_78790_a(-2.0f, -1.0f, -1.0f, 4, 2, 12, 0.0f);
+        this.setRotateAngle(this.tentacle_3, 0.55850536f, 0.0f, 0.0f);
+        this.tentacle_8 = new ModelRenderer((ModelBase)this, 347, 274);
+        this.tentacle_8.func_78793_a(0.0f, 0.0f, 0.0f);
+        this.tentacle_8.func_78790_a(-3.5f, -2.5f, -1.0f, 7, 5, 13, 0.0f);
+        this.setRotateAngle(this.tentacle_8, -0.9424778f, -0.33161256f, 1.5707964f);
+        this.taclejointUM2 = new ModelRenderer((ModelBase)this, 180, 48);
+        this.taclejointUM2.func_78793_a(0.0f, 0.0f, 9.0f);
+        this.taclejointUM2.func_78790_a(-0.5f, -0.5f, -0.5f, 1, 1, 1, 0.0f);
+        this.tentacle_13 = new ModelRenderer((ModelBase)this, 118, 188);
+        this.tentacle_13.func_78793_a(0.0f, 0.0f, 1.0f);
+        this.tentacle_13.func_78790_a(-4.0f, -2.0f, -1.0f, 8, 4, 13, 0.0f);
+        this.setRotateAngle(this.tentacle_13, 0.4712389f, 0.0f, 0.0f);
+        this.tentacle_6 = new ModelRenderer((ModelBase)this, 0, 236);
+        this.tentacle_6.func_78793_a(0.0f, 0.0f, 1.0f);
+        this.tentacle_6.func_78790_a(-2.5f, -1.5f, -1.0f, 5, 3, 11, 0.0f);
+        this.setRotateAngle(this.tentacle_6, 0.38397244f, 0.0f, 0.0f);
+        this.taclejointUM1 = new ModelRenderer((ModelBase)this, 168, 48);
+        this.taclejointUM1.func_78793_a(0.0f, -0.5f, 4.5f);
+        this.taclejointUM1.func_78790_a(-0.5f, -0.5f, -0.5f, 1, 1, 4, 0.0f);
+        this.taclejointLM1 = new ModelRenderer((ModelBase)this, 200, 48);
+        this.taclejointLM1.func_78793_a(6.0f, -6.0f, 4.5f);
+        this.taclejointLM1.func_78790_a(-0.5f, -0.5f, -0.5f, 1, 1, 1, 0.0f);
+        this.dec = new ModelRenderer((ModelBase)this, 88, 77);
+        this.dec.func_78793_a(3.9f, -2.2f, -1.0f);
+        this.dec.func_78790_a(-4.0f, -2.0f, -1.5f, 8, 9, 3, 0.0f);
+        this.setRotateAngle(this.dec, 0.38397244f, 0.0f, -0.7853982f);
+        this.taclejointRM2 = new ModelRenderer((ModelBase)this, 206, 48);
+        this.taclejointRM2.func_78793_a(0.0f, 0.0f, 10.0f);
+        this.taclejointRM2.func_78790_a(-0.5f, -0.5f, -0.5f, 1, 1, 1, 0.0f);
+        this.tentacle_12 = new ModelRenderer((ModelBase)this, 297, 257);
+        this.tentacle_12.func_78793_a(0.0f, 0.0f, 0.0f);
+        this.tentacle_12.func_78790_a(-3.5f, -2.5f, -1.0f, 7, 5, 13, 0.0f);
+        this.setRotateAngle(this.tentacle_12, -0.9424778f, 0.33161256f, -1.5707964f);
+        this.taclejointLM2 = new ModelRenderer((ModelBase)this, 570, 48);
+        this.taclejointLM2.func_78793_a(0.0f, 0.0f, 10.0f);
+        this.taclejointLM2.func_78790_a(-0.5f, -0.5f, -0.5f, 1, 1, 1, 0.0f);
+        this.dec_1 = new ModelRenderer((ModelBase)this, 141, 77);
+        this.dec_1.func_78793_a(-3.9f, -2.2f, -1.0f);
+        this.dec_1.func_78790_a(-4.0f, -2.0f, -1.5f, 8, 9, 3, 0.0f);
+        this.setRotateAngle(this.dec_1, 0.38397244f, 0.0f, 0.7853982f);
+        this.taclejointLM3 = new ModelRenderer((ModelBase)this, 364, 36);
+        this.taclejointLM3.func_78793_a(0.0f, 0.0f, 10.0f);
+        this.taclejointLM3.func_78790_a(-0.5f, -0.5f, -0.5f, 1, 1, 1, 0.0f);
+        this.tentacle_2 = new ModelRenderer((ModelBase)this, 421, 255);
+        this.tentacle_2.func_78793_a(0.0f, 0.0f, 1.0f);
+        this.tentacle_2.func_78790_a(-2.5f, -1.5f, -1.0f, 5, 3, 12, 0.0f);
+        this.setRotateAngle(this.tentacle_2, 0.4886922f, 0.0f, 0.0f);
+        this.taclejointRM4 = new ModelRenderer((ModelBase)this, 77, 8);
+        this.taclejointRM4.func_78793_a(0.0f, 0.0f, 10.0f);
+        this.taclejointRM4.func_78790_a(-0.5f, -0.5f, -0.5f, 1, 1, 1, 0.0f);
+        this.tentacle_11 = new ModelRenderer((ModelBase)this, 559, 243);
+        this.tentacle_11.func_78793_a(0.0f, 0.0f, 1.0f);
+        this.tentacle_11.func_78790_a(-3.0f, -1.0f, -1.0f, 6, 2, 13, 0.0f);
+        this.setRotateAngle(this.tentacle_11, 0.6632251f, 0.0f, 0.0f);
+        this.tentacle_7 = new ModelRenderer((ModelBase)this, 0, 222);
+        this.tentacle_7.func_78793_a(0.0f, 0.0f, 1.0f);
+        this.tentacle_7.func_78790_a(-2.0f, -1.0f, -1.0f, 4, 2, 12, 0.0f);
+        this.setRotateAngle(this.tentacle_7, 0.34906584f, 0.0f, 0.0f);
+        this.taclejointRM3 = new ModelRenderer((ModelBase)this, 358, 36);
+        this.taclejointRM3.func_78793_a(0.0f, 0.0f, 10.0f);
+        this.taclejointRM3.func_78790_a(-0.5f, -0.5f, -0.5f, 1, 1, 1, 0.0f);
+        this.tentacle_10 = new ModelRenderer((ModelBase)this, 173, 253);
+        this.tentacle_10.func_78793_a(0.0f, 0.0f, 1.0f);
+        this.tentacle_10.func_78790_a(-3.5f, -1.5f, -1.0f, 7, 3, 13, 0.0f);
+        this.setRotateAngle(this.tentacle_10, 0.62831855f, 0.0f, 0.0f);
+        this.tentacle_1 = new ModelRenderer((ModelBase)this, 99, 254);
+        this.tentacle_1.func_78793_a(0.0f, 0.0f, 1.0f);
+        this.tentacle_1.func_78790_a(-3.0f, -2.0f, -1.0f, 6, 4, 12, 0.0f);
+        this.setRotateAngle(this.tentacle_1, 0.31415927f, 0.0f, 0.0f);
+        this.tentacle_4 = new ModelRenderer((ModelBase)this, 32, 235);
+        this.tentacle_4.func_78793_a(0.0f, 0.0f, 0.0f);
+        this.tentacle_4.func_78790_a(-3.5f, -2.5f, -1.0f, 7, 5, 11, 0.0f);
+        this.setRotateAngle(this.tentacle_4, -1.012291f, 0.0f, (float)Math.PI);
+        this.b = new ModelRenderer((ModelBase)this, 0, 0);
+        this.b.func_78793_a(0.0f, 17.0f, 36.0f);
+        this.b.func_78790_a(-15.0f, -15.0f, 0.0f, 30, 30, 66, 0.0f);
+        this.setRotateAngle(this.b, 0.34906584f, 0.0f, 0.0f);
+        this.tentacle_9 = new ModelRenderer((ModelBase)this, 76, 234);
+        this.tentacle_9.func_78793_a(0.0f, 0.0f, 1.0f);
+        this.tentacle_9.func_78790_a(-4.0f, -2.0f, -1.0f, 8, 4, 13, 0.0f);
+        this.setRotateAngle(this.tentacle_9, 0.4712389f, 0.0f, 0.0f);
+        this.tentacle_15 = new ModelRenderer((ModelBase)this, 551, 205);
+        this.tentacle_15.func_78793_a(0.0f, 0.0f, 1.0f);
+        this.tentacle_15.func_78790_a(-3.0f, -1.0f, -1.0f, 6, 2, 13, 0.0f);
+        this.setRotateAngle(this.tentacle_15, 0.6632251f, 0.0f, 0.0f);
+        this.taclejointLM4 = new ModelRenderer((ModelBase)this, 94, 8);
+        this.taclejointLM4.func_78793_a(0.0f, 0.0f, 10.0f);
+        this.taclejointLM4.func_78790_a(-0.5f, -0.5f, -0.5f, 1, 1, 1, 0.0f);
+        this.jointH = new ModelRenderer((ModelBase)this, 4, 0);
+        this.jointH.func_78793_a(0.0f, -1.0f, -35.0f);
+        this.jointH.func_78790_a(-0.5f, -0.5f, -0.5f, 1, 1, 1, 0.0f);
+        this.tentacle_4.func_78792_a(this.taclejointDM2);
+        this.tentacle_5.func_78792_a(this.taclejointDM3);
+        this.taclejointUM1.func_78792_a(this.tentacle);
+        this.jointH.func_78792_a(this.head);
+        this.taclejointDM2.func_78792_a(this.tentacle_5);
+        this.tentacle_2.func_78792_a(this.taclejointUM4);
+        this.mainbody.func_78792_a(this.body);
+        this.tentacle_6.func_78792_a(this.taclejointDM4);
+        this.tentacle_1.func_78792_a(this.taclejointUM3);
+        this.head.func_78792_a(this.taclejointRM1);
+        this.head.func_78792_a(this.taclejointDM1);
+        this.taclejointLM3.func_78792_a(this.tentacle_14);
+        this.taclejointUM4.func_78792_a(this.tentacle_3);
+        this.taclejointRM1.func_78792_a(this.tentacle_8);
+        this.tentacle.func_78792_a(this.taclejointUM2);
+        this.taclejointLM2.func_78792_a(this.tentacle_13);
+        this.taclejointDM3.func_78792_a(this.tentacle_6);
+        this.head.func_78792_a(this.taclejointUM1);
+        this.head.func_78792_a(this.taclejointLM1);
+        this.head.func_78792_a(this.dec);
+        this.tentacle_8.func_78792_a(this.taclejointRM2);
+        this.taclejointLM1.func_78792_a(this.tentacle_12);
+        this.tentacle_12.func_78792_a(this.taclejointLM2);
+        this.head.func_78792_a(this.dec_1);
+        this.tentacle_13.func_78792_a(this.taclejointLM3);
+        this.taclejointUM3.func_78792_a(this.tentacle_2);
+        this.tentacle_10.func_78792_a(this.taclejointRM4);
+        this.taclejointRM4.func_78792_a(this.tentacle_11);
+        this.taclejointDM4.func_78792_a(this.tentacle_7);
+        this.tentacle_9.func_78792_a(this.taclejointRM3);
+        this.taclejointRM3.func_78792_a(this.tentacle_10);
+        this.taclejointUM2.func_78792_a(this.tentacle_1);
+        this.taclejointDM1.func_78792_a(this.tentacle_4);
+        this.mainbody.func_78792_a(this.b);
+        this.taclejointRM2.func_78792_a(this.tentacle_9);
+        this.taclejointLM4.func_78792_a(this.tentacle_15);
+        this.tentacle_14.func_78792_a(this.taclejointLM4);
+    }
+
+    public void func_78088_a(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+        this.mainbody.func_78785_a(f5);
+        this.jointH.func_78785_a(f5);
+    }
+
+    public void func_78087_a(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor, Entity entityIn) {
+    }
+}
+
