@@ -4,7 +4,7 @@ uniform sampler2D DiffuseSampler;
 varying vec2 texCoord;
 
 uniform vec2 InSize;
-uniform float SRP_Time; // time
+uniform float SP_Time; // time
 
 float saturate(float x) { return clamp(x, 0.0, 1.0); }
 
@@ -25,7 +25,7 @@ float smoothNoise1(float x) {
 
 void main() {
     vec2 baseUV = texCoord;
-    float t = SRP_Time;
+    float t = SP_Time;
 
     // edge mask
     vec2 p = baseUV * 2.0 - 1.0;
