@@ -1,8 +1,0 @@
-{
-  "parent": "block/glass_pane_side_alt",
-  "textures": {
-    "pane": "subspaceparasite:blocks/bloody_glass",
-    "edge": "subspaceparasite:blocks/bloody_glass_pane",
-    "particle": "subspaceparasite:blocks/bloody_glass"
-  }
-}

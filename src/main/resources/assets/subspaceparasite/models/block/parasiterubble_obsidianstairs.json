@@ -1,8 +1,0 @@
-{
-  "parent": "block/stairs",
-  "textures": {
-    "bottom": "subspaceparasite:blocks/bleeding_obsidian",
-    "top": "subspaceparasite:blocks/bleeding_obsidian",
-    "side": "subspaceparasite:blocks/bleeding_obsidian"
-  }
-}

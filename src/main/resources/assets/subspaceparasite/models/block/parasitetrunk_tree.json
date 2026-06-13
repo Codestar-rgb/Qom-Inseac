@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_column",
-  "textures": {
-    "particle": "subspaceparasite:blocks/parasitetrunk_tree",
-    "end": "subspaceparasite:blocks/parasitetrunk_tree",
-    "side": "subspaceparasite:blocks/parasitetrunk_tree_side"
-  }
-}

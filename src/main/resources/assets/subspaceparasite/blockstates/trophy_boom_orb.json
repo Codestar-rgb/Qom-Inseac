@@ -1,6 +1,0 @@
-{
-  "variants": {
-    "normal": { "model": "subspaceparasite:trophy_boom_orb" },
-    "inventory": { "model": "subspaceparasite:trophy_boom_orb_item" }
-  }
-}

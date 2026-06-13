@@ -1,8 +1,0 @@
-{
-  "parent": "block/glass_pane_noside",
-  "textures": {
-    "pane": "subspaceparasite:blocks/harlequinn_glass",
-    "edge": "subspaceparasite:blocks/harlequinn_glass_pane",
-    "particle": "subspaceparasite:blocks/harlequinn_glass"
-  }
-}

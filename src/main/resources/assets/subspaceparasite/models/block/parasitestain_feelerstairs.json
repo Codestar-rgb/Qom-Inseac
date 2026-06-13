@@ -1,8 +1,0 @@
-{
-  "parent": "block/stairs",
-  "textures": {
-    "bottom": "subspaceparasite:blocks/parasitestain_feeler",
-    "top": "subspaceparasite:blocks/parasitestain_feeler",
-    "side": "subspaceparasite:blocks/parasitestain_feeler_side"
-  }
-}

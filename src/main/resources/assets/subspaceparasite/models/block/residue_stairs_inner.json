@@ -1,8 +1,0 @@
-{
-  "parent": "block/inner_stairs",
-  "textures": {
-    "bottom": "subspaceparasite:blocks/residue_bricks",
-    "top": "subspaceparasite:blocks/residue_bricks",
-    "side": "subspaceparasite:blocks/residue_bricks"
-  }
-}

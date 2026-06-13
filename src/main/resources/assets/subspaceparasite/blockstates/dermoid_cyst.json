@@ -1,9 +1,0 @@
-{
-  "forge_marker": 1,
-  "variants": {
-    "facing=north": { "model": "subspaceparasite:dermoid_cyst_north" },
-    "facing=east":  { "model": "subspaceparasite:dermoid_cyst_east" },
-    "facing=south": { "model": "subspaceparasite:dermoid_cyst_south" },
-    "facing=west":  { "model": "subspaceparasite:dermoid_cyst_west" }
-  }
-}

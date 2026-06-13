@@ -1,8 +1,0 @@
-{
-  "parent": "block/glass_pane_post_ends",
-  "textures": {
-    "pane": "subspaceparasite:blocks/shrouded_glass",
-    "edge": "subspaceparasite:blocks/shrouded_glass_pane",
-    "particle": "subspaceparasite:blocks/shrouded_glass"
-  }
-}

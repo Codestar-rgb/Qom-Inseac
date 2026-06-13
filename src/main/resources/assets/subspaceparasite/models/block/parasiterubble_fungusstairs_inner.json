@@ -1,8 +1,0 @@
-{
-  "parent": "block/inner_stairs",
-  "textures": {
-    "bottom": "subspaceparasite:blocks/assimilated_fungus",
-    "top": "subspaceparasite:blocks/assimilated_fungus",
-    "side": "subspaceparasite:blocks/assimilated_fungus"
-  }
-}

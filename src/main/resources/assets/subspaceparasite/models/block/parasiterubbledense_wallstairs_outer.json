@@ -1,8 +1,0 @@
-{
-  "parent": "block/outer_stairs",
-  "textures": {
-    "bottom": "subspaceparasite:blocks/parasiterubbledense_colony",
-    "top": "subspaceparasite:blocks/parasiterubbledense_colony",
-    "side": "subspaceparasite:blocks/parasiterubbledense_colony"
-  }
-}

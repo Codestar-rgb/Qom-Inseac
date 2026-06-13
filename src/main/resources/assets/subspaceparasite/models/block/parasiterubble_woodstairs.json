@@ -1,8 +1,0 @@
-{
-  "parent": "block/stairs",
-  "textures": {
-    "bottom": "subspaceparasite:blocks/consumed_wood",
-    "top": "subspaceparasite:blocks/consumed_wood",
-    "side": "subspaceparasite:blocks/consumed_wood_side"
-  }
-}

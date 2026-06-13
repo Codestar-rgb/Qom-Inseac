@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_column_horizontal",
-  "textures": {
-    "end": "subspaceparasite:blocks/hair_follicle",
-    "side": "subspaceparasite:blocks/hair_follicle_side"
-  }
-}

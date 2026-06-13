@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_column",
-  "textures": {
-    "particle": "subspaceparasite:blocks/hivestone_debris_side",
-    "end": "subspaceparasite:blocks/hivestone_debris",
-    "side": "subspaceparasite:blocks/hivestone_debris_side"
-  }
-}

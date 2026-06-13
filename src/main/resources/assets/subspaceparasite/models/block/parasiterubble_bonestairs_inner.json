@@ -1,8 +1,0 @@
-{
-  "parent": "block/inner_stairs",
-  "textures": {
-    "bottom": "subspaceparasite:blocks/parasiterubble_bone",
-    "top": "subspaceparasite:blocks/parasiterubble_bone",
-    "side": "subspaceparasite:blocks/parasiterubble_bone"
-  }
-}

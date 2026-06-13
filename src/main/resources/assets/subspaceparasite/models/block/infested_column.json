@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_column",
-  "textures": {
-    "end": "subspaceparasite:blocks/infested_column_top",
-    "side": "subspaceparasite:blocks/infested_column_side"
-  }
-}

@@ -1,6 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "subspaceparasite:blocks/sapling_deadhead"
-  }
-}

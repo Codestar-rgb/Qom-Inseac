@@ -1,8 +1,0 @@
-{
-  "parent": "block/inner_stairs",
-  "textures": {
-    "bottom": "subspaceparasite:blocks/parasiterubbledense_biome",
-    "top": "subspaceparasite:blocks/parasiterubbledense_biome",
-    "side": "subspaceparasite:blocks/parasiterubbledense_biome"
-  }
-}

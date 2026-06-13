@@ -1,8 +1,0 @@
-{
-  "parent": "block/outer_stairs",
-  "textures": {
-    "bottom": "subspaceparasite:blocks/parasiteplank_deadhead",
-    "top": "subspaceparasite:blocks/parasiteplank_deadhead",
-    "side": "subspaceparasite:blocks/parasiteplank_deadhead"
-  }
-}

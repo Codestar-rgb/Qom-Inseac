@@ -1,6 +1,0 @@
-{
-  "parent": "subspaceparasite:block/gore_base",
-  "textures": {
-    "texture": "subspaceparasite:blocks/parasitegore_ada_big"
-  }
-}

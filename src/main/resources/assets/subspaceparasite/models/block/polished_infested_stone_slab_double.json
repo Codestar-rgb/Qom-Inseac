@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "particle": "subspaceparasite:blocks/infested_stone_polished",
-    "all": "subspaceparasite:blocks/infested_stone_polished"
-  }
-}

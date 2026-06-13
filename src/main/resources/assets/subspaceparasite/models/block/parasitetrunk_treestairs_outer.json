@@ -1,8 +1,0 @@
-{
-  "parent": "block/outer_stairs",
-  "textures": {
-    "bottom": "subspaceparasite:blocks/parasitetrunk_tree",
-    "top": "subspaceparasite:blocks/parasitetrunk_tree",
-    "side": "subspaceparasite:blocks/parasitetrunk_tree_side"
-  }
-}
