@@ -1,0 +1,72 @@
+/*
+ * Decompiled with CFR 0.152.
+ * 
+ * Could not load the following classes:
+ *  net.minecraft.client.renderer.GlStateManager
+ *  net.minecraft.client.renderer.entity.RenderManager
+ *  net.minecraft.util.ResourceLocation
+ *  net.minecraft.util.math.MathHelper
+ */
+package com.dhanantry.scapeandrunparasites.client.renderer.entity.adapted;
+
+import com.dhanantry.scapeandrunparasites.client.model.entity.adapted.ModelWymoAdapted;
+import com.dhanantry.scapeandrunparasites.client.renderer.RenderMalleable;
+import com.dhanantry.scapeandrunparasites.entity.monster.adapted.EntityWymoAdapted;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.MathHelper;
+
+public class RenderWymoAdapted
+extends RenderMalleable<EntityWymoAdapted> {
+    public static final ResourceLocation TEXTUREH = new ResourceLocation("srparasites:textures/entity/monster/wymoa.png");
+    public static final ResourceLocation TEXTURE_FROZEN = new ResourceLocation("srparasites:textures/entity/monster/snowvariants/test.png");
+
+    public RenderWymoAdapted(RenderManager manager) {
+        super(manager, new ModelWymoAdapted(), 0.0f);
+    }
+
+    protected ResourceLocation getEntityTexture(EntityWymoAdapted entity) {
+        switch (entity.getSkin()) {
+            case 120: {
+                return TEXTURE_FROZEN;
+            }
+        }
+        return TEXTUREH;
+    }
+
+    protected void preRenderCallback(EntityWymoAdapted entitylivingbaseIn, float partialTickTime) {
+        float xx = 1.1f;
+        float yy = 1.1f;
+        switch (entitylivingbaseIn.getBodyNumber()) {
+            case 1: {
+                xx = 1.23f;
+                yy = 1.23f;
+                break;
+            }
+            case 2: {
+                xx = 1.47f;
+                yy = 1.47f;
+                break;
+            }
+            case 3: {
+                xx = 1.23f;
+                yy = 1.27f;
+                break;
+            }
+            case 4: {
+                xx = 1.05f;
+                yy = 1.17f;
+            }
+        }
+        float f = entitylivingbaseIn.getSelfeFlashIntensity(partialTickTime);
+        float f1 = 1.0f + MathHelper.func_76126_a((float)(f * 100.0f)) * f * 0.01f;
+        f = MathHelper.func_76131_a((float)f, (float)0.0f, (float)1.0f);
+        f *= f;
+        f *= f;
+        float f2 = (1.0f + f * 0.4f) * f1;
+        float f3 = (1.0f + f * 0.1f) / f1;
+        GlStateManager.func_179152_a((float)(xx * f2), (float)(yy * f3), (float)f2);
+    }
+}
+
