@@ -1,32 +1,5 @@
-/*
- * Decompiled with CFR 0.152.
- * 
- * Could not load the following classes:
- *  net.minecraft.block.Block
- *  net.minecraft.block.material.Material
- *  net.minecraft.block.properties.IProperty
- *  net.minecraft.block.properties.PropertyEnum
- *  net.minecraft.block.state.BlockStateContainer
- *  net.minecraft.block.state.IBlockState
- *  net.minecraft.creativetab.CreativeTabs
- *  net.minecraft.entity.player.EntityPlayer
- *  net.minecraft.init.Blocks
- *  net.minecraft.item.Item
- *  net.minecraft.item.ItemBlock
- *  net.minecraft.item.ItemStack
- *  net.minecraft.util.IStringSerializable
- *  net.minecraft.util.NonNullList
- *  net.minecraft.util.math.BlockPos
- *  net.minecraft.util.math.RayTraceResult
- *  net.minecraft.world.IBlockAccess
- *  net.minecraft.world.World
- *  net.minecraftforge.fml.relauncher.Side
- *  net.minecraftforge.fml.relauncher.SideOnly
- */
 package com.dhanantry.scapeandrunparasites.block;
 
-import com.dhanantry.scapeandrunparasites.block.BlockParasiteSpreading;
-import com.dhanantry.scapeandrunparasites.block.IMetaName;
 import com.dhanantry.scapeandrunparasites.client.particle.ParticleSpawner;
 import com.dhanantry.scapeandrunparasites.client.particle.SRPEnumParticle;
 import com.dhanantry.scapeandrunparasites.init.SRPBlocks;
@@ -54,135 +27,132 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockParasiteRubble
-extends BlockParasiteSpreading
-implements IMetaName {
-    public static final PropertyEnum<EnumType> VARIANT = PropertyEnum.func_177709_a((String)"variant", EnumType.class);
+public class BlockParasiteRubble extends BlockParasiteSpreading implements IMetaName {
+   public static final PropertyEnum<BlockParasiteRubble.EnumType> VARIANT = PropertyEnum.func_177709_a("variant", BlockParasiteRubble.EnumType.class);
 
-    public BlockParasiteRubble(Material material, String name, float hardness, boolean creative, boolean infested) {
-        super(material, name, hardness, creative, infested);
-        this.setHarvestLevel("pickaxe", 1);
-        this.func_180632_j(this.field_176227_L.func_177621_b().func_177226_a(VARIANT, (Comparable)((Object)EnumType.BONE)));
-    }
+   public BlockParasiteRubble(Material material, String name, float hardness, boolean creative, boolean infested) {
+      super(material, name, hardness, creative, infested);
+      this.setHarvestLevel("pickaxe", 1);
+      this.func_180632_j(this.field_176227_L.func_177621_b().func_177226_a(VARIANT, BlockParasiteRubble.EnumType.BONE));
+   }
 
-    public int func_180651_a(IBlockState state) {
-        return this.func_176201_c(state);
-    }
+   public int func_180651_a(IBlockState state) {
+      return this.func_176201_c(state);
+   }
 
-    public void func_149666_a(CreativeTabs itemIn, NonNullList<ItemStack> items) {
-        for (EnumType variant : EnumType.values()) {
-            items.add((Object)new ItemStack((Block)this, 1, variant.ordinal()));
-        }
-    }
+   public void func_149666_a(CreativeTabs itemIn, NonNullList<ItemStack> items) {
+      for (BlockParasiteRubble.EnumType variant : BlockParasiteRubble.EnumType.values()) {
+         items.add(new ItemStack(this, 1, variant.ordinal()));
+      }
+   }
 
-    public IBlockState func_176203_a(int meta) {
-        return this.func_176223_P().func_177226_a(VARIANT, (Comparable)((Object)EnumType.values()[meta]));
-    }
+   public IBlockState func_176203_a(int meta) {
+      return this.func_176223_P().func_177226_a(VARIANT, BlockParasiteRubble.EnumType.values()[meta]);
+   }
 
-    public int func_176201_c(IBlockState state) {
-        return ((EnumType)((Object)state.func_177229_b(VARIANT))).ordinal();
-    }
+   public int func_176201_c(IBlockState state) {
+      return ((BlockParasiteRubble.EnumType)state.func_177229_b(VARIANT)).ordinal();
+   }
 
-    public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
-        return new ItemStack(Item.func_150898_a((Block)this), 1, this.func_176201_c(world.func_180495_p(pos)));
-    }
+   public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
+      return new ItemStack(Item.func_150898_a(this), 1, this.func_176201_c(world.func_180495_p(pos)));
+   }
 
-    protected BlockStateContainer func_180661_e() {
-        return new BlockStateContainer((Block)this, new IProperty[]{VARIANT});
-    }
+   protected BlockStateContainer func_180661_e() {
+      return new BlockStateContainer(this, new IProperty[]{VARIANT});
+   }
 
-    @Override
-    public Enum[] getVariants() {
-        return EnumType.values();
-    }
+   @Override
+   public Enum[] getVariants() {
+      return BlockParasiteRubble.EnumType.values();
+   }
 
-    @Override
-    public ItemBlock getItemBlock() {
-        return new ItemBlockVariant(this);
-    }
+   @Override
+   public ItemBlock getItemBlock() {
+      return new ItemBlockVariant(this);
+   }
 
-    @SideOnly(value=Side.CLIENT)
-    public void func_180655_c(IBlockState stateIn, World worldIn, BlockPos pos, Random rand) {
-        if (worldIn.func_180495_p(pos.func_177984_a()).func_177230_c() != Blocks.field_150350_a && worldIn.func_180495_p(pos.func_177984_a()).func_177230_c() != SRPBlocks.ParasiteBush) {
-            return;
-        }
-        if (rand.nextDouble() <= (double)SRPConfigSystems.rsBlockParticleS) {
-            double d0 = (double)pos.func_177958_n() + rand.nextDouble();
-            double d1 = (double)pos.func_177956_o() + 2.5;
-            double d2 = (double)pos.func_177952_p() + rand.nextDouble();
+   @SideOnly(Side.CLIENT)
+   public void func_180655_c(IBlockState stateIn, World worldIn, BlockPos pos, Random rand) {
+      if (worldIn.func_180495_p(pos.func_177984_a()).func_177230_c() == Blocks.field_150350_a
+         || worldIn.func_180495_p(pos.func_177984_a()).func_177230_c() == SRPBlocks.ParasiteBush) {
+         if (rand.nextDouble() <= SRPConfigSystems.rsBlockParticleS) {
+            double d0 = pos.func_177958_n() + rand.nextDouble();
+            double d1 = pos.func_177956_o() + 2.5;
+            double d2 = pos.func_177952_p() + rand.nextDouble();
             ParticleSpawner.spawnParticle(SRPEnumParticle.SPORE, d0, d1, d2, 0.0, 0.0, 0.0, 0, 0, 0);
-        }
-    }
+         }
+      }
+   }
 
-    public IBlockState func_176221_a(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
-        Block block = worldIn.func_180495_p(pos.func_177984_a()).func_177230_c();
-        switch ((EnumType)((Object)state.func_177229_b(VARIANT))) {
-            case WEATHB: {
-                if (block == Blocks.field_150433_aE || block == Blocks.field_150431_aC) {
-                    return state.func_177226_a(VARIANT, (Comparable)((Object)EnumType.WEATHBS));
-                }
-                return state;
+   public IBlockState func_176221_a(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+      Block block = worldIn.func_180495_p(pos.func_177984_a()).func_177230_c();
+      switch ((BlockParasiteRubble.EnumType)state.func_177229_b(VARIANT)) {
+         case WEATHB:
+            if (block != Blocks.field_150433_aE && block != Blocks.field_150431_aC) {
+               return state;
             }
-            case WEATHBS: {
-                if (block == Blocks.field_150433_aE || block == Blocks.field_150431_aC) {
-                    return state.func_177226_a(VARIANT, (Comparable)((Object)EnumType.WEATHBS));
-                }
-                return state.func_177226_a(VARIANT, (Comparable)((Object)EnumType.WEATHB));
-            }
-            case WEATHBC: {
-                if (block == Blocks.field_150433_aE || block == Blocks.field_150431_aC) {
-                    return state.func_177226_a(VARIANT, (Comparable)((Object)EnumType.WEATHBCS));
-                }
-                return state;
-            }
-            case WEATHBCS: {
-                if (block == Blocks.field_150433_aE || block == Blocks.field_150431_aC) {
-                    return state.func_177226_a(VARIANT, (Comparable)((Object)EnumType.WEATHBCS));
-                }
-                return state.func_177226_a(VARIANT, (Comparable)((Object)EnumType.WEATHBC));
-            }
-            case WEATHFS: {
-                if (block == Blocks.field_150433_aE || block == Blocks.field_150431_aC) {
-                    return state.func_177226_a(VARIANT, (Comparable)((Object)EnumType.WEATHFSS));
-                }
-                return state;
-            }
-            case WEATHFSS: {
-                if (block == Blocks.field_150433_aE || block == Blocks.field_150431_aC) {
-                    return state.func_177226_a(VARIANT, (Comparable)((Object)EnumType.WEATHFSS));
-                }
-                return state.func_177226_a(VARIANT, (Comparable)((Object)EnumType.WEATHFS));
-            }
-        }
-        return state;
-    }
 
-    public static enum EnumType implements IStringSerializable
-    {
-        FLESH,
-        BONE,
-        STONE,
-        STONEDEBRIS,
-        WOOD,
-        BRICKS,
-        METAL,
-        OBSIDIAN,
-        FUNGUS,
-        WEATHB,
-        WEATHBS,
-        WEATHBC,
-        WEATHBCS,
-        WEATHFS,
-        WEATHFSS;
+            return state.func_177226_a(VARIANT, BlockParasiteRubble.EnumType.WEATHBS);
+         case WEATHBS:
+            if (block != Blocks.field_150433_aE && block != Blocks.field_150431_aC) {
+               return state.func_177226_a(VARIANT, BlockParasiteRubble.EnumType.WEATHB);
+            }
 
+            return state.func_177226_a(VARIANT, BlockParasiteRubble.EnumType.WEATHBS);
+         case WEATHBC:
+            if (block != Blocks.field_150433_aE && block != Blocks.field_150431_aC) {
+               return state;
+            }
 
-        public String func_176610_l() {
-            return this.name().toLowerCase();
-        }
+            return state.func_177226_a(VARIANT, BlockParasiteRubble.EnumType.WEATHBCS);
+         case WEATHBCS:
+            if (block != Blocks.field_150433_aE && block != Blocks.field_150431_aC) {
+               return state.func_177226_a(VARIANT, BlockParasiteRubble.EnumType.WEATHBC);
+            }
 
-        public String toString() {
-            return this.func_176610_l();
-        }
-    }
+            return state.func_177226_a(VARIANT, BlockParasiteRubble.EnumType.WEATHBCS);
+         case WEATHFS:
+            if (block != Blocks.field_150433_aE && block != Blocks.field_150431_aC) {
+               return state;
+            }
+
+            return state.func_177226_a(VARIANT, BlockParasiteRubble.EnumType.WEATHFSS);
+         case WEATHFSS:
+            if (block != Blocks.field_150433_aE && block != Blocks.field_150431_aC) {
+               return state.func_177226_a(VARIANT, BlockParasiteRubble.EnumType.WEATHFS);
+            }
+
+            return state.func_177226_a(VARIANT, BlockParasiteRubble.EnumType.WEATHFSS);
+         default:
+            return state;
+      }
+   }
+
+   public static enum EnumType implements IStringSerializable {
+      FLESH,
+      BONE,
+      STONE,
+      STONEDEBRIS,
+      WOOD,
+      BRICKS,
+      METAL,
+      OBSIDIAN,
+      FUNGUS,
+      WEATHB,
+      WEATHBS,
+      WEATHBC,
+      WEATHBCS,
+      WEATHFS,
+      WEATHFSS;
+
+      public String func_176610_l() {
+         return this.name().toLowerCase();
+      }
+
+      @Override
+      public String toString() {
+         return this.func_176610_l();
+      }
+   }
 }
-

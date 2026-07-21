@@ -1,32 +1,3 @@
-/*
- * Decompiled with CFR 0.152.
- * 
- * Could not load the following classes:
- *  net.minecraft.block.Block
- *  net.minecraft.command.ICommand
- *  net.minecraft.entity.EntityLiving$SpawnPlacementType
- *  net.minecraft.entity.EntitySpawnPlacementRegistry
- *  net.minecraft.entity.player.EntityPlayerMP
- *  net.minecraft.init.Blocks
- *  net.minecraft.init.Items
- *  net.minecraft.item.Item
- *  net.minecraft.item.ItemStack
- *  net.minecraft.util.ResourceLocation
- *  net.minecraft.util.math.BlockPos
- *  net.minecraft.world.WorldServer
- *  net.minecraftforge.common.MinecraftForge
- *  net.minecraftforge.common.config.Configuration
- *  net.minecraftforge.fml.common.FMLCommonHandler
- *  net.minecraftforge.fml.common.IWorldGenerator
- *  net.minecraftforge.fml.common.event.FMLInitializationEvent
- *  net.minecraftforge.fml.common.event.FMLPostInitializationEvent
- *  net.minecraftforge.fml.common.event.FMLPreInitializationEvent
- *  net.minecraftforge.fml.common.event.FMLServerStartingEvent
- *  net.minecraftforge.fml.common.network.IGuiHandler
- *  net.minecraftforge.fml.common.network.NetworkRegistry
- *  net.minecraftforge.fml.common.network.simpleimpl.MessageContext
- *  net.minecraftforge.fml.common.registry.GameRegistry
- */
 package com.dhanantry.scapeandrunparasites.proxy;
 
 import com.dhanantry.scapeandrunparasites.SRPMain;
@@ -114,6 +85,7 @@ import com.dhanantry.scapeandrunparasites.tileentity.TileEntityInfuserFurnace;
 import com.dhanantry.scapeandrunparasites.tileentity.TileEntityRelayController;
 import com.dhanantry.scapeandrunparasites.util.CommandForceCelestial;
 import com.dhanantry.scapeandrunparasites.util.SRPAttributes;
+import com.dhanantry.scapeandrunparasites.util.SRPCommandSummonNidus;
 import com.dhanantry.scapeandrunparasites.util.config.SRPConfig;
 import com.dhanantry.scapeandrunparasites.util.config.SRPConfigMobs;
 import com.dhanantry.scapeandrunparasites.util.config.SRPConfigSystems;
@@ -127,170 +99,172 @@ import com.dhanantry.scapeandrunparasites.world.celestial.CelestialEffectRegistr
 import com.dhanantry.scapeandrunparasites.world.celestial.effects.EffectTwentySeven;
 import com.dhanantry.scapeandrunparasites.world.gen.HarlequinRockBushGen;
 import net.minecraft.block.Block;
-import net.minecraft.command.ICommand;
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntitySpawnPlacementRegistry;
+import net.minecraft.entity.EntityLiving.SpawnPlacementType;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.FMLCommonHandler;
-import net.minecraftforge.fml.common.IWorldGenerator;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
-import net.minecraftforge.fml.common.network.IGuiHandler;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class CommonProxy {
-    public static Configuration config;
-    public static Configuration configMobs;
-    public static Configuration configSystems;
-    public static Configuration configWorld;
+   public static Configuration config;
+   public static Configuration configMobs;
+   public static Configuration configSystems;
+   public static Configuration configWorld;
 
-    public void preInit(FMLPreInitializationEvent e) {
-        GameRegistry.registerTileEntity(TileEntityRelayController.class, (ResourceLocation)SRPMain.rl("relaycontroller"));
-        GameRegistry.registerTileEntity(TileEntityInfestationPurifier.class, (ResourceLocation)SRPMain.rl("infestation_purifier_te"));
-        GameRegistry.registerTileEntity(TileEntityParasiteBarrier.class, (ResourceLocation)SRPMain.rl("parasite_barrier_te"));
-        GameRegistry.registerTileEntity(TileEntityFogNullifier.class, (ResourceLocation)SRPMain.rl("fog_nullifier_te"));
-        MinecraftForge.EVENT_BUS.register((Object)new CelestialNightJoinSync());
-        GameRegistry.registerTileEntity(TileEntityInfuserFurnace.class, (ResourceLocation)SRPMain.rl("infuser_furnace"));
-        SRPFluids.init();
-        SRPRegistryHandlers.initEvents();
-        SRPConfig.initConfig(e);
-        SRPConfigSystems.initConfig(e);
-        SRPConfigMobs.initConfig(e);
-        SRPConfigWorld.initConfig(e);
-        SRPAttributes.reset();
-        SRPAttributes.init();
-        SRPSounds.init();
-        SRPPacketHandler.init();
-        SRPEntities.registerTileEntities();
-        ModCompatibility.preInit();
-        SRPNetwork.register();
-        ExtremeSnowNetwork.init();
-        NetworkRegistry.INSTANCE.registerGuiHandler((Object)SRPMain.instance, (IGuiHandler)new SRPGuiHandler());
-        MinecraftForge.EVENT_BUS.register((Object)new BestiaryCombatStatsHandler());
-        MinecraftForge.EVENT_BUS.register((Object)VengeanceGrappleHandler.get());
-        MinecraftForge.EVENT_BUS.register((Object)new DeadBloodBottleHandler());
-        BestiaryCapability.register();
-        MinecraftForge.EVENT_BUS.register((Object)new BestiaryCapEvents());
-        MinecraftForge.EVENT_BUS.register((Object)new InfestedBonemealHandler());
-        MinecraftForge.EVENT_BUS.register((Object)new BestiaryEvents());
-        MinecraftForge.EVENT_BUS.register((Object)new BlockDiscoveryHandler());
-        MinecraftForge.EVENT_BUS.register((Object)new ShrimpDropHandler());
-        FishingHooksSRP.register();
-        MinecraftForge.EVENT_BUS.register((Object)new CelestialPhaseSyncHandler());
-        CelestialEffectRegistry.register("twenty_seven", new EffectTwentySeven());
-        MinecraftForge.EVENT_BUS.register((Object)new CelestialEffectHooks());
-        if (FMLCommonHandler.instance().getSide().isClient()) {
-            MinecraftForge.EVENT_BUS.register((Object)ClientQlipShake.INSTANCE);
-            MinecraftForge.EVENT_BUS.register((Object)new DeadBloodSwimHandler());
-            MinecraftForge.EVENT_BUS.register((Object)new DeadBloodOverlayHandler());
-        }
-    }
+   public void preInit(FMLPreInitializationEvent e) {
+      GameRegistry.registerTileEntity(TileEntityRelayController.class, SRPMain.rl("relaycontroller"));
+      GameRegistry.registerTileEntity(TileEntityInfestationPurifier.class, SRPMain.rl("infestation_purifier_te"));
+      GameRegistry.registerTileEntity(TileEntityParasiteBarrier.class, SRPMain.rl("parasite_barrier_te"));
+      GameRegistry.registerTileEntity(TileEntityFogNullifier.class, SRPMain.rl("fog_nullifier_te"));
+      MinecraftForge.EVENT_BUS.register(new CelestialNightJoinSync());
+      GameRegistry.registerTileEntity(TileEntityInfuserFurnace.class, SRPMain.rl("infuser_furnace"));
+      SRPFluids.init();
+      SRPRegistryHandlers.initEvents();
+      SRPConfig.initConfig(e);
+      SRPConfigSystems.initConfig(e);
+      SRPConfigMobs.initConfig(e);
+      SRPConfigWorld.initConfig(e);
+      SRPAttributes.reset();
+      SRPAttributes.init();
+      SRPSounds.init();
+      SRPPacketHandler.init();
+      SRPEntities.registerTileEntities();
+      ModCompatibility.preInit();
+      SRPNetwork.register();
+      ExtremeSnowNetwork.init();
+      NetworkRegistry.INSTANCE.registerGuiHandler(SRPMain.instance, new SRPGuiHandler());
+      MinecraftForge.EVENT_BUS.register(new BestiaryCombatStatsHandler());
+      MinecraftForge.EVENT_BUS.register(VengeanceGrappleHandler.get());
+      MinecraftForge.EVENT_BUS.register(new DeadBloodBottleHandler());
+      BestiaryCapability.register();
+      MinecraftForge.EVENT_BUS.register(new BestiaryCapEvents());
+      MinecraftForge.EVENT_BUS.register(new InfestedBonemealHandler());
+      MinecraftForge.EVENT_BUS.register(new BestiaryEvents());
+      MinecraftForge.EVENT_BUS.register(new BlockDiscoveryHandler());
+      MinecraftForge.EVENT_BUS.register(new ShrimpDropHandler());
+      FishingHooksSRP.register();
+      MinecraftForge.EVENT_BUS.register(new CelestialPhaseSyncHandler());
+      CelestialEffectRegistry.register("twenty_seven", new EffectTwentySeven());
+      MinecraftForge.EVENT_BUS.register(new CelestialEffectHooks());
+      if (FMLCommonHandler.instance().getSide().isClient()) {
+         MinecraftForge.EVENT_BUS.register(ClientQlipShake.INSTANCE);
+         MinecraftForge.EVENT_BUS.register(new DeadBloodSwimHandler());
+         MinecraftForge.EVENT_BUS.register(new DeadBloodOverlayHandler());
+      }
+   }
 
-    public void init(FMLInitializationEvent e) {
-        GameRegistry.registerWorldGenerator((IWorldGenerator)new HarlequinRockBushGen(), (int)18);
-        SRPSmelting.register();
-        Recipe.init();
-        CelestialObjectRegistry.init();
-        MinecraftForge.EVENT_BUS.register((Object)new AssimilatedPumpkinOverlayHandler());
-        MinecraftForge.EVENT_BUS.register((Object)new EscapeOnDeathHandler());
-        MinecraftForge.EVENT_BUS.register((Object)new EscapeRespawnHandler());
-        SRPInfuserFurnaceRecipeInit.init();
-        MinecraftForge.EVENT_BUS.register((Object)new PotionDiscoveryHandler());
-        BeckonStage4DetectedAdvancement.register();
-        RupterKillMilestoneAdvancement.register();
-        EnemyOfMyEnemyAdvancement.register();
-        HuntSeasonAdvancement.register();
-        DispatcherStage4DetectedAdvancement.register();
-        BestiaryNetwork.register();
-        Blocks.field_150480_ab.func_180686_a(SRPBlocks.InfestRemain, 60, 200);
-        InfuseRecipes.instance().add(new ItemStack(Items.field_151042_j), new ItemStack(SRPItems.DEADBLOOD_FLUID), new ItemStack(SRPItems.semiorganicingot));
-        for (Block b : SRPBlocks.SRP_BLOCKS) {
-            if (!(b instanceof BlockLeafLike)) continue;
+   public void init(FMLInitializationEvent e) {
+      GameRegistry.registerWorldGenerator(new HarlequinRockBushGen(), 18);
+      SRPSmelting.register();
+      Recipe.init();
+      CelestialObjectRegistry.init();
+      MinecraftForge.EVENT_BUS.register(new AssimilatedPumpkinOverlayHandler());
+      MinecraftForge.EVENT_BUS.register(new EscapeOnDeathHandler());
+      MinecraftForge.EVENT_BUS.register(new EscapeRespawnHandler());
+      SRPInfuserFurnaceRecipeInit.init();
+      MinecraftForge.EVENT_BUS.register(new PotionDiscoveryHandler());
+      BeckonStage4DetectedAdvancement.register();
+      RupterKillMilestoneAdvancement.register();
+      EnemyOfMyEnemyAdvancement.register();
+      HuntSeasonAdvancement.register();
+      DispatcherStage4DetectedAdvancement.register();
+      BestiaryNetwork.register();
+      Blocks.field_150480_ab.func_180686_a(SRPBlocks.InfestRemain, 60, 200);
+      InfuseRecipes.instance().add(new ItemStack(Items.field_151042_j), new ItemStack(SRPItems.DEADBLOOD_FLUID), new ItemStack(SRPItems.semiorganicingot));
+
+      for (Block b : SRPBlocks.SRP_BLOCKS) {
+         if (b instanceof BlockLeafLike) {
             Blocks.field_150480_ab.func_180686_a(b, 30, 60);
-        }
-    }
+         }
+      }
+   }
 
-    public void postInit(FMLPostInitializationEvent e) {
-        config.save();
-        configMobs.save();
-        configSystems.save();
-        configWorld.save();
-        SRPSpawning.init();
-        SRPBlocks.init();
-        SRPBestiaryRegistry.registerDefaults();
-        SRPBlockCompendiumRegistry.registerDefaults();
-        SRPBiomes.clearMobSpawnList();
-        SRPSpawning.initBiome();
-        ModCompatibility.postInit();
-        EntitySpawnPlacementRegistry.setPlacementType(EntityButhol.class, (EntityLiving.SpawnPlacementType)EntityLiving.SpawnPlacementType.IN_AIR);
-        EntitySpawnPlacementRegistry.setPlacementType(EntityViin.class, (EntityLiving.SpawnPlacementType)EntityLiving.SpawnPlacementType.IN_AIR);
-        EntitySpawnPlacementRegistry.setPlacementType(EntityInfDragonE.class, (EntityLiving.SpawnPlacementType)EntityLiving.SpawnPlacementType.IN_AIR);
-        EntitySpawnPlacementRegistry.setPlacementType(EntityInfSquid.class, (EntityLiving.SpawnPlacementType)EntityLiving.SpawnPlacementType.IN_WATER);
-        EntitySpawnPlacementRegistry.setPlacementType(EntityHiBlaze.class, (EntityLiving.SpawnPlacementType)EntityLiving.SpawnPlacementType.IN_AIR);
-        EntitySpawnPlacementRegistry.setPlacementType(EntityLum.class, (EntityLiving.SpawnPlacementType)EntityLiving.SpawnPlacementType.IN_WATER);
-        EntitySpawnPlacementRegistry.setPlacementType(EntityLumAdapted.class, (EntityLiving.SpawnPlacementType)EntityLiving.SpawnPlacementType.IN_WATER);
-        EntitySpawnPlacementRegistry.setPlacementType(EntityEmana.class, (EntityLiving.SpawnPlacementType)EntityLiving.SpawnPlacementType.IN_AIR);
-        EntitySpawnPlacementRegistry.setPlacementType(EntityEmanaAdapted.class, (EntityLiving.SpawnPlacementType)EntityLiving.SpawnPlacementType.IN_AIR);
-        EntitySpawnPlacementRegistry.setPlacementType(EntityIki.class, (EntityLiving.SpawnPlacementType)EntityLiving.SpawnPlacementType.IN_AIR);
-        EntitySpawnPlacementRegistry.setPlacementType(EntityLeer.class, (EntityLiving.SpawnPlacementType)EntityLiving.SpawnPlacementType.IN_AIR);
-        EntitySpawnPlacementRegistry.setPlacementType(EntityAlafha.class, (EntityLiving.SpawnPlacementType)EntityLiving.SpawnPlacementType.IN_AIR);
-        EntitySpawnPlacementRegistry.setPlacementType(EntityJinjo.class, (EntityLiving.SpawnPlacementType)EntityLiving.SpawnPlacementType.IN_AIR);
-        EntitySpawnPlacementRegistry.setPlacementType(EntityLencia.class, (EntityLiving.SpawnPlacementType)EntityLiving.SpawnPlacementType.IN_AIR);
-        EntitySpawnPlacementRegistry.setPlacementType(EntityElvia.class, (EntityLiving.SpawnPlacementType)EntityLiving.SpawnPlacementType.IN_AIR);
-        EntitySpawnPlacementRegistry.setPlacementType(EntityTenn.class, (EntityLiving.SpawnPlacementType)EntityLiving.SpawnPlacementType.IN_AIR);
-        EntitySpawnPlacementRegistry.setPlacementType(EntityOmboo.class, (EntityLiving.SpawnPlacementType)EntityLiving.SpawnPlacementType.IN_AIR);
-        EntitySpawnPlacementRegistry.setPlacementType(EntityHeblu.class, (EntityLiving.SpawnPlacementType)EntityLiving.SpawnPlacementType.IN_AIR);
-    }
+   public void postInit(FMLPostInitializationEvent e) {
+      config.save();
+      configMobs.save();
+      configSystems.save();
+      configWorld.save();
+      SRPSpawning.init();
+      SRPBlocks.init();
+      SRPBestiaryRegistry.registerDefaults();
+      SRPBlockCompendiumRegistry.registerDefaults();
+      SRPBiomes.clearMobSpawnList();
+      SRPSpawning.initBiome();
+      ModCompatibility.postInit();
+      EntitySpawnPlacementRegistry.setPlacementType(EntityButhol.class, SpawnPlacementType.IN_AIR);
+      EntitySpawnPlacementRegistry.setPlacementType(EntityViin.class, SpawnPlacementType.IN_AIR);
+      EntitySpawnPlacementRegistry.setPlacementType(EntityInfDragonE.class, SpawnPlacementType.IN_AIR);
+      EntitySpawnPlacementRegistry.setPlacementType(EntityInfSquid.class, SpawnPlacementType.IN_WATER);
+      EntitySpawnPlacementRegistry.setPlacementType(EntityHiBlaze.class, SpawnPlacementType.IN_AIR);
+      EntitySpawnPlacementRegistry.setPlacementType(EntityLum.class, SpawnPlacementType.IN_WATER);
+      EntitySpawnPlacementRegistry.setPlacementType(EntityLumAdapted.class, SpawnPlacementType.IN_WATER);
+      EntitySpawnPlacementRegistry.setPlacementType(EntityEmana.class, SpawnPlacementType.IN_AIR);
+      EntitySpawnPlacementRegistry.setPlacementType(EntityEmanaAdapted.class, SpawnPlacementType.IN_AIR);
+      EntitySpawnPlacementRegistry.setPlacementType(EntityIki.class, SpawnPlacementType.IN_AIR);
+      EntitySpawnPlacementRegistry.setPlacementType(EntityLeer.class, SpawnPlacementType.IN_AIR);
+      EntitySpawnPlacementRegistry.setPlacementType(EntityAlafha.class, SpawnPlacementType.IN_AIR);
+      EntitySpawnPlacementRegistry.setPlacementType(EntityJinjo.class, SpawnPlacementType.IN_AIR);
+      EntitySpawnPlacementRegistry.setPlacementType(EntityLencia.class, SpawnPlacementType.IN_AIR);
+      EntitySpawnPlacementRegistry.setPlacementType(EntityElvia.class, SpawnPlacementType.IN_AIR);
+      EntitySpawnPlacementRegistry.setPlacementType(EntityTenn.class, SpawnPlacementType.IN_AIR);
+      EntitySpawnPlacementRegistry.setPlacementType(EntityOmboo.class, SpawnPlacementType.IN_AIR);
+      EntitySpawnPlacementRegistry.setPlacementType(EntityHeblu.class, SpawnPlacementType.IN_AIR);
+   }
 
-    public void serverInit(FMLServerStartingEvent e) {
-        e.registerServerCommand((ICommand)new SRPCommandEvolution());
-        e.registerServerCommand((ICommand)new SRPCommandOrigin());
-        e.registerServerCommand((ICommand)new SRPCommandNode());
-        e.registerServerCommand((ICommand)new SRPCommandColony());
-        e.registerServerCommand((ICommand)new SRPCommandRoot());
-        e.registerServerCommand((ICommand)new SRPCommandDislodgment());
-        e.registerServerCommand((ICommand)new SRPCommandGeneration());
-        e.registerServerCommand((ICommand)new SRPCommandUDevelopment());
-        e.registerServerCommand((ICommand)new CommandHarlequinHere());
-        e.registerServerCommand((ICommand)new CommandHarlequinConvert());
-        e.registerServerCommand((ICommand)new CommandHarlequinScatter());
-        e.registerServerCommand((ICommand)new CommandSRPHelp());
-        e.registerServerCommand((ICommand)new CommandSRPGuide());
-        e.registerServerCommand((ICommand)new CommandSRPGuideClear());
-        e.registerServerCommand((ICommand)new CommandForceCelestial());
-        e.registerServerCommand((ICommand)new SRPCommandGuiDistortion());
-        e.registerServerCommand((ICommand)new SRPCommandBestiaryStats());
-    }
+   public void serverInit(FMLServerStartingEvent e) {
+      e.registerServerCommand(new SRPCommandEvolution());
+      e.registerServerCommand(new SRPCommandOrigin());
+      e.registerServerCommand(new SRPCommandNode());
+      e.registerServerCommand(new SRPCommandColony());
+      e.registerServerCommand(new SRPCommandRoot());
+      e.registerServerCommand(new SRPCommandDislodgment());
+      e.registerServerCommand(new SRPCommandGeneration());
+      e.registerServerCommand(new SRPCommandUDevelopment());
+      e.registerServerCommand(new CommandHarlequinHere());
+      e.registerServerCommand(new CommandHarlequinConvert());
+      e.registerServerCommand(new CommandHarlequinScatter());
+      e.registerServerCommand(new CommandSRPHelp());
+      e.registerServerCommand(new CommandSRPGuide());
+      e.registerServerCommand(new CommandSRPGuideClear());
+      e.registerServerCommand(new CommandForceCelestial());
+      e.registerServerCommand(new SRPCommandGuiDistortion());
+      e.registerServerCommand(new SRPCommandBestiaryStats());
+      e.registerServerCommand(new SRPCommandSummonNidus());
+   }
 
-    public EntityPlayerMP getPlayerEntityFromContext(MessageContext ctx) {
-        return ctx.getServerHandler().field_147369_b;
-    }
+   public EntityPlayerMP getPlayerEntityFromContext(MessageContext ctx) {
+      return ctx.getServerHandler().field_147369_b;
+   }
 
-    public void spreadBiome(BlockPos pos, boolean convert, int type) {
-    }
+   public void spreadBiome(BlockPos pos, boolean convert, int type) {
+   }
 
-    public void playMovingSound(int sound, float v) {
-    }
+   public void playMovingSound(int sound, float v) {
+   }
 
-    public void modelReg(Item item, int meta, String id) {
-    }
+   public void modelReg(Item item, int meta, String id) {
+   }
 
-    public <T extends AbstractPacket<T>> void networkMessage(T message, MessageContext messageContext) {
-        WorldServer world = (WorldServer)messageContext.getServerHandler().field_147369_b.field_70170_p;
-        world.func_152344_a(() -> message.serverSide(FMLCommonHandler.instance().getMinecraftServerInstance(), message, messageContext.getServerHandler().field_147369_b, messageContext));
-    }
+   public <T extends AbstractPacket<T>> void networkMessage(T message, MessageContext messageContext) {
+      WorldServer world = (WorldServer)messageContext.getServerHandler().field_147369_b.field_70170_p;
+      world.func_152344_a(
+         () -> message.serverSide(
+            FMLCommonHandler.instance().getMinecraftServerInstance(), message, messageContext.getServerHandler().field_147369_b, messageContext
+         )
+      );
+   }
 }
-

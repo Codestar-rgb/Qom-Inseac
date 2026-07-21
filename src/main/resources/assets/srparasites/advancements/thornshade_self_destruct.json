@@ -2,7 +2,7 @@
   "parent": "srparasites:guerilla",
   "display": {
     "icon": {
-      "item": "srparasites:thornshade_decanter"
+      "item": "srparasites:self_destruct_icon"
     },
     "title": {
       "translate": "advancement.srparasites.thornshade_self_destruct.title"

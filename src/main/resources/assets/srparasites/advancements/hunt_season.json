@@ -2,7 +2,7 @@
   "parent": "srparasites:enemy_enemy",
   "display": {
     "icon": {
-      "item": "srparasites:weapon_bow_sentient"
+      "item": "srparasites:hunt_season_icon"
     },
     "title": {
       "translate": "advancements.srparasites.hunt_season.title"

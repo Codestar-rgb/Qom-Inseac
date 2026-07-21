@@ -1,40 +1,3 @@
-/*
- * Decompiled with CFR 0.152.
- * 
- * Could not load the following classes:
- *  com.google.common.base.Predicate
- *  javax.annotation.Nonnull
- *  javax.annotation.Nullable
- *  net.minecraft.block.Block
- *  net.minecraft.block.BlockBush
- *  net.minecraft.entity.Entity
- *  net.minecraft.entity.EntityCreature
- *  net.minecraft.entity.EntityList
- *  net.minecraft.entity.EntityLiving
- *  net.minecraft.entity.EntityLivingBase
- *  net.minecraft.entity.IEntityLivingData
- *  net.minecraft.entity.SharedMonsterAttributes
- *  net.minecraft.entity.ai.EntityAIBase
- *  net.minecraft.entity.ai.EntityAIHurtByTarget
- *  net.minecraft.entity.ai.EntityAILookIdle
- *  net.minecraft.entity.ai.EntityAISwimming
- *  net.minecraft.entity.passive.EntityAnimal
- *  net.minecraft.entity.passive.EntityVillager
- *  net.minecraft.entity.passive.EntityWaterMob
- *  net.minecraft.entity.player.EntityPlayer
- *  net.minecraft.init.Blocks
- *  net.minecraft.init.SoundEvents
- *  net.minecraft.nbt.NBTTagCompound
- *  net.minecraft.util.DamageSource
- *  net.minecraft.util.SoundEvent
- *  net.minecraft.util.math.BlockPos
- *  net.minecraft.util.math.MathHelper
- *  net.minecraft.world.DifficultyInstance
- *  net.minecraft.world.World
- *  net.minecraft.world.biome.Biome
- *  net.minecraftforge.fml.relauncher.Side
- *  net.minecraftforge.fml.relauncher.SideOnly
- */
 package com.dhanantry.scapeandrunparasites.entity.monster.crude;
 
 import com.dhanantry.scapeandrunparasites.block.BlockGore;
@@ -61,13 +24,11 @@ import javax.annotation.Nullable;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAISwimming;
@@ -88,246 +49,286 @@ import net.minecraft.world.biome.Biome;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class EntityMes
-extends EntityPMalleable {
-    public EntityMes(World worldIn) {
-        super(worldIn);
-        this.func_70105_a(0.8f, 3.05f);
-        this.borderOrb = -1;
-        this.canModRender = 1;
-        this.type = (byte)11;
-        this.field_70715_bh.func_75776_a(4, new EntityAINearestAttackableTargetStatus<EntityPlayer>(this, EntityPlayer.class, 0, SRPConfig.primitiveWalls, false, null, SRPConfig.adaptedSneakPen, SRPConfig.adaptedInviPen));
-        if (SRPConfig.mobattacking) {
-            this.field_70715_bh.func_75776_a(4, new EntityAINearestAttackableTargetStatus<EntityLiving>(this, EntityLiving.class, 0, SRPConfig.primitiveWalls, false, new Predicate<EntityLiving>(){
+public class EntityMes extends EntityPMalleable {
+   public EntityMes(World worldIn) {
+      super(worldIn);
+      this.func_70105_a(0.8F, 3.05F);
+      this.borderOrb = -1;
+      this.canModRender = 1;
+      this.type = 11;
+      this.field_70715_bh
+         .func_75776_a(
+            4,
+            new EntityAINearestAttackableTargetStatus(
+               this, EntityPlayer.class, 0, SRPConfig.primitiveWalls, false, null, SRPConfig.adaptedSneakPen, SRPConfig.adaptedInviPen
+            )
+         );
+      if (SRPConfig.mobattacking) {
+         this.field_70715_bh
+            .func_75776_a(
+               4,
+               new EntityAINearestAttackableTargetStatus(
+                  this,
+                  EntityLiving.class,
+                  0,
+                  SRPConfig.primitiveWalls,
+                  false,
+                  new Predicate<EntityLiving>() {
+                     public boolean apply(@Nullable EntityLiving entity) {
+                        return !(entity instanceof EntityWaterMob)
+                           && !(entity instanceof EntityAnimal)
+                           && !(entity instanceof EntityVillager)
+                           && !ParasiteEventEntity.checkEntity(entity, SRPConfig.mobattackingBlackList, SRPConfig.mobattackingBlackListWhite);
+                     }
+                  },
+                  SRPConfig.primitiveSneakPen,
+                  SRPConfig.primitiveInviPen
+               )
+            );
+      }
 
-                public boolean apply(@Nullable EntityLiving entity) {
-                    return !(entity instanceof EntityWaterMob) && !(entity instanceof EntityAnimal) && !(entity instanceof EntityVillager) && !ParasiteEventEntity.checkEntity((EntityLivingBase)entity, SRPConfig.mobattackingBlackList, SRPConfig.mobattackingBlackListWhite);
-                }
-            }, SRPConfig.primitiveSneakPen, SRPConfig.primitiveInviPen));
-        }
-        this.field_70728_aV = SRPAttributes.XP_PRIMITIVE;
-        this.damageCap = SRPConfig.primitiveCap;
-        this.canD = SRPConfig.primitivedespawn;
-        this.type = (byte)31;
-        this.foodSteal = SRPConfig.primitiveFoodSteal;
-        this.pointCap = SRPConfig.primitivePointCap;
-        this.pointReduction = SRPConfig.primitivePointRed;
-        this.chanceLearn = SRPConfig.primitiveChanceLe;
-        this.chanceLearnFire = SRPConfig.primitiveChanceLeFire;
-        this.DamageTypeCap = SRPConfig.primitivePointDamCap;
-        this.MiniDamage = SRPConfig.primitiveMinDamage;
-        this.regen = SRPConfig.primitiveRegen * SRPConfig.globalHealthMultiplier;
-        this.oneMindDeathValue = SRPConfig.primitiveOneMindDeathV;
-        this.regenEff = 1;
-        this.valueEvDeath = SRPConfig.primitiveLoosingEPValue;
-    }
+      this.field_70728_aV = SRPAttributes.XP_PRIMITIVE;
+      this.damageCap = SRPConfig.primitiveCap;
+      this.canD = SRPConfig.primitivedespawn;
+      this.type = 31;
+      this.foodSteal = SRPConfig.primitiveFoodSteal;
+      this.pointCap = SRPConfig.primitivePointCap;
+      this.pointReduction = SRPConfig.primitivePointRed;
+      this.chanceLearn = SRPConfig.primitiveChanceLe;
+      this.chanceLearnFire = SRPConfig.primitiveChanceLeFire;
+      this.DamageTypeCap = SRPConfig.primitivePointDamCap;
+      this.MiniDamage = SRPConfig.primitiveMinDamage;
+      this.regen = SRPConfig.primitiveRegen * SRPConfig.globalHealthMultiplier;
+      this.oneMindDeathValue = SRPConfig.primitiveOneMindDeathV;
+      this.regenEff = 1;
+      this.valueEvDeath = SRPConfig.primitiveLoosingEPValue;
+   }
 
-    @Override
-    public int getParasiteIDRegister() {
-        return 80;
-    }
+   @Override
+   public int getParasiteIDRegister() {
+      return 80;
+   }
 
-    protected void func_184651_r() {
-        this.field_70715_bh.func_75776_a(1, (EntityAIBase)new EntityAIHurtByTarget((EntityCreature)this, true, new Class[0]));
-        this.field_70714_bg.func_75776_a(0, (EntityAIBase)new EntityAISwimming((EntityLiving)this));
-        this.field_70714_bg.func_75776_a(3, (EntityAIBase)new EntityAIAttackMeleeStatus(this, 1.0, false, 0.0));
-        this.field_70714_bg.func_75776_a(8, (EntityAIBase)new EntityAILookIdle((EntityLiving)this));
-        this.field_70714_bg.func_75776_a(6, (EntityAIBase)new EntityAIGetFollowers(this, 1, 16));
-    }
+   protected void func_184651_r() {
+      this.field_70715_bh.func_75776_a(1, new EntityAIHurtByTarget(this, true, new Class[0]));
+      this.field_70714_bg.func_75776_a(0, new EntityAISwimming(this));
+      this.field_70714_bg.func_75776_a(3, new EntityAIAttackMeleeStatus(this, 1.0, false, 0.0));
+      this.field_70714_bg.func_75776_a(8, new EntityAILookIdle(this));
+      this.field_70714_bg.func_75776_a(6, new EntityAIGetFollowers(this, 1, 16));
+   }
 
-    protected void func_110147_ax() {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(SRPAttributes.THRALL_HEALTH);
-        this.func_110148_a(SharedMonsterAttributes.field_188791_g).func_111128_a(SRPAttributes.THRALL_ARMOR);
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.4);
-        this.func_110148_a(SharedMonsterAttributes.field_111266_c).func_111128_a(SRPAttributes.THRALL_KD_RESISTANCE);
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(SRPAttributes.THRALL_ATTACK_DAMAGE);
-        this.func_110148_a(SharedMonsterAttributes.field_111265_b).func_111128_a(SRPConfig.primitiveFollow);
-    }
+   protected void func_110147_ax() {
+      super.func_110147_ax();
+      this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(SRPAttributes.THRALL_HEALTH);
+      this.func_110148_a(SharedMonsterAttributes.field_188791_g).func_111128_a(SRPAttributes.THRALL_ARMOR);
+      this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.4);
+      this.func_110148_a(SharedMonsterAttributes.field_111266_c).func_111128_a(SRPAttributes.THRALL_KD_RESISTANCE);
+      this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(SRPAttributes.THRALL_ATTACK_DAMAGE);
+      this.func_110148_a(SharedMonsterAttributes.field_111265_b).func_111128_a(SRPConfig.primitiveFollow);
+   }
 
-    @Override
-    public void func_70636_d() {
-        super.func_70636_d();
-    }
+   @Override
+   public void func_70636_d() {
+      super.func_70636_d();
+   }
 
-    @Override
-    public boolean func_70652_k(@Nonnull Entity entityIn) {
-        boolean flag = super.func_70652_k(entityIn);
-        if (flag && entityIn instanceof EntityPlayer && ((EntityPlayer)entityIn).func_70005_c_().equals(this.func_95999_t())) {
-            entityIn.func_70097_a(DamageSource.func_76358_a((EntityLivingBase)this), (float)(this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111126_e() * 0.5));
-        }
-        return flag;
-    }
+   @Override
+   public boolean func_70652_k(@Nonnull Entity entityIn) {
+      boolean flag = super.func_70652_k(entityIn);
+      if (flag && entityIn instanceof EntityPlayer && ((EntityPlayer)entityIn).func_70005_c_().equals(this.func_95999_t())) {
+         entityIn.func_70097_a(DamageSource.func_76358_a(this), (float)(this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111126_e() * 0.5));
+      }
 
-    public float func_70047_e() {
-        return 1.73f;
-    }
+      return flag;
+   }
 
-    @Override
-    public void func_70645_a(DamageSource cause) {
-        if (!this.field_70170_p.field_72995_K) {
-            if (SRPConfigWorld.coloniesActivated) {
-                if (ParasiteEventWorld.numberofColonies(this.field_70170_p) >= 1) {
-                    ParasiteEventEntity.checkColony(this.field_70170_p, cause, this);
-                    ParasiteEventEntity.spawnNext(this, new EntityInfPlayer(this.field_70170_p), true, false);
-                } else {
-                    super.func_70645_a(cause);
-                }
+   public float func_70047_e() {
+      return 1.73F;
+   }
+
+   @Override
+   public void func_70645_a(DamageSource cause) {
+      if (!this.field_70170_p.field_72995_K) {
+         if (SRPConfigWorld.coloniesActivated) {
+            if (ParasiteEventWorld.numberofColonies(this.field_70170_p) >= 1) {
+               ParasiteEventEntity.checkColony(this.field_70170_p, cause, this);
+               ParasiteEventEntity.spawnNext(this, new EntityInfPlayer(this.field_70170_p), true, false);
             } else {
-                super.func_70645_a(cause);
+               super.func_70645_a(cause);
             }
-        }
-    }
+         } else {
+            super.func_70645_a(cause);
+         }
+      }
+   }
 
-    protected SoundEvent getStepSound() {
-        return SoundEvents.field_187939_hm;
-    }
+   protected SoundEvent getStepSound() {
+      return SoundEvents.field_187939_hm;
+   }
 
-    @Override
-    public boolean scaryOrbEffect(EntityLivingBase in, int mobs) {
-        boolean flag = super.scaryOrbEffect(in, mobs);
-        if (flag) {
-            // empty if block
-        }
-        return flag;
-    }
+   @Override
+   public boolean scaryOrbEffect(EntityLivingBase in, int mobs) {
+      boolean flag = super.scaryOrbEffect(in, mobs);
+      if (flag) {
+      }
 
-    protected void func_180429_a(BlockPos pos, Block blockIn) {
-        this.func_184185_a(this.getStepSound(), 0.15f, 1.0f);
-    }
+      return flag;
+   }
 
-    @Override
-    protected void spawnGore() {
-        int range = 2;
-        double i1 = MathHelper.func_76128_c((double)(this.field_70163_u + 0.1));
-        double l1 = this.field_70165_t;
-        double i2 = this.field_70161_v;
-        for (int k2 = -1 * range; k2 <= 1 * range && SRPConfig.paraGore; ++k2) {
-            for (int l2 = -1 * range; l2 <= 1 * range; ++l2) {
-                double i3 = l1 + (double)k2;
-                double l = i2 + (double)l2;
-                BlockPos blockpos = new BlockPos(i3, i1, l);
-                Block block = this.field_70170_p.func_180495_p(blockpos).func_177230_c();
-                Block blockDown = this.field_70170_p.func_180495_p(blockpos.func_177977_b()).func_177230_c();
-                if (block != Blocks.field_150350_a || blockDown == Blocks.field_150350_a || !this.field_70170_p.func_180495_p(blockpos.func_177977_b()).func_185913_b() || blockDown == SRPBlocks.InfestedStain || this.field_70170_p.field_73012_v.nextInt(3) != 0) continue;
-                this.field_70170_p.func_175656_a(blockpos, SRPBlocks.goreSim.func_176223_P().func_177226_a(BlockGore.VARIANT, (Comparable)((Object)BlockGore.EnumType.FLAT)));
+   protected void func_180429_a(BlockPos pos, Block blockIn) {
+      this.func_184185_a(this.getStepSound(), 0.15F, 1.0F);
+   }
+
+   @Override
+   protected void spawnGore() {
+      int range = 2;
+      double i1 = MathHelper.func_76128_c(this.field_70163_u + 0.1);
+      double l1 = this.field_70165_t;
+      double i2 = this.field_70161_v;
+
+      for (int k2 = -1 * range; k2 <= 1 * range && SRPConfig.paraGore; k2++) {
+         for (int l2 = -1 * range; l2 <= 1 * range; l2++) {
+            double i3 = l1 + k2;
+            double l = i2 + l2;
+            BlockPos blockpos = new BlockPos(i3, i1, l);
+            Block block = this.field_70170_p.func_180495_p(blockpos).func_177230_c();
+            Block blockDown = this.field_70170_p.func_180495_p(blockpos.func_177977_b()).func_177230_c();
+            if (block == Blocks.field_150350_a
+               && blockDown != Blocks.field_150350_a
+               && this.field_70170_p.func_180495_p(blockpos.func_177977_b()).func_185913_b()
+               && blockDown != SRPBlocks.InfestedStain
+               && this.field_70170_p.field_73012_v.nextInt(3) == 0) {
+               this.field_70170_p.func_175656_a(blockpos, SRPBlocks.goreSim.func_176223_P().func_177226_a(BlockGore.VARIANT, BlockGore.EnumType.FLAT));
             }
-        }
-        if (this.field_70170_p.func_180495_p(this.func_180425_c().func_177977_b()).func_185913_b() && (this.field_70170_p.func_180495_p(this.func_180425_c()).func_177230_c() instanceof BlockBush || this.field_70170_p.func_180495_p(this.func_180425_c()).func_177230_c() == Blocks.field_150350_a)) {
-            this.field_70170_p.func_175656_a(this.func_180425_c(), SRPBlocks.goreSim.func_176223_P().func_177226_a(BlockGore.VARIANT, (Comparable)((Object)BlockGore.EnumType.BIG)));
-            EntityRemain nnn = new EntityRemain(this.field_70170_p);
-            nnn.func_70012_b((double)this.func_180425_c().func_177958_n() + 0.5, this.func_180425_c().func_177956_o(), (double)this.func_180425_c().func_177952_p() + 0.5, 0.0f, 0.0f);
-            nnn.setParasite(EntityList.func_191301_a((Entity)this).toString());
-            nnn.setSkin((byte)this.getSkin());
-            nnn.setGoal(20 * SRPConfig.primitiveRemainValue);
-            this.field_70170_p.func_72838_d((Entity)nnn);
-        }
-        for (int i = 0; i < 4 && SRPConfig.paraGore; ++i) {
-            double d0 = (float)this.field_70165_t + this.field_70170_p.field_73012_v.nextFloat();
-            double d1 = (float)this.field_70163_u + this.field_70170_p.field_73012_v.nextFloat();
-            double d2 = (float)this.field_70161_v + this.field_70170_p.field_73012_v.nextFloat();
-            double d3 = d0 - this.field_70165_t;
-            double d4 = d1 - this.field_70163_u;
-            double d5 = d2 - this.field_70161_v;
-            double d6 = MathHelper.func_76133_a((double)(d3 * d3 + d4 * d4 + d5 * d5));
-            d3 /= d6;
-            d4 /= d6;
-            d5 /= d6;
-            double d7 = 0.5 / (d6 / 4.0 + 0.1);
-            d4 = d4 * d7 * 2.0;
-            EntityGore bomb = new EntityGore(this.field_70170_p);
-            bomb.setType((byte)2);
-            bomb.func_82149_j((Entity)this);
-            bomb.setMotion(d3 *= (d7 *= (double)(this.field_70170_p.field_73012_v.nextFloat() * this.field_70170_p.field_73012_v.nextFloat() + 0.3f)), d4, d5 *= d7, 0.15, 0.55);
-            this.field_70170_p.func_72838_d((Entity)bomb);
-        }
-    }
+         }
+      }
 
-    @Override
-    @SideOnly(value=Side.CLIENT)
-    public void spawnEffectsGore() {
-        for (int i = 0; i <= 60; ++i) {
-            if (i % 4 == 0) {
-                this.spawnParticles(SRPEnumParticle.GCLOUD, 150, 0, 0);
-            }
-            if (i % 5 != 0) continue;
+      if (this.field_70170_p.func_180495_p(this.func_180425_c().func_177977_b()).func_185913_b()
+         && (
+            this.field_70170_p.func_180495_p(this.func_180425_c()).func_177230_c() instanceof BlockBush
+               || this.field_70170_p.func_180495_p(this.func_180425_c()).func_177230_c() == Blocks.field_150350_a
+         )) {
+         this.field_70170_p.func_175656_a(this.func_180425_c(), SRPBlocks.goreSim.func_176223_P().func_177226_a(BlockGore.VARIANT, BlockGore.EnumType.BIG));
+         EntityRemain nnn = new EntityRemain(this.field_70170_p);
+         nnn.func_70012_b(
+            this.func_180425_c().func_177958_n() + 0.5, this.func_180425_c().func_177956_o(), this.func_180425_c().func_177952_p() + 0.5, 0.0F, 0.0F
+         );
+         nnn.setParasite(EntityList.func_191301_a(this).toString());
+         nnn.setSkin((byte)this.getSkin());
+         nnn.setGoal(20 * SRPConfig.primitiveRemainValue);
+         this.field_70170_p.func_72838_d(nnn);
+      }
+
+      for (int i = 0; i < 4 && SRPConfig.paraGore; i++) {
+         double d0 = (float)this.field_70165_t + this.field_70170_p.field_73012_v.nextFloat();
+         double d1 = (float)this.field_70163_u + this.field_70170_p.field_73012_v.nextFloat();
+         double d2 = (float)this.field_70161_v + this.field_70170_p.field_73012_v.nextFloat();
+         double d3 = d0 - this.field_70165_t;
+         double d4 = d1 - this.field_70163_u;
+         double d5 = d2 - this.field_70161_v;
+         double d6 = MathHelper.func_76133_a(d3 * d3 + d4 * d4 + d5 * d5);
+         d3 /= d6;
+         d4 /= d6;
+         d5 /= d6;
+         double d7 = 0.5 / (d6 / 4.0 + 0.1);
+         d7 *= this.field_70170_p.field_73012_v.nextFloat() * this.field_70170_p.field_73012_v.nextFloat() + 0.3F;
+         d3 *= d7;
+         d4 = d4 * d7 * 2.0;
+         d5 *= d7;
+         EntityGore bomb = new EntityGore(this.field_70170_p);
+         bomb.setType((byte)2);
+         bomb.func_82149_j(this);
+         bomb.setMotion(d3, d4, d5, 0.15, 0.55);
+         this.field_70170_p.func_72838_d(bomb);
+      }
+   }
+
+   @SideOnly(Side.CLIENT)
+   @Override
+   public void spawnEffectsGore() {
+      for (int i = 0; i <= 60; i++) {
+         if (i % 4 == 0) {
+            this.spawnParticles(SRPEnumParticle.GCLOUD, 150, 0, 0);
+         }
+
+         if (i % 5 == 0) {
             this.spawnParticles(SRPEnumParticle.GSPLASH, 2, -1, -1);
-        }
-    }
+         }
+      }
+   }
 
-    @Override
-    protected boolean applyColdBiome() {
-        boolean flag;
-        Biome c = this.field_70170_p.func_180494_b(this.func_180425_c());
-        boolean bl = flag = this.field_70146_Z.nextInt(1) == 0 && this.canChangeVariant;
-        if (c.func_180626_a(this.func_180425_c()) < 0.15f || c.func_150559_j() || flag) {
-            switch (this.field_70146_Z.nextInt(5)) {
-                case 0: {
-                    this.setSkin(121);
-                    break;
-                }
-                case 1: {
-                    this.setSkin(122);
-                    break;
-                }
-                case 2: {
-                    this.setSkin(123);
-                    break;
-                }
-                case 3: {
-                    this.setSkin(124);
-                    break;
-                }
-                case 4: {
-                    this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111125_b() * 1.5);
-                    this.setSkin(125);
-                }
-            }
-            this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111125_b() * 0.6);
-            this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111125_b() * 1.4);
-            this.func_110148_a(SharedMonsterAttributes.field_111265_b).func_111128_a(this.func_110148_a(SharedMonsterAttributes.field_111265_b).func_111125_b() * 1.3);
-            return true;
-        }
-        return false;
-    }
+   @Override
+   protected boolean applyColdBiome() {
+      Biome c = this.field_70170_p.func_180494_b(this.func_180425_c());
+      boolean flag = this.field_70146_Z.nextInt(1) == 0 && this.canChangeVariant;
+      if (!(c.func_180626_a(this.func_180425_c()) < 0.15F) && !c.func_150559_j() && !flag) {
+         return false;
+      } else {
+         switch (this.field_70146_Z.nextInt(5)) {
+            case 0:
+               this.setSkin(121);
+               break;
+            case 1:
+               this.setSkin(122);
+               break;
+            case 2:
+               this.setSkin(123);
+               break;
+            case 3:
+               this.setSkin(124);
+               break;
+            case 4:
+               this.func_110148_a(SharedMonsterAttributes.field_111264_e)
+                  .func_111128_a(this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111125_b() * 1.5);
+               this.setSkin(125);
+         }
 
-    protected SoundEvent func_184639_G() {
-        return SRPSounds.MES_GROWL;
-    }
+         this.func_110148_a(SharedMonsterAttributes.field_111263_d)
+            .func_111128_a(this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111125_b() * 0.6);
+         this.func_110148_a(SharedMonsterAttributes.field_111264_e)
+            .func_111128_a(this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111125_b() * 1.4);
+         this.func_110148_a(SharedMonsterAttributes.field_111265_b)
+            .func_111128_a(this.func_110148_a(SharedMonsterAttributes.field_111265_b).func_111125_b() * 1.3);
+         return true;
+      }
+   }
 
-    protected SoundEvent func_184601_bQ(DamageSource damageSourceIn) {
-        return SRPSounds.MES_HURT;
-    }
+   protected SoundEvent func_184639_G() {
+      return SRPSounds.MES_GROWL;
+   }
 
-    protected SoundEvent func_184615_bR() {
-        return SRPSounds.MES_DEATH;
-    }
+   protected SoundEvent func_184601_bQ(DamageSource damageSourceIn) {
+      return SRPSounds.MES_HURT;
+   }
 
-    @Override
-    public IEntityLivingData func_180482_a(DifficultyInstance difficulty, IEntityLivingData livingdata) {
-        IEntityLivingData floo = super.func_180482_a(difficulty, livingdata);
-        SRPReference.setSimPlayerNameSub1(this);
-        if (this.field_70146_Z.nextDouble() < SRPConfig.variantChance || this.phaseCreated >= SRPConfigSystems.evolutionParasiteAlwaysVariant) {
-            switch (2) {
-                case 2: {
-                    this.setSkin(1);
-                    this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(SRPAttributes.THRALL_HEALTH * 0.5);
-                    this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(SRPAttributes.THRALL_ATTACK_DAMAGE * 1.5);
-                    this.func_70606_j((float)this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111125_b());
-                }
-            }
-        }
-        return floo;
-    }
+   protected SoundEvent func_184615_bR() {
+      return SRPSounds.MES_DEATH;
+   }
 
-    @Override
-    public void func_70014_b(NBTTagCompound compound) {
-        super.func_70014_b(compound);
-    }
+   @Override
+   public IEntityLivingData func_180482_a(DifficultyInstance difficulty, IEntityLivingData livingdata) {
+      IEntityLivingData floo = super.func_180482_a(difficulty, livingdata);
+      SRPReference.setSimPlayerNameSub1(this);
+      if (this.field_70146_Z.nextDouble() < SRPConfig.variantChance || this.phaseCreated >= SRPConfigSystems.evolutionParasiteAlwaysVariant) {
+         switch (2) {
+            case 2:
+               this.setSkin(1);
+               this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(SRPAttributes.THRALL_HEALTH * 0.5);
+               this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(SRPAttributes.THRALL_ATTACK_DAMAGE * 1.5);
+               this.func_70606_j((float)this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111125_b());
+         }
+      }
 
-    @Override
-    public void func_70037_a(NBTTagCompound compound) {
-        super.func_70037_a(compound);
-    }
+      return floo;
+   }
+
+   @Override
+   public void func_70014_b(NBTTagCompound compound) {
+      super.func_70014_b(compound);
+   }
+
+   @Override
+   public void func_70037_a(NBTTagCompound compound) {
+      super.func_70037_a(compound);
+   }
 }
-

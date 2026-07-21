@@ -2,7 +2,7 @@
   "parent": "srparasites:cut_roots",
   "display": {
     "icon": {
-      "item": "srparasites:dislodgement_report"
+      "item": "srparasites:potion_columbus_icon"
     },
     "title": {
       "translate": "advancements.srparasites.columbus.title"

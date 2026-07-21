@@ -1,20 +1,3 @@
-/*
- * Decompiled with CFR 0.152.
- * 
- * Could not load the following classes:
- *  net.minecraft.command.CommandBase
- *  net.minecraft.command.CommandException
- *  net.minecraft.command.ICommand
- *  net.minecraft.command.ICommandSender
- *  net.minecraft.entity.Entity
- *  net.minecraft.entity.EntityList
- *  net.minecraft.server.MinecraftServer
- *  net.minecraft.util.ResourceLocation
- *  net.minecraft.util.math.BlockPos
- *  net.minecraft.util.text.ITextComponent
- *  net.minecraft.util.text.TextComponentString
- *  net.minecraft.world.World
- */
 package com.dhanantry.scapeandrunparasites.network;
 
 import java.util.ArrayList;
@@ -28,73 +11,68 @@ import net.minecraft.entity.EntityList;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 
-public class SRPCommand
-implements ICommand {
-    private final List aliases = new ArrayList();
-    protected String fullEntityName;
-    protected Entity conjuredEntity;
+public class SRPCommand implements ICommand {
+   private final List aliases = new ArrayList();
+   protected String fullEntityName;
+   protected Entity conjuredEntity;
 
-    public SRPCommand() {
-        this.aliases.add("conjure");
-        this.aliases.add("conj");
-    }
+   public SRPCommand() {
+      this.aliases.add("conjure");
+      this.aliases.add("conj");
+   }
 
-    public int compareTo(ICommand arg0) {
-        return 0;
-    }
+   public int compareTo(ICommand arg0) {
+      return 0;
+   }
 
-    public String func_71517_b() {
-        return "conjure";
-    }
+   public String func_71517_b() {
+      return "conjure";
+   }
 
-    public String func_71518_a(ICommandSender sender) {
-        return "conjure <text>";
-    }
+   public String func_71518_a(ICommandSender sender) {
+      return "conjure <text>";
+   }
 
-    public List<String> func_71514_a() {
-        return this.aliases;
-    }
+   public List<String> func_71514_a() {
+      return this.aliases;
+   }
 
-    public void func_184881_a(MinecraftServer server, ICommandSender sender, String[] argString) throws CommandException {
-        World world = sender.func_130014_f_();
-        if (!world.field_72995_K) {
-            if (argString.length == 0) {
-                sender.func_145747_a((ITextComponent)new TextComponentString("Invalid argument"));
-                return;
-            }
-            sender.func_145747_a((ITextComponent)new TextComponentString("Conjuring: [" + argString[0] + "]"));
-            this.fullEntityName = "srparasites:" + argString[0];
-            ResourceLocation ccc = new ResourceLocation(this.fullEntityName);
-            if (EntityList.func_180125_b((ResourceLocation)ccc)) {
-                this.conjuredEntity = EntityList.func_188429_b((ResourceLocation)ccc, (World)world);
-                this.conjuredEntity.func_82149_j(sender.func_174793_f());
-                world.func_72838_d(this.conjuredEntity);
-            } else {
-                sender.func_145747_a((ITextComponent)new TextComponentString("Entity not found"));
-            }
-        }
-    }
+   public void func_184881_a(MinecraftServer server, ICommandSender sender, String[] argString) throws CommandException {
+      World world = sender.func_130014_f_();
+      if (!world.field_72995_K) {
+         if (argString.length == 0) {
+            sender.func_145747_a(new TextComponentString("Invalid argument"));
+            return;
+         }
 
-    public boolean func_184882_a(MinecraftServer server, ICommandSender sender) {
-        return sender.func_70003_b(2, this.func_71517_b());
-    }
+         sender.func_145747_a(new TextComponentString("Conjuring: [" + argString[0] + "]"));
+         this.fullEntityName = "srparasites:" + argString[0];
+         ResourceLocation ccc = new ResourceLocation(this.fullEntityName);
+         if (EntityList.func_180125_b(ccc)) {
+            this.conjuredEntity = EntityList.func_188429_b(ccc, world);
+            this.conjuredEntity.func_82149_j(sender.func_174793_f());
+            world.func_72838_d(this.conjuredEntity);
+         } else {
+            sender.func_145747_a(new TextComponentString("Entity not found"));
+         }
+      }
+   }
 
-    public List<String> func_184883_a(MinecraftServer server, ICommandSender sender, String[] args, BlockPos targetPos) {
-        ArrayList<String> atm = new ArrayList<String>();
-        atm.add("sentry");
-        atm.add("carrier_heavy");
-        if (args.length == 1) {
-            return CommandBase.func_175762_a((String[])args, atm);
-        }
-        return atm;
-    }
+   public boolean func_184882_a(MinecraftServer server, ICommandSender sender) {
+      return sender.func_70003_b(2, this.func_71517_b());
+   }
 
-    public boolean func_82358_a(String[] args, int index) {
-        return false;
-    }
+   public List<String> func_184883_a(MinecraftServer server, ICommandSender sender, String[] args, BlockPos targetPos) {
+      List<String> atm = new ArrayList<>();
+      atm.add("sentry");
+      atm.add("carrier_heavy");
+      return args.length == 1 ? CommandBase.func_175762_a(args, atm) : atm;
+   }
+
+   public boolean func_82358_a(String[] args, int index) {
+      return false;
+   }
 }
-

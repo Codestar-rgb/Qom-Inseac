@@ -23,7 +23,7 @@ entity.srparasites.nametag.ricardo=Рикардо
 # Advancements
 
 advancements.srparasites.root.title=Scape and Run: Parasites
-advancements.srparasites.root.description=Начни своё падение.
+advancements.srparasites.root.description=Internus Incrementum.
 
 advancements.srparasites.kill_root.title=Venari.
 advancements.srparasites.kill_root.description=???
@@ -127,8 +127,19 @@ advancement.srparasites.hellfire_chemical_warfare.desc=Уничтожьте Др
 advancement.srparasites.cosmic_structural_failure.title=Космический структурный отказ
 advancement.srparasites.cosmic_structural_failure.desc=Прекратите вечное саморазрушение Кирина.
 
+advancements.srparasites.columbus.title=Колумб
+advancements.srparasites.columbus.description=Откройте половину звёздных событий.
+
+advancements.srparasites.stolas.title=СТОЛАС
+advancements.srparasites.stolas.description=Откройте все звёздные событие.
+
 advancement.srparasites.sepeku.title=Сеппуку
 advancement.srparasites.sepeku.desc=Вы предложили свою жизнь.
+
+item.srparasites.shrimp.name=Креветка
+tooltip.srparasites.shrimp.desc=Лучшее лакомство во всей мультивселенной.
+tooltip.srparasites.shrimp.arrow=Иногда выпадает из паразитов во время присутствия "Стрелы".
+tooltip.srparasites.shrimp.ariral=Можно скормить Ассимилированному Эндермену.
 
 # Esca Bulbs
 tile.srparasites.esca_bulb.name=Светолуковица
@@ -164,7 +175,7 @@ tile.srparasites.infested_planks.name=Заражённые доски
 tile.srparasites.infested_stone_bricks.name=Заражённые каменные кирпичи
 tile.srparasites.residue_bricks.name=Кирпичи из остатка
 tile.srparasites.residue_stairs.name=Кирпичные ступени из остатка
-tile.srparasites.residue_wall.name=Стена из остатка
+tile.srparasites.residue_wall.name=Ограда из остатка
 tile.srparasites.residue_block.name=Блок остатка
 tile.srparasites.diseased_sponge.name=Больная губка
 tile.srparasites.residue_plants.name=Цветение остатка
@@ -174,7 +185,7 @@ tile.srparasites.infested_stone_polished.name=Полированный зара�
 tile.srparasites.inf_ss.name=Заражённый песчаник
 tile.srparasites.inf_ss_chiseled.name=Резной заражённый песчаник
 tile.srparasites.inf_ss_cut.name=Гладкий заражённый песчаник
-tile.srparasites.ashen_glass.name=Пепельное стекто
+tile.srparasites.ashen_glass.name=Пепельное стекло
 tile.srparasites.ashen_glass_pane.name=Панель из пепельного стекла
 tile.srparasites.infested_glass_pane.name=Панель заражённого стекла
 tile.srparasites.bloody_glass_pane.name=Панель кровавого стекла
@@ -356,6 +367,14 @@ entity.srparasites.worm.name=Червь
 entity.srparasites.anc_dreadnaut_ten.name=Щупальце Древнего Дредноута
 
 entity.srparasites.remain.name=Останки
+
+entity.srparasites.meteor.name=Спутник Улья
+entity.srparasites.cloudtoxic.name=Токсичный газ
+entity.srparasites.orbscary.name=Сфера
+entity.srparasites.orbboom.name=Ударная волна
+entity.srparasites.orbvoid.name=Сфера Пустоты
+entity.srparasites.bomb.name=Паразитическая бомба
+
 # Creative Tab
 
 itemGroup.SRParasites=Scape and Run: Parasites
@@ -574,7 +593,7 @@ item.srparasites.ada_devourer_drop.name=§bЩупальце Пожирателя
 item.srparasites.ada_vermin_drop.name=§dЕдкий гной
 item.srparasites.ada_viscera_drop.name=§dПоврежденная материнская мембрана
 item.srparasites.hijacked_drop.name=§cЗахваченный нарост
-item.srparasites.hive_scrap.name=§7Хлам улья
+item.srparasites.hive_scrap.name=§7Лом улья
 item.srparasites.bloody_iron_ingot.name=Захваченный железный слиток
 item.srparasites.semiorganic_ingot.name=Полуорганический слиток
 tile.srparasites.semiorganic_block.name=Полуорганический блок
@@ -625,26 +644,26 @@ tile.srparasites.parasitesapling_consumed.name=Истощённый сажене
 tile.srparasites.parasitesapling_deadhead.name=Отцветший саженец | WIP
 tile.srparasites.parasitesapling_infested.name=Заражённый саженец | WIP
 
-tile.srparasites.parasiteplank_deadhead_wall.name=Стена из отцветших досок
-tile.srparasites.parasiterubble_weathb_wall.name=Стена из выветренных кирпичей
-tile.srparasites.parasiterubbledense_colony_wall.name=Спрессованная каменная стена колонии
-tile.srparasites.parasiterubble_weathfs_wall.name=Морозная выветренная каменная стена
-tile.srparasites.parasiterubbledense_biome_wall.name=Укреплённая стена из камня улья
-tile.srparasites.parasiterubble_weathbc_wall.name=Стена из выветренного булыжника
-tile.srparasites.parasiterubble_bricks_wall.name=Стена из камня улья
-tile.srparasites.parasitecanister_bag_wall.name=Стена из плоти
-tile.srparasites.infestedrubble_wall.name=Стена из заражённого камня
-tile.srparasites.infestedstain_wall.name=Стена из заражённой земли
-tile.srparasites.parasitestain_flesh_wall.name=Стена из кусков плоти
-tile.srparasites.parasiterubble_metal_wall.name=Стена из ульестали
+tile.srparasites.parasiteplank_deadhead_wall.name=Ограда из отцветших досок
+tile.srparasites.parasiterubble_weathb_wall.name=Ограда из выветренных кирпичей
+tile.srparasites.parasiterubbledense_colony_wall.name=Спрессованная каменная ограда колонии
+tile.srparasites.parasiterubble_weathfs_wall.name=Морозная выветренная каменная ограда
+tile.srparasites.parasiterubbledense_biome_wall.name=Укреплённая ограда из камня улья
+tile.srparasites.parasiterubble_weathbc_wall.name=Ограда из выветренного булыжника
+tile.srparasites.parasiterubble_bricks_wall.name=Ограда из камня улья
+tile.srparasites.parasitecanister_bag_wall.name=Ограда из плоти
+tile.srparasites.infestedrubble_wall.name=Ограда из заражённого камня
+tile.srparasites.infestedstain_wall.name=Ограда из заражённой земли
+tile.srparasites.parasitestain_flesh_wall.name=Ограда из кусков плоти
+tile.srparasites.parasiterubble_metal_wall.name=Ограда из ульестали
 
-tile.srparasites.infested_plank_wall.name=Стена из заражённых досок
-tile.srparasites.bruisewood_plank_wall.name=Стена из досок синякового дерева
-tile.srparasites.polished_infested_stone_wall.name=Стена из гладкого заражённого камня
-tile.srparasites.infested_stone_brick_wall.name=Стена из заражённых кирпичей
-tile.srparasites.goth_plank_wall.name=Стена из готических досок
-tile.srparasites.infested_sandstone_wall.name=Стена из заражённого песчаника
-tile.srparasites.consumed_plank_wall.name=Стена из истощённых досок
+tile.srparasites.infested_plank_wall.name=Ограда из заражённых досок
+tile.srparasites.bruisewood_plank_wall.name=Ограда из досок синякового дерева
+tile.srparasites.polished_infested_stone_wall.name=Ограда из гладкого заражённого камня
+tile.srparasites.infested_stone_brick_wall.name=Ограда из заражённых кирпичей
+tile.srparasites.goth_plank_wall.name=Ограда из готических досок
+tile.srparasites.infested_sandstone_wall.name=Ограда из заражённого песчаника
+tile.srparasites.consumed_plank_wall.name=Ограда из истощённых досок
 
 tile.srparasites.harlequinn_grass.name=Арлекинный блок травы
 tile.srparasites.harleskinn_block.name=Арлекинный кожный блок
@@ -691,7 +710,7 @@ tile.srparasites.infestedore_gol.name=Инфицированная золота�
 tile.srparasites.infestedore_iro.name=Инфицированная железная руда
 tile.srparasites.infestedore_lap.name=Инфицированная лазуритовая руда
 tile.srparasites.infestedore_red.name=Инфицированная редстоуновая руда
-tile.srparasites.infestedore_un.name=Инфицированная Руда
+tile.srparasites.infestedore_un.name=Инфицированная руда
 
 # Harleskinn building set
 tile.srparasites.harleskinn_stairs.name=Ступени из арлекинной кожи
@@ -706,7 +725,7 @@ tile.srparasites.harleskinn_slab.name=Плита из арлекинной ко�
 tile.srparasites.infested_cobblestone_slab.name=Заражённая булыжниковая плита
 tile.srparasites.infested_plank_slab.name=Плита из заражённых досок
 tile.srparasites.infested_stone_slab.name=Заражённая каменная плита
-tile.srparasites.infested_dirt_slab.name=Плита заражённой земли
+tile.srparasites.infested_dirt_slab.name=Плита из заражённой земли
 tile.srparasites.reinforced_hivestone_slab.name=Плита из укреплённого камня улья
 tile.srparasites.parasitic_colony_core_slab.name=Плита из ядра паразитической колонии
 tile.srparasites.sac_of_flesh_slab.name=Плита из плоти
@@ -716,7 +735,7 @@ tile.srparasites.parasitic_compressed_colony_stone_slab.name=Плита из с�
 tile.srparasites.weathered_cobblestone_slab.name=Плита из выветренного булыжника
 tile.srparasites.frost_weathered_stone_slab.name=Плита из обмороженного камня
 tile.srparasites.infested_stone_brick_slab.name=Плита из заражённых кирпичей
-tile.srparasites.infested_terracotta_slab.name=Плита заражённой терракоты
+tile.srparasites.infested_terracotta_slab.name=Плита из заражённой терракоты
 tile.srparasites.polished_infested_stone_slab.name=Плита из полированного заражённого камня
 tile.srparasites.residue_brick_slab.name=Плита кирпичей из остатка
 tile.srparasites.infested_sandstone_slab.name=Плита из заражённого песчаника
@@ -854,7 +873,7 @@ tooltip.srparasites.false_apple=§7§o"Разве так уж плохо, что
 item.srparasites.fishlin.name=Рыблин
 tooltip.srparasites.fishlin=§7§oСвежеизвивающийся.
 item.srparasites.alveoligrowth.name=Альвеолы
-tooltip.srparasites.alveoligrowth=§7§oДыши легче.
+tooltip.srparasites.alveoligrowth=§7§oДышите легче.
 
 tile.srparasites.bruisewood_plank_stairs.name=Ступени из досок синякового дерева
 tile.srparasites.infested_sandstone_stairs.name=Ступени из заражённого песчаника
@@ -869,8 +888,8 @@ tile.srparasites.wheathered_bricks_stairs.name=Ступени из выветр�
 tile.srparasites.wheathered_cobblestone_stairs.name=Ступени из выветренного булыжника
 
 
-tile.srparasites.parasiteplank_deadhead.name=Отцветшая доска
-tile.srparasites.parasiteplank_deadheads.name=Отцветшая доска
+tile.srparasites.parasiteplank_deadhead.name=Отцветшие доски
+tile.srparasites.parasiteplank_deadheads.name=Отцветшие доски
 
 tile.srparasites.parasitestain_dirt.name=Почва улья
 tile.srparasites.parasitestain_dirtstairs.name=Ступени из почвы улья
@@ -890,7 +909,7 @@ tile.srparasites.parasiterubble_slabhalf.name=Плита из укреплённ
 tile.srparasites.parasiterubble_slabdouble.name=Укреплённая кость
 tile.srparasites.parasiterubble_flesh.name=Концентрированный мешок плоти
 tile.srparasites.parasiterubble_fleshstairs.name=Ступени из концентрированной плоти
-tile.srparasites.parasiterubble_flesh_wall.name=Стена из концентрированной плоти
+tile.srparasites.parasiterubble_flesh_wall.name=Ограда из концентрированной плоти
 tile.srparasites.parasiterubble_bone.name=Укреплённая кость
 tile.srparasites.parasiterubble_boneslabhalf.name=Плита из укреплённой кости
 tile.srparasites.parasiterubble_boneslabdouble.name=Двойная плита из укреплённой кости
@@ -1165,7 +1184,7 @@ lingering_potion.effect.srparasites:the_sign=Туманное зелье §bЗн
 item.srparasites.the_sign_charm.name=Знамение
 tooltip.srparasites.the_sign_charm.red=ТОЛЬКО ДЛЯ ТВОРЧЕСКОГО РЕЖИМА
 tooltip.srparasites.the_sign_charm.white=Тот, кто хочет родиться, должен сначала уничтожить мир.
-tooltip.srparasites.the_sign_charm.gray=Паразиты игнорируют игрока, пока предмет находится в его инвентаре.
+tooltip.srparasites.the_sign_charm.gray=Паразиты игнорируют игрока, пока предмет находится в его инвентаре. Феномен искажения также игнорирует игрока.
 mob_effect.srparasites:the_sign=Знамение
 effect.srparasites.the_sign=Знамение
 tipped_arrow.effect.srparasites:the_sign=Стрела Знамения
@@ -1385,7 +1404,7 @@ tootip.srparasites.item.28=Используйте на паразите для �
 tootip.srparasites.item.26=Используйте на паразите для §cДеградации
 tootip.srparasites.item.27=Используйте на паразите для смены §cВарианта
 tootip.srparasites.item.29=§fОбращает твои §5Раны §fпротив них, отражая §5немного ближнего урона. §fЭто благославение работает только §5дважды §fза жизнь. Тотемы бессмертия §5аннулируют §fбудущие последствия.
-tootip.srparasites.item.30=Важный компонент зельеварения для создания §5Кувшина Тернотенника§f.
+tootip.srparasites.item.30=Важный компонент зельеварения для создания §5Графина Тернотенника§f.
 tootip.srparasites.item.31=Предмет Творческого режима §l|§r §oМоментально сжигает паразитическую флору.
 
 tootip.srparasites.item.18=Пока течёт кровь, Часы тикают в сторону §4ужасной полуночи§f. 
@@ -1430,8 +1449,8 @@ tootip.srparasites.weaponm.800=? ? ?
 tootip.srparasites.weaponr.1=§fРезультат превращения разных частей Паразитов в оружие. Огонь жизни горит в нём.
 tootip.srparasites.weaponr.2=§fВысшая эволюция Живого Лука. Он обрёл собственный §bРазум§f.
 
-tootip.srparasites.weaponr.10=Продолжайте натягивать эту тетиву
-tootip.srparasites.weaponr.20=Продолжайте натягивать эту тетиву
+tootip.srparasites.weaponr.10=Продолжайте натягивать его тетиву
+tootip.srparasites.weaponr.20=Продолжайте натягивать его тетиву
 
 tootip.srparasites.weaponr.100=? ? ?
 tootip.srparasites.weaponr.200=? ? ?
@@ -1448,125 +1467,211 @@ item.record.discthree.desc=Rotch Gwylt - §bSerenity
 
 ##subtitles
 
+subtitles.purifier.use=Очиститель очищает
+subtitles.lure.use=Приманка приманивает
+subtitles.carcass.use=Корпус рассыпается
+
+subtitles.inhoosdeath=Малая форма умирает
+subtitles.inhoosliving=Малая форма булькает
+subtitles.inhooshurt=Малая форма ранена
+subtitles.inhoomdeath=Средняя форма умирает
+subtitles.inhoomliving=Средняя форма булькает
+subtitles.inhoomhurt=Средняя форма ранена
+subtitles.inhoomstep=Плоть ползёт
+
 subtitles.carrierdeath=Перевозчик умирает
 subtitles.carrierliving=Перевозчик булькает
 subtitles.carrierhurt=Перевозчик ворчит
+
 subtitles.devourerliving=Примитивный Пожиратель рычит
 subtitles.devourerhurt=Примитивный Пожиратель ранен
 subtitles.devourerdeath=Примитивный Пожиратель умирает
+
 subtitles.adabolsterdeath=Адаптированный Подстрекатель умирает
 subtitles.adabolsterliving=Адаптированный Подстрекатель рычит
 subtitles.adabolsterhurt=Адаптированный Подстрекатель ворчит
+
 subtitles.monarchdeath=Монарх вопит
 subtitles.monarchliving=Монарх зовёт
 subtitles.monarchhurt=Монарх кричит
+
 subtitles.marauderdeath=Мародёр умирает
 subtitles.marauderliving=Мародёр булькает
 subtitles.marauderhurt=Мародёр ворчит
+
 subtitles.assimhumanliving=Ассимилированный Человек кричит
 subtitles.assimhumanhurt=Ассимилированный Человек воет
 subtitles.assimhumandeath=Ассимилированный Человек умирает
+
 subtitles.assimpigliving=Искажённое хрюкание
 subtitles.assimpighurt=Ассимилированная Свинья визжит
 subtitles.assimpigdeath=Ассимилированная Свинья умирает
+
 subtitles.assimhorseliving=Искажённое ржание
 subtitles.assimhorsecharge=Ассимилированная Лошадь рвётся
 subtitles.assimhorsehurt=Ассимилированная Лошадь кричит
 subtitles.assimhorsedeath=Ассимилированная Лошадь умирает
+
 subtitles.assimspiderliving=Искажённое шипение
 subtitles.assimspidersteps=Насекомое ходит
 subtitles.assimspiderdeath=Большой Паук умирает
+
 subtitles.headliving=Голова кричит
 subtitles.headhurt=Голова визжит
 subtitles.headdeath=Голова умирает
+
 subtitles.verminliving=Вредитель ворчит
 subtitles.verminhurt=Вредитель вопит
 subtitles.vermindeath=Вредитель гибнет
+
 subtitles.buglinliving=Баглин шипит
 subtitles.buglinhurt=Баглин хлюпает
 subtitles.buglindeath=Баглин раздавлен
+
 subtitles.rupterliving=Руптер щёлкает
 subtitles.rupterhurt=Руптер визжит
 subtitles.rupterdies=Руптер умирает
 subtitles.rupterinfects=Руптер выпускает Зов Улья
+
 subtitles.wardenliving=Хранитель рычит
 subtitles.wardenhurt=Хранитель ворчит
 subtitles.wardendeath=Хранитель умирает
+
 subtitles.adaarachliving=Адаптированная Арахнида рычит
 subtitles.adaarachhurt=Адаптированная Арахнида ворчит
 subtitles.adaarachdeath=Адаптированная Арахнида шипит
+
 subtitles.assimcowliving=Искажённое мычание
 subtitles.assimcowhurt=Ассимилированная Корова брюзжит
 subtitles.assimcowdeath=Ассимилированная Корова умирает
+
 subtitles.assimsheepliving=Искаженное блеяние
 subtitles.assimsheephurt=Ассимилированная Овца блеет
 subtitles.assimsheepdeath=Ассимилированная Овца Умирает
+
 subtitles.assimwolfliving=Необычный лай
 subtitles.assimwolfhurt=Искажённое скуление
 subtitles.assimwolfdeath=Ассимилированный Волк умирает
+
 subtitles.assimbearliving=Искажённое фыркание
 subtitles.assimbearhurt=Искажённый рёв
 subtitles.assimbeardeath=Ассимилированный Медведь умирает
+
 subtitles.simmermanliving=Инородные звуки
 subtitles.simmermanhurt=Искажённые звуки
 subtitles.simmermanteleports=Искажённая телепортация
 subtitles.simmermandeath=Ассимилированный Эндермен умирает
-subtitles.infectedfleshmelt=Хлюпающая плоть объединяется
+
 subtitles.adasummonerliving=Адаптированный Призыватель кричит
 subtitles.adasummonerhurt=Адаптированный Призыватель хрипит
 subtitles.adasummonerdeath=Адаптированный Призыватель вопит
 subtitles.adasummonersummon=Громкий крик
+
 subtitles.adayelloweyeliving=Адаптированный Желтоглаз ворчит
 subtitles.adayelloweyehurt=Адаптированный Желтоглаз рычит
 subtitles.adayelloweyedeath=Адаптированный Желтоглаз умирает
 subtitles.adayelloweyeshoot=Адаптированный Желтоглаз плюёт
+
 subtitles.adareekerliving=Адаптированный Смердящий рычит
 subtitles.adareekerhurt=Адаптированный Смердящий брюзжит
 subtitles.adareekerdeath=Адаптированный Смердящий умирает
+
 subtitles.adamanduliving=Адаптированный Исчезатель рычит
 subtitles.adamanduhurt=Адаптированный Исчезатель кричит
 subtitles.adamandudeath=Адаптированный Исчезатель умирает
+
 subtitles.vigiliving=Линчеватель грохочет
 subtitles.vigihurt=Линчеватель трескает
 subtitles.vigideath=Линчеватель булькает
+
 subtitles.bogleliving=Полоскание
 subtitles.boglehurt=Рычание
 subtitles.bogledeath=Что-то погибает
+
 subtitles.hostliving=Сброд вырисовывается
 subtitles.hosthurt=Сброд кричит
 subtitles.hostdeath=Сброд умирает
 subtitles.hostmerge=Коллективное рычание
+
 subtitles.adamaducamo=Ужасные насмешки
+
 subtitles.adavomit=Паразит блюёт
-subtitles.flesh=Плоть хлюпает
+
+subtitles.infectedfleshmelt=Движущаяся плоть объединяется
+subtitles.fleshgrow=Движущаяся плоть растёт
+subtitles.flesheat=Движущаяся плоть ест
+subtitles.fleshprimitive=Движущаяся плоть лопается
+subtitles.fleshliving=Движущаяся плоть шипит
+subtitles.fleshdeath=Движущаяся плоть сгинает
+subtitles.fleshhurt=Движущаяся плоть хлюпает
+subtitles.litefleshslide=Плоть ползёт
+
 subtitles.sentryliving=Часовой ворчит
 subtitles.sentryhurt=Часовой шипит
 subtitles.sentrydeath=Часовой умирает
+
 subtitles.beckonliving=Маяк шепчет
 subtitles.beckonhurt=Маяк шипит
 subtitles.beckondeath=Маяк воет
 subtitles.beckonbell=Звон колокола
+
 subtitles.mobexplodes=Существо взрывается
+
 subtitles.mobswipe=Существо бьёт
 subtitles.moblands=Существо приземляется
+
 subtitles.cysteats=Предмет хрустнул
+
 subtitles.adaptationpart=Паразит адаптируется
 subtitles.adaptationfull=Паразит адаптировался
+
 subtitles.biomeheart=§cСердцебиение
+
 subtitles.vengeance.chain=Цепь клацает
 subtitles.vengeance.paper=Страницы переворачиваются
 subtitles.vengeance.impact=Удар
 subtitles.vengeance.whoosh=Свист
 subtitles.vengeance.rock=Удар
+
 subtitles.orb.idle=Шум сферы
 subtitles.orb.summon=Сфера свистит
+
 subtitles.beckonvortex=Вихрь формируется
+
 subtitles.block.unlocked=Блок открыт в Справочнике
 subtitles.item.unlocked=Предмет открыт в Справочнике
 subtitles.celestial.unlocked=Небесное тело открыто в Справочнике
 subtitles.entity.unlocked=Существо открыто в Справочнике
 subtitles.entity.relaypaper=Листок бумаги в процессе печати
 subtitles.entity.relayscan=Радар сканирует
+subtitles.shrimp.eat=Креветка дезинтегрируется
+
+subtitles.adaverminhurt=Адаптированный Вредитель ворчит
+subtitles.adaverminidle=Адаптированный Вредитель визжит
+
+subtitles.dredgedeath=Ищейка погибает
+subtitles.dredgeliving=Ищейка шуршит
+subtitles.dredgehurt=Ищейка ворчит
+
+subtitles.cruxdeath=Извечный умирает
+subtitles.cruxliving=Извечный воет
+subtitles.cruxhurt=Извечный ворчит
+
+subtitles.mangler_dies=Кромсатель погибает
+subtitles.mangler_idle=Кромсатель потрескивает
+subtitles.mangler_hurt=Кромсатель визжит
+
+subtitles.lightbomberdeath=Лёгкий Бомбардир умирает
+subtitles.lightbomberliving=Лёгкий Бомбардир подвывает
+subtitles.lightbomberhurt=Лёгкий Бомбардир ворчит
+
+subtitles.kyphosisdeath=Кифоз умирает
+subtitles.kyphosisliving=Кифоз стонет
+subtitles.kyphosishurt=Кифоз шипит
+
+subtitles.rof.spitout=Червь плюёт
+subtitles.rof.emerge=Червь выползает
+
 item.srparasites.srp_field_guide.name=Справочник
 lore.srparasites.compendium=Справочник
 
@@ -1652,10 +1757,10 @@ bestiary.celestial.eight.name=Восемь
 bestiary.celestial.eight.desc=???
 
 bestiary.celestial.arrow.name=Стрела
-bestiary.celestial.arrow.desc=Необычный тетраэдр.
+bestiary.celestial.arrow.desc=Необычный тетраэдр. | Паразиты могут оставлять креветку после смерти.
 
 bestiary.celestial.twenty_seven.name=Двадцать семь
-bestiary.celestial.twenty_seven.desc=??? §l|§r §oГнев
+bestiary.celestial.twenty_seven.desc=??? §l|§r §oПаразиты будут появляться с эффектом Гнева.
 
 bestiary.celestial.three.name=Три
 bestiary.celestial.three.desc=???
@@ -1690,16 +1795,20 @@ bestiary.celestial.uranus.desc=Холодный, наклонённый шар, 
 bestiary.celestial.venus.name=Венера
 bestiary.celestial.venus.desc=Яркий, словно задушенный облаками шарик. День на ней длиннее года. На ней есть мыши.
 
+bestiary.celestial.ongoing=Звёздных событий активно этой ночью
+bestiary.celestial.counter=%s / %s
+
 # Bestiary UI
 bestiary.kills=Убийства
 bestiary.cap_missing_client=Возможности отсутствуют (клиент). Попробуйте открыть ещё раз.
 bestiary.more_info_at_n=Больше информации после %s убийств (ОЗ/УР).
-bestiary.lore_unlocks_at_n=История разблокируется после %s убийств.
+bestiary.lore_unlocks_at_n=Описание разблокируется после %s убийств.
 bestiary.loot_looting=+Добыча
 bestiary.drops=Выпадаемые предметы
 bestiary.no_drops=Нет выпадаемых предметов
 bestiary.drops_unlock_at_n=Выпадаемые предметы открываются после %s убийств
 bestiary.loot_unlocks_at_n=Добыча открывается после %s убийств
+bestiary.lore_fallback=Описание
 
 bestiary.tab.parasites=Паразиты
 bestiary.tab.blocks=Блоки
@@ -1748,7 +1857,7 @@ bestiary.effect.prey.desc=Носитель рассматривается как
 bestiary.effect.needler.desc=Из организма хозяина вырастают паразитические наросты, выпускающие иглообразные снаряды, которые наносят урон находящимся поблизости существам.
 bestiary.effect.overheating.desc=Тело носителя перегревается, получая всё более серьёзные повреждения по мере того, как начинают отказывать внутренние системы.
 bestiary.effect.spotted.desc=Носитель помечен, и паразитам легче его отследить и обнаружить.
-bestiary.effect.the_sign.desc=На теле носителя виден знак, имеющий особое значение. Паразиты будут игнорировать его присутствие, пока этот знак сохраняется. Этот знак — ярко-красный символ, которым обладают лишь немногие. Среди этих людей он считается показателем таких качеств, как большой потенциал, уникальность и компетентное лидерство.
+bestiary.effect.the_sign.desc=На теле носителя виден знак, имеющий особое значение. Паразиты будут игнорировать его присутствие, пока этот знак сохраняется. Этот знак — ярко-красный символ, которым обладают лишь немногие. Среди этих людей он считается показателем таких качеств, как большой потенциал, уникальность и компетентное лидерство. Знамение заставляет паразитов игнорировать носителя, а также дарует иммунитет к Феномену искажения.
 bestiary.effect.thornshade_thorns.desc=Из тела существа вырастают колючие наросты, наносящие урон тем, кто на него нападает. Если существо подвергнется воздействию эффекта более двух раз, то тело существа яростно взорвётся колючими наростами. Находящиеся поблизости существа, также подвергшиеся воздействию этого эффекта, также взорвуться, если окажутся слишком близко к существу во время извержения. Не разрушает блоки.
 bestiary.effect.coth.desc=Ассимилятивная инфекция, развивающаяся поэтапно. Она может возобновиться и усилиться, распространиться на находящихся поблизости живых носителей (если не будет отогнана) и в конечном итоге вызвать превращение, когда хозяин ослабнет или будут достигнуты пороговые значения прогрессии.
 bestiary.effect.viral.desc=Быстро мутирующая инфекция распространяется по организму хозяина, периодически нанося повреждения и создавая риск передачи находящимся поблизости живым существам. Более высокие уровни воздействия увеличивают тяжесть заболевания и потенциал распространения.
@@ -1804,6 +1913,9 @@ bestiary.system.collective_consciousness.desc=Паразиты могут дей
 
 bestiary.system.scent.name=Смрад
 bestiary.system.scent.desc=Паразиты реагируют на активность накоплением «Смрада». По мере повышения уровня Смрада волны врагов становятся все более частыми и агрессивными. Неосторожные бои или задержка в зараженных местах могут спровоцировать все более опасные ответные нападения.
+srp.msg.scent.closest_notified=Зловоние нарастает...
+srp.msg.scent.deployed_area=Вы почувствовали ужасный запах вокруг
+srp.msg.scent.active=Вы чувствуете ужасный Смрад
 
 bestiary.system.ubiquitous_development.name=Вездесущее развитие
 bestiary.system.ubiquitous_development.desc=По мере дальнейшего развития паразитов по всему миру начинают активироваться новые системы. Более высокие уровни развития открывают такие механики, как скоординированное поведение, слияние, волны Смрада, структуры и расширенные правила появления.
@@ -1828,6 +1940,9 @@ bestiary.system.nests.desc=Специализированные паразиты
 
 bestiary.system.variants.name=Варианты
 bestiary.system.variants.desc=Паразиты могут появляться в самых разных формах, которые не ограничиваются накладыванием заразности, кровотечением или нанесением большего урона блокам.
+
+bestiary.system.derived_distortion.name=Феномен Производного искажения
+bestiary.system.derived_distortion.desc=Производные паразиты вызывают разрушительное явление, которое мешает работе находящихся поблизости инструментов анализа и интерфейсов. При достаточно близком расположении зараженные страницы графического интерфейса могут отображать искаженный текст, ложные показания и искаженные значения вместо достоверной информации. Этот эффект, основанный на близости, вызывает выделение из глаз жертвы черного маслянистого вещества, а мысли и ощущения приобретают характер шероховатой, статически заряженной гранитной поверхности.
 
 
 srphelp.header.warning=§cВнимание: Информация может быть устаревшей.
@@ -2096,7 +2211,7 @@ gui.srparasites.phase_report.disabled=Выключен
 
 #INBORN
 lore.srparasites.buglin=§lЭпитет:§r Lodo §l|§r §oЭта похожая на личинку масса, размером примерно с баскетбольный мяч, состоит из нестабильной плоти, которая изгибается и сжимается неестественным образом, часто оказываясь на грани разрыва. От него исходит резкий металлический запах, а его субстанция имеет агрессивно-кислый вкус. Шестнадцать маленьких когтей, каждый длиной около дюйма, расположены на его нижней части и позволяют ему ползать по местности или проникать в живую добычу и выходить из неё. У него нет видимых отверстий, его тело запечатано, словно деформированный катализатор. Несмотря на свою гибкость, Баглин довольно хрупкий для экстремальных давлений и мгновенно разрывается под тяжестью железного голема. Часто встречается вылезающим из нор паразитов.
-lore.srparasites.rupter=§lЭпитет:§r Mudo §l|§r §oРуптеры действуют стаями, используя скорость и численность для раскола групп и преследования изолированных целей. В одиночку они поначалу миролюбивы, хотя это поведение быстро меняется. Их мускулатура и сухожилия сложены в плотную, тессерактоподобную структуру, а внутренние органы разветвляются по телу подобно корневым системам без четкой структуры. Они весят примерно столько же, сколько пушечное ядро, и способны совершать длинные и быстрые прыжки, а также карабкаться по отвесным поверхностям, хотя им не хватает ловкости, чтобы так же хорошо висеть на потолках. Щупальца вытягиваются наружу при возбуждении, цепляясь за цели и впиваясь в них. Руптеры часто разрывают скот и мелких животных, нередко убивая их непреднамеренно. Твердое вещество растворяется в желудке и отрыгивается обратно на жертву или внутрь нее в виде небольших неразличимых следов, эффективно передавая COTH без особого сопротивления. Их органы можно извлекать, сушить и перерабатывать в прочный волокнистый материал. Конечности могут отрываться от тела, подобно пауку. Остается неизвестным, способны ли они регенерировать утраченные конечности.
+lore.srparasites.rupter=§lЭпитет:§r Mudo §l|§r §oРуптеры действуют стаями, используя скорость и численность для раскола групп и преследования изолированных целей. В одиночку они поначалу миролюбивы, хотя это поведение быстро меняется. Их мускулатура и сухожилия сложены в плотную, тессерактоподобную структуру, а внутренние органы разветвляются по телу подобно корневым системам без четкой структуры. Они весят примерно столько же, сколько пушечное ядро, и способны совершать длинные и быстрые прыжки, а также карабкаться по отвесным поверхностям, хотя им не хватает ловкости, чтобы так же хорошо висеть на потолках. Щупальца вытягиваются наружу при возбуждении, цепляясь за цели и впиваясь в них. Руптеры часто разрывают скот и мелких животных, нередко убивая их непреднамеренно. Твердое вещество растворяется в желудке и отрыгивается обратно на жертву или внутрь нее в виде небольших неразличимых следов, эффективно передавая Зов Улья без особого сопротивления. Их органы можно извлекать, сушить и перерабатывать в прочный волокнистый материал. Конечности могут отрываться от тела, подобно пауку. Остается неизвестным, способны ли они регенерировать утраченные конечности.
 lore.srparasites.mangler=§lЭпитет:§r Nuuh §l|§r §oЭто зверь ближнего боя, произошедший от Руптеров, выращенный специально для охоты на крупную добычу, такую ​​как коровы, лошади и ламы. Он весит примерно столько же, сколько большая собака, и создан для выносливости и постоянной силы, а не для скорости. Несмотря на более массивную форму, он сохраняет передаваемые способности своих предшественников. Металлический запах, присущий Руптерам, значительно сильнее и часто ощущается еще до визуального контакта.
 lore.srparasites.carrier_flying=§lЭпитет:§r Buthol §l|§r §oВоздушный перевозчик, парящий над активными зонами заражения. На теле свисают три внешних луковичных образования, каждое из которых содержит отдельный химический компонент. При возбуждении соединения с силой смешиваются внутри луковиц, вызывая быстрое раздувание, после чего тело разрывается. При контакте с открытым воздухом высвобождающаяся смесь превращается в высокотоксичное газообразное вещество. Существо издает запах, похожий на запах промышленных химических отходов. Его поверхность покрыта мелкими иглообразными выступами и проколами, которые повреждают окружающие вещества во время детонации. Образующееся соединение быстро плавит открытую кожу. Поражение огнём, по-видимому, дестабилизирует и частично нейтрализует реакцию.
 lore.srparasites.carrier_heavy=§lЭпитет:§r Rathol §l|§r §oТяжелый перевозчик, предназначенный для распространения плотных грузов грязи, токсинов и паразитов. Корпус полностью герметичен, не имеет видимых отверстий и функционирует в основном как сосуд под давлением для хранения ядовитых газов. Образцы могут образовываться без живой массы, но при этом оставаться наполненными летучими химическими смесями. Внутри его компартментальной структуры несколько частично переваренных паразитов остаются взвешенными и подвижными, плавая в суспензии. Перед детонацией организм растворяет свои внутренние органы и структурные барьеры, быстро создавая внутреннее давление перед разрывом. Он сильно реагирует на вибрации и издает запах, сравнимый с запахом испорченного вареного мяса, запечатанного в теплом контейнере. Поражение огнём, по-видимому, дестабилизирует и частично ослабляет реакцию.
@@ -2104,19 +2219,21 @@ lore.srparasites.carrier_light=§lЭпитет:§r Gothol §l|§r §oЛовки�
 lore.srparasites.gnat=§lЭпитет:§r Ata §l|§r §oНебольшой паразит, использующий свои щупальца как вращающиеся буровые головки для проникновения в организм хозяина, что позволяет ему захватывать и контролировать как органические, так и неорганические сущности. Отдельные щупальца слабы, но исключительно острые и способны прогрызать плотный материал и живучую добычу. Выступающий на спине бугристый нарост растворяется или с силой разрывается, внедрившись в организм хозяина, ускоряя внутренние повреждения и захват. Его сильно привлекает запах крови, до такой степени, что он может быть намеренно использован в качестве отвлекающего фактора. Организм полностью лишён слуха и полагается на обоняние для ориентации. Образцы часто покрыты скользкой, смазывающей слизью, остатком, выделяемым Вредителями.
 lore.srparasites.lice=§lЭпитет:§r Viin §l|§r §oКрайне непредсказуемый паразит, использующий свои щупальца как вращающиеся буровые головки для проникновения в организм хозяина, захватывая и контролируя как органические, так и неорганические сущности. Его брюшко сильно раздуто и покрыто множеством луковичных наростов, которые служат одновременно топливом и взрывчатыми зарядами, позволяя ему силой прикрепляться и проникать в устойчивые цели. Его движения непредсказуемы до такой степени, что его трудно отслеживать или прихлопнуть. Организм сильно привлекается запахом пота и крови и издает слабое жужжание при приближении.
 
-lore.srparasites.sim_adventurer=§lЭпитет:§r Sim §l|§r §oЗаражённый странник. Они передвигаются группами, когда поблизости оказывается достаточное количество особей. История другого игрока остаётся загадкой.
-lore.srparasites.sim_bear=§lЭпитет:§r Sim §l|§r §oМышцы и масса, собранные как живая осадная машина. Держитесь на расстоянии.
-lore.srparasites.sim_bigspider=§lЭпитет:§r Dorpa §l|§r §oРаздутый переносчик, тянущий за собой паутину и гниль. Он не похож на остальные, не так ли?
-lore.srparasites.sim_cow=§lЭпитет:§r Sim §l|§r §oМедлительная, выносливая и пугающе покладистая. Её морда по-прежнему подергивается в такт шелесту пшеницы. Может атаковать и таранить любую цель.
-lore.srparasites.sim_dragone=§lЭпитет:§r Sim §l|§r §oИскалеченный летун, едва помнящий, как парить. Тем не менее, он чрезвычайно опасен, его деформация повышает смертоносность. Никакая броня не вечна.
-lore.srparasites.sim_enderman=§lЭпитет:§r Sim §l|§r §oИскажённый в пространстве курьер. Дальний родственник Заблудшего Пассажира. Кажется, ему всё равно, поджигает ли он других, если сам пылает. Неумолимый.
-lore.srparasites.sim_horse=§lЭпитет:§r Sim §l|§r §oОдна из четырёх. Без человека. До краёв наполнена крайне летучими гнилостными жидкостями, которые с силой взрываются. с Огонём или без, но она взорвётся при достаточно сильном импульсе или разрыве органов.
-lore.srparasites.sim_human=§lЭпитет:§r Sim §l|§r §oОтголоски прошлого еще остались. Он не мёртв. Просто страдает. По сути, живой щит, как и все остальные, только умнее.
-lore.srparasites.sim_pig=§lЭпитет:§r Sim §l|§r §oСпокойная оболочка, ненасытное ядро. Всё ещё свинья. Ничего, кроме биоматерии.
-lore.srparasites.sim_sheep=§lЭпитет:§r Sim §l|§r §o«Пусть она возопиет за наши страдания и горе вместо нас».
-lore.srparasites.sim_squid=§lЭпитет:§r Sim §l|§r §oБесшумный переносчик, засеивающий водоемы. Гниющие частицы и обломки отрываются от его тела, как снег.
-lore.srparasites.sim_villager=§lЭпитет:§r Sim §l|§r §oТорговец грязью и гнилью, а не товарами. Всего лишь биоматерия и живой щит, даже если в нём ещё остался хоть какой-то разум.
-lore.srparasites.sim_wolf=§lЭпитет:§r Sim §l|§r §oИнстинкты стаи подавлены. Кусает быстро.
+#SIM
+
+lore.srparasites.sim_adventurer=§lЭпитет:§r Sim §l|§r §oНаблюдалось, что они передвигаются разрозненными группами, но как только собирается достаточное количество особей, они начинают двигаться в унисон. Они по-прежнему проверяют сундуки и прочие хранилища, дверные проемы и постройки, похожие на лагеря, словно в них сохранились отголоски памяти. Иногда один из них останавливается и несколько секунд смотрит в знакомые места, словно пытаясь вспомнить, что это было раньше. Похоже, им нравятся ассимилированные собаки. Наверное, некоторые вещи никогда не меняются.
+lore.srparasites.sim_bear=§lЭпитет:§r Sim §l|§r §oЕго тело было изуродовано с сохранением максимальной силы, а не скорости. Эти особи не принимают агрессивной позы и не имитируют атаку, как здоровые медведи; если их разозлить, они бросаются в бой сломя голову. Деревья, баррикады и даже поврежденные стены воспринимаются этим существом как помеха. Однажды я наблюдал, как один из них обгрызал собственную плоть, словно пытаясь утолить зуд.
+lore.srparasites.sim_bigspider=§lЭпитет:§r Dorpa §l|§r §oЭтот вид паразитов образует чрезмерное количество паутины, смешанной с отвратительными органическими останками. Оставленные им следы часто остаются загрязненными еще долго после того, как жертва прошла мимо. Его движения странно размеренны, как будто он меньше заинтересован в преследовании и больше озабочен распространением материала по как можно большей территории. У этого вида явно выраженный нрав, и я однажды видел, как он безжалостно протыкал ногами свинью, словно лошадь, топчущая гору мяса. Могу предположить, что он делал это потому, что добыча издавала громкие звуки; он не стал ее заражать. Возможно, это была просто пища для паразитов?
+lore.srparasites.sim_cow=§lЭпитет:§r Sim §l|§r §oОна по-прежнему реагирует на наличие корма и знакомые звуки, характерные для животноводства, хотя и ненадолго. Как только она начинает реагировать, она опускает голову и с такой силой бросается вперёд, что может раздавить забор или сломать кость. Контраст между её фермерскими манерами и внезапной агрессией вызывает глубокое беспокойство. Она продолжает выть и кричать всякий раз, когда восходит солнце. Я не знаю почему.
+lore.srparasites.sim_dragone=§lЭпитет:§r Sim §l|§r §oПолёт, по-видимому, даётся ей с трудом, что указывает на серьёзные анатомические недостатки. Тем не менее, она остаётся крайне смертоносным при снижении и сближении. Кажется, она компенсирует ослабление своего тела за счёт увеличения дистанции и полёта. Броня, найденная на трупах, оставленных ею часто демонстрирует разрывы и следы расплавления, что соответствует скорее окучиванию фольги в кислоту, чем чистому хищничеству. Она, похоже, ещё не адаптировалась к своему телу, о чём свидетельствует её неоднократный удар черепом о обсидиановые столбы Края, словно булавой.
+lore.srparasites.sim_enderman=§lЭпитет:§r Sim §l|§r §oДемонстрирует нестабильное поведение при телепортации и мало заботится о собственном состоянии. При возгорании не отступает, как ожидалось, а может вместо этого продолжать движение, поджигая всё вокруг. Не проявляет никаких признаков самосохранения и бросается в воду, несмотря на свою, казалось бы, токсичную природу. Это говорит о том, что болевая реакция либо притупилась, либо стала неактуальной. Однако будучи обезглавленным, по какой-то причине, не реагирует на воду.
+lore.srparasites.sim_horse=§lЭпитет:§r Sim §l|§r §oБрюшная полость вздута от сжатого гнилостного вещества, что делает даже незначительные травмы опасными. Она легко пугается при сильном воздействии силы, тепла или внезапном разрыве и может взорваться ещё до момента полного коллапса. Несмотря на эту нестабильность, она все же может быстро сократить расстояние. Я видел, как она билась и кричала, как живая лошадь, за мгновения до взрыва.
+lore.srparasites.sim_human=§lЭпитет:§r Sim §l|§r §oОни сохраняют более узнаваемое поведение, чем большинство зараженных видов. Некоторые особи колеблются у дверных проемов, смотрят в сторону голосов или отшатываются от внезапного жара, прежде чем возобновить атаку. Эти реакции указывают на то, что осознание не было полностью стерто. Их трудно изучать долгое время, так как их движения часто больше напоминают панику, чем враждебность. Я не могу определить, какие эмоции они могут проявлять.
+lore.srparasites.sim_pig=§lЭпитет:§r Sim §l|§r §oИздалека её все еще можно принять за обычное животное, особенно в состоянии покоя. При ближайшем рассмотрении обнаруживаются постоянные жевательные движения и резкие смены фокуса внимания. Она с одинаковым интересом роется в органических отходах, останках и зараженной растительности. От первоначального темперамента осталось очень мало, за исключением впечатляющего интеллекта. Я видел, как она бездумно каталась в грязи и выкапывала морковь, но она просто вываливалась из её пасти, по-видимому, она не желала полностью ее съедать.
+lore.srparasites.sim_sheep=§lЭпитет:§r Sim §l|§r §oЕё крик — один из самых ужасных звуков, записанных у зараженного скота. Вокализация напоминает обычное блеяние, но при длительном прослушивании обнаруживается напряженный, влажный тембр, не похожий ни на что естественное. Находящиеся поблизости особи иногда становятся более активными, когда она кричит. Является ли это общением или просто возбуждением, до сих пор неизвестно. Я заметил, что их можно окрашивать в несколько определенных цветов. Зачем и нужно ли это кому-то, я не знаю.
+lore.srparasites.sim_squid=§lЭпитет:§r Sim §l|§r §oПередвигается в воде с почти пассивной грацией, сбрасывая гниющие остатки, мусор и инфекционные вещества по мере дрейфа. Места, которые он посещает, со временем заметно загрязняются. При приближении не проявляет особой активности. Окружающее течение часто уносит его части дальше, чем само тело. Я не могу определить, где у него рот. Возможно, их два.
+lore.srparasites.sim_villager=§lЭпитет:§r Sim §l|§r §oОн по-прежнему поворачивает голову в ответ на движение с тем же странным ритмом, что и обычные крестьяне. Некоторые были замечены возле дверей, рабочих мест и бывших мест сбора. Сходство исчезает, как только человек приближается. Любой оставшийся социальный инстинкт был опустошен и перепрофилирован в гротескную имитацию. Я видел одного, который не приближался с открытой агрессией, хотя он совсем не был похож на крестьянина. Шесть ног, длинные волосы и странное «лицо». Что-то высокое и пульсирующее тянется вдоль затылка. Однажды я наблюдал, как он вложил что-то странное в руки другого существа неподалеку, как будто совершая какой-то обмен. Мне кажется, он пытается что-то сказать, но я не могу понять его пустые звуки. Пока что, во всяком случае.
+lore.srparasites.sim_wolf=§lЭпитет:§r Sim §l|§r §oБыстро реагирует на движение и редко атакует, не проверив предварительно расстояние. Даже при отсутствии явного вожака стаи, многие особи начинают кружить вокруг друг друга, что говорит о сохранении старого инстинкта в нарушенной форме. Может быть, это просто самообман? Укусы быстрые, повторяющиеся и часто направлены низко, к лодыжкам. Я видел некоторых с ошейниками на шее, и они странно реагируют, когда их называют прежними именами, написанными на ошейниках.
 
 #DETACHED HEADS
 lore.srparasites.sim_cowhead=§lЭпитет:§r Desim §l|§r §oОбезглавленная, оживлённая ползающими сухожилиями. Пахнет желудочной кислотой и говядиной. Будет стремиться воссоединиться с любой кучей мяса, чтобы захватить её.
@@ -2141,16 +2258,16 @@ lore.srparasites.fer_villager=§lЭпитет:§r Fer §l|§r §oИнстинк�
 lore.srparasites.fer_wolf=§lЭпитет:§r Fer §l|§r §oНеумолимый охотник.
 
 # CRUDE
-lore.srparasites.crux=§lЭпитет:§r Cruxa §l|§r §oСущество-каркас все еще сплетается. Вечная ярость, которая растет с каждым трупом.
-lore.srparasites.crux_incomplete=§lЭпитет:§r Cruxa §l|§r §oКонтур, обретший очертания. Обугленные остатки того, что когда-то было завершено.
-lore.srparasites.heed=§lЭпитет:§r Heed §l|§r §oРазведчик, который шепчет волю других.
-lore.srparasites.host=§lЭпитет:§r Host §l|§r §oКорпус, который ожидает превращения.
-lore.srparasites.hostii=§lЭпитет:§r Hostii §l|§r §oПрорва движется как единая масса.
-lore.srparasites.incompleteform_medium=§lЭпитет:§r Inhoo §l|§r §oПолуготовая форма, но абсолютно смертоносная.
-lore.srparasites.incompleteform_small=§lЭпитет:§r Inhoo §l|§r §oНевысокая груда, быстро режет. Весит как маленькая собака.
-lore.srparasites.thrall=§lЭпитет:§r Mes §l|§r §oПослушание, воплощенное в плоти.
-lore.srparasites.dredge=§lЭпитет:§r Done §l|§r §oИзвлекает мясо и воспоминания с полей сражений. Неуловимый удушитель.
-lore.srparasites.airscrew=§lЭпитет:§r Leer §l|§r §oЕго хоботок обладает достаточной силой, чтобы без труда поднять фургон.
+lore.srparasites.crux=§lЭпитет:§r Cruxa §l|§r §oЭто скелет грубого, самоотверженного существа, всё ещё формирующийся воедино. Его ярость усиливается с каждым оставленным им трупом. Я видел, как он швырял своих сородичей в убегающую добычу, не заботясь о том, убьёт ли их удар. Под огромным напряжением его тело выделяет странное кипящее оранжевое вещество, и при движении на большой скорости из него поднимается пар, словно всё тело вот-вот загорится. Я не могу представить, какая сила необходима, чтобы поддерживать такое тело в движении.
+lore.srparasites.crux_incomplete=§lЭпитет:§r Cruxa §l|§r §oОчертания неуклюже сцепленных зубов. Остается лишь обугленный, наполовину сформированный каркас, тянущий время и плоть, пока не пробьётся более полное тело. Часто оно оседает в неглубоких ручьях и реках, чтобы охладиться, словно вода ускоряет заживление его грубого, бесформенного, похожего на куколку тела.
+lore.srparasites.heed=§lЭпитет:§r Heed §l|§r §oПятиголовый разведчик, несущийся на муравьеподобном теле, с пастью, расположенной боком поперёк морды. Он почти не руководит самостоятельно, вместо этого передаёт сигналы вперед и подстрекая к охоте там, где встречает сопротивление. Я видел, как он вступал в трофаллаксис с более мелкими и нуждающимися в внимании паразитами.
+lore.srparasites.host=§lЭпитет:§r Host §l|§r §oЧасто говорят, что землетрясения предвещают гибель. Большая часть трупов остается погребенной, и лишь потусторонние стоны и шелест земли наверху выдают, куда делось остальное. Трупы превращаются в странную черную, смолоподобную субстанцию, которая скрепляет их тело и делает его податливым. Каждое щупальце заканчивается полым отверстием, используемым для множества целей: от сращивания разорванной плоти до питания павшими.
+lore.srparasites.hostii=§lЭпитет:§r Hostii §l|§r §oПрорва передвигается под мягкой и неровной землёй, словно её тело может поддаться каждой острой трещине в заражённой почве. То, что когда-то было погребённым носителем, разрослось до более тяжёлой колониальной формы, извергая наполненные кровью бомбы быстрыми очередями, каждая из которых содержит неизвестный яд и болезнь. Под шумом их передвижения часто слышны повторяющиеся бормотания, которые указывают на наличие некоего низкого коллективного разума, хотя ничего из сказанного в них пока не удалось понять.
+lore.srparasites.incompleteform_medium=§lЭпитет:§r Inhoo §l|§r §oПолуготовая форма, но вполне смертоносна. Такое существо ожидаешь увидеть царапающим стенки тела, а не разгуливающим без него.
+lore.srparasites.incompleteform_small=§lЭпитет:§r Inhoo §l|§r §oНевысокая груда, быстро режет. Лёгкая в руках и неприятная на ощупь при ударе, словно ловишь мешок, полный зубов. Пахнет отвратительно, и от неё лучше избавиться как можно быстрее.
+lore.srparasites.thrall=§lЭпитет:§r Mes §l|§r §oПослушание во плоти. Его тело свисает, словно изуродованное существо, вынужденное выпрямиться, а темные тянущиеся нити хлещут за ним, как оторванные поводья. Их часто можно найти возле мест, когда-то полных жизни, разминающих и тревожащихся над предметами исчезнувшей рутины. Ноги деформировались, превратившись в твердые, похожие на копыта обрубки, а лицо исказилось до неузнаваемости, превратившись в искалеченное выражение, слишком изуродованное, чтобы назвать его человеческим, но все еще узнаваемо пытающееся существовать.
+lore.srparasites.dredge=§lЭпитет:§r Done §l|§r §oВыверенное насилие. Под черепом потустороннего палача тело смыкается в целенаправленные петли, испытывая ребра, горло и позвоночник со спокойной точностью существа, которое уже знает, где человеческое тело и дух сдаются в первую очередь. Хвост сковывает и душит, лишает тело воздуха и оставляет жертву в состоянии сильной потери координации задолго до смерти. Ее жертвы остаются в состоянии, напоминающем «§4атаксию-телеангиэктазию§o§0»§o, но ускоренном до чего-то жестоко мгновенного. Борьба затягивается с чрезмерной осторожностью, чтобы быть случайной. Ни один другой паразит такого уровня, кажется, не заинтересован в том, чтобы удерживать жертву в сознании в самые тяжелые моменты. Питается ли она химическими веществами паники или воспоминаниями, встряхнутыми страданиями, я пока не могу сказать.
+lore.srparasites.airscrew=§lЭпитет:§r Leer §l|§r §oЕго хоботок обладает достаточной силой, чтобы с легкостью поднять фургон. Мешок над телом удерживает его в подвешенном состоянии, как испорченный кальмар, вероятно, наполненный летучим газом низкой плотности, вырабатываемым в избытке его собственными тканями и находящимся под достаточным давлением, чтобы компенсировать вес существа. Рот снизу выделяет концентрированный Зов Улья в виде влажных, удушающих потоков. Добыча, пойманная в его перепончатые снаряды, втягивается вверх и обрабатывается крючковатой нижней стороной вывихнутой пасти с ритмом, подобным тому, который используется для отделения мяса от костей. Не раз я видел, как два или более существа боролись за одну и ту же добычу, дергаясь с такой слепой силой, что жертва разрывалась между ними. Те, кто выживает после кормления, не всегда остаются целыми; перевернутые особи иногда выбрасываются после этого и оставляются падать насмерть.
 
 #ASSIMARA
 lore.srparasites.mar_bear=§lЭпитет:§r Mar §l|§r §oВ его теле нет ничего логичного. Внутри гнездится колония пауков.
@@ -2282,10 +2399,10 @@ gui.srparasites.worldsettings.tooltip.difficulty.impossible=Невозможна
 # Tooltips
 gui.srparasites.worldsettings.tooltip.difficulty=Сложность заражения
 gui.srparasites.worldsettings.tooltip.challenge=Выберите дополнительные модификаторы сложности.
-gui.srparasites.worldsettings.tooltip.challenge.c1=This is config 1's config.
-gui.srparasites.worldsettings.tooltip.challenge.c2=This is config 2's config.
-gui.srparasites.worldsettings.tooltip.challenge.c3=This is config 3's config.
-gui.srparasites.worldsettings.tooltip.meteor=Метеорит приземлится на 3 день, начиная заражение.
+gui.srparasites.worldsettings.tooltip.challenge.c1=Это настройки конфигурации 1
+gui.srparasites.worldsettings.tooltip.challenge.c2=Это настройки конфигурации 2
+gui.srparasites.worldsettings.tooltip.challenge.c3=Это настройки конфигурации 3
+gui.srparasites.worldsettings.tooltip.meteor=Падение метеора может произойти после %s дня. Проверка происходит каждые %s дней (%s тиков). Шанс в каждой проверке: %s%%. §4Высокорискованный, ускоренный вариант начального развития SRP.
 
 # config openers
 gui.srparasites.worldsettings.config.general=Основная конфигурация
@@ -2379,4 +2496,4 @@ command.srpevolution.getphase.coth_count=§7 -> Количество сущес�
 command.srpevolution.getphase.eivs=§7 -> Векторов в мире: §6%d§r
 
 command.srpevolution.getphase.footer=§8§m----------------------§r
-command.srpevolution.getphase.all=§8§m-----§r §dЭволюция SRP§r §8§m-----§r\n§7 -> Измерение: §e%d§r\n§7 -> Фаза эволюции: §b%d§r\n§7 -> Всего очков: §a%d§r\n§7 -> Очков до следующей фазы: §a%d§r\n§7 -> Прогресс: §e%s%%§r\n§7 -> Откат фазы: §e%d§7 секунд осталось§r\n§7 -> srpevolutiongaining: §f%s §8(§7True = набор очков включен§8)§r\n§7 -> srpevolutionloss: §f%s §8(§7True = потеря очков включена§8)§r\n§7 -> Код смещения:§r\n§f%s§r\n§7 -> Пороговое количество мобов SRP: §e%d§r\n§7 -> Поколение: §b%d§r\n§7 -> Тиков до следующего поколения: §e%d§r\n§7 -> Уровень вездесущего развития: §d%d§r\n§7 -> Количество паразитов: §c%d§r\n§7 -> Количество существ с эффектов Зова Улья: §5%d§r\n§7 -> Векторов в мире: §6%d§r\n§8§m----------------------§r
+command.srpevolution.getphase.all=§8§m-----§r §dЭволюция SRP§r §8§m-----§r\n§7 -> Измерение: §e%d§r\n§7 -> Фаза эволюции: §b%d§r\n§7 -> Всего очков: §a%d§r\n§7 -> Очков до следующей фазы: §a%d§r\n§7 -> Прогресс: §e%s%%§r\n§7 -> Откат фазы: §e%d§7 секунд осталось§r\n§7 -> srpevolutiongaining: §f%s §8(§7True = набор очков включен§8)§r\n§7 -> srpevolutionloss: §f%s §8(§7True = потеря очков включена§8)§r\n§7 -> Код смещения:§r\n§f%s§r\n§7 -> Пороговое количество мобов SRP: §e%d§r\n§7 -> Поколение: §b%d§r\n§7 -> Тиков до следующего поколения: §e%d§r\n§7 -> Уровень вездесущего развития: §d%d§r\n§7 -> Количество паразитов: §c%d§r\n§7 -> Количество существ с эффектом Зова Улья: §5%d§r\n§7 -> Векторов в мире: §6%d§r\n§8§m----------------------§r

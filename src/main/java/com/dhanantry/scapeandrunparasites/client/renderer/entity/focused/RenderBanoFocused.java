@@ -1,10 +1,3 @@
-/*
- * Decompiled with CFR 0.152.
- * 
- * Could not load the following classes:
- *  net.minecraft.client.renderer.entity.RenderManager
- *  net.minecraft.util.ResourceLocation
- */
 package com.dhanantry.scapeandrunparasites.client.renderer.entity.focused;
 
 import com.dhanantry.scapeandrunparasites.client.model.entity.focused.ModelBanoFocused;
@@ -13,22 +6,19 @@ import com.dhanantry.scapeandrunparasites.entity.monster.focused.EntityBanoFocus
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderBanoFocused
-extends RenderCosmical<EntityBanoFocused> {
-    public static final ResourceLocation TEXTURES = new ResourceLocation("srparasites:textures/entity/monster/test.png");
-    public static final ResourceLocation TEXTURESEC = new ResourceLocation("srparasites:textures/entity/monster/testb.png");
+public class RenderBanoFocused extends RenderCosmical<EntityBanoFocused> {
+   public static final ResourceLocation TEXTURES = new ResourceLocation("srparasites:textures/entity/monster/test.png");
+   public static final ResourceLocation TEXTURESEC = new ResourceLocation("srparasites:textures/entity/monster/testb.png");
 
-    public RenderBanoFocused(RenderManager manager) {
-        super(manager, new ModelBanoFocused(), 0.5f);
-    }
+   public RenderBanoFocused(RenderManager manager) {
+      super(manager, new ModelBanoFocused(), 0.5F);
+   }
 
-    protected ResourceLocation getEntityTexture(EntityBanoFocused entity) {
-        return TEXTURES;
-    }
+   protected ResourceLocation getEntityTexture(EntityBanoFocused entity) {
+      return TEXTURES;
+   }
 
-    @Override
-    protected ResourceLocation getEntityTextureCosmical(EntityBanoFocused entity) {
-        return TEXTURESEC;
-    }
+   protected ResourceLocation getEntityTextureCosmical(EntityBanoFocused entity) {
+      return TEXTURESEC;
+   }
 }
-

@@ -1,19 +1,11 @@
-/*
- * Decompiled with CFR 0.152.
- * 
- * Could not load the following classes:
- *  net.minecraft.item.Item$ToolMaterial
- *  net.minecraftforge.common.util.EnumHelper
- */
 package com.dhanantry.scapeandrunparasites.init;
 
-import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraftforge.common.util.EnumHelper;
 
 public final class SRPToolMaterials {
-    public static final Item.ToolMaterial HIJACKED_IRON = EnumHelper.addToolMaterial((String)"HIJACKED_IRON", (int)2, (int)1561, (float)7.0f, (float)2.5f, (int)14);
+   public static final ToolMaterial HIJACKED_IRON = EnumHelper.addToolMaterial("HIJACKED_IRON", 2, 1561, 7.0F, 2.5F, 14);
 
-    private SRPToolMaterials() {
-    }
+   private SRPToolMaterials() {
+   }
 }
-

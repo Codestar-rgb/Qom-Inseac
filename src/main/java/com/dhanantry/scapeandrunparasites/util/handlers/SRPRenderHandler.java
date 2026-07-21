@@ -1,13 +1,3 @@
-/*
- * Decompiled with CFR 0.152.
- * 
- * Could not load the following classes:
- *  net.minecraft.client.renderer.entity.Render
- *  net.minecraft.client.renderer.entity.RenderManager
- *  net.minecraft.util.ResourceLocation
- *  net.minecraftforge.fml.client.registry.IRenderFactory
- *  net.minecraftforge.fml.client.registry.RenderingRegistry
- */
 package com.dhanantry.scapeandrunparasites.util.handlers;
 
 import com.dhanantry.scapeandrunparasites.client.SRPProjectile;
@@ -142,6 +132,7 @@ import com.dhanantry.scapeandrunparasites.client.renderer.entity.primitive.Rende
 import com.dhanantry.scapeandrunparasites.client.renderer.entity.primitive.RenderShyco;
 import com.dhanantry.scapeandrunparasites.client.renderer.entity.primitive.RenderWymo;
 import com.dhanantry.scapeandrunparasites.client.renderer.entity.primitive.RenderZaa;
+import com.dhanantry.scapeandrunparasites.client.renderer.entity.projectile.RenderHebluLight;
 import com.dhanantry.scapeandrunparasites.client.renderer.entity.pure.RenderAlafha;
 import com.dhanantry.scapeandrunparasites.client.renderer.entity.pure.RenderAnged;
 import com.dhanantry.scapeandrunparasites.client.renderer.entity.pure.RenderEsor;
@@ -309,6 +300,7 @@ import com.dhanantry.scapeandrunparasites.entity.projectile.EntityProjectileBiom
 import com.dhanantry.scapeandrunparasites.entity.projectile.EntityProjectileDragonE;
 import com.dhanantry.scapeandrunparasites.entity.projectile.EntityProjectileEffects;
 import com.dhanantry.scapeandrunparasites.entity.projectile.EntityProjectileElviaBall;
+import com.dhanantry.scapeandrunparasites.entity.projectile.EntityProjectileHebluLight;
 import com.dhanantry.scapeandrunparasites.entity.projectile.EntityProjectileHomming;
 import com.dhanantry.scapeandrunparasites.entity.projectile.EntityProjectileLenciaBall;
 import com.dhanantry.scapeandrunparasites.entity.projectile.EntityProjectileNade;
@@ -326,1115 +318,1045 @@ import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 
 public class SRPRenderHandler {
-    public static void registryEntityRenders() {
-        if (!SRPConfig.allowMobs) {
-            return;
-        }
-        RenderingRegistry.registerEntityRenderingHandler(EntityKirin.class, (IRenderFactory)new IRenderFactory<EntityKirin>(){
-
+   public static void registryEntityRenders() {
+      if (SRPConfig.allowMobs) {
+         RenderingRegistry.registerEntityRenderingHandler(EntityKirin.class, new IRenderFactory<EntityKirin>() {
             public Render<? super EntityKirin> createRenderFor(RenderManager manager) {
-                return new RenderKirin(manager);
+               return new RenderKirin(manager);
             }
-        });
-        if (SRPConfigMobs.hebluEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityHeblu.class, (IRenderFactory)new IRenderFactory<EntityHeblu>(){
-
-                public Render<? super EntityHeblu> createRenderFor(RenderManager manager) {
-                    return new RenderHeblu(manager);
-                }
+         });
+         if (SRPConfigMobs.hebluEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityHeblu.class, new IRenderFactory<EntityHeblu>() {
+               public Render<? super EntityHeblu> createRenderFor(RenderManager manager) {
+                  return new RenderHeblu(manager);
+               }
             });
-        }
-        RenderingRegistry.registerEntityRenderingHandler(EntityOroncoAW.class, (IRenderFactory)new IRenderFactory<EntityOroncoAW>(){
+         }
 
+         RenderingRegistry.registerEntityRenderingHandler(EntityOroncoAW.class, new IRenderFactory<EntityOroncoAW>() {
             public Render<? super EntityOroncoAW> createRenderFor(RenderManager manager) {
-                return new RenderOroncoAW(manager);
+               return new RenderOroncoAW(manager);
             }
-        });
-        if (SRPConfigMobs.ratholEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityRathol.class, (IRenderFactory)new IRenderFactory<EntityRathol>(){
-
-                public Render<? super EntityRathol> createRenderFor(RenderManager manager) {
-                    return new RenderRathol(manager);
-                }
+         });
+         if (SRPConfigMobs.ratholEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityRathol.class, new IRenderFactory<EntityRathol>() {
+               public Render<? super EntityRathol> createRenderFor(RenderManager manager) {
+                  return new RenderRathol(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.gotholEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityGothol.class, (IRenderFactory)new IRenderFactory<EntityGothol>(){
+         }
 
-                public Render<? super EntityGothol> createRenderFor(RenderManager manager) {
-                    return new RenderGothol(manager);
-                }
+         if (SRPConfigMobs.gotholEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityGothol.class, new IRenderFactory<EntityGothol>() {
+               public Render<? super EntityGothol> createRenderFor(RenderManager manager) {
+                  return new RenderGothol(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.lodoEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityLodo.class, (IRenderFactory)new IRenderFactory<EntityLodo>(){
+         }
 
-                public Render<? super EntityLodo> createRenderFor(RenderManager manager) {
-                    return new RenderLodo(manager);
-                }
+         if (SRPConfigMobs.lodoEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityLodo.class, new IRenderFactory<EntityLodo>() {
+               public Render<? super EntityLodo> createRenderFor(RenderManager manager) {
+                  return new RenderLodo(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.butholEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityButhol.class, (IRenderFactory)new IRenderFactory<EntityButhol>(){
+         }
 
-                public Render<? super EntityButhol> createRenderFor(RenderManager manager) {
-                    return new RenderButhol(manager);
-                }
+         if (SRPConfigMobs.butholEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityButhol.class, new IRenderFactory<EntityButhol>() {
+               public Render<? super EntityButhol> createRenderFor(RenderManager manager) {
+                  return new RenderButhol(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.mudoEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityMudo.class, (IRenderFactory)new IRenderFactory<EntityMudo>(){
+         }
 
-                public Render<? super EntityMudo> createRenderFor(RenderManager manager) {
-                    return new RenderMudo(manager);
-                }
+         if (SRPConfigMobs.mudoEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityMudo.class, new IRenderFactory<EntityMudo>() {
+               public Render<? super EntityMudo> createRenderFor(RenderManager manager) {
+                  return new RenderMudo(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.ataEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityAta.class, (IRenderFactory)new IRenderFactory<EntityAta>(){
+         }
 
-                public Render<? super EntityAta> createRenderFor(RenderManager manager) {
-                    return new RenderAta(manager);
-                }
+         if (SRPConfigMobs.ataEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityAta.class, new IRenderFactory<EntityAta>() {
+               public Render<? super EntityAta> createRenderFor(RenderManager manager) {
+                  return new RenderAta(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.ataEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityViin.class, (IRenderFactory)new IRenderFactory<EntityViin>(){
+         }
 
-                public Render<? super EntityViin> createRenderFor(RenderManager manager) {
-                    return new RenderViin(manager);
-                }
+         if (SRPConfigMobs.ataEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityViin.class, new IRenderFactory<EntityViin>() {
+               public Render<? super EntityViin> createRenderFor(RenderManager manager) {
+                  return new RenderViin(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.nuuhEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityNuuh.class, (IRenderFactory)new IRenderFactory<EntityNuuh>(){
+         }
 
-                public Render<? super EntityNuuh> createRenderFor(RenderManager manager) {
-                    return new RenderNuuh(manager);
-                }
+         if (SRPConfigMobs.nuuhEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityNuuh.class, new IRenderFactory<EntityNuuh>() {
+               public Render<? super EntityNuuh> createRenderFor(RenderManager manager) {
+                  return new RenderNuuh(manager);
+               }
             });
-        }
-        RenderingRegistry.registerEntityRenderingHandler(EntityVenkrol.class, (IRenderFactory)new IRenderFactory<EntityVenkrol>(){
+         }
 
+         RenderingRegistry.registerEntityRenderingHandler(EntityVenkrol.class, new IRenderFactory<EntityVenkrol>() {
             public Render<? super EntityVenkrol> createRenderFor(RenderManager manager) {
-                return new RenderVenkrol(manager);
+               return new RenderVenkrol(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityVenkrolSII.class, (IRenderFactory)new IRenderFactory<EntityVenkrolSII>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityVenkrolSII.class, new IRenderFactory<EntityVenkrolSII>() {
             public Render<? super EntityVenkrolSII> createRenderFor(RenderManager manager) {
-                return new RenderVenkrolSII(manager);
+               return new RenderVenkrolSII(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityVenkrolSIII.class, (IRenderFactory)new IRenderFactory<EntityVenkrolSIII>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityVenkrolSIII.class, new IRenderFactory<EntityVenkrolSIII>() {
             public Render<? super EntityVenkrolSIII> createRenderFor(RenderManager manager) {
-                return new RenderVenkrolSIII(manager);
+               return new RenderVenkrolSIII(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityVenkrolSIV.class, (IRenderFactory)new IRenderFactory<EntityVenkrolSIV>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityVenkrolSIV.class, new IRenderFactory<EntityVenkrolSIV>() {
             public Render<? super EntityVenkrolSIV> createRenderFor(RenderManager manager) {
-                return new RenderVenkrolSIV(manager);
+               return new RenderVenkrolSIV(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityDodT.class, (IRenderFactory)new IRenderFactory<EntityDodT>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityDodT.class, new IRenderFactory<EntityDodT>() {
             public Render<? super EntityDodT> createRenderFor(RenderManager manager) {
-                return new RenderDodT(manager);
+               return new RenderDodT(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityLeemB.class, (IRenderFactory)new IRenderFactory<EntityLeemB>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityLeemB.class, new IRenderFactory<EntityLeemB>() {
             public Render<? super EntityLeemB> createRenderFor(RenderManager manager) {
-                return new RenderLeemB(manager);
+               return new RenderLeemB(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityRof.class, (IRenderFactory)new IRenderFactory<EntityRof>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityRof.class, new IRenderFactory<EntityRof>() {
             public Render<? super EntityRof> createRenderFor(RenderManager manager) {
-                return new RenderRof(manager);
+               return new RenderRof(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityDod.class, (IRenderFactory)new IRenderFactory<EntityDod>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityDod.class, new IRenderFactory<EntityDod>() {
             public Render<? super EntityDod> createRenderFor(RenderManager manager) {
-                return new RenderDod(manager);
+               return new RenderDod(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityDodSII.class, (IRenderFactory)new IRenderFactory<EntityDodSII>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityDodSII.class, new IRenderFactory<EntityDodSII>() {
             public Render<? super EntityDodSII> createRenderFor(RenderManager manager) {
-                return new RenderDodSII(manager);
+               return new RenderDodSII(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityDodSIII.class, (IRenderFactory)new IRenderFactory<EntityDodSIII>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityDodSIII.class, new IRenderFactory<EntityDodSIII>() {
             public Render<? super EntityDodSIII> createRenderFor(RenderManager manager) {
-                return new RenderDodSIII(manager);
+               return new RenderDodSIII(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityDodSIV.class, (IRenderFactory)new IRenderFactory<EntityDodSIV>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityDodSIV.class, new IRenderFactory<EntityDodSIV>() {
             public Render<? super EntityDodSIV> createRenderFor(RenderManager manager) {
-                return new RenderDodSIV(manager);
+               return new RenderDodSIV(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityLeem.class, (IRenderFactory)new IRenderFactory<EntityLeem>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityLeem.class, new IRenderFactory<EntityLeem>() {
             public Render<? super EntityLeem> createRenderFor(RenderManager manager) {
-                return new RenderLeem(manager);
+               return new RenderLeem(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityLeemSII.class, (IRenderFactory)new IRenderFactory<EntityLeemSII>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityLeemSII.class, new IRenderFactory<EntityLeemSII>() {
             public Render<? super EntityLeemSII> createRenderFor(RenderManager manager) {
-                return new RenderLeemSII(manager);
+               return new RenderLeemSII(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityLeemSIII.class, (IRenderFactory)new IRenderFactory<EntityLeemSIII>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityLeemSIII.class, new IRenderFactory<EntityLeemSIII>() {
             public Render<? super EntityLeemSIII> createRenderFor(RenderManager manager) {
-                return new RenderLeemSIII(manager);
+               return new RenderLeemSIII(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityLeemSIV.class, (IRenderFactory)new IRenderFactory<EntityLeemSIV>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityLeemSIV.class, new IRenderFactory<EntityLeemSIV>() {
             public Render<? super EntityLeemSIV> createRenderFor(RenderManager manager) {
-                return new RenderLeemSIV(manager);
+               return new RenderLeemSIV(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityLesh.class, (IRenderFactory)new IRenderFactory<EntityLesh>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityLesh.class, new IRenderFactory<EntityLesh>() {
             public Render<? super EntityLesh> createRenderFor(RenderManager manager) {
-                return new RenderLesh(manager);
+               return new RenderLesh(manager);
             }
-        });
-        if (SRPConfigMobs.tonroEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityTonro.class, (IRenderFactory)new IRenderFactory<EntityTonro>(){
-
-                public Render<? super EntityTonro> createRenderFor(RenderManager manager) {
-                    return new RenderTonro(manager);
-                }
+         });
+         if (SRPConfigMobs.tonroEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityTonro.class, new IRenderFactory<EntityTonro>() {
+               public Render<? super EntityTonro> createRenderFor(RenderManager manager) {
+                  return new RenderTonro(manager);
+               }
             });
-        }
-        RenderingRegistry.registerEntityRenderingHandler(EntityNak.class, (IRenderFactory)new IRenderFactory<EntityNak>(){
+         }
 
+         RenderingRegistry.registerEntityRenderingHandler(EntityNak.class, new IRenderFactory<EntityNak>() {
             public Render<? super EntityNak> createRenderFor(RenderManager manager) {
-                return new RenderNak(manager);
+               return new RenderNak(manager);
             }
-        });
-        if (SRPConfigMobs.unvoEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityUnvo.class, (IRenderFactory)new IRenderFactory<EntityUnvo>(){
-
-                public Render<? super EntityUnvo> createRenderFor(RenderManager manager) {
-                    return new RenderUnvo(manager);
-                }
+         });
+         if (SRPConfigMobs.unvoEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityUnvo.class, new IRenderFactory<EntityUnvo>() {
+               public Render<? super EntityUnvo> createRenderFor(RenderManager manager) {
+                  return new RenderUnvo(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.kolEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityKol.class, (IRenderFactory)new IRenderFactory<EntityKol>(){
+         }
 
-                public Render<? super EntityKol> createRenderFor(RenderManager manager) {
-                    return new RenderKol(manager);
-                }
+         if (SRPConfigMobs.kolEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityKol.class, new IRenderFactory<EntityKol>() {
+               public Render<? super EntityKol> createRenderFor(RenderManager manager) {
+                  return new RenderKol(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.terlaEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityTerla.class, (IRenderFactory)new IRenderFactory<EntityTerla>(){
+         }
 
-                public Render<? super EntityTerla> createRenderFor(RenderManager manager) {
-                    return new RenderTerla(manager);
-                }
+         if (SRPConfigMobs.terlaEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityTerla.class, new IRenderFactory<EntityTerla>() {
+               public Render<? super EntityTerla> createRenderFor(RenderManager manager) {
+                  return new RenderTerla(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.oroncoEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityOronco.class, (IRenderFactory)new IRenderFactory<EntityOronco>(){
+         }
 
-                public Render<? super EntityOronco> createRenderFor(RenderManager manager) {
-                    return new RenderOronco(manager);
-                }
+         if (SRPConfigMobs.oroncoEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityOronco.class, new IRenderFactory<EntityOronco>() {
+               public Render<? super EntityOronco> createRenderFor(RenderManager manager) {
+                  return new RenderOronco(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.oroncoEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityOroncoTen.class, (IRenderFactory)new IRenderFactory<EntityOroncoTen>(){
+         }
 
-                public Render<? super EntityOroncoTen> createRenderFor(RenderManager manager) {
-                    return new RenderOroncoTen(manager);
-                }
+         if (SRPConfigMobs.oroncoEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityOroncoTen.class, new IRenderFactory<EntityOroncoTen>() {
+               public Render<? super EntityOroncoTen> createRenderFor(RenderManager manager) {
+                  return new RenderOroncoTen(manager);
+               }
             });
-        }
-        RenderingRegistry.registerEntityRenderingHandler(EntityDropPod.class, (IRenderFactory)new IRenderFactory<EntityDropPod>(){
+         }
 
+         RenderingRegistry.registerEntityRenderingHandler(EntityDropPod.class, new IRenderFactory<EntityDropPod>() {
             public Render<? super EntityDropPod> createRenderFor(RenderManager manager) {
-                return new RenderAncientPod(manager);
+               return new RenderAncientPod(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityAboBodies.class, (IRenderFactory)new IRenderFactory<EntityAboBodies>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityAboBodies.class, new IRenderFactory<EntityAboBodies>() {
             public Render<? super EntityAboBodies> createRenderFor(RenderManager manager) {
-                return new RenderAboFaces(manager);
+               return new RenderAboFaces(manager);
             }
-        });
-        if (SRPConfigMobs.leerEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityLeer.class, (IRenderFactory)new IRenderFactory<EntityLeer>(){
-
-                public Render<? super EntityLeer> createRenderFor(RenderManager manager) {
-                    return new RenderLeer(manager);
-                }
+         });
+         if (SRPConfigMobs.leerEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityLeer.class, new IRenderFactory<EntityLeer>() {
+               public Render<? super EntityLeer> createRenderFor(RenderManager manager) {
+                  return new RenderLeer(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.doneEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityDone.class, (IRenderFactory)new IRenderFactory<EntityDone>(){
+         }
 
-                public Render<? super EntityDone> createRenderFor(RenderManager manager) {
-                    return new RenderDone(manager);
-                }
+         if (SRPConfigMobs.doneEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityDone.class, new IRenderFactory<EntityDone>() {
+               public Render<? super EntityDone> createRenderFor(RenderManager manager) {
+                  return new RenderDone(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.hostEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityHost.class, (IRenderFactory)new IRenderFactory<EntityHost>(){
+         }
 
-                public Render<? super EntityHost> createRenderFor(RenderManager manager) {
-                    return new RenderHost(manager);
-                }
+         if (SRPConfigMobs.hostEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityHost.class, new IRenderFactory<EntityHost>() {
+               public Render<? super EntityHost> createRenderFor(RenderManager manager) {
+                  return new RenderHost(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.hostEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityHostII.class, (IRenderFactory)new IRenderFactory<EntityHostII>(){
+         }
 
-                public Render<? super EntityHostII> createRenderFor(RenderManager manager) {
-                    return new RenderHostII(manager);
-                }
+         if (SRPConfigMobs.hostEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityHostII.class, new IRenderFactory<EntityHostII>() {
+               public Render<? super EntityHostII> createRenderFor(RenderManager manager) {
+                  return new RenderHostII(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.thrallEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityMes.class, (IRenderFactory)new IRenderFactory<EntityMes>(){
+         }
 
-                public Render<? super EntityMes> createRenderFor(RenderManager manager) {
-                    return new RenderMes(manager);
-                }
+         if (SRPConfigMobs.thrallEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityMes.class, new IRenderFactory<EntityMes>() {
+               public Render<? super EntityMes> createRenderFor(RenderManager manager) {
+                  return new RenderMes(manager);
+               }
             });
-        }
-        RenderingRegistry.registerEntityRenderingHandler(EntityInhooS.class, (IRenderFactory)new IRenderFactory<EntityInhooS>(){
+         }
 
+         RenderingRegistry.registerEntityRenderingHandler(EntityInhooS.class, new IRenderFactory<EntityInhooS>() {
             public Render<? super EntityInhooS> createRenderFor(RenderManager manager) {
-                return new RenderInhooS(manager);
+               return new RenderInhooS(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityInhooM.class, (IRenderFactory)new IRenderFactory<EntityInhooM>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityInhooM.class, new IRenderFactory<EntityInhooM>() {
             public Render<? super EntityInhooM> createRenderFor(RenderManager manager) {
-                return new RenderInhooM(manager);
+               return new RenderInhooM(manager);
             }
-        });
-        if (SRPConfigMobs.dorpaEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityDorpa.class, (IRenderFactory)new IRenderFactory<EntityDorpa>(){
-
-                public Render<? super EntityDorpa> createRenderFor(RenderManager manager) {
-                    return new RenderDorpa(manager);
-                }
+         });
+         if (SRPConfigMobs.dorpaEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityDorpa.class, new IRenderFactory<EntityDorpa>() {
+               public Render<? super EntityDorpa> createRenderFor(RenderManager manager) {
+                  return new RenderDorpa(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.infendermanEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityInfEnderman.class, (IRenderFactory)new IRenderFactory<EntityInfEnderman>(){
+         }
 
-                public Render<? super EntityInfEnderman> createRenderFor(RenderManager manager) {
-                    return new RenderInfEnderman(manager);
-                }
+         if (SRPConfigMobs.infendermanEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityInfEnderman.class, new IRenderFactory<EntityInfEnderman>() {
+               public Render<? super EntityInfEnderman> createRenderFor(RenderManager manager) {
+                  return new RenderInfEnderman(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.infendermanEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityInfEndermanHead.class, (IRenderFactory)new IRenderFactory<EntityInfEndermanHead>(){
+         }
 
-                public Render<? super EntityInfEndermanHead> createRenderFor(RenderManager manager) {
-                    return new RenderInfEndermanHead(manager);
-                }
+         if (SRPConfigMobs.infendermanEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityInfEndermanHead.class, new IRenderFactory<EntityInfEndermanHead>() {
+               public Render<? super EntityInfEndermanHead> createRenderFor(RenderManager manager) {
+                  return new RenderInfEndermanHead(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.infhumanEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityInfHuman.class, (IRenderFactory)new IRenderFactory<EntityInfHuman>(){
+         }
 
-                public Render<? super EntityInfHuman> createRenderFor(RenderManager manager) {
-                    return new RenderInfHuman(manager);
-                }
+         if (SRPConfigMobs.infhumanEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityInfHuman.class, new IRenderFactory<EntityInfHuman>() {
+               public Render<? super EntityInfHuman> createRenderFor(RenderManager manager) {
+                  return new RenderInfHuman(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.infhumanEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityInfHumanHead.class, (IRenderFactory)new IRenderFactory<EntityInfHumanHead>(){
+         }
 
-                public Render<? super EntityInfHumanHead> createRenderFor(RenderManager manager) {
-                    return new RenderInfHumanHead(manager);
-                }
+         if (SRPConfigMobs.infhumanEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityInfHumanHead.class, new IRenderFactory<EntityInfHumanHead>() {
+               public Render<? super EntityInfHumanHead> createRenderFor(RenderManager manager) {
+                  return new RenderInfHumanHead(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.infcowEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityInfCow.class, (IRenderFactory)new IRenderFactory<EntityInfCow>(){
+         }
 
-                public Render<? super EntityInfCow> createRenderFor(RenderManager manager) {
-                    return new RenderInfCow(manager);
-                }
+         if (SRPConfigMobs.infcowEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityInfCow.class, new IRenderFactory<EntityInfCow>() {
+               public Render<? super EntityInfCow> createRenderFor(RenderManager manager) {
+                  return new RenderInfCow(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.infsquidEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityInfSquid.class, (IRenderFactory)new IRenderFactory<EntityInfSquid>(){
+         }
 
-                public Render<? super EntityInfSquid> createRenderFor(RenderManager manager) {
-                    return new RenderInfSquid(manager);
-                }
+         if (SRPConfigMobs.infsquidEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityInfSquid.class, new IRenderFactory<EntityInfSquid>() {
+               public Render<? super EntityInfSquid> createRenderFor(RenderManager manager) {
+                  return new RenderInfSquid(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.infcowEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityInfCowHead.class, (IRenderFactory)new IRenderFactory<EntityInfCowHead>(){
+         }
 
-                public Render<? super EntityInfCowHead> createRenderFor(RenderManager manager) {
-                    return new RenderInfCowHead(manager);
-                }
+         if (SRPConfigMobs.infcowEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityInfCowHead.class, new IRenderFactory<EntityInfCowHead>() {
+               public Render<? super EntityInfCowHead> createRenderFor(RenderManager manager) {
+                  return new RenderInfCowHead(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.infsheepEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityInfSheep.class, (IRenderFactory)new IRenderFactory<EntityInfSheep>(){
+         }
 
-                public Render<? super EntityInfSheep> createRenderFor(RenderManager manager) {
-                    return new RenderInfSheep(manager);
-                }
+         if (SRPConfigMobs.infsheepEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityInfSheep.class, new IRenderFactory<EntityInfSheep>() {
+               public Render<? super EntityInfSheep> createRenderFor(RenderManager manager) {
+                  return new RenderInfSheep(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.infsheepEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityInfSheepHead.class, (IRenderFactory)new IRenderFactory<EntityInfSheepHead>(){
+         }
 
-                public Render<? super EntityInfSheepHead> createRenderFor(RenderManager manager) {
-                    return new RenderInfSheepHead(manager);
-                }
+         if (SRPConfigMobs.infsheepEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityInfSheepHead.class, new IRenderFactory<EntityInfSheepHead>() {
+               public Render<? super EntityInfSheepHead> createRenderFor(RenderManager manager) {
+                  return new RenderInfSheepHead(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.infwolfEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityInfWolf.class, (IRenderFactory)new IRenderFactory<EntityInfWolf>(){
+         }
 
-                public Render<? super EntityInfWolf> createRenderFor(RenderManager manager) {
-                    return new RenderInfWolf(manager);
-                }
+         if (SRPConfigMobs.infwolfEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityInfWolf.class, new IRenderFactory<EntityInfWolf>() {
+               public Render<? super EntityInfWolf> createRenderFor(RenderManager manager) {
+                  return new RenderInfWolf(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.infwolfEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityInfWolfHead.class, (IRenderFactory)new IRenderFactory<EntityInfWolfHead>(){
+         }
 
-                public Render<? super EntityInfWolfHead> createRenderFor(RenderManager manager) {
-                    return new RenderInfWolfHead(manager);
-                }
+         if (SRPConfigMobs.infwolfEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityInfWolfHead.class, new IRenderFactory<EntityInfWolfHead>() {
+               public Render<? super EntityInfWolfHead> createRenderFor(RenderManager manager) {
+                  return new RenderInfWolfHead(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.infpigEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityInfPig.class, (IRenderFactory)new IRenderFactory<EntityInfPig>(){
+         }
 
-                public Render<? super EntityInfPig> createRenderFor(RenderManager manager) {
-                    return new RenderInfPig(manager);
-                }
+         if (SRPConfigMobs.infpigEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityInfPig.class, new IRenderFactory<EntityInfPig>() {
+               public Render<? super EntityInfPig> createRenderFor(RenderManager manager) {
+                  return new RenderInfPig(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.infpigEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityInfPigHead.class, (IRenderFactory)new IRenderFactory<EntityInfPigHead>(){
+         }
 
-                public Render<? super EntityInfPigHead> createRenderFor(RenderManager manager) {
-                    return new RenderInfPigHead(manager);
-                }
+         if (SRPConfigMobs.infpigEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityInfPigHead.class, new IRenderFactory<EntityInfPigHead>() {
+               public Render<? super EntityInfPigHead> createRenderFor(RenderManager manager) {
+                  return new RenderInfPigHead(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.infvillagerEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityInfVillager.class, (IRenderFactory)new IRenderFactory<EntityInfVillager>(){
+         }
 
-                public Render<? super EntityInfVillager> createRenderFor(RenderManager manager) {
-                    return new RenderInfVillager(manager);
-                }
+         if (SRPConfigMobs.infvillagerEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityInfVillager.class, new IRenderFactory<EntityInfVillager>() {
+               public Render<? super EntityInfVillager> createRenderFor(RenderManager manager) {
+                  return new RenderInfVillager(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.infvillagerEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityInfVillagerHead.class, (IRenderFactory)new IRenderFactory<EntityInfVillagerHead>(){
+         }
 
-                public Render<? super EntityInfVillagerHead> createRenderFor(RenderManager manager) {
-                    return new RenderInfVillagerHead(manager);
-                }
+         if (SRPConfigMobs.infvillagerEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityInfVillagerHead.class, new IRenderFactory<EntityInfVillagerHead>() {
+               public Render<? super EntityInfVillagerHead> createRenderFor(RenderManager manager) {
+                  return new RenderInfVillagerHead(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.infhorseEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityInfHorse.class, (IRenderFactory)new IRenderFactory<EntityInfHorse>(){
+         }
 
-                public Render<? super EntityInfHorse> createRenderFor(RenderManager manager) {
-                    return new RenderInfHorse(manager);
-                }
+         if (SRPConfigMobs.infhorseEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityInfHorse.class, new IRenderFactory<EntityInfHorse>() {
+               public Render<? super EntityInfHorse> createRenderFor(RenderManager manager) {
+                  return new RenderInfHorse(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.infhorseEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityInfHorseHead.class, (IRenderFactory)new IRenderFactory<EntityInfHorseHead>(){
+         }
 
-                public Render<? super EntityInfHorseHead> createRenderFor(RenderManager manager) {
-                    return new RenderInfHorseHead(manager);
-                }
+         if (SRPConfigMobs.infhorseEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityInfHorseHead.class, new IRenderFactory<EntityInfHorseHead>() {
+               public Render<? super EntityInfHorseHead> createRenderFor(RenderManager manager) {
+                  return new RenderInfHorseHead(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.infadventurerEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityInfPlayer.class, (IRenderFactory)new IRenderFactory<EntityInfPlayer>(){
+         }
 
-                public Render<? super EntityInfPlayer> createRenderFor(RenderManager manager) {
-                    return new RenderInfPlayer(manager);
-                }
+         if (SRPConfigMobs.infadventurerEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityInfPlayer.class, new IRenderFactory<EntityInfPlayer>() {
+               public Render<? super EntityInfPlayer> createRenderFor(RenderManager manager) {
+                  return new RenderInfPlayer(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.infadventurerEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityInfPlayerHead.class, (IRenderFactory)new IRenderFactory<EntityInfPlayerHead>(){
+         }
 
-                public Render<? super EntityInfPlayerHead> createRenderFor(RenderManager manager) {
-                    return new RenderInfPlayerHead(manager);
-                }
+         if (SRPConfigMobs.infadventurerEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityInfPlayerHead.class, new IRenderFactory<EntityInfPlayerHead>() {
+               public Render<? super EntityInfPlayerHead> createRenderFor(RenderManager manager) {
+                  return new RenderInfPlayerHead(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.infbearEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityInfBear.class, (IRenderFactory)new IRenderFactory<EntityInfBear>(){
+         }
 
-                public Render<? super EntityInfBear> createRenderFor(RenderManager manager) {
-                    return new RenderInfBear(manager);
-                }
+         if (SRPConfigMobs.infbearEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityInfBear.class, new IRenderFactory<EntityInfBear>() {
+               public Render<? super EntityInfBear> createRenderFor(RenderManager manager) {
+                  return new RenderInfBear(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.infdragoneEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityInfDragonE.class, (IRenderFactory)new IRenderFactory<EntityInfDragonE>(){
+         }
 
-                public Render<? super EntityInfDragonE> createRenderFor(RenderManager manager) {
-                    return new RenderInfDragonE(manager);
-                }
+         if (SRPConfigMobs.infdragoneEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityInfDragonE.class, new IRenderFactory<EntityInfDragonE>() {
+               public Render<? super EntityInfDragonE> createRenderFor(RenderManager manager) {
+                  return new RenderInfDragonE(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.infdragoneEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityInfDragonEHead.class, (IRenderFactory)new IRenderFactory<EntityInfDragonEHead>(){
+         }
 
-                public Render<? super EntityInfDragonEHead> createRenderFor(RenderManager manager) {
-                    return new RenderInfDragonEHead(manager);
-                }
+         if (SRPConfigMobs.infdragoneEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityInfDragonEHead.class, new IRenderFactory<EntityInfDragonEHead>() {
+               public Render<? super EntityInfDragonEHead> createRenderFor(RenderManager manager) {
+                  return new RenderInfDragonEHead(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.ferbearEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityFerBear.class, (IRenderFactory)new IRenderFactory<EntityFerBear>(){
+         }
 
-                public Render<? super EntityFerBear> createRenderFor(RenderManager manager) {
-                    return new RenderFerBear(manager);
-                }
+         if (SRPConfigMobs.ferbearEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityFerBear.class, new IRenderFactory<EntityFerBear>() {
+               public Render<? super EntityFerBear> createRenderFor(RenderManager manager) {
+                  return new RenderFerBear(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.fercowEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityFerCow.class, (IRenderFactory)new IRenderFactory<EntityFerCow>(){
+         }
 
-                public Render<? super EntityFerCow> createRenderFor(RenderManager manager) {
-                    return new RenderFerCow(manager);
-                }
+         if (SRPConfigMobs.fercowEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityFerCow.class, new IRenderFactory<EntityFerCow>() {
+               public Render<? super EntityFerCow> createRenderFor(RenderManager manager) {
+                  return new RenderFerCow(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.ferendermanEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityFerEnderman.class, (IRenderFactory)new IRenderFactory<EntityFerEnderman>(){
+         }
 
-                public Render<? super EntityFerEnderman> createRenderFor(RenderManager manager) {
-                    return new RenderFerEnderman(manager);
-                }
+         if (SRPConfigMobs.ferendermanEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityFerEnderman.class, new IRenderFactory<EntityFerEnderman>() {
+               public Render<? super EntityFerEnderman> createRenderFor(RenderManager manager) {
+                  return new RenderFerEnderman(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.ferhorseEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityFerHorse.class, (IRenderFactory)new IRenderFactory<EntityFerHorse>(){
+         }
 
-                public Render<? super EntityFerHorse> createRenderFor(RenderManager manager) {
-                    return new RenderFerHorse(manager);
-                }
+         if (SRPConfigMobs.ferhorseEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityFerHorse.class, new IRenderFactory<EntityFerHorse>() {
+               public Render<? super EntityFerHorse> createRenderFor(RenderManager manager) {
+                  return new RenderFerHorse(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.fervillagerEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityFerVillager.class, (IRenderFactory)new IRenderFactory<EntityFerVillager>(){
+         }
 
-                public Render<? super EntityFerVillager> createRenderFor(RenderManager manager) {
-                    return new RenderFerVillager(manager);
-                }
+         if (SRPConfigMobs.fervillagerEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityFerVillager.class, new IRenderFactory<EntityFerVillager>() {
+               public Render<? super EntityFerVillager> createRenderFor(RenderManager manager) {
+                  return new RenderFerVillager(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.ferhumanEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityFerHuman.class, (IRenderFactory)new IRenderFactory<EntityFerHuman>(){
+         }
 
-                public Render<? super EntityFerHuman> createRenderFor(RenderManager manager) {
-                    return new RenderFerHuman(manager);
-                }
+         if (SRPConfigMobs.ferhumanEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityFerHuman.class, new IRenderFactory<EntityFerHuman>() {
+               public Render<? super EntityFerHuman> createRenderFor(RenderManager manager) {
+                  return new RenderFerHuman(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.fersheepEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityFerSheep.class, (IRenderFactory)new IRenderFactory<EntityFerSheep>(){
+         }
 
-                public Render<? super EntityFerSheep> createRenderFor(RenderManager manager) {
-                    return new RenderFerSheep(manager);
-                }
+         if (SRPConfigMobs.fersheepEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityFerSheep.class, new IRenderFactory<EntityFerSheep>() {
+               public Render<? super EntityFerSheep> createRenderFor(RenderManager manager) {
+                  return new RenderFerSheep(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.ferpigEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityFerPig.class, (IRenderFactory)new IRenderFactory<EntityFerPig>(){
+         }
 
-                public Render<? super EntityFerPig> createRenderFor(RenderManager manager) {
-                    return new RenderFerPig(manager);
-                }
+         if (SRPConfigMobs.ferpigEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityFerPig.class, new IRenderFactory<EntityFerPig>() {
+               public Render<? super EntityFerPig> createRenderFor(RenderManager manager) {
+                  return new RenderFerPig(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.ferwolfEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityFerWolf.class, (IRenderFactory)new IRenderFactory<EntityFerWolf>(){
+         }
 
-                public Render<? super EntityFerWolf> createRenderFor(RenderManager manager) {
-                    return new RenderFerWolf(manager);
-                }
+         if (SRPConfigMobs.ferwolfEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityFerWolf.class, new IRenderFactory<EntityFerWolf>() {
+               public Render<? super EntityFerWolf> createRenderFor(RenderManager manager) {
+                  return new RenderFerWolf(manager);
+               }
             });
-        }
-        RenderingRegistry.registerEntityRenderingHandler(EntitySpeVillager.class, (IRenderFactory)new IRenderFactory<EntitySpeVillager>(){
+         }
 
+         RenderingRegistry.registerEntityRenderingHandler(EntitySpeVillager.class, new IRenderFactory<EntitySpeVillager>() {
             public Render<? super EntitySpeVillager> createRenderFor(RenderManager manager) {
-                return new RenderSpeVillager(manager);
+               return new RenderSpeVillager(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntitySpeHuman.class, (IRenderFactory)new IRenderFactory<EntitySpeHuman>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntitySpeHuman.class, new IRenderFactory<EntitySpeHuman>() {
             public Render<? super EntitySpeHuman> createRenderFor(RenderManager manager) {
-                return new RenderSpeHuman(manager);
+               return new RenderSpeHuman(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntitySpeCow.class, (IRenderFactory)new IRenderFactory<EntitySpeCow>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntitySpeCow.class, new IRenderFactory<EntitySpeCow>() {
             public Render<? super EntitySpeCow> createRenderFor(RenderManager manager) {
-                return new RenderSpeCow(manager);
+               return new RenderSpeCow(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntitySpeEnderman.class, (IRenderFactory)new IRenderFactory<EntitySpeEnderman>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntitySpeEnderman.class, new IRenderFactory<EntitySpeEnderman>() {
             public Render<? super EntitySpeEnderman> createRenderFor(RenderManager manager) {
-                return new RenderSpeEnderman(manager);
+               return new RenderSpeEnderman(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntitySpeSheep.class, (IRenderFactory)new IRenderFactory<EntitySpeSheep>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntitySpeSheep.class, new IRenderFactory<EntitySpeSheep>() {
             public Render<? super EntitySpeSheep> createRenderFor(RenderManager manager) {
-                return new RenderSpeSheep(manager);
+               return new RenderSpeSheep(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntitySpeBear.class, (IRenderFactory)new IRenderFactory<EntitySpeBear>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntitySpeBear.class, new IRenderFactory<EntitySpeBear>() {
             public Render<? super EntitySpeBear> createRenderFor(RenderManager manager) {
-                return new RenderSpeBear(manager);
+               return new RenderSpeBear(manager);
             }
-        });
-        if (SRPConfigMobs.higolemEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityHiGolem.class, (IRenderFactory)new IRenderFactory<EntityHiGolem>(){
-
-                public Render<? super EntityHiGolem> createRenderFor(RenderManager manager) {
-                    return new RenderHiGolem(manager);
-                }
+         });
+         if (SRPConfigMobs.higolemEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityHiGolem.class, new IRenderFactory<EntityHiGolem>() {
+               public Render<? super EntityHiGolem> createRenderFor(RenderManager manager) {
+                  return new RenderHiGolem(manager);
+               }
             });
-        }
-        RenderingRegistry.registerEntityRenderingHandler(EntityHiSkeleton.class, (IRenderFactory)new IRenderFactory<EntityHiSkeleton>(){
+         }
 
+         RenderingRegistry.registerEntityRenderingHandler(EntityHiSkeleton.class, new IRenderFactory<EntityHiSkeleton>() {
             public Render<? super EntityHiSkeleton> createRenderFor(RenderManager manager) {
-                return new RenderHiSkeleton(manager);
+               return new RenderHiSkeleton(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityHiBlaze.class, (IRenderFactory)new IRenderFactory<EntityHiBlaze>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityHiBlaze.class, new IRenderFactory<EntityHiBlaze>() {
             public Render<? super EntityHiBlaze> createRenderFor(RenderManager manager) {
-                return new RenderHiBlaze(manager);
+               return new RenderHiBlaze(manager);
             }
-        });
-        if (SRPConfigMobs.emanaEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityEmana.class, (IRenderFactory)new IRenderFactory<EntityEmana>(){
-
-                public Render<? super EntityEmana> createRenderFor(RenderManager manager) {
-                    return new RenderEmana(manager);
-                }
+         });
+         if (SRPConfigMobs.emanaEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityEmana.class, new IRenderFactory<EntityEmana>() {
+               public Render<? super EntityEmana> createRenderFor(RenderManager manager) {
+                  return new RenderEmana(manager);
+               }
             });
-            RenderingRegistry.registerEntityRenderingHandler(EntityEmanaAdapted.class, (IRenderFactory)new IRenderFactory<EntityEmanaAdapted>(){
-
-                public Render<? super EntityEmanaAdapted> createRenderFor(RenderManager manager) {
-                    return new RenderEmanaAdapted(manager);
-                }
+            RenderingRegistry.registerEntityRenderingHandler(EntityEmanaAdapted.class, new IRenderFactory<EntityEmanaAdapted>() {
+               public Render<? super EntityEmanaAdapted> createRenderFor(RenderManager manager) {
+                  return new RenderEmanaAdapted(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.lumEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityLum.class, (IRenderFactory)new IRenderFactory<EntityLum>(){
+         }
 
-                public Render<? super EntityLum> createRenderFor(RenderManager manager) {
-                    return new RenderLum(manager);
-                }
+         if (SRPConfigMobs.lumEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityLum.class, new IRenderFactory<EntityLum>() {
+               public Render<? super EntityLum> createRenderFor(RenderManager manager) {
+                  return new RenderLum(manager);
+               }
             });
-            RenderingRegistry.registerEntityRenderingHandler(EntityLumAdapted.class, (IRenderFactory)new IRenderFactory<EntityLumAdapted>(){
-
-                public Render<? super EntityLumAdapted> createRenderFor(RenderManager manager) {
-                    return new RenderLumAdapted(manager);
-                }
+            RenderingRegistry.registerEntityRenderingHandler(EntityLumAdapted.class, new IRenderFactory<EntityLumAdapted>() {
+               public Render<? super EntityLumAdapted> createRenderFor(RenderManager manager) {
+                  return new RenderLumAdapted(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.hullEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityHull.class, (IRenderFactory)new IRenderFactory<EntityHull>(){
+         }
 
-                public Render<? super EntityHull> createRenderFor(RenderManager manager) {
-                    return new RenderHull(manager);
-                }
+         if (SRPConfigMobs.hullEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityHull.class, new IRenderFactory<EntityHull>() {
+               public Render<? super EntityHull> createRenderFor(RenderManager manager) {
+                  return new RenderHull(manager);
+               }
             });
-            RenderingRegistry.registerEntityRenderingHandler(EntityHullAdapted.class, (IRenderFactory)new IRenderFactory<EntityHullAdapted>(){
-
-                public Render<? super EntityHullAdapted> createRenderFor(RenderManager manager) {
-                    return new RenderHullAdapted(manager);
-                }
+            RenderingRegistry.registerEntityRenderingHandler(EntityHullAdapted.class, new IRenderFactory<EntityHullAdapted>() {
+               public Render<? super EntityHullAdapted> createRenderFor(RenderManager manager) {
+                  return new RenderHullAdapted(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.canraEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityCanra.class, (IRenderFactory)new IRenderFactory<EntityCanra>(){
+         }
 
-                public Render<? super EntityCanra> createRenderFor(RenderManager manager) {
-                    return new RenderCanra(manager);
-                }
+         if (SRPConfigMobs.canraEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityCanra.class, new IRenderFactory<EntityCanra>() {
+               public Render<? super EntityCanra> createRenderFor(RenderManager manager) {
+                  return new RenderCanra(manager);
+               }
             });
-            RenderingRegistry.registerEntityRenderingHandler(EntityCanraAdapted.class, (IRenderFactory)new IRenderFactory<EntityCanraAdapted>(){
-
-                public Render<? super EntityCanraAdapted> createRenderFor(RenderManager manager) {
-                    return new RenderCanraAdapted(manager);
-                }
+            RenderingRegistry.registerEntityRenderingHandler(EntityCanraAdapted.class, new IRenderFactory<EntityCanraAdapted>() {
+               public Render<? super EntityCanraAdapted> createRenderFor(RenderManager manager) {
+                  return new RenderCanraAdapted(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.noglaEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityNogla.class, (IRenderFactory)new IRenderFactory<EntityNogla>(){
+         }
 
-                public Render<? super EntityNogla> createRenderFor(RenderManager manager) {
-                    return new RenderNogla(manager);
-                }
+         if (SRPConfigMobs.noglaEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityNogla.class, new IRenderFactory<EntityNogla>() {
+               public Render<? super EntityNogla> createRenderFor(RenderManager manager) {
+                  return new RenderNogla(manager);
+               }
             });
-            RenderingRegistry.registerEntityRenderingHandler(EntityNoglaAdapted.class, (IRenderFactory)new IRenderFactory<EntityNoglaAdapted>(){
-
-                public Render<? super EntityNoglaAdapted> createRenderFor(RenderManager manager) {
-                    return new RenderNoglaAdapted(manager);
-                }
+            RenderingRegistry.registerEntityRenderingHandler(EntityNoglaAdapted.class, new IRenderFactory<EntityNoglaAdapted>() {
+               public Render<? super EntityNoglaAdapted> createRenderFor(RenderManager manager) {
+                  return new RenderNoglaAdapted(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.zetmoEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityBano.class, (IRenderFactory)new IRenderFactory<EntityBano>(){
+         }
 
-                public Render<? super EntityBano> createRenderFor(RenderManager manager) {
-                    return new RenderBano(manager);
-                }
+         if (SRPConfigMobs.zetmoEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityBano.class, new IRenderFactory<EntityBano>() {
+               public Render<? super EntityBano> createRenderFor(RenderManager manager) {
+                  return new RenderBano(manager);
+               }
             });
-            RenderingRegistry.registerEntityRenderingHandler(EntityBanoAdapted.class, (IRenderFactory)new IRenderFactory<EntityBanoAdapted>(){
-
-                public Render<? super EntityBanoAdapted> createRenderFor(RenderManager manager) {
-                    return new RenderBanoAdapted(manager);
-                }
+            RenderingRegistry.registerEntityRenderingHandler(EntityBanoAdapted.class, new IRenderFactory<EntityBanoAdapted>() {
+               public Render<? super EntityBanoAdapted> createRenderFor(RenderManager manager) {
+                  return new RenderBanoAdapted(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.shycoEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityShyco.class, (IRenderFactory)new IRenderFactory<EntityShyco>(){
+         }
 
-                public Render<? super EntityShyco> createRenderFor(RenderManager manager) {
-                    return new RenderShyco(manager);
-                }
+         if (SRPConfigMobs.shycoEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityShyco.class, new IRenderFactory<EntityShyco>() {
+               public Render<? super EntityShyco> createRenderFor(RenderManager manager) {
+                  return new RenderShyco(manager);
+               }
             });
-            RenderingRegistry.registerEntityRenderingHandler(EntityShycoAdapted.class, (IRenderFactory)new IRenderFactory<EntityShycoAdapted>(){
-
-                public Render<? super EntityShycoAdapted> createRenderFor(RenderManager manager) {
-                    return new RenderShycoAdapted(manager);
-                }
+            RenderingRegistry.registerEntityRenderingHandler(EntityShycoAdapted.class, new IRenderFactory<EntityShycoAdapted>() {
+               public Render<? super EntityShycoAdapted> createRenderFor(RenderManager manager) {
+                  return new RenderShycoAdapted(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.wymoEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityWymo.class, (IRenderFactory)new IRenderFactory<EntityWymo>(){
+         }
 
-                public Render<? super EntityWymo> createRenderFor(RenderManager manager) {
-                    return new RenderWymo(manager);
-                }
+         if (SRPConfigMobs.wymoEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityWymo.class, new IRenderFactory<EntityWymo>() {
+               public Render<? super EntityWymo> createRenderFor(RenderManager manager) {
+                  return new RenderWymo(manager);
+               }
             });
-            RenderingRegistry.registerEntityRenderingHandler(EntityWymoAdapted.class, (IRenderFactory)new IRenderFactory<EntityWymoAdapted>(){
-
-                public Render<? super EntityWymoAdapted> createRenderFor(RenderManager manager) {
-                    return new RenderWymoAdapted(manager);
-                }
+            RenderingRegistry.registerEntityRenderingHandler(EntityWymoAdapted.class, new IRenderFactory<EntityWymoAdapted>() {
+               public Render<? super EntityWymoAdapted> createRenderFor(RenderManager manager) {
+                  return new RenderWymoAdapted(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.ikiEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityIki.class, (IRenderFactory)new IRenderFactory<EntityIki>(){
+         }
 
-                public Render<? super EntityIki> createRenderFor(RenderManager manager) {
-                    return new RenderIki(manager);
-                }
+         if (SRPConfigMobs.ikiEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityIki.class, new IRenderFactory<EntityIki>() {
+               public Render<? super EntityIki> createRenderFor(RenderManager manager) {
+                  return new RenderIki(manager);
+               }
             });
-            RenderingRegistry.registerEntityRenderingHandler(EntityIkiAdapted.class, (IRenderFactory)new IRenderFactory<EntityIkiAdapted>(){
-
-                public Render<? super EntityIkiAdapted> createRenderFor(RenderManager manager) {
-                    return new RenderIkiAdapted(manager);
-                }
+            RenderingRegistry.registerEntityRenderingHandler(EntityIkiAdapted.class, new IRenderFactory<EntityIkiAdapted>() {
+               public Render<? super EntityIkiAdapted> createRenderFor(RenderManager manager) {
+                  return new RenderIkiAdapted(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.arachnidaEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityRanrac.class, (IRenderFactory)new IRenderFactory<EntityRanrac>(){
+         }
 
-                public Render<? super EntityRanrac> createRenderFor(RenderManager manager) {
-                    return new RenderRanrac(manager);
-                }
+         if (SRPConfigMobs.arachnidaEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityRanrac.class, new IRenderFactory<EntityRanrac>() {
+               public Render<? super EntityRanrac> createRenderFor(RenderManager manager) {
+                  return new RenderRanrac(manager);
+               }
             });
-            RenderingRegistry.registerEntityRenderingHandler(EntityRanracAdapted.class, (IRenderFactory)new IRenderFactory<EntityRanracAdapted>(){
-
-                public Render<? super EntityRanracAdapted> createRenderFor(RenderManager manager) {
-                    return new RenderRanracAdapted(manager);
-                }
+            RenderingRegistry.registerEntityRenderingHandler(EntityRanracAdapted.class, new IRenderFactory<EntityRanracAdapted>() {
+               public Render<? super EntityRanracAdapted> createRenderFor(RenderManager manager) {
+                  return new RenderRanracAdapted(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.zaaEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityZaa.class, (IRenderFactory)new IRenderFactory<EntityZaa>(){
+         }
 
-                public Render<? super EntityZaa> createRenderFor(RenderManager manager) {
-                    return new RenderZaa(manager);
-                }
+         if (SRPConfigMobs.zaaEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityZaa.class, new IRenderFactory<EntityZaa>() {
+               public Render<? super EntityZaa> createRenderFor(RenderManager manager) {
+                  return new RenderZaa(manager);
+               }
             });
-            RenderingRegistry.registerEntityRenderingHandler(EntityZaaAdapted.class, (IRenderFactory)new IRenderFactory<EntityZaaAdapted>(){
-
-                public Render<? super EntityZaaAdapted> createRenderFor(RenderManager manager) {
-                    return new RenderZaaAdapted(manager);
-                }
+            RenderingRegistry.registerEntityRenderingHandler(EntityZaaAdapted.class, new IRenderFactory<EntityZaaAdapted>() {
+               public Render<? super EntityZaaAdapted> createRenderFor(RenderManager manager) {
+                  return new RenderZaaAdapted(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.gimEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityGim.class, (IRenderFactory)new IRenderFactory<EntityGim>(){
+         }
 
-                public Render<? super EntityGim> createRenderFor(RenderManager manager) {
-                    return new RenderGim(manager);
-                }
+         if (SRPConfigMobs.gimEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityGim.class, new IRenderFactory<EntityGim>() {
+               public Render<? super EntityGim> createRenderFor(RenderManager manager) {
+                  return new RenderGim(manager);
+               }
             });
-            RenderingRegistry.registerEntityRenderingHandler(EntityGimAdapted.class, (IRenderFactory)new IRenderFactory<EntityGimAdapted>(){
-
-                public Render<? super EntityGimAdapted> createRenderFor(RenderManager manager) {
-                    return new RenderGimAdapted(manager);
-                }
+            RenderingRegistry.registerEntityRenderingHandler(EntityGimAdapted.class, new IRenderFactory<EntityGimAdapted>() {
+               public Render<? super EntityGimAdapted> createRenderFor(RenderManager manager) {
+                  return new RenderGimAdapted(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.alafhaEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityAlafha.class, (IRenderFactory)new IRenderFactory<EntityAlafha>(){
+         }
 
-                public Render<? super EntityAlafha> createRenderFor(RenderManager manager) {
-                    return new RenderAlafha(manager);
-                }
+         if (SRPConfigMobs.alafhaEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityAlafha.class, new IRenderFactory<EntityAlafha>() {
+               public Render<? super EntityAlafha> createRenderFor(RenderManager manager) {
+                  return new RenderAlafha(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.ganroEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityGanro.class, (IRenderFactory)new IRenderFactory<EntityGanro>(){
+         }
 
-                public Render<? super EntityGanro> createRenderFor(RenderManager manager) {
-                    return new RenderGanro(manager);
-                }
+         if (SRPConfigMobs.ganroEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityGanro.class, new IRenderFactory<EntityGanro>() {
+               public Render<? super EntityGanro> createRenderFor(RenderManager manager) {
+                  return new RenderGanro(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.angedEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityAnged.class, (IRenderFactory)new IRenderFactory<EntityAnged>(){
+         }
 
-                public Render<? super EntityAnged> createRenderFor(RenderManager manager) {
-                    return new RenderAnged(manager);
-                }
+         if (SRPConfigMobs.angedEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityAnged.class, new IRenderFactory<EntityAnged>() {
+               public Render<? super EntityAnged> createRenderFor(RenderManager manager) {
+                  return new RenderAnged(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.ombooEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityOmboo.class, (IRenderFactory)new IRenderFactory<EntityOmboo>(){
+         }
 
-                public Render<? super EntityOmboo> createRenderFor(RenderManager manager) {
-                    return new RenderOmboo(manager);
-                }
+         if (SRPConfigMobs.ombooEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityOmboo.class, new IRenderFactory<EntityOmboo>() {
+               public Render<? super EntityOmboo> createRenderFor(RenderManager manager) {
+                  return new RenderOmboo(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.rondEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityRond.class, (IRenderFactory)new IRenderFactory<EntityRond>(){
+         }
 
-                public Render<? super EntityRond> createRenderFor(RenderManager manager) {
-                    return new RenderRond(manager);
-                }
+         if (SRPConfigMobs.rondEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityRond.class, new IRenderFactory<EntityRond>() {
+               public Render<? super EntityRond> createRenderFor(RenderManager manager) {
+                  return new RenderRond(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.jinjoEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityJinjo.class, (IRenderFactory)new IRenderFactory<EntityJinjo>(){
+         }
 
-                public Render<? super EntityJinjo> createRenderFor(RenderManager manager) {
-                    return new RenderJinjo(manager);
-                }
+         if (SRPConfigMobs.jinjoEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityJinjo.class, new IRenderFactory<EntityJinjo>() {
+               public Render<? super EntityJinjo> createRenderFor(RenderManager manager) {
+                  return new RenderJinjo(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.flamEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityFlam.class, (IRenderFactory)new IRenderFactory<EntityFlam>(){
+         }
 
-                public Render<? super EntityFlam> createRenderFor(RenderManager manager) {
-                    return new RenderFlam(manager);
-                }
+         if (SRPConfigMobs.flamEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityFlam.class, new IRenderFactory<EntityFlam>() {
+               public Render<? super EntityFlam> createRenderFor(RenderManager manager) {
+                  return new RenderFlam(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.pheonEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityPheon.class, (IRenderFactory)new IRenderFactory<EntityPheon>(){
+         }
 
-                public Render<? super EntityPheon> createRenderFor(RenderManager manager) {
-                    return new RenderPheon(manager);
-                }
+         if (SRPConfigMobs.pheonEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityPheon.class, new IRenderFactory<EntityPheon>() {
+               public Render<? super EntityPheon> createRenderFor(RenderManager manager) {
+                  return new RenderPheon(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.elviaEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityElvia.class, (IRenderFactory)new IRenderFactory<EntityElvia>(){
+         }
 
-                public Render<? super EntityElvia> createRenderFor(RenderManager manager) {
-                    return new RenderElvia(manager);
-                }
+         if (SRPConfigMobs.elviaEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityElvia.class, new IRenderFactory<EntityElvia>() {
+               public Render<? super EntityElvia> createRenderFor(RenderManager manager) {
+                  return new RenderElvia(manager);
+               }
             });
-        }
-        RenderingRegistry.registerEntityRenderingHandler(EntityTenn.class, (IRenderFactory)new IRenderFactory<EntityTenn>(){
+         }
 
+         RenderingRegistry.registerEntityRenderingHandler(EntityTenn.class, new IRenderFactory<EntityTenn>() {
             public Render<? super EntityTenn> createRenderFor(RenderManager manager) {
-                return new RenderTenn(manager);
+               return new RenderTenn(manager);
             }
-        });
-        if (SRPConfigMobs.lenciaEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityLencia.class, (IRenderFactory)new IRenderFactory<EntityLencia>(){
-
-                public Render<? super EntityLencia> createRenderFor(RenderManager manager) {
-                    return new RenderLencia(manager);
-                }
+         });
+         if (SRPConfigMobs.lenciaEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityLencia.class, new IRenderFactory<EntityLencia>() {
+               public Render<? super EntityLencia> createRenderFor(RenderManager manager) {
+                  return new RenderLencia(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.vestaEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityVesta.class, (IRenderFactory)new IRenderFactory<EntityVesta>(){
+         }
 
-                public Render<? super EntityVesta> createRenderFor(RenderManager manager) {
-                    return new RenderVesta(manager);
-                }
+         if (SRPConfigMobs.vestaEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityVesta.class, new IRenderFactory<EntityVesta>() {
+               public Render<? super EntityVesta> createRenderFor(RenderManager manager) {
+                  return new RenderVesta(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.esorEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityEsor.class, (IRenderFactory)new IRenderFactory<EntityEsor>(){
+         }
 
-                public Render<? super EntityEsor> createRenderFor(RenderManager manager) {
-                    return new RenderEsor(manager);
-                }
+         if (SRPConfigMobs.esorEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityEsor.class, new IRenderFactory<EntityEsor>() {
+               public Render<? super EntityEsor> createRenderFor(RenderManager manager) {
+                  return new RenderEsor(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.orchEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityOrch.class, (IRenderFactory)new IRenderFactory<EntityOrch>(){
+         }
 
-                public Render<? super EntityOrch> createRenderFor(RenderManager manager) {
-                    return new RenderOrch(manager);
-                }
+         if (SRPConfigMobs.orchEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityOrch.class, new IRenderFactory<EntityOrch>() {
+               public Render<? super EntityOrch> createRenderFor(RenderManager manager) {
+                  return new RenderOrch(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.flogEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityFlog.class, (IRenderFactory)new IRenderFactory<EntityFlog>(){
+         }
 
-                public Render<? super EntityFlog> createRenderFor(RenderManager manager) {
-                    return new RenderFlog(manager);
-                }
+         if (SRPConfigMobs.flogEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityFlog.class, new IRenderFactory<EntityFlog>() {
+               public Render<? super EntityFlog> createRenderFor(RenderManager manager) {
+                  return new RenderFlog(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.heedEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityHeed.class, (IRenderFactory)new IRenderFactory<EntityHeed>(){
+         }
 
-                public Render<? super EntityHeed> createRenderFor(RenderManager manager) {
-                    return new RenderHeed(manager);
-                }
+         if (SRPConfigMobs.heedEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityHeed.class, new IRenderFactory<EntityHeed>() {
+               public Render<? super EntityHeed> createRenderFor(RenderManager manager) {
+                  return new RenderHeed(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.cruxaEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityCruxA.class, (IRenderFactory)new IRenderFactory<EntityCruxA>(){
+         }
 
-                public Render<? super EntityCruxA> createRenderFor(RenderManager manager) {
-                    return new RenderCruxA(manager);
-                }
+         if (SRPConfigMobs.cruxaEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityCruxA.class, new IRenderFactory<EntityCruxA>() {
+               public Render<? super EntityCruxA> createRenderFor(RenderManager manager) {
+                  return new RenderCruxA(manager);
+               }
             });
-        }
-        if (SRPConfigMobs.cruxaEnabled) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityCruxB.class, (IRenderFactory)new IRenderFactory<EntityCruxB>(){
+         }
 
-                public Render<? super EntityCruxB> createRenderFor(RenderManager manager) {
-                    return new RenderCruxB(manager);
-                }
+         if (SRPConfigMobs.cruxaEnabled) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityCruxB.class, new IRenderFactory<EntityCruxB>() {
+               public Render<? super EntityCruxB> createRenderFor(RenderManager manager) {
+                  return new RenderCruxB(manager);
+               }
             });
-        }
-        RenderingRegistry.registerEntityRenderingHandler(EntityProjectileWebball.class, (IRenderFactory)new IRenderFactory<EntityProjectileWebball>(){
+         }
 
+         RenderingRegistry.registerEntityRenderingHandler(EntityProjectileWebball.class, new IRenderFactory<EntityProjectileWebball>() {
             public Render<EntityProjectileWebball> createRenderFor(RenderManager manager) {
-                return new SRPProjectile(manager, 0.5f, new ResourceLocation("srparasites", "textures/entity/projectile/webball.png"));
+               return new SRPProjectile(manager, 0.5F, new ResourceLocation("srparasites", "textures/entity/projectile/webball.png"));
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityProjectileSpineball.class, (IRenderFactory)new IRenderFactory<EntityProjectileSpineball>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityProjectileSpineball.class, new IRenderFactory<EntityProjectileSpineball>() {
             public Render<EntityProjectileSpineball> createRenderFor(RenderManager manager) {
-                return new SRPProjectile(manager, 0.5f, new ResourceLocation("srparasites", "textures/entity/projectile/spineball.png"));
+               return new SRPProjectile(manager, 0.5F, new ResourceLocation("srparasites", "textures/entity/projectile/spineball.png"));
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityProjectileNade.class, (IRenderFactory)new IRenderFactory<EntityProjectileNade>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityProjectileNade.class, new IRenderFactory<EntityProjectileNade>() {
             public Render<EntityProjectileNade> createRenderFor(RenderManager manager) {
-                return new SRPProjectile(manager, 0.5f, new ResourceLocation("srparasites", "textures/entity/projectile/nade.png"));
+               return new SRPProjectile(manager, 0.5F, new ResourceLocation("srparasites", "textures/entity/projectile/nade.png"));
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityProjectileAlafhaBall.class, (IRenderFactory)new IRenderFactory<EntityProjectileAlafhaBall>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityProjectileAlafhaBall.class, new IRenderFactory<EntityProjectileAlafhaBall>() {
             public Render<EntityProjectileAlafhaBall> createRenderFor(RenderManager manager) {
-                return new SRPProjectile(manager, 0.5f, new ResourceLocation("srparasites", "textures/entity/projectile/alafha.png"));
+               return new SRPProjectile(manager, 0.5F, new ResourceLocation("srparasites", "textures/entity/projectile/alafha.png"));
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityProjectileAngedball.class, (IRenderFactory)new IRenderFactory<EntityProjectileAngedball>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityProjectileHebluLight.class, new IRenderFactory<EntityProjectileHebluLight>() {
+            public Render<? super EntityProjectileHebluLight> createRenderFor(RenderManager manager) {
+               return new RenderHebluLight(manager);
+            }
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityProjectileAngedball.class, new IRenderFactory<EntityProjectileAngedball>() {
             public Render<EntityProjectileAngedball> createRenderFor(RenderManager manager) {
-                return new SRPProjectile(manager, 0.5f, new ResourceLocation("srparasites", "textures/entity/projectile/anged.png"));
+               return new SRPProjectile(manager, 0.5F, new ResourceLocation("srparasites", "textures/entity/projectile/anged.png"));
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityProjectilePullball.class, (IRenderFactory)new IRenderFactory<EntityProjectilePullball>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityProjectilePullball.class, new IRenderFactory<EntityProjectilePullball>() {
             public Render<EntityProjectilePullball> createRenderFor(RenderManager manager) {
-                return new SRPProjectile(manager, 0.5f, new ResourceLocation("srparasites", "textures/entity/projectile/pullingweb.png"));
+               return new SRPProjectile(manager, 0.5F, new ResourceLocation("srparasites", "textures/entity/projectile/pullingweb.png"));
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityProjectileAncientball.class, (IRenderFactory)new IRenderFactory<EntityProjectileAncientball>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityProjectileAncientball.class, new IRenderFactory<EntityProjectileAncientball>() {
             public Render<EntityProjectileAncientball> createRenderFor(RenderManager manager) {
-                return new SRPProjectile(manager, 0.5f, new ResourceLocation("srparasites", "textures/entity/projectile/ancient.png"));
+               return new SRPProjectile(manager, 0.5F, new ResourceLocation("srparasites", "textures/entity/projectile/ancient.png"));
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityThrowableAntiInfestedBlock.class, (IRenderFactory)new IRenderFactory<EntityThrowableAntiInfestedBlock>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityThrowableAntiInfestedBlock.class, new IRenderFactory<EntityThrowableAntiInfestedBlock>() {
             public Render<EntityThrowableAntiInfestedBlock> createRenderFor(RenderManager manager) {
-                return new SRPProjectile(manager, 0.5f, new ResourceLocation("srparasites", "textures/entity/projectile/cleaner.png"));
+               return new SRPProjectile(manager, 0.5F, new ResourceLocation("srparasites", "textures/entity/projectile/cleaner.png"));
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityProjectileBiomass.class, (IRenderFactory)new IRenderFactory<EntityProjectileBiomass>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityProjectileBiomass.class, new IRenderFactory<EntityProjectileBiomass>() {
             public Render<EntityProjectileBiomass> createRenderFor(RenderManager manager) {
-                return new SRPProjectile(manager, 0.5f, new ResourceLocation("srparasites", "textures/entity/projectile/biomass.png"));
+               return new SRPProjectile(manager, 0.5F, new ResourceLocation("srparasites", "textures/entity/projectile/biomass.png"));
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityProjectileDragonE.class, (IRenderFactory)new IRenderFactory<EntityProjectileDragonE>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityProjectileDragonE.class, new IRenderFactory<EntityProjectileDragonE>() {
             public Render<EntityProjectileDragonE> createRenderFor(RenderManager manager) {
-                return new SRPProjectile(manager, 0.5f, new ResourceLocation("srparasites", "textures/entity/projectile/dragone.png"));
+               return new SRPProjectile(manager, 0.5F, new ResourceLocation("srparasites", "textures/entity/projectile/dragone.png"));
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityProjectileLenciaBall.class, (IRenderFactory)new IRenderFactory<EntityProjectileLenciaBall>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityProjectileLenciaBall.class, new IRenderFactory<EntityProjectileLenciaBall>() {
             public Render<EntityProjectileLenciaBall> createRenderFor(RenderManager manager) {
-                return new SRPProjectile(manager, 0.5f, new ResourceLocation("srparasites", "textures/entity/projectile/lencia.png"));
+               return new SRPProjectile(manager, 0.5F, new ResourceLocation("srparasites", "textures/entity/projectile/lencia.png"));
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityProjectileElviaBall.class, (IRenderFactory)new IRenderFactory<EntityProjectileElviaBall>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityProjectileElviaBall.class, new IRenderFactory<EntityProjectileElviaBall>() {
             public Render<EntityProjectileElviaBall> createRenderFor(RenderManager manager) {
-                return new SRPProjectile(manager, 0.5f, new ResourceLocation("srparasites", "textures/entity/projectile/elvia.png"));
+               return new SRPProjectile(manager, 0.5F, new ResourceLocation("srparasites", "textures/entity/projectile/elvia.png"));
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityProjectileEffects.class, (IRenderFactory)new IRenderFactory<EntityProjectileEffects>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityProjectileEffects.class, new IRenderFactory<EntityProjectileEffects>() {
             public Render<EntityProjectileEffects> createRenderFor(RenderManager manager) {
-                return new SRPProjectile(manager, 0.5f, new ResourceLocation("srparasites", "textures/entity/projectile/elvia.png"));
+               return new SRPProjectile(manager, 0.5F, new ResourceLocation("srparasites", "textures/entity/projectile/elvia.png"));
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityTendril.class, (IRenderFactory)new IRenderFactory<EntityTendril>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityTendril.class, new IRenderFactory<EntityTendril>() {
             public Render<? super EntityTendril> createRenderFor(RenderManager manager) {
-                return new RenderTendril(manager);
+               return new RenderTendril(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityDamage.class, (IRenderFactory)new IRenderFactory<EntityDamage>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityDamage.class, new IRenderFactory<EntityDamage>() {
             public Render<? super EntityDamage> createRenderFor(RenderManager manager) {
-                return new RenderDamage(manager);
+               return new RenderDamage(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityBomb.class, (IRenderFactory)new IRenderFactory<EntityBomb>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityBomb.class, new IRenderFactory<EntityBomb>() {
             public Render<? super EntityBomb> createRenderFor(RenderManager manager) {
-                return new RenderBomb(manager);
+               return new RenderBomb(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityBiomass.class, (IRenderFactory)new IRenderFactory<EntityBiomass>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityBiomass.class, new IRenderFactory<EntityBiomass>() {
             public Render<? super EntityBiomass> createRenderFor(RenderManager manager) {
-                return new RenderBiomass(manager);
+               return new RenderBiomass(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityGore.class, (IRenderFactory)new IRenderFactory<EntityGore>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityGore.class, new IRenderFactory<EntityGore>() {
             public Render<? super EntityGore> createRenderFor(RenderManager manager) {
-                return new RenderGore(manager);
+               return new RenderGore(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityProjectileHomming.class, (IRenderFactory)new IRenderFactory<EntityProjectileHomming>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityProjectileHomming.class, new IRenderFactory<EntityProjectileHomming>() {
             public Render<? super EntityProjectileHomming> createRenderFor(RenderManager manager) {
-                return new RenderProjectileHomming(manager);
+               return new RenderProjectileHomming(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityBody.class, (IRenderFactory)new IRenderFactory<EntityBody>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityBody.class, new IRenderFactory<EntityBody>() {
             public Render<? super EntityBody> createRenderFor(RenderManager manager) {
-                return new RenderEntityBody(manager);
+               return new RenderEntityBody(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityBodyModel.class, (IRenderFactory)new IRenderFactory<EntityBodyModel>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityBodyModel.class, new IRenderFactory<EntityBodyModel>() {
             public Render<? super EntityBodyModel> createRenderFor(RenderManager manager) {
-                return new RenderEntityBodyModel(manager);
+               return new RenderEntityBodyModel(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityToxicCloud.class, (IRenderFactory)new IRenderFactory<EntityToxicCloud>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityToxicCloud.class, new IRenderFactory<EntityToxicCloud>() {
             public Render<? super EntityToxicCloud> createRenderFor(RenderManager manager) {
-                return new RenderTCloud(manager);
+               return new RenderTCloud(manager);
             }
-        });
-        if (!SRPConfigSystems.oneMindDebug) {
-            RenderingRegistry.registerEntityRenderingHandler(EntityParasiticScent.class, (IRenderFactory)new IRenderFactory<EntityParasiticScent>(){
-
-                public Render<? super EntityParasiticScent> createRenderFor(RenderManager manager) {
-                    return new RenderScent(manager);
-                }
+         });
+         if (!SRPConfigSystems.oneMindDebug) {
+            RenderingRegistry.registerEntityRenderingHandler(EntityParasiticScent.class, new IRenderFactory<EntityParasiticScent>() {
+               public Render<? super EntityParasiticScent> createRenderFor(RenderManager manager) {
+                  return new RenderScent(manager);
+               }
             });
-        }
-        RenderingRegistry.registerEntityRenderingHandler(EntitySource.class, (IRenderFactory)new IRenderFactory<EntitySource>(){
+         }
 
+         RenderingRegistry.registerEntityRenderingHandler(EntitySource.class, new IRenderFactory<EntitySource>() {
             public Render<? super EntitySource> createRenderFor(RenderManager manager) {
-                return new RenderSource(manager);
+               return new RenderSource(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityOrbScary.class, (IRenderFactory)new IRenderFactory<EntityOrbScary>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityOrbScary.class, new IRenderFactory<EntityOrbScary>() {
             public Render<? super EntityOrbScary> createRenderFor(RenderManager manager) {
-                return new RenderOrbScary(manager);
+               return new RenderOrbScary(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityOrbVoid.class, (IRenderFactory)new IRenderFactory<EntityOrbVoid>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityOrbVoid.class, new IRenderFactory<EntityOrbVoid>() {
             public Render<? super EntityOrbVoid> createRenderFor(RenderManager manager) {
-                return new RenderOrbVoid(manager);
+               return new RenderOrbVoid(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityOrbBoom.class, (IRenderFactory)new IRenderFactory<EntityOrbBoom>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityOrbBoom.class, new IRenderFactory<EntityOrbBoom>() {
             public Render<? super EntityOrbBoom> createRenderFor(RenderManager manager) {
-                return new RenderOrbBoom(manager);
+               return new RenderOrbBoom(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityNade.class, (IRenderFactory)new IRenderFactory<EntityNade>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityNade.class, new IRenderFactory<EntityNade>() {
             public Render<? super EntityNade> createRenderFor(RenderManager manager) {
-                return new RenderNade(manager);
+               return new RenderNade(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityMeteor.class, (IRenderFactory)new IRenderFactory<EntityMeteor>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityMeteor.class, new IRenderFactory<EntityMeteor>() {
             public Render<? super EntityMeteor> createRenderFor(RenderManager manager) {
-                return new RenderMeteor(manager);
+               return new RenderMeteor(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityWave.class, (IRenderFactory)new IRenderFactory<EntityWave>(){
-
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityWave.class, new IRenderFactory<EntityWave>() {
             public Render<? super EntityWave> createRenderFor(RenderManager manager) {
-                return new RenderWave(manager);
+               return new RenderWave(manager);
             }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityWaveShock.class, RenderWaveShock::new);
-        RenderingRegistry.registerEntityRenderingHandler(EntityRemain.class, RenderRemain::new);
-        RenderingRegistry.registerEntityRenderingHandler(EntityHitbox.class, HitboxNoRender::new);
-    }
+         });
+         RenderingRegistry.registerEntityRenderingHandler(EntityWaveShock.class, RenderWaveShock::new);
+         RenderingRegistry.registerEntityRenderingHandler(EntityRemain.class, RenderRemain::new);
+         RenderingRegistry.registerEntityRenderingHandler(EntityHitbox.class, HitboxNoRender::new);
+      }
+   }
 }
-

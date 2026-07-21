@@ -2,7 +2,7 @@
   "parent": "srparasites:kill_deterrent",
   "display": {
     "icon": {
-      "item": "srparasites:itemmobspawner_kirin"
+      "item": "srparasites:cosmic_structural_failure_icon"
     },
     "title": {
       "translate": "advancement.srparasites.cosmic_structural_failure.title"

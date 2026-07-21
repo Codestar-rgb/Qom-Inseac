@@ -2,7 +2,7 @@
   "parent": "srparasites:secret_root",
   "display": {
     "icon": {
-      "item": "srparasites:itemmobspawner_gothol"
+      "item": "srparasites:pearl"
     },
     "title": {
       "translate": "advancements.srparasites.controversial.title"

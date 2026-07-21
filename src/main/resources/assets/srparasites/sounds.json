@@ -1,7 +1,57 @@
 {
+  "effect.rage": {
+    "category": "hostile",
+    "sounds": [
+      {"name":"srparasites:misc/rage1"},
+      {"name":"srparasites:misc/rage2"},
+      {"name":"srparasites:misc/rage3"},
+      {"name":"srparasites:misc/rage1","pitch":0.95},
+      {"name":"srparasites:misc/rage2","pitch":0.95},
+      {"name":"srparasites:misc/rage3","pitch":0.95},
+      {"name":"srparasites:misc/rage1","pitch":1.05},
+      {"name":"srparasites:misc/rage2","pitch":1.05},
+      {"name":"srparasites:misc/rage3","pitch":1.05}
+ ]
+  },
+    "celestial.dark_days.start": {
+    "category": "ambient",
+    "sounds": [
+      "srparasites:celestial/dark_days_start"
+    ]
+  },
+  "celestial.dark_days.ending": {
+    "category": "ambient",
+    "sounds": [
+      "srparasites:celestial/dark_days_ending"
+    ]
+  },
+  "celestial.dark_days.rumble": {
+    "category": "ambient",
+    "sounds": [
+      {
+        "name": "srparasites:celestial/dark_days_rumble",
+        "stream": true
+      }
+    ]
+  },
+  "summoner.resurrect": {
+    "category": "hostile",
+    "subtitle": "subtitles.summoner.resurrect",
+    "sounds": [
+      {"name":"srparasites:misc/resurrect1"},
+      {"name":"srparasites:misc/resurrect2"},
+      {"name":"srparasites:misc/resurrect3"},
+      {"name":"srparasites:misc/resurrect1","pitch":0.95},
+      {"name":"srparasites:misc/resurrect2","pitch":0.95},
+      {"name":"srparasites:misc/resurrect3","pitch":0.95},
+      {"name":"srparasites:misc/resurrect1","pitch":1.05},
+      {"name":"srparasites:misc/resurrect2","pitch":1.05},
+      {"name":"srparasites:misc/resurrect3","pitch":1.05}
+ ]
+  },
   "compendium.unlock.item": {
     "category": "player",
-    "subtitle": "subtitles.item.unlocked",
+    "subtitle": "subtitles.compendium.unlocked",
     "sounds": [
       "srparasites:bestiary/item/unlock1",
       "srparasites:bestiary/item/unlock2",
@@ -15,7 +65,7 @@
   },
   "compendium.unlock.block": {
     "category": "player",
-    "subtitle": "subtitles.block.unlocked",
+    "subtitle": "subtitles.compendium.unlocked",
     "sounds": [
       "srparasites:bestiary/block/unlock1",
       "srparasites:bestiary/block/unlock2",
@@ -29,7 +79,7 @@
   },
   "compendium.unlock.celestial": {
     "category": "player",
-    "subtitle": "subtitles.celestial.unlocked",
+    "subtitle": "subtitles.compendium.unlocked",
     "sounds": [
       "srparasites:bestiary/celestial/unlock1",
       "srparasites:bestiary/celestial/unlock2",
@@ -43,7 +93,7 @@
   },
   "compendium.unlock.entity": {
     "category": "player",
-    "subtitle": "subtitles.entity.unlocked",
+    "subtitle": "subtitles.compendium.unlocked",
     "sounds": [
       "srparasites:bestiary/entity/unlock1",
       "srparasites:bestiary/entity/unlock2",
@@ -73,15 +123,33 @@
     "category": "player",
     "subtitle": "subtitles.shrimp.eat",
     "sounds": [
-      {"name": "srparasites:item/shrimp_eat1", "pitch":1},
-      {"name": "srparasites:item/shrimp_eat2", "pitch":1},
-      {"name": "srparasites:item/shrimp_eat3", "pitch":1},
-      {"name": "srparasites:item/shrimp_eat1", "pitch":1.1},
-      {"name": "srparasites:item/shrimp_eat2", "pitch":1.1},
-      {"name": "srparasites:item/shrimp_eat3", "pitch":1.1},
-      {"name": "srparasites:item/shrimp_eat1", "pitch":0.9},
-      {"name": "srparasites:item/shrimp_eat2", "pitch":0.9},
-      {"name": "srparasites:item/shrimp_eat3", "pitch":0.9}
+      {
+        "name": "srparasites:item/shrimp_eat1","pitch": 1
+      },
+   {
+        "name": "srparasites:item/shrimp_eat2","pitch": 1
+      },
+   {
+        "name": "srparasites:item/shrimp_eat3","pitch": 1
+      },
+   {
+        "name": "srparasites:item/shrimp_eat1","pitch": 1.1
+   },
+      {
+        "name": "srparasites:item/shrimp_eat2","pitch": 1.1
+   },
+      {
+        "name": "srparasites:item/shrimp_eat3","pitch": 1.1
+   },
+      {
+        "name": "srparasites:item/shrimp_eat1","pitch": 0.9
+   },
+      {
+        "name": "srparasites:item/shrimp_eat2","pitch": 0.9
+   },
+      {
+        "name": "srparasites:item/shrimp_eat3","pitch": 0.9
+   }
     ]
   },
   "vengeance.attack.impact": {
@@ -114,7 +182,7 @@
   },
   "vengeance.attack.rock": {
     "category": "player",
-    "subtitle": "subtitles.vengeance.rock",
+    "subtitle": "subtitles.vengeance.impact",
     "sounds": [
       "srparasites:item/vengeance_rock_impact"
     ]
@@ -132,7 +200,10 @@
     "subtitle": "subtitles.orb.idle",
     "distance": 30,
     "sounds": [
-      { "name": "srparasites:misc/orb_attack_idle", "volume": 0.8 }
+      {
+        "name": "srparasites:misc/orb_attack_idle",
+        "volume": 0.8
+      }
     ]
   },
   "attack.ranrac": {
@@ -160,9 +231,10 @@
     ]
   },
   "attack.wymo": {
+    "subtitle": "subtitles.tozoon.special",
     "category": "hostile",
     "sounds": [
-      "srparasites:ada_tozoon_special"
+      "srparasites:adapted/tozoon/special"
     ]
   },
   "attack.gim": {
@@ -248,41 +320,46 @@
     ]
   },
   "zaa.dig": {
+    "subtitle": "subtitles.dig",
     "category": "hostile",
     "sounds": [
-      "srparasites:prim_burrower_digging_1",
-      "srparasites:prim_burrower_digging_2",
-      "srparasites:prim_burrower_digging_3"
+      "srparasites:mob/dig/digging1",
+      "srparasites:mob/dig/digging2",
+      "srparasites:mob/dig/digging3"
     ]
   },
   "wymo.death": {
+    "subtitle": "subtitles.tozoon.death",
     "category": "hostile",
     "sounds": [
       "srparasites:prim_tozoon_death"
     ]
   },
   "wymo.hurt": {
+    "subtitle": "subtitles.tozoon.hurt",
     "category": "hostile",
     "sounds": [
-      "srparasites:prim_tozoon_hurt_1",
-      "srparasites:prim_tozoon_hurt_2",
-      "srparasites:prim_tozoon_hurt_3"
+      "srparasites:primitive/tozoon/hurt1",
+      "srparasites:primitive/tozoon/hurt2",
+      "srparasites:primitive/tozoon/hurt3"
     ]
   },
   "wymo.growl": {
+    "subtitle": "subtitles.tozoon.idle",
     "category": "hostile",
     "sounds": [
-      "srparasites:prim_tozoon_living_1",
-      "srparasites:prim_tozoon_living_2",
-      "srparasites:prim_tozoon_living_3"
+      "srparasites:primitive/tozoon/idle1",
+      "srparasites:primitive/tozoon/idle2",
+      "srparasites:primitive/tozoon/idle3"
     ]
   },
   "wymo.dig": {
+    "subtitle": "subtitles.dig",
     "category": "hostile",
     "sounds": [
-      "srparasites:prim_tozoon_digging_1",
-      "srparasites:prim_tozoon_digging_2",
-      "srparasites:prim_tozoon_digging_3"
+      "srparasites:mob/dig/digging1",
+      "srparasites:mob/dig/digging2",
+      "srparasites:mob/dig/digging3"
     ]
   },
   "infectedhuman.death": {
@@ -296,12 +373,30 @@
     "category": "hostile",
     "subtitle": "subtitles.assimhumanliving",
     "sounds": [
-      {"name":"srparasites:mob/assimilated/human/idle1","weight": 1000},
-      {"name":"srparasites:mob/assimilated/human/idle2","weight": 1000},
-      {"name":"srparasites:mob/assimilated/human/idle3","weight": 1000},
-      {"name":"srparasites:mob/assimilated/human/idle4","weight": 1000},
-      {"name":"srparasites:mob/assimilated/human/idle5","weight": 1000},
-      {"name":"srparasites:mob/assimilated/human/old_idle","weight": 1}
+      {
+        "name": "srparasites:mob/assimilated/human/idle1",
+        "weight": 1000
+      },
+      {
+        "name": "srparasites:mob/assimilated/human/idle2",
+        "weight": 1000
+      },
+      {
+        "name": "srparasites:mob/assimilated/human/idle3",
+        "weight": 1000
+      },
+      {
+        "name": "srparasites:mob/assimilated/human/idle4",
+        "weight": 1000
+      },
+      {
+        "name": "srparasites:mob/assimilated/human/idle5",
+        "weight": 1000
+      },
+      {
+        "name": "srparasites:mob/assimilated/human/old_idle",
+        "weight": 1
+      }
     ]
   },
   "infectedhuman.hurt": {
@@ -349,7 +444,7 @@
       }
     ]
   },
-    "assenderman.death": {
+  "assenderman.death": {
     "category": "hostile",
     "subtitle": "subtitles.assendermandeath",
     "sounds": [
@@ -490,7 +585,7 @@
   },
   "infectedhorse.sa2": {
     "category": "hostile",
-    "subtitle": "subtitles.mobexplodes",
+    "subtitle": "subtitles.entity.generic.explode",
     "sounds": [
       "srparasites:assimilatedhorseexplode"
     ]
@@ -648,11 +743,12 @@
   },
   "small.step": {
     "category": "hostile",
-    "subtitle": "subtitles.assimspidersteps",
+    "subtitle": "subtitles.block.generic.footsteps",
     "sounds": [
-      "srparasites:smollegs1",
-      "srparasites:smollegs2",
-      "srparasites:smollegs3"
+      "srparasites:mob/step/small/step1",
+      "srparasites:mob/step/small/step2",
+      "srparasites:mob/step/small/step3",
+      "srparasites:mob/step/small/step4"
     ]
   },
   "infectedspider.step": {
@@ -734,58 +830,65 @@
     "category": "hostile",
     "subtitle": "subtitles.infectedfleshmelt",
     "sounds": [
-      "srparasites:infected_melting"
+      "srparasites:mob/crude/flesh/infected_melting"
     ]
   },
   "hiblaze.fire": {
     "category": "hostile",
+    "subtitle": "subtitles.hi_blaze.shoot",
     "sounds": [
-      "srparasites:hijackedblazeshoot1"
+      "srparasites:mob/hijacked/blaze/shoot"
     ]
   },
   "hiblaze.death": {
     "category": "hostile",
+    "subtitle": "subtitles.hi_blaze.death",
     "sounds": [
-      "srparasites:hijackedblazedeath1"
+      "srparasites:mob/hijacked/blaze/death"
     ]
   },
   "hiblaze.growl": {
     "category": "hostile",
+    "subtitle": "subtitles.hi_blaze.idle",
     "sounds": [
-      "srparasites:hijackedblazeliving1",
-      "srparasites:hijackedblazeliving2",
-      "srparasites:hijackedblazeliving3"
+      "srparasites:mob/hijacked/blaze/idle1",
+      "srparasites:mob/hijacked/blaze/idle2",
+      "srparasites:mob/hijacked/blaze/idle3"
     ]
   },
   "hiblaze.hurt": {
     "category": "hostile",
+    "subtitle": "subtitles.hi_blaze.hurt",
     "sounds": [
-      "srparasites:hijackedblazehurt1",
-      "srparasites:hijackedblazehurt2",
-      "srparasites:hijackedblazehurt3",
-      "srparasites:hijackedblazehurt4"
+      "srparasites:mob/hijacked/blaze/hurt1",
+      "srparasites:mob/hijacked/blaze/hurt2",
+      "srparasites:mob/hijacked/blaze/hurt3",
+      "srparasites:mob/hijacked/blaze/hurt4"
     ]
   },
   "higolem.death": {
     "category": "hostile",
+    "subtitle": "subtitles.hi_golem.death",
     "sounds": [
-      "srparasites:hijackedgolemdeath"
+      "srparasites:mob/hijacked/golem/death"
     ]
   },
   "higolem.growl": {
     "category": "hostile",
+    "subtitle": "subtitles.hi_golem.idle",
     "sounds": [
-      "srparasites:hijackedgolemliving1",
-      "srparasites:hijackedgolemliving2",
-      "srparasites:hijackedgolemliving3"
+      "srparasites:mob/hijacked/golem/idle1",
+      "srparasites:mob/hijacked/golem/idle2",
+      "srparasites:mob/hijacked/golem/idle3"
     ]
   },
   "higolem.hurt": {
     "category": "hostile",
+    "subtitle": "subtitles.hi_golem.hurt",
     "sounds": [
-      "srparasites:hijackedgolemhurt1",
-      "srparasites:hijackedgolemhurt2",
-      "srparasites:hijackedgolemhurt3"
+      "srparasites:mob/hijacked/golem/hurt1",
+      "srparasites:mob/hijacked/golem/hurt2",
+      "srparasites:mob/hijacked/golem/hurt3"
     ]
   },
   "canra.death": {
@@ -1107,34 +1210,38 @@
     ]
   },
   "awymo.death": {
+    "subtitle": "subtitles.tozoon.death",
     "category": "hostile",
     "sounds": [
-      "srparasites:ada_tozoon_death"
+      "srparasites:mob/adapted/tozoon/death"
     ]
   },
   "awymo.growl": {
+    "subtitle": "subtitles.tozoon.idle",
     "category": "hostile",
     "sounds": [
-      "srparasites:ada_tozoon_living_1",
-      "srparasites:ada_tozoon_living_2",
-      "srparasites:ada_tozoon_living_3",
-      "srparasites:ada_tozoon_living_4"
+      "srparasites:mob/adapted/tozoon/idle1",
+      "srparasites:mob/adapted/tozoon/idle2",
+      "srparasites:mob/adapted/tozoon/idle3",
+      "srparasites:mob/adapted/tozoon/idle4"
     ]
   },
   "awymo.hurt": {
+    "subtitle": "subtitles.tozoon.hurt",
     "category": "hostile",
     "sounds": [
-      "srparasites:ada_tozoon_hurt_1",
-      "srparasites:ada_tozoon_hurt_2",
-      "srparasites:ada_tozoon_hurt_3"
+      "srparasites:mob/adapted/tozoon/hurt1",
+      "srparasites:mob/adapted/tozoon/hurt2",
+      "srparasites:mob/adapted/tozoon/hurt3"
     ]
   },
   "awymo.dig": {
+    "subtitle": "subtitles.dig",
     "category": "hostile",
     "sounds": [
-      "srparasites:ada_tozoon_digging_1",
-      "srparasites:ada_tozoon_digging_2",
-      "srparasites:ada_tozoon_digging_3"
+      "srparasites:mob/dig/digging1",
+      "srparasites:mob/dig/digging2",
+      "srparasites:mob/dig/digging3"
     ]
   },
   "azaa.death": {
@@ -1161,11 +1268,12 @@
     ]
   },
   "azaa.dig": {
+    "subtitle": "subtitles.dig",
     "category": "hostile",
     "sounds": [
-      "srparasites:ada_burrower_digging_1",
-      "srparasites:ada_burrower_digging_2",
-      "srparasites:ada_burrower_digging_3"
+      "srparasites:mob/dig/digging1",
+      "srparasites:mob/dig/digging2",
+      "srparasites:mob/dig/digging3"
     ]
   },
   "azetmo.death": {
@@ -1246,21 +1354,32 @@
     "category": "hostile",
     "subtitle": "subtitles.buglinliving",
     "sounds": [
-      "srparasites:mob/pure/buglin/idle"
+      "srparasites:mob/pure/buglin/idle1",
+      "srparasites:mob/pure/buglin/idle2",
+      "srparasites:mob/pure/buglin/idle3"
     ]
   },
   "lodo.hurt": {
     "category": "hostile",
     "subtitle": "subtitles.buglinhurt",
     "sounds": [
-      "srparasites:mob/pure/buglin/hurt"
+      "srparasites:mob/pure/buglin/hurt1",
+      "srparasites:mob/pure/buglin/hurt2",
+      "srparasites:mob/pure/buglin/hurt3"
     ]
   },
   "lodo.mudo": {
     "category": "hostile",
-    "subtitle": "subtitles.buglinhurt",
+    "subtitle": "subtitles.buglingrow",
     "sounds": [
       "srparasites:mob/pure/buglin/lodo_mudo"
+    ]
+  },
+  "lodo.emerge": {
+    "category": "block",
+    "subtitle": "subtitles.buglinemerge",
+    "sounds": [
+      "srparasites:mob/pure/buglin/emerge"
     ]
   },
   "carrier.death": {
@@ -1365,42 +1484,42 @@
     "category": "hostile",
     "subtitle": "subtitles.hostdeath",
     "sounds": [
-      "srparasites:host_death"
+      "srparasites:mob/crude/host/death"
     ]
   },
   "host.underground": {
     "category": "hostile",
-    "subtitle": "subtitles.hostliving",
+    "subtitle": "subtitles.hostidle",
     "sounds": [
-      "srparasites:host_burrow_1",
-      "srparasites:host_burrow_2",
-      "srparasites:host_burrow_3"
+      "srparasites:mob/crude/host/burrow1",
+      "srparasites:mob/crude/host/burrow2",
+      "srparasites:mob/crude/host/burrow3"
     ]
   },
   "host.growl": {
     "category": "hostile",
-    "subtitle": "subtitles.hostliving",
+    "subtitle": "subtitles.hostidle",
     "sounds": [
-      "srparasites:hostliving1",
-      "srparasites:hostliving2"
+      "srparasites:mob/crude/host/idle1",
+      "srparasites:mob/crude/host/idle2"
     ]
   },
   "host.hurt": {
     "category": "hostile",
     "subtitle": "subtitles.hosthurt",
     "sounds": [
-      "srparasites:host_hurt_1",
-      "srparasites:host_hurt_2",
-      "srparasites:host_hurt_3"
+      "srparasites:mob/crude/host/hurt1",
+      "srparasites:mob/crude/host/hurt2",
+      "srparasites:mob/crude/host/hurt3"
     ]
   },
   "host.em": {
     "category": "hostile",
-    "subtitle": "subtitles.hostmerge",
+    "subtitle": "subtitles.hostemerge",
     "sounds": [
-      "srparasites:host_reveal_1",
-      "srparasites:host_reveal_2",
-      "srparasites:host_reveal_3"
+      "srparasites:mob/crude/host/reveal1",
+      "srparasites:mob/crude/host/reveal2",
+      "srparasites:mob/crude/host/reveal3"
     ]
   },
   "done.death": {
@@ -1453,11 +1572,12 @@
     ]
   },
   "quac.dig": {
+    "subtitle": "subtitles.dig",
     "category": "hostile",
     "sounds": [
-      "srparasites:worm_carrier_emerge_1",
-      "srparasites:worm_carrier_emerge_2",
-      "srparasites:worm_carrier_emerge_3"
+      "srparasites:mob/dig/emerge_huge1",
+      "srparasites:mob/dig/emerge_huge2",
+      "srparasites:mob/dig/emerge_huge3"
     ]
   },
   "mes.death": {
@@ -1549,25 +1669,25 @@
     "category": "hostile",
     "subtitle": "subtitles.mangler_dies",
     "sounds": [
-      "srparasites:mangler_death"
+      "srparasites:mob/pure/mangler/death"
     ]
   },
   "nuuh.growl": {
     "category": "hostile",
     "subtitle": "subtitles.mangler_idle",
     "sounds": [
-      "srparasites:mangler_idle_1",
-      "srparasites:mangler_idle_2",
-      "srparasites:mangler_idle_3"
+      "srparasites:mob/pure/mangler/idle1",
+      "srparasites:mob/pure/mangler/idle2",
+      "srparasites:mob/pure/mangler/idle3"
     ]
   },
   "nuuh.hurt": {
     "category": "hostile",
     "subtitle": "subtitles.mangler_hurt",
     "sounds": [
-      "srparasites:mangler_hurt_1",
-      "srparasites:mangler_hurt_2",
-      "srparasites:mangler_hurt_3"
+      "srparasites:mob/pure/mangler/hurt1",
+      "srparasites:mob/pure/mangler/hurt2",
+      "srparasites:mob/pure/mangler/hurt3"
     ]
   },
   "ganro.death": {
@@ -1845,22 +1965,68 @@
     ]
   },
   "bodies.death": {
+    "subtitle": "subtitles.abobodies.death",
     "category": "hostile",
     "sounds": [
-      
     ]
   },
   "bodies.growl": {
     "category": "hostile",
+    "subtitle": "subtitles.abobodies.idle",
     "sounds": [
-      "srparasites:abo_body_idle_1",
-      "srparasites:abo_body_idle_2"
+      "srparasites:mob/abomination/body/idle1",
+      "srparasites:mob/abomination/body/idle2"
     ]
   },
   "bodies.hurt": {
+    "subtitle": "subtitles.abobodies.hurt",
     "category": "hostile",
     "sounds": [
-      
+      {
+        "name": "srparasites:assimilatedsheephurt1","pitch": 0.4
+   },
+      {
+        "name": "srparasites:assimilatedsheephurt2","pitch": 0.4
+   },
+      {
+        "name": "srparasites:assimilatedsheephurt3","pitch": 0.4
+   },
+      {
+        "name": "srparasites:assimilatedcowhurt1","pitch": 0.4
+   },
+      {
+        "name": "srparasites:assimilatedcowhurt2","pitch": 0.4
+   },
+      {
+        "name": "srparasites:assimilatedcowhurt3","pitch": 0.4
+   },
+      {
+        "name": "srparasites:assimilatedpighurt1","pitch": 0.4
+   },
+      {
+        "name": "srparasites:assimilatedpighurt2","pitch": 0.4
+   },
+      {
+        "name": "srparasites:assimilatedpighurt3","pitch": 0.4
+   },
+      {
+        "name": "srparasites:assimilatedhorsehurt1","pitch": 0.4
+   },
+      {
+        "name": "srparasites:assimilatedhorsehurt2","pitch": 0.4
+   },
+      {
+        "name": "srparasites:assimilatedhorsehurt3","pitch": 0.4
+   },
+      {
+        "name": "srparasites:assimilatedwolfhurt1","pitch": 0.4
+   },
+      {
+        "name": "srparasites:assimilatedwolfhurt2","pitch": 0.4
+   },
+      {
+        "name": "srparasites:assimilatedwolfhurt3","pitch": 0.4
+   }
     ]
   },
   "oronco.death": {
@@ -1913,64 +2079,96 @@
   },
   "kirin.death": {
     "category": "hostile",
+    "subtitle": "subtitles.kirin.death",
     "sounds": [
-      "srparasites:kirin_death"
+      "srparasites:mob/derived/kirin/death"
     ]
   },
   "kirin.growl": {
     "category": "hostile",
+    "subtitle": "subtitles.kirin.idle",
     "sounds": [
-      "srparasites:kirin_idle_1",
-      "srparasites:kirin_idle_2",
-      "srparasites:kirin_idle_3"
+      "srparasites:mob/derived/kirin/idle1",
+      "srparasites:mob/derived/kirin/idle2",
+      "srparasites:mob/derived/kirin/idle3"
     ]
   },
   "kirin.hurt": {
     "category": "hostile",
+    "subtitle": "subtitles.kirin.hurt",
     "sounds": [
-      "srparasites:kirin_hurt_1",
-      "srparasites:kirin_hurt_2",
-      "srparasites:kirin_hurt_3"
+      "srparasites:mob/derived/kirin/hurt1",
+      "srparasites:mob/derived/kirin/hurt2",
+      "srparasites:mob/derived/kirin/hurt3"
     ]
   },
   "kirin.shoot": {
     "category": "hostile",
+    "subtitle": "subtitles.kirin.blackhole",
     "sounds": [
-      "srparasites:kirin_black_hole"
+      "srparasites:mob/derived/kirin/black_hole"
     ]
   },
   "heblu.death": {
     "category": "hostile",
+    "subtitle": "subtitles.draconite.death",
     "sounds": [
-      "srparasites:draconite_death"
+      "srparasites:mob/derived/draconite/death"
     ]
   },
   "heblu.growl": {
     "category": "hostile",
+    "subtitle": "subtitles.draconite.idle",
     "sounds": [
-      "srparasites:draconite_idle_1",
-      "srparasites:draconite_idle_2",
-      "srparasites:draconite_idle_3",
-      "srparasites:draconite_idle_4",
-      "srparasites:draconite_idle_5"
+      "srparasites:mob/derived/draconite/idle1",
+      "srparasites:mob/derived/draconite/idle2",
+      "srparasites:mob/derived/draconite/idle3",
+      "srparasites:mob/derived/draconite/idle4",
+      "srparasites:mob/derived/draconite/idle5"
     ]
   },
   "heblu.hurt": {
     "category": "hostile",
+    "subtitle": "subtitles.draconite.hurt",
     "sounds": [
-      
-    ]
-  },
-  "heblu.step": {
-    "category": "hostile",
-    "sounds": [
-
+      "srparasites:mob/derived/draconite/idle3",
+      "srparasites:mob/derived/draconite/idle4",
+      "srparasites:mob/derived/draconite/idle5"
     ]
   },
   "heblu.shoot": {
     "category": "hostile",
+    "subtitle": "subtitles.draconite.shoot",
     "sounds": [
-      "srparasites:draconite_fire_shoot"
+      "srparasites:mob/derived/draconite/fire_shoot"
+    ]
+  },
+  "heblu.light_impact": {
+    "category": "hostile",
+    "subtitle": "subtitles.draconite.light_impact",
+    "sounds": [
+      "srparasites:mob/derived/draconite/heblu_light_impact",
+      "srparasites:mob/derived/draconite/heblu_light_impact_1"
+    ]
+  },
+  "heblu.parry": {
+    "category": "hostile",
+    "subtitle": "subtitles.draconite.parry",
+    "sounds": [
+      "srparasites:mob/derived/draconite/parry1",
+      "srparasites:mob/derived/draconite/parry2",
+      "srparasites:mob/derived/draconite/parry3"
+    ]
+  },
+  "heblu.bell_chargeup": {
+    "category": "hostile",
+    "subtitle": "subtitles.draconite.bell_chargeup",
+    "distance": 64,
+    "sounds": [
+      {
+        "name": "srparasites:mob/derived/draconite/heblu_bell_chargup",
+        "volume": 1.0
+      }
     ]
   },
   "ancient.pod": {
@@ -2000,14 +2198,14 @@
   },
   "rathol.boom": {
     "category": "hostile",
-    "subtitle": "subtitles.mobexplodes",
+    "subtitle": "subtitles.entity.generic.explode",
     "sounds": [
       "srparasites:rathol_explotion"
     ]
   },
   "buthol.boom": {
     "category": "hostile",
-    "subtitle": "subtitles.mobexplodes",
+    "subtitle": "subtitles.entity.generic.explode",
     "sounds": [
       "srparasites:buthol_explotion"
     ]
@@ -2044,11 +2242,12 @@
     ]
   },
   "unvo.dig": {
+    "subtitle": "subtitles.dig",
     "category": "hostile",
     "sounds": [
-      "srparasites:sentry_emerge_1",
-      "srparasites:sentry_emerge_2",
-      "srparasites:sentry_emerge_3"
+      "srparasites:mob/dig/emerge1",
+      "srparasites:mob/dig/emerge2",
+      "srparasites:mob/dig/emerge3"
     ]
   },
   "unvo.shooting": {
@@ -2081,175 +2280,174 @@
     ]
   },
   "tonro.dig": {
+    "subtitle": "subtitles.dig",
     "category": "hostile",
     "sounds": [
-      "srparasites:kyphosis_emerge_1",
-      "srparasites:kyphosis_emerge_2",
-      "srparasites:kyphosis_emerge_3"
+      "srparasites:mob/dig/emerge_alt1",
+      "srparasites:mob/dig/emerge_alt2",
+      "srparasites:mob/dig/emerge_alt3"
     ]
   },
   "venkrol.si": {
     "category": "hostile",
-    "subtitle": "subtitles.beckonbell",
+    "subtitle": "subtitles.beckon.appear",
     "sounds": [
-      "srparasites:vstagei"
+      "srparasites:mob/nexus/stage1/beckon/appear"
     ]
   },
   "venkrol.sii": {
     "category": "hostile",
-    "subtitle": "subtitles.beckonbell",
+    "subtitle": "subtitles.beckon.appear",
     "sounds": [
-      "srparasites:vstageii"
+      "srparasites:mob/nexus/stage2/beckon/appear"
     ]
   },
   "venkrol.siii": {
     "category": "hostile",
-    "subtitle": "subtitles.beckonbell",
+    "subtitle": "subtitles.beckon.appear",
     "sounds": [
-      "srparasites:vstageiii"
+      "srparasites:mob/nexus/stage3/beckon/appear"
     ]
   },
   "venkrol.siv": {
     "category": "hostile",
-    "subtitle": "subtitles.beckonbell",
+    "subtitle": "subtitles.beckon.appear",
     "sounds": [
-      "srparasites:vstageiv"
+      "srparasites:mob/nexus/stage4/beckon/appear"
     ]
   },
   "dod.si": {
     "category": "hostile",
+    "subtitle": "subtitles.dispatcher.appear",
     "sounds": [
-      "srparasites:dispatcher_stage_i"
+      "srparasites:mob/nexus/stage1/dispatcher/appear"
     ]
   },
   "dod.sii": {
     "category": "hostile",
+    "subtitle": "subtitles.dispatcher.appear",
     "sounds": [
-      "srparasites:dispatcher_stage_ii"
+      "srparasites:mob/nexus/stage2/dispatcher/appear"
     ]
   },
   "dod.siii": {
     "category": "hostile",
+    "subtitle": "subtitles.dispatcher.appear",
     "sounds": [
-      "srparasites:dispatcher_stage_iii"
+      "srparasites:mob/nexus/stage3/dispatcher/appear"
     ]
   },
   "dod.siv": {
     "category": "hostile",
+    "subtitle": "subtitles.dispatcher.appear",
     "sounds": [
-      "srparasites:dispatcher_stage_iv"
+      "srparasites:mob/nexus/stage4/dispatcher/appear"
     ]
   },
   "leem.si": {
     "category": "hostile",
+    "subtitle": "subtitles.rooter.appear",
     "sounds": [
-      "srparasites:lstagei"
+      "srparasites:mob/nexus/stage1/rooter/appear"
     ]
   },
   "leem.sii": {
     "category": "hostile",
+    "subtitle": "subtitles.rooter.appear",
     "sounds": [
-      "srparasites:lstageii"
+      "srparasites:mob/nexus/stage2/rooter/appear"
     ]
   },
   "leem.siii": {
     "category": "hostile",
+    "subtitle": "subtitles.rooter.appear",
     "sounds": [
-      "srparasites:lstageiii"
+      "srparasites:mob/nexus/stage3/rooter/appear"
     ]
   },
   "leem.siv": {
     "category": "hostile",
+    "subtitle": "subtitles.rooter.appear",
     "sounds": [
-      "srparasites:lstageiv"
+      "srparasites:mob/nexus/stage4/rooter/appear"
     ]
   },
   "venkrolsi.growl": {
     "category": "hostile",
     "subtitle": "subtitles.beckonliving",
     "sounds": [
-      "srparasites:beckonsi_growl",
-      "srparasites:beckonsi_growl_2",
-      "srparasites:beckonsi_growl_2"
+      "srparasites:mob/nexus/stage1/beckon/idle1",
+      "srparasites:mob/nexus/stage1/beckon/idle2"
     ]
   },
   "venkrolsi.hurt": {
     "category": "hostile",
     "subtitle": "subtitles.beckonhurt",
     "sounds": [
-      "srparasites:beckonsi_hurt",
-      "srparasites:beckonsi_hurt_2",
-      "srparasites:beckonsi_hurt_2"
+      "srparasites:mob/nexus/stage1/beckon/hurt1",
+      "srparasites:mob/nexus/stage1/beckon/hurt2"
     ]
   },
   "venkrolsi.death": {
     "category": "hostile",
     "subtitle": "subtitles.beckondeath",
     "sounds": [
-      "srparasites:beckonsi_death",
-      "srparasites:beckonsi_death_2",
-      "srparasites:beckonsi_death_2"
+      "srparasites:mob/nexus/stage1/beckon/death1",
+      "srparasites:mob/nexus/stage1/beckon/death2"
     ]
   },
   "venkrolsii.growl": {
     "category": "hostile",
     "subtitle": "subtitles.beckonliving",
     "sounds": [
-      "srparasites:beckonsii_growl",
-      "srparasites:beckonsii_growl_2",
-      "srparasites:beckonsii_growl_2"
+      "srparasites:mob/nexus/stage2/beckon/idle1",
+      "srparasites:mob/nexus/stage2/beckon/idle2"
     ]
   },
   "venkrolsii.hurt": {
     "category": "hostile",
     "subtitle": "subtitles.beckonhurt",
     "sounds": [
-      "srparasites:beckonsii_hurt",
-      "srparasites:beckonsii_hurt_2",
-      "srparasites:beckonsii_hurt_2"
+      "srparasites:mob/nexus/stage2/beckon/hurt1",
+      "srparasites:mob/nexus/stage2/beckon/hurt2"
     ]
   },
   "venkrolsii.death": {
     "category": "hostile",
     "subtitle": "subtitles.beckondeath",
     "sounds": [
-      "srparasites:beckonsii_death",
-      "srparasites:beckonsii_death_2",
-      "srparasites:beckonsii_death_2"
+      "srparasites:mob/nexus/stage2/beckon/death1",
+      "srparasites:mob/nexus/stage2/beckon/death2"
     ]
   },
   "venkrolsiii.growl": {
     "category": "hostile",
     "subtitle": "subtitles.beckonliving",
     "sounds": [
-      "srparasites:beckonsiii_growl",
-      "srparasites:beckonsiii_growl_2",
-      "srparasites:beckonsiii_growl_2"
+      "srparasites:mob/nexus/stage3/beckon/idle1",
+      "srparasites:mob/nexus/stage3/beckon/idle2"
     ]
   },
   "venkrolsiii.hurt": {
     "category": "hostile",
     "subtitle": "subtitles.beckonhurt",
     "sounds": [
-      "srparasites:beckonsiii_hurt",
-      "srparasites:beckonsiii_hurt_2",
-      "srparasites:beckonsiii_hurt_2"
+      "srparasites:mob/nexus/stage3/beckon/hurt1",
+      "srparasites:mob/nexus/stage3/beckon/hurt2"
     ]
   },
   "venkrolsiii.death": {
     "category": "hostile",
     "subtitle": "subtitles.beckondeath",
     "sounds": [
-      "srparasites:beckonsiii_death",
-      "srparasites:beckonsiii_death_2",
-      "srparasites:beckonsiii_death_2"
+      "srparasites:mob/nexus/stage3/beckon/death1",
+      "srparasites:mob/nexus/stage3/beckon/death2"
     ]
   },
   "venkrolsiii.tornado": {
-    "category": "hostile",
-    "subtitle": "subtitles.beckonvortex",
+    "category": "weather",
     "sounds": [
-      "srparasites:misc/beckon_vortex"
+      "srparasites:mob/nexus/stage4/beckon/vortex"
     ]
   },
   "rof.spit_out": {
@@ -2283,14 +2481,13 @@
     ]
   },
   "mob.silence": {
-    "category": "hostile",
     "sounds": [
       "srparasites:misc/mob_silence"
     ]
   },
   "mob.explotion": {
     "category": "hostile",
-    "subtitle": "subtitles.mobexplodes",
+    "subtitle": "subtitles.entity.generic.explode",
     "sounds": [
       "srparasites:misc/mob_explotion"
     ]
@@ -2304,13 +2501,14 @@
   },
   "mob.hitground": {
     "category": "hostile",
-    "subtitle": "subtitles.moblands",
+    "subtitle": "subtitles.block.generic.fall",
     "sounds": [
       "srparasites:misc/mob_hitground"
     ]
   },
   "mob.tendril": {
     "category": "hostile",
+    "subtitle": "subtitles.mobtendril",
     "sounds": [
       "srparasites:misc/mob_tendril"
     ]
@@ -2359,19 +2557,21 @@
     ]
   },
   "dod.ten": {
+    "subtitle": "subtitles.dig",
     "category": "hostile",
     "sounds": [
-      "srparasites:dispatcher_tentacles_emerge_1",
-      "srparasites:dispatcher_tentacles_emerge_2",
-      "srparasites:dispatcher_tentacles_emerge_3"
+      "srparasites:mob/dig/emerge_alt1",
+      "srparasites:mob/dig/emerge_alt2",
+      "srparasites:mob/dig/emerge_alt3"
     ]
   },
   "dod.nak": {
+    "subtitle": "subtitles.dig",
     "category": "hostile",
     "sounds": [
-      "srparasites:seizer_emerge_1",
-      "srparasites:seizer_emerge_2",
-      "srparasites:seizer_emerge_3"
+      "srparasites:mob/dig/emerge_alt1",
+      "srparasites:mob/dig/emerge_alt2",
+      "srparasites:mob/dig/emerge_alt3"
     ]
   },
   "scent.wave": {
@@ -3147,722 +3347,1985 @@
     "category": "block",
     "subtitle": "subtitles.block.generic.footsteps",
     "sounds": [
-      {"name": "srparasites:mob/step/heavy/step1", "pitch":1},
-      {"name": "srparasites:mob/step/heavy/step2", "pitch":1},
-      {"name": "srparasites:mob/step/heavy/step3", "pitch":1},
-      {"name": "srparasites:mob/step/heavy/step4", "pitch":1},
-      {"name": "srparasites:mob/step/heavy/step5", "pitch":1}
-    ]
+      {
+        "name": "srparasites:mob/step/heavy/step1","pitch": 1
+      },
+   {
+        "name": "srparasites:mob/step/heavy/step2","pitch": 1
+      },
+   {
+        "name": "srparasites:mob/step/heavy/step3","pitch": 1
+      },
+   {
+        "name": "srparasites:mob/step/heavy/step4","pitch": 1
+      },
+   {
+        "name": "srparasites:mob/step/heavy/step5","pitch": 1
+      }
+ ]
   },
   "step.heavy_two": {
     "category": "block",
     "subtitle": "subtitles.block.generic.footsteps",
     "sounds": [
-      {"name": "srparasites:mob/step/heavy/two_steps1", "pitch":1},
-      {"name": "srparasites:mob/step/heavy/two_steps2", "pitch":1},
-      {"name": "srparasites:mob/step/heavy/two_steps3", "pitch":1},
-      {"name": "srparasites:mob/step/heavy/two_steps4", "pitch":1},
-      {"name": "srparasites:mob/step/heavy/two_steps5", "pitch":1}
-    ]
+      {
+        "name": "srparasites:mob/step/heavy/two_steps1","pitch": 1
+      },
+   {
+        "name": "srparasites:mob/step/heavy/two_steps2","pitch": 1
+      },
+   {
+        "name": "srparasites:mob/step/heavy/two_steps3","pitch": 1
+      },
+   {
+        "name": "srparasites:mob/step/heavy/two_steps4","pitch": 1
+      },
+   {
+        "name": "srparasites:mob/step/heavy/two_steps5","pitch": 1
+      }
+ ]
   },
   "step.heavy_multiple": {
     "category": "block",
     "subtitle": "subtitles.block.generic.footsteps",
     "sounds": [
-      {"name": "srparasites:mob/step/heavy_multiple/step1", "pitch":1},
-      {"name": "srparasites:mob/step/heavy_multiple/step2", "pitch":1},
-      {"name": "srparasites:mob/step/heavy_multiple/step3", "pitch":1},
-      {"name": "srparasites:mob/step/heavy_multiple/step4", "pitch":1}
-    ]
+      {
+        "name": "srparasites:mob/step/heavy_multiple/step1","pitch": 1
+      },
+   {
+        "name": "srparasites:mob/step/heavy_multiple/step2","pitch": 1
+      },
+   {
+        "name": "srparasites:mob/step/heavy_multiple/step3","pitch": 1
+      },
+   {
+        "name": "srparasites:mob/step/heavy_multiple/step4","pitch": 1
+      }
+ ]
   },
   "block.flesh.dig": {
     "category": "block",
     "subtitle": "subtitles.block.generic.break",
     "sounds": [
-      {"name": "srparasites:block/flesh/dig1", "pitch":1.1},
-      {"name": "srparasites:block/flesh/dig1", "pitch":1.2},
-      {"name": "srparasites:block/flesh/dig1", "pitch":1.3},
-      {"name": "srparasites:block/flesh/dig2", "pitch":1.1},
-      {"name": "srparasites:block/flesh/dig2", "pitch":1.2},
-      {"name": "srparasites:block/flesh/dig2", "pitch":1.3},
-      {"name": "srparasites:block/flesh/dig3", "pitch":1.1},
-      {"name": "srparasites:block/flesh/dig3", "pitch":1.2},
-      {"name": "srparasites:block/flesh/dig3", "pitch":1.3},
-      {"name": "srparasites:block/flesh/dig4", "pitch":1.1},
-      {"name": "srparasites:block/flesh/dig4", "pitch":1.2},
-      {"name": "srparasites:block/flesh/dig4", "pitch":1.3}
+      {
+        "name": "srparasites:block/flesh/dig1","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/dig1","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/dig1","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/dig2","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/dig2","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/dig2","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/dig3","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/dig3","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/dig3","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/dig4","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/dig4","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/dig4","pitch": 1.3
+   }
     ]
   },
   "block.flesh.step": {
     "category": "block",
     "subtitle": "subtitles.block.generic.footsteps",
     "sounds": [
-      {"name": "srparasites:block/flesh/step1", "pitch":1.1},
-      {"name": "srparasites:block/flesh/step1", "pitch":1.2},
-      {"name": "srparasites:block/flesh/step1", "pitch":1.3},
-      {"name": "srparasites:block/flesh/step2", "pitch":1.1},
-      {"name": "srparasites:block/flesh/step2", "pitch":1.2},
-      {"name": "srparasites:block/flesh/step2", "pitch":1.3},
-      {"name": "srparasites:block/flesh/step3", "pitch":1.1},
-      {"name": "srparasites:block/flesh/step3", "pitch":1.2},
-      {"name": "srparasites:block/flesh/step3", "pitch":1.3},
-      {"name": "srparasites:block/flesh/step4", "pitch":1.1},
-      {"name": "srparasites:block/flesh/step4", "pitch":1.2},
-      {"name": "srparasites:block/flesh/step4", "pitch":1.3},
-      {"name": "srparasites:block/flesh/step5", "pitch":1.1},
-      {"name": "srparasites:block/flesh/step5", "pitch":1.2},
-      {"name": "srparasites:block/flesh/step5", "pitch":1.3}
+      {
+        "name": "srparasites:block/flesh/step1","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/step1","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/step1","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/step2","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/step2","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/step2","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/step3","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/step3","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/step3","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/step4","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/step4","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/step4","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/step5","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/step5","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/step5","pitch": 1.3
+   }
     ]
   },
   "block.flesh.place": {
     "category": "block",
     "subtitle": "subtitles.block.generic.place",
     "sounds": [
-      {"name": "srparasites:block/flesh/dig1", "pitch":1.1},
-      {"name": "srparasites:block/flesh/dig1", "pitch":1.2},
-      {"name": "srparasites:block/flesh/dig1", "pitch":1.3},
-      {"name": "srparasites:block/flesh/dig2", "pitch":1.1},
-      {"name": "srparasites:block/flesh/dig2", "pitch":1.2},
-      {"name": "srparasites:block/flesh/dig2", "pitch":1.3},
-      {"name": "srparasites:block/flesh/dig3", "pitch":1.1},
-      {"name": "srparasites:block/flesh/dig3", "pitch":1.2},
-      {"name": "srparasites:block/flesh/dig3", "pitch":1.3},
-      {"name": "srparasites:block/flesh/dig4", "pitch":1.1},
-      {"name": "srparasites:block/flesh/dig4", "pitch":1.2},
-      {"name": "srparasites:block/flesh/dig4", "pitch":1.3}
+      {
+        "name": "srparasites:block/flesh/dig1","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/dig1","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/dig1","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/dig2","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/dig2","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/dig2","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/dig3","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/dig3","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/dig3","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/dig4","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/dig4","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/dig4","pitch": 1.3
+   }
     ]
   },
   "block.flesh.hit": {
     "category": "block",
     "subtitle": "subtitles.block.generic.hit",
     "sounds": [
-      {"name": "srparasites:block/flesh/step1", "pitch":1.1},
-      {"name": "srparasites:block/flesh/step1", "pitch":1.2},
-      {"name": "srparasites:block/flesh/step1", "pitch":1.3},
-      {"name": "srparasites:block/flesh/step2", "pitch":1.1},
-      {"name": "srparasites:block/flesh/step2", "pitch":1.2},
-      {"name": "srparasites:block/flesh/step2", "pitch":1.3},
-      {"name": "srparasites:block/flesh/step3", "pitch":1.1},
-      {"name": "srparasites:block/flesh/step3", "pitch":1.2},
-      {"name": "srparasites:block/flesh/step3", "pitch":1.3},
-      {"name": "srparasites:block/flesh/step4", "pitch":1.1},
-      {"name": "srparasites:block/flesh/step4", "pitch":1.2},
-      {"name": "srparasites:block/flesh/step4", "pitch":1.3},
-      {"name": "srparasites:block/flesh/step5", "pitch":1.1},
-      {"name": "srparasites:block/flesh/step5", "pitch":1.2},
-      {"name": "srparasites:block/flesh/step5", "pitch":1.3}
+      {
+        "name": "srparasites:block/flesh/step1","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/step1","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/step1","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/step2","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/step2","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/step2","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/step3","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/step3","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/step3","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/step4","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/step4","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/step4","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/step5","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/step5","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/step5","pitch": 1.3
+   }
     ]
   },
   "block.flesh.fall": {
     "category": "block",
     "subtitle": "subtitles.block.generic.fall",
     "sounds": [
-      {"name": "srparasites:block/flesh/step1", "pitch":1.1},
-      {"name": "srparasites:block/flesh/step1", "pitch":1.2},
-      {"name": "srparasites:block/flesh/step1", "pitch":1.3},
-      {"name": "srparasites:block/flesh/step2", "pitch":1.1},
-      {"name": "srparasites:block/flesh/step2", "pitch":1.2},
-      {"name": "srparasites:block/flesh/step2", "pitch":1.3},
-      {"name": "srparasites:block/flesh/step3", "pitch":1.1},
-      {"name": "srparasites:block/flesh/step3", "pitch":1.2},
-      {"name": "srparasites:block/flesh/step3", "pitch":1.3},
-      {"name": "srparasites:block/flesh/step4", "pitch":1.1},
-      {"name": "srparasites:block/flesh/step4", "pitch":1.2},
-      {"name": "srparasites:block/flesh/step4", "pitch":1.3},
-      {"name": "srparasites:block/flesh/step5", "pitch":1.1},
-      {"name": "srparasites:block/flesh/step5", "pitch":1.2},
-      {"name": "srparasites:block/flesh/step5", "pitch":1.3}
+      {
+        "name": "srparasites:block/flesh/step1","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/step1","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/step1","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/step2","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/step2","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/step2","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/step3","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/step3","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/step3","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/step4","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/step4","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/step4","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/step5","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/step5","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/step5","pitch": 1.3
+   }
     ]
   },
   "block.flesh_light.dig": {
     "category": "block",
     "subtitle": "subtitles.block.generic.break",
     "sounds": [
-      {"name": "srparasites:block/flesh/light/dig1", "pitch":1.1},
-      {"name": "srparasites:block/flesh/light/dig1", "pitch":1.2},
-      {"name": "srparasites:block/flesh/light/dig1", "pitch":1.3},
-      {"name": "srparasites:block/flesh/light/dig2", "pitch":1.1},
-      {"name": "srparasites:block/flesh/light/dig2", "pitch":1.2},
-      {"name": "srparasites:block/flesh/light/dig2", "pitch":1.3},
-      {"name": "srparasites:block/flesh/light/dig3", "pitch":1.1},
-      {"name": "srparasites:block/flesh/light/dig3", "pitch":1.2},
-      {"name": "srparasites:block/flesh/light/dig3", "pitch":1.3},
-      {"name": "srparasites:block/flesh/light/dig4", "pitch":1.1},
-      {"name": "srparasites:block/flesh/light/dig4", "pitch":1.2},
-      {"name": "srparasites:block/flesh/light/dig4", "pitch":1.3}
+      {
+        "name": "srparasites:block/flesh/light/dig1","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/light/dig1","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/light/dig1","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/light/dig2","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/light/dig2","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/light/dig2","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/light/dig3","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/light/dig3","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/light/dig3","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/light/dig4","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/light/dig4","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/light/dig4","pitch": 1.3
+   }
     ]
   },
   "block.flesh_light.step": {
     "category": "block",
     "subtitle": "subtitles.block.generic.footsteps",
     "sounds": [
-      {"name": "srparasites:block/flesh/light/step1", "pitch":1.1},
-      {"name": "srparasites:block/flesh/light/step1", "pitch":1.2},
-      {"name": "srparasites:block/flesh/light/step1", "pitch":1.3},
-      {"name": "srparasites:block/flesh/light/step2", "pitch":1.1},
-      {"name": "srparasites:block/flesh/light/step2", "pitch":1.2},
-      {"name": "srparasites:block/flesh/light/step2", "pitch":1.3},
-      {"name": "srparasites:block/flesh/light/step3", "pitch":1.1},
-      {"name": "srparasites:block/flesh/light/step3", "pitch":1.2},
-      {"name": "srparasites:block/flesh/light/step3", "pitch":1.3},
-      {"name": "srparasites:block/flesh/light/step4", "pitch":1.1},
-      {"name": "srparasites:block/flesh/light/step4", "pitch":1.2},
-      {"name": "srparasites:block/flesh/light/step4", "pitch":1.3},
-      {"name": "srparasites:block/flesh/light/step5", "pitch":1.1},
-      {"name": "srparasites:block/flesh/light/step5", "pitch":1.2},
-      {"name": "srparasites:block/flesh/light/step5", "pitch":1.3},
-      {"name": "srparasites:block/flesh/light/step6", "pitch":1.1},
-      {"name": "srparasites:block/flesh/light/step6", "pitch":1.2},
-      {"name": "srparasites:block/flesh/light/step6", "pitch":1.3}
+      {
+        "name": "srparasites:block/flesh/light/step1","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/light/step1","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/light/step1","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/light/step2","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/light/step2","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/light/step2","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/light/step3","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/light/step3","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/light/step3","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/light/step4","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/light/step4","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/light/step4","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/light/step5","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/light/step5","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/light/step5","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/light/step6","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/light/step6","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/light/step6","pitch": 1.3
+   }
     ]
   },
   "block.flesh_light.place": {
     "category": "block",
     "subtitle": "subtitles.block.generic.place",
     "sounds": [
-      {"name": "srparasites:block/flesh/light/dig1", "pitch":1.1},
-      {"name": "srparasites:block/flesh/light/dig1", "pitch":1.2},
-      {"name": "srparasites:block/flesh/light/dig1", "pitch":1.3},
-      {"name": "srparasites:block/flesh/light/dig2", "pitch":1.1},
-      {"name": "srparasites:block/flesh/light/dig2", "pitch":1.2},
-      {"name": "srparasites:block/flesh/light/dig2", "pitch":1.3},
-      {"name": "srparasites:block/flesh/light/dig3", "pitch":1.1},
-      {"name": "srparasites:block/flesh/light/dig3", "pitch":1.2},
-      {"name": "srparasites:block/flesh/light/dig3", "pitch":1.3},
-      {"name": "srparasites:block/flesh/light/dig4", "pitch":1.1},
-      {"name": "srparasites:block/flesh/light/dig4", "pitch":1.2},
-      {"name": "srparasites:block/flesh/light/dig4", "pitch":1.3}
+      {
+        "name": "srparasites:block/flesh/light/dig1","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/light/dig1","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/light/dig1","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/light/dig2","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/light/dig2","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/light/dig2","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/light/dig3","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/light/dig3","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/light/dig3","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/light/dig4","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/light/dig4","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/light/dig4","pitch": 1.3
+   }
     ]
   },
   "block.flesh_light.hit": {
     "category": "block",
     "subtitle": "subtitles.block.generic.hit",
     "sounds": [
-      {"name": "srparasites:block/flesh/light/step1", "pitch":1.1},
-      {"name": "srparasites:block/flesh/light/step1", "pitch":1.2},
-      {"name": "srparasites:block/flesh/light/step1", "pitch":1.3},
-      {"name": "srparasites:block/flesh/light/step2", "pitch":1.1},
-      {"name": "srparasites:block/flesh/light/step2", "pitch":1.2},
-      {"name": "srparasites:block/flesh/light/step2", "pitch":1.3},
-      {"name": "srparasites:block/flesh/light/step3", "pitch":1.1},
-      {"name": "srparasites:block/flesh/light/step3", "pitch":1.2},
-      {"name": "srparasites:block/flesh/light/step3", "pitch":1.3},
-      {"name": "srparasites:block/flesh/light/step4", "pitch":1.1},
-      {"name": "srparasites:block/flesh/light/step4", "pitch":1.2},
-      {"name": "srparasites:block/flesh/light/step4", "pitch":1.3},
-      {"name": "srparasites:block/flesh/light/step5", "pitch":1.1},
-      {"name": "srparasites:block/flesh/light/step5", "pitch":1.2},
-      {"name": "srparasites:block/flesh/light/step5", "pitch":1.3},
-      {"name": "srparasites:block/flesh/light/step6", "pitch":1.1},
-      {"name": "srparasites:block/flesh/light/step6", "pitch":1.2},
-      {"name": "srparasites:block/flesh/light/step6", "pitch":1.3}
+      {
+        "name": "srparasites:block/flesh/light/step1","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/light/step1","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/light/step1","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/light/step2","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/light/step2","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/light/step2","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/light/step3","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/light/step3","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/light/step3","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/light/step4","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/light/step4","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/light/step4","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/light/step5","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/light/step5","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/light/step5","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/light/step6","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/light/step6","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/light/step6","pitch": 1.3
+   }
     ]
   },
   "block.flesh_light.fall": {
     "category": "block",
     "subtitle": "subtitles.block.generic.fall",
     "sounds": [
-      {"name": "srparasites:block/flesh/light/step1", "pitch":1.1},
-      {"name": "srparasites:block/flesh/light/step1", "pitch":1.2},
-      {"name": "srparasites:block/flesh/light/step1", "pitch":1.3},
-      {"name": "srparasites:block/flesh/light/step2", "pitch":1.1},
-      {"name": "srparasites:block/flesh/light/step2", "pitch":1.2},
-      {"name": "srparasites:block/flesh/light/step2", "pitch":1.3},
-      {"name": "srparasites:block/flesh/light/step3", "pitch":1.1},
-      {"name": "srparasites:block/flesh/light/step3", "pitch":1.2},
-      {"name": "srparasites:block/flesh/light/step3", "pitch":1.3},
-      {"name": "srparasites:block/flesh/light/step4", "pitch":1.1},
-      {"name": "srparasites:block/flesh/light/step4", "pitch":1.2},
-      {"name": "srparasites:block/flesh/light/step4", "pitch":1.3},
-      {"name": "srparasites:block/flesh/light/step5", "pitch":1.1},
-      {"name": "srparasites:block/flesh/light/step5", "pitch":1.2},
-      {"name": "srparasites:block/flesh/light/step5", "pitch":1.3},
-      {"name": "srparasites:block/flesh/light/step6", "pitch":1.1},
-      {"name": "srparasites:block/flesh/light/step6", "pitch":1.2},
-      {"name": "srparasites:block/flesh/light/step6", "pitch":1.3}
+      {
+        "name": "srparasites:block/flesh/light/step1","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/light/step1","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/light/step1","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/light/step2","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/light/step2","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/light/step2","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/light/step3","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/light/step3","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/light/step3","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/light/step4","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/light/step4","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/light/step4","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/light/step5","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/light/step5","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/light/step5","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/light/step6","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/light/step6","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/light/step6","pitch": 1.3
+   }
     ]
   },
   "block.heart.dig": {
     "category": "block",
     "subtitle": "subtitles.block.generic.break",
     "sounds": [
-      {"name": "srparasites:block/flesh/heart/dig1", "pitch":1.1},
-      {"name": "srparasites:block/flesh/heart/dig1", "pitch":1.2},
-      {"name": "srparasites:block/flesh/heart/dig1", "pitch":1.3}
+      {
+        "name": "srparasites:block/flesh/heart/dig1","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/heart/dig1","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/heart/dig1","pitch": 1.3
+   }
     ]
   },
   "block.heart.hit": {
     "category": "block",
     "subtitle": "subtitles.block.generic.hit",
     "sounds": [
-      {"name": "srparasites:block/flesh/heart/step1", "pitch":1.1},
-      {"name": "srparasites:block/flesh/heart/step1", "pitch":1.2},
-      {"name": "srparasites:block/flesh/heart/step1", "pitch":1.3},
-      {"name": "srparasites:block/flesh/heart/step2", "pitch":1.1},
-      {"name": "srparasites:block/flesh/heart/step2", "pitch":1.2},
-      {"name": "srparasites:block/flesh/heart/step2", "pitch":1.3},
-      {"name": "srparasites:block/flesh/heart/step3", "pitch":1.1},
-      {"name": "srparasites:block/flesh/heart/step3", "pitch":1.2},
-      {"name": "srparasites:block/flesh/heart/step3", "pitch":1.3},
-      {"name": "srparasites:block/flesh/heart/step4", "pitch":1.1},
-      {"name": "srparasites:block/flesh/heart/step4", "pitch":1.2},
-      {"name": "srparasites:block/flesh/heart/step4", "pitch":1.3},
-      {"name": "srparasites:block/flesh/heart/step5", "pitch":1.1},
-      {"name": "srparasites:block/flesh/heart/step5", "pitch":1.2},
-      {"name": "srparasites:block/flesh/heart/step5", "pitch":1.3},
-      {"name": "srparasites:block/flesh/heart/step6", "pitch":1.1},
-      {"name": "srparasites:block/flesh/heart/step6", "pitch":1.2},
-      {"name": "srparasites:block/flesh/heart/step6", "pitch":1.3}
+      {
+        "name": "srparasites:block/flesh/heart/step1","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/heart/step1","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/heart/step1","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/heart/step2","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/heart/step2","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/heart/step2","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/heart/step3","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/heart/step3","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/heart/step3","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/heart/step4","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/heart/step4","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/heart/step4","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/heart/step5","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/heart/step5","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/heart/step5","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/flesh/heart/step6","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/flesh/heart/step6","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/flesh/heart/step6","pitch": 1.3
+   }
     ]
   },
   "block.purifier.dig": {
     "category": "block",
     "subtitle": "subtitles.block.generic.break",
     "sounds": [
-      {"name": "srparasites:block/purifier/dig1", "pitch":1.15},
-      {"name": "srparasites:block/purifier/dig1", "pitch":1.2},
-      {"name": "srparasites:block/purifier/dig1", "pitch":1.25},
-      {"name": "srparasites:block/purifier/dig2", "pitch":1.15},
-      {"name": "srparasites:block/purifier/dig2", "pitch":1.2},
-      {"name": "srparasites:block/purifier/dig2", "pitch":1.25},
-      {"name": "srparasites:block/purifier/dig3", "pitch":1.15},
-      {"name": "srparasites:block/purifier/dig3", "pitch":1.2},
-      {"name": "srparasites:block/purifier/dig3", "pitch":1.25}
+      {
+        "name": "srparasites:block/purifier/dig1","pitch": 1.15
+   },
+      {
+        "name": "srparasites:block/purifier/dig1","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/purifier/dig1","pitch": 1.25
+   },
+      {
+        "name": "srparasites:block/purifier/dig2","pitch": 1.15
+   },
+      {
+        "name": "srparasites:block/purifier/dig2","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/purifier/dig2","pitch": 1.25
+   },
+      {
+        "name": "srparasites:block/purifier/dig3","pitch": 1.15
+   },
+      {
+        "name": "srparasites:block/purifier/dig3","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/purifier/dig3","pitch": 1.25
+   }
     ]
   },
   "block.purifier.step": {
     "category": "block",
     "subtitle": "subtitles.block.generic.footsteps",
     "sounds": [
-      {"name": "srparasites:block/purifier/step1", "pitch":1.1},
-      {"name": "srparasites:block/purifier/step1", "pitch":1.2},
-      {"name": "srparasites:block/purifier/step1", "pitch":1.3},
-      {"name": "srparasites:block/purifier/step2", "pitch":1.1},
-      {"name": "srparasites:block/purifier/step2", "pitch":1.2},
-      {"name": "srparasites:block/purifier/step2", "pitch":1.3},
-      {"name": "srparasites:block/purifier/step3", "pitch":1.1},
-      {"name": "srparasites:block/purifier/step3", "pitch":1.2},
-      {"name": "srparasites:block/purifier/step3", "pitch":1.3},
-      {"name": "srparasites:block/purifier/step4", "pitch":1.1},
-      {"name": "srparasites:block/purifier/step4", "pitch":1.2},
-      {"name": "srparasites:block/purifier/step4", "pitch":1.3}
+      {
+        "name": "srparasites:block/purifier/step1","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/purifier/step1","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/purifier/step1","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/purifier/step2","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/purifier/step2","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/purifier/step2","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/purifier/step3","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/purifier/step3","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/purifier/step3","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/purifier/step4","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/purifier/step4","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/purifier/step4","pitch": 1.3
+   }
     ]
   },
   "block.purifier.place": {
     "category": "block",
     "subtitle": "subtitles.block.generic.place",
     "sounds": [
-      {"name": "srparasites:block/purifier/place1", "pitch":1.1},
-      {"name": "srparasites:block/purifier/place1", "pitch":1.2},
-      {"name": "srparasites:block/purifier/place1", "pitch":1.3},
-      {"name": "srparasites:block/purifier/place2", "pitch":1.1},
-      {"name": "srparasites:block/purifier/place2", "pitch":1.2},
-      {"name": "srparasites:block/purifier/place2", "pitch":1.3},
-      {"name": "srparasites:block/purifier/place3", "pitch":1.1},
-      {"name": "srparasites:block/purifier/place3", "pitch":1.2},
-      {"name": "srparasites:block/purifier/place3", "pitch":1.3}
+      {
+        "name": "srparasites:block/purifier/place1","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/purifier/place1","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/purifier/place1","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/purifier/place2","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/purifier/place2","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/purifier/place2","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/purifier/place3","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/purifier/place3","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/purifier/place3","pitch": 1.3
+   }
     ]
   },
   "block.purifier.hit": {
     "category": "block",
     "subtitle": "subtitles.block.generic.hit",
     "sounds": [
-      {"name": "srparasites:block/purifier/step1", "pitch":1.1},
-      {"name": "srparasites:block/purifier/step1", "pitch":1.2},
-      {"name": "srparasites:block/purifier/step1", "pitch":1.3},
-      {"name": "srparasites:block/purifier/step2", "pitch":1.1},
-      {"name": "srparasites:block/purifier/step2", "pitch":1.2},
-      {"name": "srparasites:block/purifier/step2", "pitch":1.3},
-      {"name": "srparasites:block/purifier/step3", "pitch":1.1},
-      {"name": "srparasites:block/purifier/step3", "pitch":1.2},
-      {"name": "srparasites:block/purifier/step3", "pitch":1.3},
-      {"name": "srparasites:block/purifier/step4", "pitch":1.1},
-      {"name": "srparasites:block/purifier/step4", "pitch":1.2},
-      {"name": "srparasites:block/purifier/step4", "pitch":1.3}
+      {
+        "name": "srparasites:block/purifier/step1","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/purifier/step1","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/purifier/step1","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/purifier/step2","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/purifier/step2","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/purifier/step2","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/purifier/step3","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/purifier/step3","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/purifier/step3","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/purifier/step4","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/purifier/step4","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/purifier/step4","pitch": 1.3
+   }
     ]
   },
   "block.purifier.fall": {
     "category": "block",
     "subtitle": "subtitles.block.generic.fall",
     "sounds": [
-      {"name": "srparasites:block/purifier/step1", "pitch":1.1},
-      {"name": "srparasites:block/purifier/step1", "pitch":1.2},
-      {"name": "srparasites:block/purifier/step1", "pitch":1.3},
-      {"name": "srparasites:block/purifier/step2", "pitch":1.1},
-      {"name": "srparasites:block/purifier/step2", "pitch":1.2},
-      {"name": "srparasites:block/purifier/step2", "pitch":1.3},
-      {"name": "srparasites:block/purifier/step3", "pitch":1.1},
-      {"name": "srparasites:block/purifier/step3", "pitch":1.2},
-      {"name": "srparasites:block/purifier/step3", "pitch":1.3},
-      {"name": "srparasites:block/purifier/step4", "pitch":1.1},
-      {"name": "srparasites:block/purifier/step4", "pitch":1.2},
-      {"name": "srparasites:block/purifier/step4", "pitch":1.3}
+      {
+        "name": "srparasites:block/purifier/step1","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/purifier/step1","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/purifier/step1","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/purifier/step2","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/purifier/step2","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/purifier/step2","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/purifier/step3","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/purifier/step3","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/purifier/step3","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/purifier/step4","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/purifier/step4","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/purifier/step4","pitch": 1.3
+   }
     ]
   },
   "block.purifier.use": {
     "category": "block",
     "subtitle": "subtitles.purifier.use",
     "sounds": [
-      {"name": "srparasites:block/purifier/use1", "pitch":1.05},
-      {"name": "srparasites:block/purifier/use1", "pitch":1},
-      {"name": "srparasites:block/purifier/use1", "pitch":0.95},
-      {"name": "srparasites:block/purifier/use2", "pitch":1.05},
-      {"name": "srparasites:block/purifier/use2", "pitch":1},
-      {"name": "srparasites:block/purifier/use2", "pitch":0.95},
-      {"name": "srparasites:block/purifier/use3", "pitch":1.05},
-      {"name": "srparasites:block/purifier/use3", "pitch":1},
-      {"name": "srparasites:block/purifier/use3", "pitch":0.95},
-      {"name": "srparasites:block/purifier/use4", "pitch":1.05},
-      {"name": "srparasites:block/purifier/use4", "pitch":1},
-      {"name": "srparasites:block/purifier/use4", "pitch":0.95}
+      {
+        "name": "srparasites:block/purifier/use1","pitch": 1.05
+   },
+      {
+        "name": "srparasites:block/purifier/use1","pitch": 1
+      },
+   {
+        "name": "srparasites:block/purifier/use1","pitch": 0.95
+   },
+      {
+        "name": "srparasites:block/purifier/use2","pitch": 1.05
+   },
+      {
+        "name": "srparasites:block/purifier/use2","pitch": 1
+      },
+   {
+        "name": "srparasites:block/purifier/use2","pitch": 0.95
+   },
+      {
+        "name": "srparasites:block/purifier/use3","pitch": 1.05
+   },
+      {
+        "name": "srparasites:block/purifier/use3","pitch": 1
+      },
+   {
+        "name": "srparasites:block/purifier/use3","pitch": 0.95
+   },
+      {
+        "name": "srparasites:block/purifier/use4","pitch": 1.05
+   },
+      {
+        "name": "srparasites:block/purifier/use4","pitch": 1
+      },
+   {
+        "name": "srparasites:block/purifier/use4","pitch": 0.95
+   }
     ]
   },
   "block.lure.dig": {
     "category": "block",
     "subtitle": "subtitles.block.generic.break",
     "sounds": [
-      {"name": "srparasites:block/lure/dig1", "pitch":1.15},
-      {"name": "srparasites:block/lure/dig1", "pitch":1.2},
-      {"name": "srparasites:block/lure/dig1", "pitch":1.25},
-      {"name": "srparasites:block/lure/dig2", "pitch":1.15},
-      {"name": "srparasites:block/lure/dig2", "pitch":1.2},
-      {"name": "srparasites:block/lure/dig2", "pitch":1.25},
-      {"name": "srparasites:block/lure/dig3", "pitch":1.15},
-      {"name": "srparasites:block/lure/dig3", "pitch":1.2},
-      {"name": "srparasites:block/lure/dig3", "pitch":1.25},
-      {"name": "srparasites:block/lure/dig4", "pitch":1.15},
-      {"name": "srparasites:block/lure/dig4", "pitch":1.2},
-      {"name": "srparasites:block/lure/dig4", "pitch":1.25}
+      {
+        "name": "srparasites:block/lure/dig1","pitch": 1.15
+   },
+      {
+        "name": "srparasites:block/lure/dig1","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/lure/dig1","pitch": 1.25
+   },
+      {
+        "name": "srparasites:block/lure/dig2","pitch": 1.15
+   },
+      {
+        "name": "srparasites:block/lure/dig2","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/lure/dig2","pitch": 1.25
+   },
+      {
+        "name": "srparasites:block/lure/dig3","pitch": 1.15
+   },
+      {
+        "name": "srparasites:block/lure/dig3","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/lure/dig3","pitch": 1.25
+   },
+      {
+        "name": "srparasites:block/lure/dig4","pitch": 1.15
+   },
+      {
+        "name": "srparasites:block/lure/dig4","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/lure/dig4","pitch": 1.25
+   }
     ]
   },
   "block.lure.step": {
     "category": "block",
     "subtitle": "subtitles.block.generic.footsteps",
     "sounds": [
-      {"name": "srparasites:block/lure/step1", "pitch":1.1},
-      {"name": "srparasites:block/lure/step1", "pitch":1.2},
-      {"name": "srparasites:block/lure/step1", "pitch":1.3},
-      {"name": "srparasites:block/lure/step2", "pitch":1.1},
-      {"name": "srparasites:block/lure/step2", "pitch":1.2},
-      {"name": "srparasites:block/lure/step2", "pitch":1.3},
-      {"name": "srparasites:block/lure/step3", "pitch":1.1},
-      {"name": "srparasites:block/lure/step3", "pitch":1.2},
-      {"name": "srparasites:block/lure/step3", "pitch":1.3},
-      {"name": "srparasites:block/lure/step4", "pitch":1.1},
-      {"name": "srparasites:block/lure/step4", "pitch":1.2},
-      {"name": "srparasites:block/lure/step4", "pitch":1.3}
+      {
+        "name": "srparasites:block/lure/step1","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/lure/step1","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/lure/step1","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/lure/step2","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/lure/step2","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/lure/step2","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/lure/step3","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/lure/step3","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/lure/step3","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/lure/step4","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/lure/step4","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/lure/step4","pitch": 1.3
+   }
     ]
   },
   "block.lure.place": {
     "category": "block",
     "subtitle": "subtitles.block.generic.place",
     "sounds": [
-      {"name": "srparasites:block/lure/place1", "pitch":1.1},
-      {"name": "srparasites:block/lure/place1", "pitch":1.2},
-      {"name": "srparasites:block/lure/place1", "pitch":1.3},
-      {"name": "srparasites:block/lure/place2", "pitch":1.1},
-      {"name": "srparasites:block/lure/place2", "pitch":1.2},
-      {"name": "srparasites:block/lure/place2", "pitch":1.3},
-      {"name": "srparasites:block/lure/place3", "pitch":1.1},
-      {"name": "srparasites:block/lure/place3", "pitch":1.2},
-      {"name": "srparasites:block/lure/place3", "pitch":1.3},
-      {"name": "srparasites:block/lure/place4", "pitch":1.1},
-      {"name": "srparasites:block/lure/place4", "pitch":1.2},
-      {"name": "srparasites:block/lure/place4", "pitch":1.3}
+      {
+        "name": "srparasites:block/lure/place1","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/lure/place1","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/lure/place1","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/lure/place2","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/lure/place2","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/lure/place2","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/lure/place3","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/lure/place3","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/lure/place3","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/lure/place4","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/lure/place4","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/lure/place4","pitch": 1.3
+   }
     ]
   },
   "block.lure.hit": {
     "category": "block",
     "subtitle": "subtitles.block.generic.hit",
     "sounds": [
-      {"name": "srparasites:block/lure/step1", "pitch":1.1},
-      {"name": "srparasites:block/lure/step1", "pitch":1.2},
-      {"name": "srparasites:block/lure/step1", "pitch":1.3},
-      {"name": "srparasites:block/lure/step2", "pitch":1.1},
-      {"name": "srparasites:block/lure/step2", "pitch":1.2},
-      {"name": "srparasites:block/lure/step2", "pitch":1.3},
-      {"name": "srparasites:block/lure/step3", "pitch":1.1},
-      {"name": "srparasites:block/lure/step3", "pitch":1.2},
-      {"name": "srparasites:block/lure/step3", "pitch":1.3},
-      {"name": "srparasites:block/lure/step4", "pitch":1.1},
-      {"name": "srparasites:block/lure/step4", "pitch":1.2},
-      {"name": "srparasites:block/lure/step4", "pitch":1.3}
+      {
+        "name": "srparasites:block/lure/step1","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/lure/step1","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/lure/step1","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/lure/step2","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/lure/step2","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/lure/step2","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/lure/step3","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/lure/step3","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/lure/step3","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/lure/step4","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/lure/step4","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/lure/step4","pitch": 1.3
+   }
     ]
   },
   "block.lure.fall": {
     "category": "block",
     "subtitle": "subtitles.block.generic.fall",
     "sounds": [
-      {"name": "srparasites:block/lure/step1", "pitch":1.1},
-      {"name": "srparasites:block/lure/step1", "pitch":1.2},
-      {"name": "srparasites:block/lure/step1", "pitch":1.3},
-      {"name": "srparasites:block/lure/step2", "pitch":1.1},
-      {"name": "srparasites:block/lure/step2", "pitch":1.2},
-      {"name": "srparasites:block/lure/step2", "pitch":1.3},
-      {"name": "srparasites:block/lure/step3", "pitch":1.1},
-      {"name": "srparasites:block/lure/step3", "pitch":1.2},
-      {"name": "srparasites:block/lure/step3", "pitch":1.3},
-      {"name": "srparasites:block/lure/step4", "pitch":1.1},
-      {"name": "srparasites:block/lure/step4", "pitch":1.2},
-      {"name": "srparasites:block/lure/step4", "pitch":1.3}
+      {
+        "name": "srparasites:block/lure/step1","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/lure/step1","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/lure/step1","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/lure/step2","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/lure/step2","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/lure/step2","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/lure/step3","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/lure/step3","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/lure/step3","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/lure/step4","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/lure/step4","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/lure/step4","pitch": 1.3
+   }
     ]
   },
   "block.lure.use": {
     "category": "block",
     "subtitle": "subtitles.lure.use",
     "sounds": [
-      {"name": "srparasites:block/lure/use1", "pitch":1.05},
-      {"name": "srparasites:block/lure/use1", "pitch":1},
-      {"name": "srparasites:block/lure/use1", "pitch":0.95},
-      {"name": "srparasites:block/lure/use2", "pitch":1.05},
-      {"name": "srparasites:block/lure/use2", "pitch":1},
-      {"name": "srparasites:block/lure/use2", "pitch":0.95}
+      {
+        "name": "srparasites:block/lure/use1","pitch": 1.05
+   },
+      {
+        "name": "srparasites:block/lure/use1","pitch": 1
+      },
+   {
+        "name": "srparasites:block/lure/use1","pitch": 0.95
+   },
+      {
+        "name": "srparasites:block/lure/use2","pitch": 1.05
+   },
+      {
+        "name": "srparasites:block/lure/use2","pitch": 1
+      },
+   {
+        "name": "srparasites:block/lure/use2","pitch": 0.95
+   }
     ]
   },
   "block.carcass.use": {
     "category": "block",
     "subtitle": "subtitles.carcass.use",
     "sounds": [
-      {"name": "srparasites:block/lure/carcass", "pitch":1.05},
-      {"name": "srparasites:block/lure/carcass", "pitch":1},
-      {"name": "srparasites:block/lure/carcass", "pitch":0.95}
+      {
+        "name": "srparasites:block/lure/carcass","pitch": 1.05
+   },
+      {
+        "name": "srparasites:block/lure/carcass","pitch": 1
+      },
+   {
+        "name": "srparasites:block/lure/carcass","pitch": 0.95
+   }
     ]
   },
   "block.beckon.dig": {
     "category": "block",
     "subtitle": "subtitles.block.generic.break",
     "sounds": [
-      {"name": "srparasites:block/beckon/dig1", "pitch":1.1, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig1", "pitch":1.2, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig1", "pitch":1.3, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig2", "pitch":1.1, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig2", "pitch":1.2, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig2", "pitch":1.3, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig3", "pitch":1.1, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig3", "pitch":1.2, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig3", "pitch":1.3, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig4", "pitch":1.1, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig4", "pitch":1.2, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig4", "pitch":1.3, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig5", "pitch":1.1, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig5", "pitch":1.2, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig5", "pitch":1.3, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig6", "pitch":1.1, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig6", "pitch":1.2, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig6", "pitch":1.3, "volume": 1.5}
+      {
+        "name": "srparasites:block/beckon/dig1","pitch": 1.1,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig1","pitch": 1.2,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig1","pitch": 1.3,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig2","pitch": 1.1,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig2","pitch": 1.2,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig2","pitch": 1.3,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig3","pitch": 1.1,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig3","pitch": 1.2,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig3","pitch": 1.3,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig4","pitch": 1.1,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig4","pitch": 1.2,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig4","pitch": 1.3,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig5","pitch": 1.1,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig5","pitch": 1.2,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig5","pitch": 1.3,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig6","pitch": 1.1,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig6","pitch": 1.2,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig6","pitch": 1.3,
+    "volume": 1.5
+      }
     ]
   },
   "block.beckon.step": {
     "category": "block",
     "subtitle": "subtitles.block.generic.footsteps",
     "sounds": [
-      {"name": "srparasites:block/beckon/step1", "pitch":1.1, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step1", "pitch":1.2, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step1", "pitch":1.3, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step2", "pitch":1.1, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step2", "pitch":1.2, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step2", "pitch":1.3, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step3", "pitch":1.1, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step3", "pitch":1.2, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step3", "pitch":1.3, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step4", "pitch":1.1, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step4", "pitch":1.2, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step4", "pitch":1.3, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step5", "pitch":1.1, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step5", "pitch":1.2, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step5", "pitch":1.3, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step6", "pitch":1.1, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step6", "pitch":1.2, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step6", "pitch":1.3, "volume": 1.5}
+      {
+        "name": "srparasites:block/beckon/step1","pitch": 1.1,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step1","pitch": 1.2,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step1","pitch": 1.3,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step2","pitch": 1.1,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step2","pitch": 1.2,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step2","pitch": 1.3,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step3","pitch": 1.1,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step3","pitch": 1.2,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step3","pitch": 1.3,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step4","pitch": 1.1,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step4","pitch": 1.2,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step4","pitch": 1.3,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step5","pitch": 1.1,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step5","pitch": 1.2,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step5","pitch": 1.3,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step6","pitch": 1.1,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step6","pitch": 1.2,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step6","pitch": 1.3,
+    "volume": 1.5
+      }
     ]
   },
   "block.beckon.place": {
     "category": "block",
     "subtitle": "subtitles.block.generic.place",
     "sounds": [
-      {"name": "srparasites:block/beckon/dig1", "pitch":1.1, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig1", "pitch":1.2, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig1", "pitch":1.3, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig2", "pitch":1.1, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig2", "pitch":1.2, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig2", "pitch":1.3, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig3", "pitch":1.1, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig3", "pitch":1.2, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig3", "pitch":1.3, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig4", "pitch":1.1, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig4", "pitch":1.2, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig4", "pitch":1.3, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig5", "pitch":1.1, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig5", "pitch":1.2, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig5", "pitch":1.3, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig6", "pitch":1.1, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig6", "pitch":1.2, "volume": 1.5},
-      {"name": "srparasites:block/beckon/dig6", "pitch":1.3, "volume": 1.5}
+      {
+        "name": "srparasites:block/beckon/dig1","pitch": 1.1,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig1","pitch": 1.2,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig1","pitch": 1.3,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig2","pitch": 1.1,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig2","pitch": 1.2,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig2","pitch": 1.3,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig3","pitch": 1.1,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig3","pitch": 1.2,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig3","pitch": 1.3,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig4","pitch": 1.1,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig4","pitch": 1.2,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig4","pitch": 1.3,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig5","pitch": 1.1,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig5","pitch": 1.2,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig5","pitch": 1.3,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig6","pitch": 1.1,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig6","pitch": 1.2,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/dig6","pitch": 1.3,
+    "volume": 1.5
+      }
     ]
   },
   "block.beckon.hit": {
     "category": "block",
     "subtitle": "subtitles.block.generic.hit",
     "sounds": [
-      {"name": "srparasites:block/beckon/step1", "pitch":1.1, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step1", "pitch":1.2, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step1", "pitch":1.3, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step2", "pitch":1.1, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step2", "pitch":1.2, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step2", "pitch":1.3, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step3", "pitch":1.1, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step3", "pitch":1.2, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step3", "pitch":1.3, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step4", "pitch":1.1, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step4", "pitch":1.2, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step4", "pitch":1.3, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step5", "pitch":1.1, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step5", "pitch":1.2, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step5", "pitch":1.3, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step6", "pitch":1.1, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step6", "pitch":1.2, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step6", "pitch":1.3, "volume": 1.5}
+      {
+        "name": "srparasites:block/beckon/step1","pitch": 1.1,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step1","pitch": 1.2,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step1","pitch": 1.3,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step2","pitch": 1.1,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step2","pitch": 1.2,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step2","pitch": 1.3,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step3","pitch": 1.1,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step3","pitch": 1.2,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step3","pitch": 1.3,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step4","pitch": 1.1,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step4","pitch": 1.2,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step4","pitch": 1.3,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step5","pitch": 1.1,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step5","pitch": 1.2,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step5","pitch": 1.3,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step6","pitch": 1.1,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step6","pitch": 1.2,
+    "volume": 1.5
+      },
+      {
+        "name": "srparasites:block/beckon/step6","pitch": 1.3,
+    "volume": 1.5
+      }
     ]
   },
   "block.beckon.fall": {
     "category": "block",
     "subtitle": "subtitles.block.generic.fall",
     "sounds": [
-      {"name": "srparasites:block/beckon/step1", "pitch":1.1, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step1", "pitch":1.2, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step1", "pitch":1.3, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step2", "pitch":1.1, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step2", "pitch":1.2, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step2", "pitch":1.3, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step3", "pitch":1.1, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step3", "pitch":1.2, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step3", "pitch":1.3, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step4", "pitch":1.1, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step4", "pitch":1.2, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step4", "pitch":1.3, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step5", "pitch":1.1, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step5", "pitch":1.2, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step5", "pitch":1.3, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step6", "pitch":1.1, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step6", "pitch":1.2, "volume": 1.5},
-      {"name": "srparasites:block/beckon/step6", "pitch":1.3, "volume": 1.5}
+      {"name": "srparasites:block/beckon/step1","pitch": 1.1,"volume": 1.5},
+      {"name": "srparasites:block/beckon/step1","pitch": 1.2,"volume": 1.5},
+      {"name": "srparasites:block/beckon/step1","pitch": 1.3,"volume": 1.5},
+      {"name": "srparasites:block/beckon/step2","pitch": 1.1,"volume": 1.5},
+      {"name": "srparasites:block/beckon/step2","pitch": 1.2,"volume": 1.5},
+      {"name": "srparasites:block/beckon/step2","pitch": 1.3,"volume": 1.5},
+      {"name": "srparasites:block/beckon/step3","pitch": 1.1,"volume": 1.5},
+      {"name": "srparasites:block/beckon/step3","pitch": 1.2,"volume": 1.5},
+      {"name": "srparasites:block/beckon/step3","pitch": 1.3,"volume": 1.5},
+      {"name": "srparasites:block/beckon/step4","pitch": 1.1,"volume": 1.5},
+      {"name": "srparasites:block/beckon/step4","pitch": 1.2,"volume": 1.5},
+      {"name": "srparasites:block/beckon/step4","pitch": 1.3,"volume": 1.5},
+      {"name": "srparasites:block/beckon/step5","pitch": 1.1,"volume": 1.5},
+      {"name": "srparasites:block/beckon/step5","pitch": 1.2,"volume": 1.5},
+      {"name": "srparasites:block/beckon/step5","pitch": 1.3,"volume": 1.5},
+      {"name": "srparasites:block/beckon/step6","pitch": 1.1,"volume": 1.5},
+      {"name": "srparasites:block/beckon/step6","pitch": 1.2,"volume": 1.5},
+      {"name": "srparasites:block/beckon/step6","pitch": 1.3,"volume": 1.5}
     ]
   },
   "block.soil.dig": {
     "category": "block",
     "subtitle": "subtitles.block.generic.break",
     "sounds": [
-      {"name": "srparasites:block/soil/dig1", "pitch":1.1},
-      {"name": "srparasites:block/soil/dig1", "pitch":1.2},
-      {"name": "srparasites:block/soil/dig1", "pitch":1.3},
-      {"name": "srparasites:block/soil/dig2", "pitch":1.1},
-      {"name": "srparasites:block/soil/dig2", "pitch":1.2},
-      {"name": "srparasites:block/soil/dig2", "pitch":1.3},
-      {"name": "srparasites:block/soil/dig3", "pitch":1.1},
-      {"name": "srparasites:block/soil/dig3", "pitch":1.2},
-      {"name": "srparasites:block/soil/dig3", "pitch":1.3},
-      {"name": "srparasites:block/soil/dig4", "pitch":1.1},
-      {"name": "srparasites:block/soil/dig4", "pitch":1.2},
-      {"name": "srparasites:block/soil/dig4", "pitch":1.3}
+      {
+        "name": "srparasites:block/soil/dig1","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/soil/dig1","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/soil/dig1","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/soil/dig2","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/soil/dig2","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/soil/dig2","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/soil/dig3","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/soil/dig3","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/soil/dig3","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/soil/dig4","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/soil/dig4","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/soil/dig4","pitch": 1.3
+   }
     ]
   },
   "block.soil.step": {
     "category": "block",
     "subtitle": "subtitles.block.generic.footsteps",
     "sounds": [
-      {"name": "srparasites:block/soil/step1", "pitch":1.1},
-      {"name": "srparasites:block/soil/step1", "pitch":1.2},
-      {"name": "srparasites:block/soil/step1", "pitch":1.3},
-      {"name": "srparasites:block/soil/step2", "pitch":1.1},
-      {"name": "srparasites:block/soil/step2", "pitch":1.2},
-      {"name": "srparasites:block/soil/step2", "pitch":1.3},
-      {"name": "srparasites:block/soil/step3", "pitch":1.1},
-      {"name": "srparasites:block/soil/step3", "pitch":1.2},
-      {"name": "srparasites:block/soil/step3", "pitch":1.3},
-      {"name": "srparasites:block/soil/step4", "pitch":1.1},
-      {"name": "srparasites:block/soil/step4", "pitch":1.2},
-      {"name": "srparasites:block/soil/step4", "pitch":1.3},
-      {"name": "srparasites:block/soil/step5", "pitch":1.1},
-      {"name": "srparasites:block/soil/step5", "pitch":1.2},
-      {"name": "srparasites:block/soil/step5", "pitch":1.3},
-      {"name": "srparasites:block/soil/step6", "pitch":1.1},
-      {"name": "srparasites:block/soil/step6", "pitch":1.2},
-      {"name": "srparasites:block/soil/step6", "pitch":1.3},
-      {"name": "srparasites:block/soil/step7", "pitch":1.1},
-      {"name": "srparasites:block/soil/step7", "pitch":1.2},
-      {"name": "srparasites:block/soil/step7", "pitch":1.3}
+      {
+        "name": "srparasites:block/soil/step1","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/soil/step1","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/soil/step1","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/soil/step2","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/soil/step2","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/soil/step2","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/soil/step3","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/soil/step3","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/soil/step3","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/soil/step4","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/soil/step4","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/soil/step4","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/soil/step5","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/soil/step5","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/soil/step5","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/soil/step6","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/soil/step6","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/soil/step6","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/soil/step7","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/soil/step7","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/soil/step7","pitch": 1.3
+   }
     ]
   },
   "block.soil.place": {
     "category": "block",
     "subtitle": "subtitles.block.generic.place",
     "sounds": [
-      {"name": "srparasites:block/soil/dig1", "pitch":1.1},
-      {"name": "srparasites:block/soil/dig1", "pitch":1.2},
-      {"name": "srparasites:block/soil/dig1", "pitch":1.3},
-      {"name": "srparasites:block/soil/dig2", "pitch":1.1},
-      {"name": "srparasites:block/soil/dig2", "pitch":1.2},
-      {"name": "srparasites:block/soil/dig2", "pitch":1.3},
-      {"name": "srparasites:block/soil/dig3", "pitch":1.1},
-      {"name": "srparasites:block/soil/dig3", "pitch":1.2},
-      {"name": "srparasites:block/soil/dig3", "pitch":1.3},
-      {"name": "srparasites:block/soil/dig4", "pitch":1.1},
-      {"name": "srparasites:block/soil/dig4", "pitch":1.2},
-      {"name": "srparasites:block/soil/dig4", "pitch":1.3}
+      {
+        "name": "srparasites:block/soil/dig1","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/soil/dig1","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/soil/dig1","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/soil/dig2","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/soil/dig2","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/soil/dig2","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/soil/dig3","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/soil/dig3","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/soil/dig3","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/soil/dig4","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/soil/dig4","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/soil/dig4","pitch": 1.3
+   }
     ]
   },
   "block.soil.hit": {
     "category": "block",
     "subtitle": "subtitles.block.generic.hit",
     "sounds": [
-      {"name": "srparasites:block/soil/step1", "pitch":1.1},
-      {"name": "srparasites:block/soil/step1", "pitch":1.2},
-      {"name": "srparasites:block/soil/step1", "pitch":1.3},
-      {"name": "srparasites:block/soil/step2", "pitch":1.1},
-      {"name": "srparasites:block/soil/step2", "pitch":1.2},
-      {"name": "srparasites:block/soil/step2", "pitch":1.3},
-      {"name": "srparasites:block/soil/step3", "pitch":1.1},
-      {"name": "srparasites:block/soil/step3", "pitch":1.2},
-      {"name": "srparasites:block/soil/step3", "pitch":1.3},
-      {"name": "srparasites:block/soil/step4", "pitch":1.1},
-      {"name": "srparasites:block/soil/step4", "pitch":1.2},
-      {"name": "srparasites:block/soil/step4", "pitch":1.3},
-      {"name": "srparasites:block/soil/step5", "pitch":1.1},
-      {"name": "srparasites:block/soil/step5", "pitch":1.2},
-      {"name": "srparasites:block/soil/step5", "pitch":1.3},
-      {"name": "srparasites:block/soil/step6", "pitch":1.1},
-      {"name": "srparasites:block/soil/step6", "pitch":1.2},
-      {"name": "srparasites:block/soil/step6", "pitch":1.3},
-      {"name": "srparasites:block/soil/step7", "pitch":1.1},
-      {"name": "srparasites:block/soil/step7", "pitch":1.2},
-      {"name": "srparasites:block/soil/step7", "pitch":1.3}
+      {
+        "name": "srparasites:block/soil/step1","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/soil/step1","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/soil/step1","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/soil/step2","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/soil/step2","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/soil/step2","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/soil/step3","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/soil/step3","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/soil/step3","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/soil/step4","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/soil/step4","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/soil/step4","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/soil/step5","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/soil/step5","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/soil/step5","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/soil/step6","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/soil/step6","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/soil/step6","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/soil/step7","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/soil/step7","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/soil/step7","pitch": 1.3
+   }
     ]
   },
   "block.soil.fall": {
     "category": "block",
     "subtitle": "subtitles.block.generic.fall",
     "sounds": [
-      {"name": "srparasites:block/soil/step1", "pitch":1.1},
-      {"name": "srparasites:block/soil/step1", "pitch":1.2},
-      {"name": "srparasites:block/soil/step1", "pitch":1.3},
-      {"name": "srparasites:block/soil/step2", "pitch":1.1},
-      {"name": "srparasites:block/soil/step2", "pitch":1.2},
-      {"name": "srparasites:block/soil/step2", "pitch":1.3},
-      {"name": "srparasites:block/soil/step3", "pitch":1.1},
-      {"name": "srparasites:block/soil/step3", "pitch":1.2},
-      {"name": "srparasites:block/soil/step3", "pitch":1.3},
-      {"name": "srparasites:block/soil/step4", "pitch":1.1},
-      {"name": "srparasites:block/soil/step4", "pitch":1.2},
-      {"name": "srparasites:block/soil/step4", "pitch":1.3},
-      {"name": "srparasites:block/soil/step5", "pitch":1.1},
-      {"name": "srparasites:block/soil/step5", "pitch":1.2},
-      {"name": "srparasites:block/soil/step5", "pitch":1.3},
-      {"name": "srparasites:block/soil/step6", "pitch":1.1},
-      {"name": "srparasites:block/soil/step6", "pitch":1.2},
-      {"name": "srparasites:block/soil/step6", "pitch":1.3},
-      {"name": "srparasites:block/soil/step7", "pitch":1.1},
-      {"name": "srparasites:block/soil/step7", "pitch":1.2},
-      {"name": "srparasites:block/soil/step7", "pitch":1.3}
+      {
+        "name": "srparasites:block/soil/step1","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/soil/step1","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/soil/step1","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/soil/step2","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/soil/step2","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/soil/step2","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/soil/step3","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/soil/step3","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/soil/step3","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/soil/step4","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/soil/step4","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/soil/step4","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/soil/step5","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/soil/step5","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/soil/step5","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/soil/step6","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/soil/step6","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/soil/step6","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/soil/step7","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/soil/step7","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/soil/step7","pitch": 1.3
+   }
+    ]
+  },
+  "block.vomit.dig": {
+    "category": "block",
+    "subtitle": "subtitles.block.generic.break",
+    "sounds": [
+      {
+        "name": "srparasites:block/vomit/dig1","pitch": 1.15
+   },
+      {
+        "name": "srparasites:block/vomit/dig1","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/vomit/dig1","pitch": 1.25
+   },
+      {
+        "name": "srparasites:block/vomit/dig2","pitch": 1.15
+   },
+      {
+        "name": "srparasites:block/vomit/dig2","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/vomit/dig2","pitch": 1.25
+   },
+      {
+        "name": "srparasites:block/vomit/dig3","pitch": 1.15
+   },
+      {
+        "name": "srparasites:block/vomit/dig3","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/vomit/dig3","pitch": 1.25
+   },
+      {
+        "name": "srparasites:block/vomit/dig4","pitch": 1.15
+   },
+      {
+        "name": "srparasites:block/vomit/dig4","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/vomit/dig4","pitch": 1.25
+   }
+    ]
+  },
+  "block.vomit.step": {
+    "category": "block",
+    "subtitle": "subtitles.block.generic.footsteps",
+    "sounds": [
+      {
+        "name": "srparasites:block/vomit/step1","pitch": 1.1,
+    "volume": 4
+      },
+      {
+        "name": "srparasites:block/vomit/step1","pitch": 1.2,
+    "volume": 4
+      },
+      {
+        "name": "srparasites:block/vomit/step1","pitch": 1.3,
+    "volume": 4
+      },
+      {
+        "name": "srparasites:block/vomit/step2","pitch": 1.1,
+    "volume": 4
+      },
+      {
+        "name": "srparasites:block/vomit/step2","pitch": 1.2,
+    "volume": 4
+      },
+      {
+        "name": "srparasites:block/vomit/step2","pitch": 1.3,
+    "volume": 4
+      },
+      {
+        "name": "srparasites:block/vomit/step3","pitch": 1.1,
+    "volume": 4
+      },
+      {
+        "name": "srparasites:block/vomit/step3","pitch": 1.2,
+    "volume": 4
+      },
+      {
+        "name": "srparasites:block/vomit/step3","pitch": 1.3,
+    "volume": 4
+      },
+      {
+        "name": "srparasites:block/vomit/step4","pitch": 1.1,
+    "volume": 4
+      },
+      {
+        "name": "srparasites:block/vomit/step4","pitch": 1.2,
+    "volume": 4
+      },
+      {
+        "name": "srparasites:block/vomit/step4","pitch": 1.3,
+    "volume": 4
+      }
+    ]
+  },
+  "block.vomit.place": {
+    "category": "block",
+    "subtitle": "subtitles.block.generic.place",
+    "sounds": [
+      {
+        "name": "srparasites:block/vomit/dig1","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/vomit/dig1","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/vomit/dig1","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/vomit/dig2","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/vomit/dig2","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/vomit/dig2","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/vomit/dig3","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/vomit/dig3","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/vomit/dig3","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/vomit/dig4","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/vomit/dig4","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/vomit/dig4","pitch": 1.3
+   }
+    ]
+  },
+  "block.vomit.hit": {
+    "category": "block",
+    "subtitle": "subtitles.block.generic.hit",
+    "sounds": [
+      {
+        "name": "srparasites:block/vomit/step1","pitch": 1.1},
+      {
+        "name": "srparasites:block/vomit/step1","pitch": 1.2},
+      {
+        "name": "srparasites:block/vomit/step1","pitch": 1.3},
+      {
+        "name": "srparasites:block/vomit/step2","pitch": 1.1},
+      {
+        "name": "srparasites:block/vomit/step2","pitch": 1.2},
+      {
+        "name": "srparasites:block/vomit/step2","pitch": 1.3},
+      {
+        "name": "srparasites:block/vomit/step3","pitch": 1.1},
+      {
+        "name": "srparasites:block/vomit/step3","pitch": 1.2},
+      {
+        "name": "srparasites:block/vomit/step3","pitch": 1.3},
+      {
+        "name": "srparasites:block/vomit/step4","pitch": 1.1},
+      {
+        "name": "srparasites:block/vomit/step4","pitch": 1.2},
+      {
+        "name": "srparasites:block/vomit/step4","pitch": 1.3}
+    ]
+  },
+  "block.vomit.fall": {
+    "category": "block",
+    "subtitle": "subtitles.block.generic.fall",
+    "sounds": [
+      {
+        "name": "srparasites:block/vomit/step1","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/vomit/step1","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/vomit/step1","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/vomit/step2","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/vomit/step2","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/vomit/step2","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/vomit/step3","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/vomit/step3","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/vomit/step3","pitch": 1.3
+   },
+      {
+        "name": "srparasites:block/vomit/step4","pitch": 1.1
+   },
+      {
+        "name": "srparasites:block/vomit/step4","pitch": 1.2
+   },
+      {
+        "name": "srparasites:block/vomit/step4","pitch": 1.3
+   }
+    ]
+  },
+  "block.fog": {
+    "category": "block",
+    "sounds": [
+      {"name": "srparasites:block/fog/fog1","pitch": 1.1},
+      {"name": "srparasites:block/fog/fog2","pitch": 1.2},
+      {"name": "srparasites:block/fog/fog3","pitch": 1.3},
+      {"name": "srparasites:block/fog/fog1","pitch": 1.1},
+      {"name": "srparasites:block/fog/fog2","pitch": 1.2},
+      {"name": "srparasites:block/fog/fog3","pitch": 1.3},
+      {"name": "srparasites:block/fog/fog1","pitch": 1.1},
+      {"name": "srparasites:block/fog/fog2","pitch": 1.2},
+      {"name": "srparasites:block/fog/fog3","pitch": 1.3}
+ ]
+  },
+  "block.tunnel.dig": {
+    "category": "block",
+    "subtitle": "subtitles.block.generic.break",
+    "sounds": [
+      {"name": "srparasites:block/tunnel/dig1","pitch": 1.1},
+      {"name": "srparasites:block/tunnel/dig1","pitch": 1.2},
+      {"name": "srparasites:block/tunnel/dig1","pitch": 1.3},
+      {"name": "srparasites:block/tunnel/dig2","pitch": 1.1},
+      {"name": "srparasites:block/tunnel/dig2","pitch": 1.2},
+      {"name": "srparasites:block/tunnel/dig2","pitch": 1.3},
+      {"name": "srparasites:block/tunnel/dig3","pitch": 1.1},
+      {"name": "srparasites:block/tunnel/dig3","pitch": 1.2},
+      {"name": "srparasites:block/tunnel/dig3","pitch": 1.3}
     ]
   }
 }

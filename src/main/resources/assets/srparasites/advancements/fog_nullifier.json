@@ -2,7 +2,7 @@
   "parent": "srparasites:firmamentum_root",
   "display": {
     "icon": {
-      "item": "srparasites:parasitefog"
+      "item": "srparasites:fog_nullifier_icon"
     },
     "title": {
       "translate": "advancements.srparasites.fog_nullifier.title"

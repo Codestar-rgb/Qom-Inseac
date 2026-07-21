@@ -4,7 +4,7 @@
 entity.srparasites.scent.name=循质袭击
 
 entity.srparasites.abo_bodies.name=缀合多体
-entity.srparasites.abo_head.name=Giant Head
+entity.srparasites.abo_head.name=巨型头颅
 
 entity.srparasites.pri_longarms.name=原始长臂兽
 entity.srparasites.pri_manducater.name=原始咀骨兽
@@ -26,16 +26,16 @@ advancements.srparasites.root.title=逃逸：寄生体
 advancements.srparasites.root.description=由内向外。
 
 advancements.srparasites.kill_root.title=狩猎。
-advancements.srparasites.kill_root.description=???
+advancements.srparasites.kill_root.description=？？？
 
-advancements.srparasites.secret_root.title=Cognitio.
-advancements.srparasites.secret_root.description=???
+advancements.srparasites.secret_root.title=认知。
+advancements.srparasites.secret_root.description=？？？
 
-advancements.srparasites.monument_root.title=纪念碑。
-advancements.srparasites.monument_root.description=???
+advancements.srparasites.monument_root.title=丰碑。
+advancements.srparasites.monument_root.description=？？？
 
 advancements.srparasites.firmamentum_root.title=苍穹。
-advancements.srparasites.firmamentum_root.description=???
+advancements.srparasites.firmamentum_root.description=？？？
 
 advancements.srparasites.brew_fear.title=§b狂喜
 advancements.srparasites.brew_fear.description=酿制恐惧药水
@@ -71,37 +71,37 @@ advancements.srparasites.kill_crude.title=粗制种
 advancements.srparasites.kill_crude.description=击杀所有粗制种寄生体
 
 advancements.srparasites.kill_beckon_s1.title=园丁
-advancements.srparasites.kill_beckon_s1.description=击杀一只I阶召唤柱
+advancements.srparasites.kill_beckon_s1.description=击杀 I 阶召唤柱
 
 advancements.srparasites.kill_beckon_s2.title=修枝者
-advancements.srparasites.kill_beckon_s2.description=击杀一只II阶召唤柱
+advancements.srparasites.kill_beckon_s2.description=击杀 II 阶召唤柱
 
 advancements.srparasites.kill_beckon_s3.title=掘根者
-advancements.srparasites.kill_beckon_s3.description=击杀一只III阶召唤柱
+advancements.srparasites.kill_beckon_s3.description=击杀 III 阶召唤柱
 
 advancements.srparasites.kill_beckon_s4.title=根除者
-advancements.srparasites.kill_beckon_s4.description=击杀一只IV阶召唤柱
+advancements.srparasites.kill_beckon_s4.description=击杀 IV 阶召唤柱
 
-advancements.srparasites.kill_dispatcher_s1.title=镇压ZAYIN
-advancements.srparasites.kill_dispatcher_s1.description=击杀一只I阶调度柱
+advancements.srparasites.kill_dispatcher_s1.title=镇压 ZAYIN 级
+advancements.srparasites.kill_dispatcher_s1.description=击杀 I 阶调度柱
 
-advancements.srparasites.kill_dispatcher_s2.title=镇压TETH
-advancements.srparasites.kill_dispatcher_s2.description=击杀一只II阶调度柱
+advancements.srparasites.kill_dispatcher_s2.title=镇压 TETH 级
+advancements.srparasites.kill_dispatcher_s2.description=击杀 II 阶调度柱
 
-advancements.srparasites.kill_dispatcher_s3.title=镇压HE
-advancements.srparasites.kill_dispatcher_s3.description=击杀一只III阶调度柱
+advancements.srparasites.kill_dispatcher_s3.title=镇压 HE 级
+advancements.srparasites.kill_dispatcher_s3.description=击杀 III 阶调度柱
 
-advancements.srparasites.kill_dispatcher_s4.title=镇压ALEPH
-advancements.srparasites.kill_dispatcher_s4.description=击杀一只IV阶调度柱
+advancements.srparasites.kill_dispatcher_s4.title=镇压 ALEPH 级
+advancements.srparasites.kill_dispatcher_s4.description=击杀 IV 阶调度柱
 
 advancements.srparasites.fermented_arrogance.title=愈发膨胀的傲慢
 advancements.srparasites.fermented_arrogance.description=击杀一只狂化末影人
 
 advancements.srparasites.monument.title=我是你所有罪孽的纪念碑
-advancements.srparasites.monument.description=某个存在达到了IV阶
+advancements.srparasites.monument.description=某个存在达到了 IV 阶
 
 advancements.srparasites.cut_roots.title=除恶务尽，斩草除根
-advancements.srparasites.cut_roots.description=杀死1000只裂兽
+advancements.srparasites.cut_roots.description=杀死 1000 只裂兽
 
 advancements.srparasites.peacekeeper.title=和平卫士
 advancements.srparasites.peacekeeper.description=获得一个生物群系净化器
@@ -109,17 +109,17 @@ advancements.srparasites.peacekeeper.description=获得一个生物群系净化�
 advancements.srparasites.enemy_enemy.title=敌人的敌人
 advancements.srparasites.enemy_enemy.description=让苦力怕击杀一只寄生体
 
-advancements.srparasites.ruin_of_fools.title=愚人废墟
+advancements.srparasites.ruin_of_fools.title=愚人之殒
 advancements.srparasites.ruin_of_fools.description=击杀所有原始种寄生体
 
 advancements.srparasites.hunt_season.title=猎杀时刻
-advancements.srparasites.hunt_season.description=在一天内杀死50只寄生体
+advancements.srparasites.hunt_season.description=在一天内杀死 50 只寄生体
 
 advancements.srparasites.qliphoth_overload.title=逆卡巴拉能量过载
-advancements.srparasites.qliphoth_overload.description=某个存在达到了IV阶
+advancements.srparasites.qliphoth_overload.description=某个存在达到了 IV 阶
 
 advancement.srparasites.thornshade_self_destruct.title=华丽的自我毁灭
-advancement.srparasites.thornshade_self_destruct.desc=在自己身上触发影棘刺的爆炸效果。
+advancement.srparasites.thornshade_self_destruct.desc=在自己身上触发影棘的爆炸效果。
 
 advancement.srparasites.sepeku.title=切腹自尽
 advancement.srparasites.sepeku.desc=你献出了你的生命。
@@ -129,6 +129,17 @@ advancement.srparasites.hellfire_chemical_warfare.desc=终结邪狱龙，并从�
 
 advancement.srparasites.cosmic_structural_failure.title=宇宙结构崩坏
 advancement.srparasites.cosmic_structural_failure.desc=让踏虚体摆脱永恒的自毁作用。
+
+advancements.srparasites.columbus.title=哥伦布
+advancements.srparasites.columbus.description=发现一半的天象事件。
+
+advancements.srparasites.stolas.title=斯托拉斯
+advancements.srparasites.stolas.description=发现所有天象事件。
+
+item.srparasites.shrimp.name=虾
+tooltip.srparasites.shrimp.desc=多元宇宙中最美味的佳肴。
+tooltip.srparasites.shrimp.arrow=在翘曲箭头存在期间，有概率被寄生体掉落。
+tooltip.srparasites.shrimp.ariral=可以喂给被同化的末影人。
 
 # Esca Bulbs
 tile.srparasites.esca_bulb.name=饵灯
@@ -185,10 +196,10 @@ tile.srparasites.harlequinn_glass.name=丑鳞玻璃
 tile.srparasites.bloody_glass.name=血染玻璃
 tile.srparasites.infested_glass.name=寄染玻璃
 tile.srparasites.biomass_block.name=生物质块
-tile.srparasites.shade_glass_pane.name=阴影玻璃板
+tile.srparasites.shade_glass_pane.name=暗影玻璃板
 tile.srparasites.sepia_glass_pane.name=深褐色玻璃板
 tile.srparasites.moody_glass_pane.name=阴郁玻璃板
-tile.srparasites.shade_glass.name=阴影玻璃
+tile.srparasites.shade_glass.name=暗影玻璃
 tile.srparasites.sepia_glass.name=深褐色玻璃
 tile.srparasites.moody_glass.name=阴郁玻璃
 
@@ -221,8 +232,8 @@ entity.srparasites.done.name=溺骨妖
 entity.srparasites.carrier_worm.name=蠕虫载体
 entity.srparasites.airscrew.name=悬牵体
 
-death.attack.srparasites.ricardo=%s被添加到了复仇之书
-item.srparasites.book_of_vengeance.name=§d§l复仇之书
+death.attack.srparasites.ricardo=%s被添加到了复仇账簿
+item.srparasites.book_of_vengeance.name=§d§l复仇账簿
 item.srparasites.book_of_vengeance.vengeance0=§7------------------
 item.srparasites.book_of_vengeance.vengeance1=§6统治，集合，誓报此仇。
 item.srparasites.book_of_vengeance.vengeance3=§d流血，抑减，烟雾轨迹 §8（5秒）
@@ -322,7 +333,7 @@ entity.srparasites.succor.name=援助泡
 entity.srparasites.seeker.name=Seeker
 entity.srparasites.architect.name=构筑体
 entity.srparasites.dredge.name=溺骨妖
-entity.srparasites.sim_dragonhead.name=行走龙首
+entity.srparasites.sim_dragonhead.name=行走龙头颅
 
 entity.srparasites.draconite.name=§9邪狱龙
 entity.srparasites.kirin.name=§9踏虚体
@@ -387,28 +398,28 @@ item.srparasites.itemmobspawner_cruxb.name=未成形烬余兽刷怪蛋
 item.srparasites.itemmobspawner_infbear.name=被同化的熊刷怪蛋
 item.srparasites.itemmobspawner_infsquid.name=被同化的鱿鱼刷怪蛋
 item.srparasites.itemmobspawner_infenderman.name=被同化的末影人刷怪蛋 
-item.srparasites.itemmobspawner_infendermanhead.name=被同化的末影人行走头颅刷怪蛋
+item.srparasites.itemmobspawner_infendermanhead.name=行走末影人头颅刷怪蛋
 item.srparasites.itemmobspawner_infplayer.name=被同化的冒险者刷怪蛋
-item.srparasites.itemmobspawner_infplayerhead.name=被同化的冒险者行走头颅刷怪蛋
+item.srparasites.itemmobspawner_infplayerhead.name=行走冒险者头颅刷怪蛋
 item.srparasites.itemmobspawner_dorpa.name=被同化的大蜘蛛刷怪蛋
 item.srparasites.itemmobspawner_infhuman.name=被同化的人类刷怪蛋
-item.srparasites.itemmobspawner_infhumanhead.name=被同化的人类行走头颅刷怪蛋
+item.srparasites.itemmobspawner_infhumanhead.name=行走人类头颅刷怪蛋
 item.srparasites.itemmobspawner_infvillager.name=被同化的村民刷怪蛋
-item.srparasites.itemmobspawner_infvillagerhead.name=被同化的村民行走头颅刷怪蛋
+item.srparasites.itemmobspawner_infvillagerhead.name=行走村民头颅刷怪蛋
 item.srparasites.itemmobspawner_infcow.name=被同化的牛刷怪蛋
-item.srparasites.itemmobspawner_infcowhead.name=被同化的牛行走头颅刷怪蛋
+item.srparasites.itemmobspawner_infcowhead.name=行走牛头颅刷怪蛋
 item.srparasites.itemmobspawner_infpig.name=被同化的猪刷怪蛋
-item.srparasites.itemmobspawner_infpighead.name=被同化的猪行走头颅刷怪蛋
+item.srparasites.itemmobspawner_infpighead.name=行走猪头颅刷怪蛋
 item.srparasites.itemmobspawner_infsheep.name=被同化的羊刷怪蛋
-item.srparasites.itemmobspawner_infsheephead.name=被同化的羊行走头颅刷怪蛋
+item.srparasites.itemmobspawner_infsheephead.name=行走羊头颅刷怪蛋
 item.srparasites.itemmobspawner_infwolf.name=被同化的狼刷怪蛋
-item.srparasites.itemmobspawner_infwolfhead.name=被同化的狼行走头颅刷怪蛋
+item.srparasites.itemmobspawner_infwolfhead.name=行走狼头颅刷怪蛋
 item.srparasites.itemmobspawner_infhorse.name=被同化的马刷怪蛋
-item.srparasites.itemmobspawner_infhorsehead.name=被同化的马行走头颅刷怪蛋
+item.srparasites.itemmobspawner_infhorsehead.name=行走马头颅刷怪蛋
 item.srparasites.itemmobspawner_inhoos.name=小块未成形寄生体刷怪蛋
 item.srparasites.itemmobspawner_inhoom.name=中块未成形寄生体刷怪蛋
 item.srparasites.itemmobspawner_infdragone.name=被同化的末影龙刷怪蛋
-item.srparasites.itemmobspawner_infdragonehead.name=被同化的末影龙行走头颅刷怪蛋
+item.srparasites.itemmobspawner_infdragonehead.name=行走末影龙头颅刷怪蛋
 
 item.srparasites.itemmobspawner_marbear.name=诡化熊刷怪蛋
 item.srparasites.itemmobspawner_marhuman.name=诡化人类刷怪蛋
@@ -525,7 +536,7 @@ item.srparasites.weapon_cleaver.name=§e活体劈刀
 item.srparasites.weapon_cleaver_sentient.name=§6觉知巨劈刀
 item.srparasites.weapon_maul.name=§e活体锤
 item.srparasites.weapon_maul_sentient.name=§6觉知巨锤
-item.srparasites.weapon_lance.name=§e活体长矛
+item.srparasites.weapon_lance.name=§e活体矛
 item.srparasites.weapon_lance_sentient.name=§6觉知巨矛
 
 item.srparasites.hijacked_iron_sword.name=§c被操纵的铁剑
@@ -573,16 +584,16 @@ item.srparasites.bone.name=§e奇怪的骨头
 
 item.srparasites.ada_longarms_drop.name=§b长臂兽盔甲碎片
 item.srparasites.ada_summoner_drop.name=§b召唤兽核心
-item.srparasites.ada_yelloweye_drop.name=§b黄眸兽的骨头
-item.srparasites.ada_reeker_drop.name=§b毒腥兽的牙齿
-item.srparasites.ada_manducater_drop.name=§b咀骨兽的核心
-item.srparasites.ada_bolster_drop.name=§b协增兽的甲壳
-item.srparasites.ada_arachnida_drop.name=§b蛛形兽的利爪
-item.srparasites.ada_devourer_drop.name=§b吞噬兽的触须
+item.srparasites.ada_yelloweye_drop.name=§b黄眸兽骨头
+item.srparasites.ada_reeker_drop.name=§b毒腥兽齿
+item.srparasites.ada_manducater_drop.name=§b咀骨兽珠
+item.srparasites.ada_bolster_drop.name=§b协增兽外壳
+item.srparasites.ada_arachnida_drop.name=§b蛛形兽爪
+item.srparasites.ada_devourer_drop.name=§b吞噬兽触须
 item.srparasites.ada_vermin_drop.name=§d腐蚀性黏液
 item.srparasites.ada_viscera_drop.name=§d被剥离的母胎膜
 item.srparasites.hijacked_drop.name=§c劫持种增生物
-item.srparasites.ada_burrower_drop.name=§cFigment
+item.srparasites.ada_burrower_drop.name=§c幻物
 item.srparasites.hive_scrap.name=§7寄巢碎片
 item.srparasites.bloody_iron_ingot.name=被操纵的铁锭
 item.srparasites.semiorganic_ingot.name=半生物合金锭
@@ -609,7 +620,7 @@ item.srparasites.lurecomponent2.name=§b染疾心脏
 item.srparasites.lurecomponent3.name=§b被切下的筋腱
 item.srparasites.lurecomponent4.name=§b有毒肺脏
 item.srparasites.lurecomponent5.name=§b带毒大脑
-item.srparasites.lurecomponent6.name=§b扭曲脊标
+item.srparasites.lurecomponent6.name=§b扭曲脊疝
 item.srparasites.lurecomponent7.name=§bLure Component 7
 item.srparasites.lurecomponent8.name=§bLure Component 8
 item.srparasites.lurecomponent9.name=§bLure Component 9
@@ -736,6 +747,7 @@ tile.srparasites.harleskinn_block_slab.name=丑鳞肤块台阶
 tile.srparasites.poland_skin_slab.name=病变肤块台阶
 tile.srparasites.locs_block_slab.name=脏辫块台阶
 
+tile.srparasites.parasitestainslabdouble.name=寄生体污渍双台阶
 tile.srparasites.infested_cobblestone_slab_double.name=寄染圆石双台阶
 tile.srparasites.infested_stone_slab_double.name=寄染石头双台阶
 tile.srparasites.infested_dirt_slab_double.name=寄染泥土双台阶
@@ -772,7 +784,7 @@ tile.srparasites.colonyoutpost.name=聚生地前哨站
 tile.srparasites.biomepurifier.name=§b生物群系净化器
 tile.srparasites.parasitestructure.name=未成形的聚生地结构
 tile.srparasites.parasitethin.name=纤细寄生原木
-tile.srparasites.parasitemouth.name=深嘴
+tile.srparasites.parasitemouth.name=咽喉
 tile.srparasites.parasitetendril.name=寄生卷须
 tile.srparasites.parasitefog.name=雾
 
@@ -863,7 +875,7 @@ item.srparasites.false_apple.name=假苹果
 tooltip.srparasites.false_apple=§7§o“难道幸存下来是一种罪孽吗？”
 item.srparasites.fishlin.name=鱼灵
 tooltip.srparasites.fishlin=§7§o鲜活地扭动着。
-item.srparasites.alveoligrowth.name=肺泡果
+item.srparasites.alveoligrowth.name=肺泡增生物
 tooltip.srparasites.alveoligrowth=§7§o放松呼吸。  
 
 tile.srparasites.bruisewood_plank_stairs.name=瘢痕木楼梯
@@ -981,10 +993,10 @@ bestiary.block.srparasites.residue_block.desc=用于建筑配方。丛生残渣�
 bestiary.block.srparasites.sick_alveoli.desc=肺泡簇的病变弱化形态。接触它的生物会中毒，需将其移至支气管附近方可治愈其疾病。
 bestiary.block.srparasites.alveoli.desc=地下巨型器官获取空气养分的主要来源。对其使用玻璃瓶可收集肺泡液，这是生物酿造的重要原料。若远离支气管过久，它会病变。
 bestiary.block.srparasites.hair_follicle_block.desc=为地下巨型器官输送空气养分。
-bestiary.block.srparasites.parasite_barrier.desc=将SRParasites的所有实体向外排斥。作用半径可在1至10区块范围内调节。
+bestiary.block.srparasites.parasite_barrier.desc=将所有的 SRP 实体向外排斥。作用半径可在 1 至 10 区块范围内调节。
 bestiary.block.srparasites.assimilated_pumpkin.desc=可以被装备。会施加寄巢之唤效果。
-bestiary.block.srparasites.esca_bulb.desc=闻起来，摸起来像腐烂的鱼。满载生物荧光物质。
-bestiary.block.srparasites.node_redstone_lamp.desc=一种易碎的玻璃节点，可连接250格范围内的调度柱。它会根据距离远近发光并输出比较器信号，右键点击可显示最近调度柱的等级与距离。信号强度 = 调度柱等级 | 距离等级 = 调度柱距离（1为最近，5为最远）
+bestiary.block.srparasites.esca_bulb.desc=闻起来，摸起来都像腐烂的鱼。满载生物荧光物质。
+bestiary.block.srparasites.node_redstone_lamp.desc=一种易碎的玻璃节点，可连接 250 格范围内的调度柱。它会根据距离远近发光并输出比较器信号，右键点击可显示最近调度柱的等级与距离。信号强度 = 调度柱等级 | 距离等级 = 调度柱距离（1 为最近，5 为最远）
 bestiary.block.srparasites.parasiteloot_common.desc=出现于聚生地巨型结构中。从中取走物品时会伤害玩家。容器越空，伤害越高（参考进度条显示）。
 bestiary.block.srparasites.infestation_purifier.desc=仅创造模式可用的方块，使用钻石时能清除范围内的召唤柱侵染。使用前提：附近不得存在召唤柱。
 bestiary.block.srparasites.parasitemouth.desc=一只嵌入地面的肉质寄生口器。任何直接踩踏其上的生物都会遭到撕咬，承受穿甲伤害并被附加腐蚀与病毒效果。寄生体自身及创造模式下的玩家不受影响。
@@ -1387,8 +1399,8 @@ tootip.srparasites.item.14=§8§o一种在熔融状态下注入寄生体血淋�
 tootip.srparasites.item.20=一片干燥的皮肤，可从§7协增兽§f身上采集得到。
 tootip.srparasites.item.21=从§7蛛形兽§f身上采集得来的爪子，锋锐无比。
 tootip.srparasites.item.22=从§b吞噬兽§f身上采集的来的触须，坚硬如骨。
-tootip.srparasites.item.23=§a召唤柱§f的外皮，可从柱子的身上剥出。
-tootip.srparasites.item.24=§c调度柱§f的外皮，可从柱子的身上剥出。
+tootip.srparasites.item.23=§a召唤柱§f的外皮，可从柱身剥出。
+tootip.srparasites.item.24=§c调度柱§f的外皮，可从柱身剥出。
 
 tootip.srparasites.item.25=令指向的寄生体§c进化
 tootip.srparasites.item.28=令指向的生物§c被同化
@@ -1414,8 +1426,8 @@ tootip.srparasites.weaponm.10=可§c扫荡§f大范围内的敌人。
 tootip.srparasites.weaponm.20=可§c抹除§f大范围内的敌人。
 tootip.srparasites.weaponm.30=§f使盔甲逐渐§c失去保护作用§f。
 tootip.srparasites.weaponm.40=§f使盔甲逐渐§c失去保护作用§f。
-tootip.srparasites.weaponm.50=§f造成§c危及生命§f的损伤
-tootip.srparasites.weaponm.60=§f造成§c危及生命§f的损伤
+tootip.srparasites.weaponm.50=§f造成§c危及生命§f的损伤。
+tootip.srparasites.weaponm.60=§f造成§c危及生命§f的损伤。
 tootip.srparasites.weaponm.70=§f为敌人送上§a致命§f斩击。
 tootip.srparasites.weaponm.80=§f为敌人送上§a致命§f斩击。
 tootip.srparasites.weaponm.90=§c杀一§f，镇百。
@@ -1447,118 +1459,175 @@ tootip.srparasites.weaponr.200=？？？
 
 tooltip.tile.srparasites.evolutionlure=能够抑制演化点数增长，持续时间约 %s 秒。
 
-item.srparasites.discone.name=Duality
-item.srparasites.disctwo.name=We'll Meet Again
-item.srparasites.discthree.name=§bSerenity
+item.srparasites.discone.name=二元性
+item.srparasites.disctwo.name=终将再会
+item.srparasites.discthree.name=§b静谧
 
-item.record.discone.desc=Duality
-item.record.disctwo.desc=We'll Meet Again
-item.record.discthree.desc=§bSerenity
+item.record.discone.desc=二元性
+item.record.disctwo.desc=终将再会
+item.record.discthree.desc=§b静谧
 
 ##subtitles
+
+subtitles.purifier.use=净化器净化
+subtitles.lure.use=诱饵被使用
+subtitles.carcass.use=饵堆溃散
+
+subtitles.inhoosdeath=小块未成形寄生体：死亡
+subtitles.inhoosliving=小块未成形寄生体：咕噜
+subtitles.inhooshurt=小块未成形寄生体：受伤
+subtitles.inhoomdeath=中块未成形寄生体：死亡
+subtitles.inhoomliving=中块未成形寄生体：咕噜
+subtitles.inhoomhurt=中块未成形寄生体：受伤
+subtitles.inhoomstep=肉块啪嗒
 
 subtitles.carrierdeath=母体：死亡
 subtitles.carrierliving=母体：咕噜声
 subtitles.carrierhurt=母体：嗥叫
+
 subtitles.devourerliving=原始吞噬兽：咆哮
 subtitles.devourerhurt=原始吞噬兽：受伤
 subtitles.devourerdeath=原始吞噬兽：死亡
+
 subtitles.adabolsterdeath=适应协增兽：死亡
 subtitles.adabolsterliving=适应协增兽：嚎叫
 subtitles.adabolsterhurt=适应协增兽：嗥叫
+
 subtitles.monarchdeath=统御兽：哭喊
-subtitles.monarchliving=统御兽：召唤
-subtitles.monarchhurt=统御兽：尖叫
+subtitles.monarchliving=统御兽：呼喊
+subtitles.monarchhurt=统御兽：尖啸
+
 subtitles.marauderdeath=掠夺兽：死亡
 subtitles.marauderliving=掠夺兽：咕噜
 subtitles.marauderhurt=掠夺兽：嗥叫
+
+subtitles.assimadvliving=被同化的冒险者：呼吸
+
 subtitles.assimhumanliving=被同化的人类：尖叫
-subtitles.assimhumanhurt=被同化的人类：嚎叫
+subtitles.assimhumanhurt=被同化的人类：号叫
 subtitles.assimhumandeath=被同化的人类：死亡
-subtitles.assimpigliving=失真的哼叫
+
+subtitles.assimpigliving=失真的哼哼声
 subtitles.assimpighurt=被同化的猪：尖叫
 subtitles.assimpigdeath=被同化的猪：死亡
-subtitles.assimhorseliving=失真的嘶鸣
+
+subtitles.assimhorseliving=失真的嘶鸣声
 subtitles.assimhorsecharge=被同化的马：冲刺
 subtitles.assimhorsehurt=被同化的马：尖叫
 subtitles.assimhorsedeath=被同化的马：死亡
+
 subtitles.assimspiderliving=失真的嘶嘶声
 subtitles.assimspidersteps=蜘蛛的脚步声
 subtitles.assimspiderdeath=大蜘蛛：死亡
+
 subtitles.headliving=头颅：尖叫
-subtitles.headhurt=头颅：大声尖叫
+subtitles.headhurt=头颅：尖啸
 subtitles.headdeath=头颅：死亡
-subtitles.verminliving=孕虫兽：嚎叫
-subtitles.verminhurt=孕虫兽：大叫
+
+subtitles.verminliving=孕虫兽：漱口
+subtitles.verminhurt=孕虫兽：吼叫
 subtitles.vermindeath=孕虫兽：死亡
-subtitles.buglinliving=虫灵：嘶嘶声
+
+subtitles.buglinliving=虫灵：嘶嘶
 subtitles.buglinhurt=虫灵：被挤压
 subtitles.buglindeath=虫灵：被碾碎
-subtitles.rupterliving=裂兽：咔哒声
+
+subtitles.rupterliving=裂兽：咔哒
 subtitles.rupterhurt=裂兽：尖叫
 subtitles.rupterdies=裂兽：死亡
 subtitles.rupterinfects=裂兽：释放寄巢之唤
+
 subtitles.wardenliving=看守兽：嚎叫
 subtitles.wardenhurt=看守兽：嗥叫
 subtitles.wardendeath=看守兽：死亡
+
 subtitles.adaarachliving=适应蛛形兽：嚎叫
 subtitles.adaarachhurt=适应蛛形兽：嗥叫
-subtitles.adaarachdeath=适应蛛形兽：嘶嘶声
-subtitles.assimcowliving=失真的哞哞叫
-subtitles.assimcowhurt=被同化的牛：哞叫
+subtitles.adaarachdeath=适应蛛形兽：嘶嘶
+
+subtitles.assimcowliving=失真的哞哞声
+subtitles.assimcowhurt=被同化的牛：咕哝
 subtitles.assimcowdeath=被同化的牛：死亡
-subtitles.assimsheepliving=失真的咩咩叫
+
+subtitles.assimsheepliving=失真的咩咩声
 subtitles.assimsheephurt=被同化的羊：颤叫
 subtitles.assimsheepdeath=被同化的羊：死亡
-subtitles.assimwolfliving=不寻常的吠叫
+
+subtitles.assimwolfliving=不寻常的吠叫声
 subtitles.assimwolfhurt=失真的呜呜叫
 subtitles.assimwolfdeath=被同化的狼：死亡
-subtitles.assimbearliving=失真的喑哑叫声
-subtitles.assimbearhurt=失真的怒吼
+
+subtitles.assimbearliving=失真的嘶吼声
+subtitles.assimbearhurt=失真的咆哮声
 subtitles.assimbeardeath=被同化的熊：死亡
+
+subtitles.assendermanliving=异界的呜哇声
+subtitles.assendermanhurt=失真的呜哇声
+subtitles.assendermanteleports=邪恶的的呜哇声
+subtitles.assendermandeath=诡化末影人：号哭
+
 subtitles.simmermanliving=异界的呜嗡声
 subtitles.simmermanhurt=失真的呜嗡声
 subtitles.simmermanteleports=邪恶的呜嗡声
 subtitles.simmermandeath=被同化的末影人：号哭
-subtitles.infectedfleshmelt=破碎的血肉正在融合
+
 subtitles.adasummonerliving=适应召唤兽：尖叫
-subtitles.adasummonerhurt=适应召唤兽：大声尖叫
+subtitles.adasummonerhurt=适应召唤兽：尖啸
 subtitles.adasummonerdeath=适应召唤兽：哭喊
-subtitles.adasummonersummon=震耳的尖叫
+subtitles.adasummonersummon=震耳长啸
+
 subtitles.adayelloweyeliving=适应黄眸兽：嚎叫
-subtitles.adayelloweyehurt=适应黄眸兽：怒吼
+subtitles.adayelloweyehurt=适应黄眸兽：咆哮
 subtitles.adayelloweyedeath=适应黄眸兽：死亡
 subtitles.adayelloweyeshoot=适应黄眸兽：喷吐
+
 subtitles.adareekerliving=适应毒腥兽：嚎叫
 subtitles.adareekerhurt=适应毒腥兽：咕哝
 subtitles.adareekerdeath=适应毒腥兽：死亡
+
 subtitles.adamanduliving=适应咀骨兽：嚎叫
 subtitles.adamanduhurt=适应咀骨兽：尖叫
-subtitles.adamandudeath=适应咀骨兽：怒吼
-subtitles.vigiliving=巡兽：噪音
-subtitles.vigihurt= 巡兽：爆裂声
-subtitles.vigideath=巡兽：咕噜声
+subtitles.adamandudeath=适应咀骨兽：咆哮
+
+subtitles.vigiliving=巡兽：隆隆
+subtitles.vigihurt=巡兽：噼啪
+subtitles.vigideath=巡兽：咕噜
+
 subtitles.bogleliving=咕噜声
 subtitles.boglehurt=嚎叫声
-subtitles.bogledeath=某物的死亡声
-subtitles.hostliving=缠骨柱：缓缓出现声
+subtitles.bogledeath=某物死亡声
+
+subtitles.hostliving=缠骨柱：缓缓出现
 subtitles.hosthurt=缠骨柱：尖叫
 subtitles.hostdeath=缠骨柱：死亡
 subtitles.hostmerge=众声齐吟
+
+subtitles.infectedfleshmelt=破碎的血肉正在融合
+subtitles.fleshgrow=活体肉块：生长
+subtitles.flesheat=活体肉块：吞噬
+subtitles.fleshprimitive=活体肉块：砰通
+subtitles.fleshliving=活体肉块：嘶嘶声
+subtitles.fleshdeath=活体肉块：腐烂
+subtitles.fleshhurt=活体肉块：挤压
+
 subtitles.adamaducamo=似有似无的挑衅声
 subtitles.adavomit=寄生体呕吐
-subtitles.flesh=肉块啪嗒
+
+subtitles.litefleshslide=肉块滑行
+
 subtitles.sentryliving=哨戒爪：嚎叫
-subtitles.sentryhurt=哨戒爪：嘶嘶声
+subtitles.sentryhurt=哨戒爪：嘶嘶
 subtitles.sentrydeath=哨戒爪：死亡
-subtitles.beckonliving=召唤柱：耳语
-subtitles.beckonhurt=召唤柱：嘶嘶声
+
+subtitles.beckonliving=召唤柱：低语
+subtitles.beckonhurt=召唤柱：嘶嘶
 subtitles.beckondeath=召唤柱：哭喊
+
 subtitles.beckonbell=钟声鸣响
-subtitles.mobexplodes=怪物爆炸
-subtitles.mobswipe=怪物挥打
-subtitles.moblands=怪物着陆
-subtitles.cysteats=物品被吞噬
+subtitles.mobexplodes=寄生体爆体
+subtitles.mobswipe=寄生体挥打
+subtitles.moblands=寄生体着陆
+subtitles.cysteats=物品：被吞噬
 subtitles.adaptationpart=寄生体适应中
 subtitles.adaptationfull=寄生体适应完成
 subtitles.biomeheart=§c心跳声
@@ -1570,12 +1639,43 @@ subtitles.vengeance.rock=碎裂声
 subtitles.orb.idle=寄染泡嗡鸣声
 subtitles.orb.summon=寄染泡呼啸声
 subtitles.beckonvortex=龙卷风形成中
+
 subtitles.block.unlocked=方块已在图鉴中解锁
 subtitles.item.unlocked=物品已在图鉴中解锁
 subtitles.celestial.unlocked=天象事件已在图鉴中解锁
 subtitles.entity.unlocked=实体已在图鉴中解锁
 subtitles.entity.relaypaper=纸张正持续打印输出中
 subtitles.entity.relayscan=中继扫描
+subtitles.shrimp.eat=虾被吃掉
+
+subtitles.adaverminhurt=适应孕虫兽：嗥叫
+subtitles.adaverminidle=适应孕虫兽：鸣叫
+
+subtitles.dredgedeath=溺骨妖：死亡
+subtitles.dredgeliving=溺骨妖：沙沙声
+subtitles.dredgehurt=溺骨妖：嗥叫
+
+subtitles.cruxdeath=烬余兽：死亡
+subtitles.cruxliving=烬余兽：号叫
+subtitles.cruxhurt=烬余兽：嗥叫
+
+subtitles.mangler_dies=凶裂兽：死亡
+subtitles.mangler_idle=凶裂兽：嘀嗒
+subtitles.mangler_hurt=凶裂兽：尖叫
+
+subtitles.lightbomberdeath=轻型轰炸兽：死亡
+subtitles.lightbomberliving=轻型轰炸兽：号叫
+subtitles.lightbomberhurt=轻型轰炸兽：嗥叫
+
+subtitles.kyphosisdeath=曲击柱：死亡
+subtitles.kyphosisliving=曲击柱：号叫
+subtitles.kyphosishurt=曲击柱：嘶嘶
+
+subtitles.rof.spitout=侵袭蠕虫：喷吐
+subtitles.rof.emerge=侵袭蠕虫：出现
+
+### COMPENDIUM
+
 item.srparasites.srp_field_guide.name=图鉴
 lore.srparasites.compendium=图鉴
 
@@ -1600,10 +1700,10 @@ bestiary.tier.derived=衍生种
 bestiary.capability_missing_client=客户端功能缺失。请尝试重新打开。
 bestiary.no_mobs_unlocked_in_tier=此种阶尚未解锁任何生物.
 bestiary.tier_label=种阶：%s
-bestiary.select_category=选择一个类别
+bestiary.select_category=选择一个种阶
 bestiary.parasite_tiers=寄生体种阶
 bestiary.kills_label=击杀数
-bestiary.unlock_by_kill=（杀死该种类中的寄生体以解锁全部）
+bestiary.unlock_by_kill=（杀死该种阶中的寄生体以解锁全部）
 
 
 bestiary.stats=生命值：%s   攻击伤害：%s
@@ -1612,7 +1712,7 @@ bestiary.stats=生命值：%s   攻击伤害：%s
 
 gui.srparasites.escape_button=防死亡循环 |
 gui.srparasites.escape_button_blocks=格
-gui.srparasites.escape_tooltip=你还好吗？要不换一处地方。
+gui.srparasites.escape_tooltip=你还好吗，要不要换处地方？
 
 # Purifier messages
 message.srparasites.purifier_use_diamond=请使用钻石进行交互
@@ -1654,26 +1754,26 @@ bestiary.celestial.chance=几率
 bestiary.celestial.blip.name=光点
 bestiary.celestial.blip.desc=夜空中一道存在已久的短暂微光，自你记事起便已存在。
 
-bestiary.celestial.pulse.name=脉冲星
+bestiary.celestial.pulse.name=脉搏
 bestiary.celestial.pulse.desc=缓慢而有节律的搏动。
 
 bestiary.celestial.eight.name=八号天体
-bestiary.celestial.eight.desc=???
+bestiary.celestial.eight.desc=？？？
 
 bestiary.celestial.arrow.name=翘曲箭头
-bestiary.celestial.arrow.desc=一个奇怪的四面体。
+bestiary.celestial.arrow.desc=一个奇怪的四面体 | 寄生体可能会掉落虾。
 
 bestiary.celestial.twenty_seven.name=二十七号天体
-bestiary.celestial.twenty_seven.desc=??? | 狂怒
+bestiary.celestial.twenty_seven.desc=??? §l|§r §o寄生体生成时附有狂怒效果。
 
 bestiary.celestial.three.name=三号天体
-bestiary.celestial.three.desc=???
+bestiary.celestial.three.desc=？？？
 
 bestiary.celestial.eighty_three.name=八十三号天体
-bestiary.celestial.eighty_three.desc=???
+bestiary.celestial.eighty_three.desc=？？？
 
 bestiary.celestial.four_comet.name=四号彗星
-bestiary.celestial.four_comet.desc=???
+bestiary.celestial.four_comet.desc=？？？
 
 bestiary.celestial.jupiter.name=木星
 bestiary.celestial.jupiter.desc=一颗悬浮于黑暗中的肿胀巨物。其带状云层翻涌着，仿佛无眼的淤青。质量如此庞大，引力足以扭曲周边一切事物的轨迹。
@@ -1699,6 +1799,9 @@ bestiary.celestial.uranus.desc=一个寒冷、倾斜的天体，在天空中总�
 bestiary.celestial.venus.name=金星
 bestiary.celestial.venus.desc=一块被明亮的云雾笼罩的大理石。它有比一年还长的一天。上面有老鼠。
 
+bestiary.celestial.ongoing=天象事件今晚活跃中
+bestiary.celestial.counter=%s / %s
+
 # Bestiary UI
 bestiary.kills=击杀数
 bestiary.cap_missing_client=客户端功能缺失。请尝试重新打开。
@@ -1709,7 +1812,10 @@ bestiary.drops=掉落物
 bestiary.no_drops=无掉落物
 bestiary.drops_unlock_at_n=%s次击杀后解锁其掉落物
 bestiary.loot_unlocks_at_n=%s次击杀后解锁其掉落物信息
-
+bestiary.drops.none_fallback=（未在配置文件中发现掉落物）
+bestiary.drops_fallback=掉落物
+bestiary.loot_unlocks_at_n_fallback=%s 次击杀后解锁其掉落物信息
+bestiary.lore_fallback=故事设定
 bestiary.tab.parasites=寄生体
 bestiary.tab.blocks=方块
 
@@ -1727,6 +1833,7 @@ bestiary.controls.rotation.off=旋转：关
 bestiary.controls.run.on=奔跑动画：开
 bestiary.controls.run.off=奔跑动画：关
 bestiary.tooltip.run_inaccurate=动画可能并不总是准确的。
+bestiary.parasites.unlock_tier_hint=（击杀一只该种阶寄生体解锁）
 bestiary.pose.yaw=俯仰角
 bestiary.pose.pitch=偏摆角
 bestiary.pose.zoom=缩放
@@ -1750,14 +1857,14 @@ bestiary.effects.missing_desc=描述缺失。
 # Bestiary Potion descriptions
 bestiary.effect.dod_smoke_trail.desc=一股浓烟尾迹会持续跟随受影响的实体。
 bestiary.effect.bleed.desc=宿主持续内出血。伤害量随生命上限提升，并在移动时加剧。
-bestiary.effect.conta.desc=宿主遭受生物污染，将承受周期性的伤害，并有污染至周围生物的风险。
+bestiary.effect.conta.desc=宿主遭受生物传染，将承受周期性的伤害，并有传染至周围生物的风险。
 bestiary.effect.corrosive.desc=腐蚀性物质持续侵蚀宿主，造成周期性伤害。
 bestiary.effect.foster.desc=宿主已被标记为适合寄生发育的目标，将吸引附近寄生体的注意与保护。
 bestiary.effect.prey.desc=宿主被标记为猎物，将更频繁地遭到寄生体的追踪与袭击。
 bestiary.effect.needler.desc=寄生体从宿主身上迸发，射出针状物体攻击周围目标。
 bestiary.effect.overheating.desc=宿主体温过热急剧升高，随着内部系统开始衰竭，将持续承受不断加剧的伤害。
 bestiary.effect.spotted.desc=宿主已被标记，更容易被寄生体追踪和定位。
-bestiary.effect.the_sign.desc=宿主承载着重要的印记。只要印记存续，寄生体会忽略其存在。该印记是一种鲜红色的符号，仅被少数人所拥有。在这些个体之中，印记被视为巨大潜能、特殊性以及卓越领导力等特质的象征。
+bestiary.effect.the_sign.desc=宿主承载着重要的印记。只要印记存续，寄生体会忽略其存在。该印记是一种鲜红色的符号，仅被少数人所拥有。在这些个体之中，印记被视为巨大潜能、特殊性以及卓越领导力、寄生体侵略等特质的象征。
 bestiary.effect.thornshade_thorns.desc=带刺的增生体从宿主身上爆发，对近战攻击者造成伤害。若宿主累积受到该效果超过2次，将发生剧烈爆炸。附近受相同效果影响的实体若在爆炸时过于接近宿主，也会随之引爆。该效果不会破坏地形方块。
 bestiary.effect.coth.desc=一种阶段性的同化感染。它会不断刷新与加剧，向周围活体宿主传播（除非被阻挡），并在宿主虚弱或达到特定阶段阈值时触发转化。
 bestiary.effect.viral.desc=一种快速变异的感染在宿主体内扩散，造成周期性伤害，并有传播给附近生物的风险。效果等级越高，感染严重性与传播可能性越大。
@@ -1812,8 +1919,7 @@ bestiary.system.collective_consciousness.name=虫巢意识
 bestiary.system.collective_consciousness.desc=寄生体可以作为一个单一协调的有机体行动。当虫巢意识激活时，附近的实体共享感知并协同响应。
 
 bestiary.system.eiv.name=寄生体侵染源区
-bestiary.system.eiv.desc=寄生虫只能在侵染源区内生成，除非在配置中禁用了这一限制。每个侵染源区都有生命值，每当寄生虫杀死一个生物或将其同化时，其生命值就会增加。当发生上述任一情况时，该生物的总生命值将计入侵染源区自身的生命值。侵染源区的半径和生命值也可以每天（或大约每24000个刻度）独立增加。若要查看侵染源区的信息，请将一个源区模块放入中继塔中，然后点击“扫描”。
-
+bestiary.system.eiv.desc=当寄生体侵染源区启用时，寄生体只能在侵染源区内生成。每个侵染源区都有生命值，每当寄生体杀死一个生物或将其同化时，其生命值就会增加。当发生上述任一情况时，该生物的总生命值将计入侵染源区自身的生命值。侵染源区的半径和生命值也可以每天（或大约每 24000 个刻度）独立增加。若要查看侵染源区的信息，请将一个源区模块放入中继塔中，然后点击“扫描”。
 bestiary.system.scent.name=循迹系统
 bestiary.system.scent.desc=寄生体通过“循质”积累对活动做出反应。随着循质水平上升，敌人波次变得越发频繁、更具侵略性。粗心的战斗或在侵染区域逗留会招致越来越危险的响应。
 srp.msg.scent.closest_notified=附近的循质已被通知
@@ -1844,7 +1950,8 @@ bestiary.system.nests.desc=专门的连结种（如调度柱）可以形成加�
 bestiary.system.variants.name=变种
 bestiary.system.variants.desc=寄生体的生成可能产生多种变种，其特性不限于施加病毒、流血，或对方块造成更多破坏。
 
-
+bestiary.system.derived_distortion.name=衍生种扭曲现象
+bestiary.system.derived_distortion.desc=衍生种寄生体会释放一种干扰性现象，扰乱周边的分析工具与操作界面。当其距离足够近时，受影响的界面页面会出现文字乱码、读数造假、数值扭曲，无法显示可靠信息。这种近距离作用会使受害者双眼渗出黑色油状物质，同时其思绪与感官会产生如同粗糙、布满静电的花岗岩表面般的异样触感。
 srphelp.header.warning=§c警告：信息可能不是最新的。
 srphelp.header.topics=§eSRP 帮助主题：
 srphelp.header.topics_inline=§e已知主题：%s
@@ -1954,6 +2061,11 @@ srphelp.srpguide.restore.usage=§b/srpguide restore
 srphelp.srpguide.restore.desc=从快照（由 unlockall 创建）恢复你的图鉴。
 srphelp.srpguide.clearall.usage=§b/srpguide clearall
 srphelp.srpguide.clearall.desc=清除你的图鉴进度。
+srphelp.srpguidistortion.usage=§b/srpguidistortion <开启|关闭|切换|状态> [玩家]
+srphelp.srpguidistortion.desc=为自身或其他玩家开启、关闭、切换或查看界面扭曲状态。
+srphelp.srpbestiarystats.clear.usage=§b/srpbestiarystats clear [玩家]
+srphelp.srpbestiarystats.clear.desc=清除自身或指定玩家图鉴统计页面的记录数据。
+
 
 # srpguideclear
 srphelp.srpguideclear.self.usage=§b/srpguideclear
@@ -1975,6 +2087,14 @@ srphelp.harlequin_scatter.ruins.desc=在有效的生物群系表面散布丑鳞�
 srphelp.conjure.usage=§b/conjure <实体_id>
 srphelp.conjure.desc=生成一个特定的 SRP 实体（别名：/conj）。
 
+# breathe
+srphelp.srp_breathe.usage=/srp_breathe <开启|关闭|切换>
+srphelp.srp_breathe.desc=在客户端开启、关闭或切换呼吸着色器特效。
+
+# celestial
+srphelp.srp_celestial.usage=/srp_celestial <列表|清除|全部|ID>
+srphelp.srp_celestial.desc=列出、清除、强制触发全部或切换当前维度指定的天象事件。
+
 # srpguide command messages
 command.srpguide.usage=/srpguide unlockall | clear | clearall | reset | unlockblocks | clearblocks | unlockcelestial | clearcelestial | unlockeffects | cleareffects
 command.srpguide.players_only=仅限玩家。
@@ -1995,6 +2115,13 @@ command.srpguide.clearall_ok=图鉴已清除。
 command.srpguide.clearblocks_ok=图鉴：方块进度已清除。
 command.srpguide.clearcelestial_ok=图鉴：天象事件进度已清除。
 command.srpguide.clearcelestial_need_getter=在 IBestiaryProgress/BestiaryProgress 上缺少 getSeenCelestials()。添加它以支持 /srpguide clearcelestial。
+
+commands.srparasites.bestiary_stats.usage=用法：%s
+commands.srparasites.bestiary_stats.player_not_found=未找到玩家：%s
+commands.srparasites.bestiary_stats.console_requires_player=控制台指令必须指定一名玩家。
+commands.srparasites.bestiary_stats.cleared_other=已清除玩家 %s 的图鉴统计数据。
+commands.srparasites.bestiary_stats.cleared_self=您的图鉴统计数据已被清除。
+commands.srparasites.bestiary_stats.cap_missing=玩家 %s 未启用图鉴功能模块。
 
 srpguide.sounds.on=图鉴音效：开
 srpguide.sounds.off=图鉴音效：关
@@ -2049,8 +2176,8 @@ srparasites.dislodgement.event.8=寄生体死亡时：伤害附近的非寄生�
 srparasites.dislodgement.event.9=寄生体死亡时：消耗附近玩家的饱食度。 消耗量： %s
 srparasites.dislodgement.event.10=杀死低级寄生体会生成更高级的寄生体。 生物： %s
 srparasites.dislodgement.event.11=寄生体免疫负面效果。
-srparasites.dislodgement.event.12=非寄生体生物会周期性损失生命值。 伤害： %s
-srparasites.dislodgement.event.13=所有玩家的饱食度会周期性消耗。 消耗量： %s
+srparasites.dislodgement.event.12=非寄生体生物会周期性地损失生命值。 伤害： %s
+srparasites.dislodgement.event.13=所有玩家的饱食度会周期性地消耗。 消耗量： %s
 srparasites.dislodgement.event.14=当前演化阶段会使用下一阶段的生物生成列表。 阶段： %s
 srparasites.dislodgement.event.15=寄生体不会发出嚎叫;连结种将不会产生生成音效。
 srparasites.dislodgement.event.16=寄生体不会发出行走音效;连结种将不会产生进化音效。
@@ -2093,6 +2220,38 @@ gui.srparasites.vector_map.legend.line1=红圈 = 侵染源区。
 gui.srparasites.vector_map.legend.line2=超出（%s）扫描距离的侵染源区会显示为黄点。
 gui.srparasites.vector_map.legend.line3=蓝色标记 = 扫描起始地。
 
+#STAT PAGE
+bestiary.tab.stats=统计数据
+bestiary.stats.info=按种阶记录的寄生体击杀数据。
+bestiary.stats.summary=已记录寄生体总击杀数：%s
+bestiary.stats.note=该数值由图鉴中各寄生体注册 ID 的击杀数据汇总得出。
+bestiary.stats.total_kills=击杀总计
+bestiary.stats.all_parasites=全部寄生体
+bestiary.stats.scroll_hint=鼠标滚轮移至面板上可滚动查看。
+bestiary.stats.chart_title=各种阶击杀统计
+bestiary.stats.combat_totals=战斗统计总计
+bestiary.stats.damage_to_parasites=对寄生体造成总伤害
+bestiary.stats.damage_from_parasites=受到寄生体总伤害
+bestiary.stats.deaths_by_parasites=被寄生体击杀总次数
+
+#DISTORTION
+commands.srparasites.guidistortion.usage=commands.srparasites.guidistortion.usage
+commands.srparasites.guidistortion.usage.text=用法：%s
+commands.srparasites.guidistortion.player_not_found=未找到玩家：%s
+commands.srparasites.guidistortion.console_requires_player=控制台指令必须指定玩家。
+commands.srparasites.guidistortion.invalid_argument=参数无效。请使用 on、off、toggle 或 status。
+commands.srparasites.guidistortion.status=玩家 %s 的界面扭曲：%s
+commands.srparasites.guidistortion.set_other=已将玩家 %s 的界面扭曲设为 %s
+commands.srparasites.guidistortion.set_self=你的界面扭曲已设为 %s
+commands.srparasites.guidistortion.state.enabled=已启用
+commands.srparasites.guidistortion.state.disabled=已禁用
+commands.srparasites.guidistortion.set_all=已更新 %s 名在线玩家的界面扭曲状态。
+commands.srparasites.guidistortion.status.detailed=%s：扭曲状态为 %s。创造/旁观模式权限覆盖：%s。当前模式：%s。
+commands.srparasites.guidistortion.creative_override.enabled=允许
+commands.srparasites.guidistortion.creative_override.disabled=禁止
+commands.srparasites.guidistortion.gamemode.creative_or_spectator=创造/旁观模式
+commands.srparasites.guidistortion.gamemode.normal=普通模式
+
 #PHASE REPORT
 item.srparasites.phase_report.name=阶段报告
 tooltip.srparasites.phase_report=显示当前扫描的演化报告。
@@ -2119,19 +2278,19 @@ lore.srparasites.gnat=§l绰号：§r Ata §l|§r §o一种小型寄生体，利
 lore.srparasites.lice=§l绰号：§r Viin §l|§r §o一种极度不稳定的寄生体，其触须可如钻头般旋转，用以钻入宿主体内，进而劫持并操纵有机与无机实体。其腹部异常膨大，表面布满多颗瘤状增生组织，既是能量来源亦是爆炸装置，可强行附着并穿透高抗性目标。移动轨迹毫无规律可言，甚至低效到难以追踪或拍击。该生物对汗液与血腥味极为敏感，靠近时会发出微弱的嗡鸣声。
 
 #ASSIMILATED
-lore.srparasites.sim_adventurer=§l绰号：§r Sim §l|§r §o一个被感染的游荡者，当附近聚集足够数量时，会形成群体移动。某位同行玩家的下落仍是个谜。
-lore.srparasites.sim_bear=§l绰号：§r Sim §l|§r §o由强化的肌肉与生物质聚合而成的活体攻城器械。建议保持远距离交战。
-lore.srparasites.sim_bigspider=§l绰号：§r Dorpa §l|§r §o拖曳着黏网与腐败物质的肿胀载体。它的形态……似乎与其他同类不太一样？
-lore.srparasites.sim_cow=§l绰号：§r Sim §l|§r §o行动缓慢、体型敦厚，且呈现诡异的顺从性。其口鼻部仍会对麦穗产生抽动反应。可锁定目标发起冲锋。
-lore.srparasites.sim_dragone=§l绰号：§r Sim §l|§r §o严重扭曲的飞行生物，几乎已经忘记如何飞行。尽管如此，它仍然极度危险，经过扭曲以提升杀伤力。没有任何护甲是永恒的。
-lore.srparasites.sim_enderman=§l绰号：§r Sim §l|§r §o受空间扭曲侵蚀的传送者，与“迷失的乘客”是远亲。自身燃烧时并不在乎是否会点燃它者。行动模式极为执着。
-lore.srparasites.sim_horse=§l绰号：§r Sim §l|§r §o四骑士之一，但无人驾驭。体内充盈着高度不稳定的腐败液体，无论着火与否：受到剧烈冲击或器官破裂时自爆。
-lore.srparasites.sim_human=§l绰号：§r Sim §l|§r §o人格的回响仍在其中滞留……他们并未真正死去，只是承受着无尽的痛苦。本质上与其他肉盾单位类似，但具备更高的智能。
-lore.srparasites.sim_pig=§l绰号：§r Sim §l|§r §o外表平静，内心贪婪。终究只是一头猪。不过是些生物质罢了。
-lore.srparasites.sim_sheep=§l绰号：§r Sim §l|§r §o“替我们的悲伤与痛苦流泪。”
-lore.srparasites.sim_squid=§l绰号：§r Sim §l|§r §o静默的水体感染者。专门污染水域的无声载体。腐烂的微粒与碎屑如雪花般从其躯体飘落。
-lore.srparasites.sim_villager=§l绰号：§r Sim §l|§r §o交易之物唯有污秽与腐烂，而非商品。即使残存些许心智，其本质仍只是生物质与肉盾罢了。
-lore.srparasites.sim_wolf=§l绰号：§r Sim §l|§r §o群体本能已被扭曲。撕咬速度极快。
+lore.srparasites.sim_adventurer=§l绰号：§r Sim §l|§r §o一个被感染的游荡者，当附近聚集足够数量时，会群体移动。它们仍会检查容器、门口和营地般的结构，仿佛记忆以碎片的形式残存。偶尔，其中一个会停下来，凝视着熟悉的空间长达数秒，好像在努力回忆自己曾经是什么。它们似乎喜欢被同化的狗。我想，有些事永远不会改变。
+lore.srparasites.sim_bear=§l绰号：§r Sim §l|§r §o它的身体是为力量而非速度而保留下来的。这些样本不会像健康的熊那样摆出威吓姿势或佯装冲锋；一旦被激怒，它们就会全力出击。树木、路障，甚至破损的墙壁，对它来说都只是小麻烦。我曾观察到其中一个个体正在啃噬自己身上的肉，仿佛在缓解某种痒感。
+lore.srparasites.sim_bigspider=§l绰号：§r Dorpa §l|§r §o这只个体分泌出大量网状物，混合着恶臭的有机渗出物。它所经过的路径往往在宿主离开后很久仍残留着污染。它的动作出奇地刻意，仿佛并不急于追逐，而更在意将物质尽可能广泛地散布到地面上。这只个体有明显的脾气，我曾目睹它用腿不停地在猪身上戳出洞来，就像一匹马践踏一堆肉。我只能推测，它这样做是因为猎物太吵；它甚至懒得去感染它。也许那只是用来喂养寄生体的饲料？
+lore.srparasites.sim_cow=§l绰号：§r Sim §l|§r §o它对饲料的存在以及熟悉的饲养声响仍有反应，尽管只是短暂的。一旦受到刺激，它会低下头，以足以撞碎围栏或折断骨头的力量向前猛冲。它身上那种农场饲养时养成的习性与突如其来的暴力之间的反差，令人深感不安。每当太阳升起，它就会不停地哀嚎哭泣。我对此毫无头绪。
+lore.srparasites.sim_dragone=§l绰号：§r Sim §l|§r §o它的身体似乎难以进行飞行，表明其解剖结构已严重受损。即便如此，它在下降和近距离接近时依然极具致命性。它似乎正以距离和飞行来弥补自己日渐衰败的身体。从尸体上回收的护甲往往呈现出撕裂和熔化的纹路，更像是将锡箔浸入酸液中，而非干净的捕食痕迹。它似乎尚未适应自己的身体，这一点可以从它反复将自己的颅骨像流星锤一样猛砸末地黑曜石柱的行为中看出。
+lore.srparasites.sim_enderman=§l绰号：§r Sim §l|§r §o表现出不稳定的传送行为，并且几乎不在意自身的状况。当被点燃时，它并不会如预期般退却，反而可能继续前进，并在此过程中点燃附近的一切。它没有任何自我保护迹象，甚至会将自己投入水中，尽管它自身似乎带有毒性。这表明其疼痛反应要么已经迟钝，要么已变得无关紧要。不过，出于某种原因，它分离出来的头颅个体似乎不受水的影响。
+lore.srparasites.sim_horse=§l绰号：§r Sim §l|§r §o腹部因充满加压的腐烂物质而肿胀，即便是轻微的创伤也很危险。它在受到外力、高温或突然破裂时极易受惊，可能在完全崩溃前就引爆。尽管存在这种不稳定性，它仍能快速拉近距离。我曾见过它在引爆前的瞬间，像一匹活马一样剧烈挣扎并嘶鸣。
+lore.srparasites.sim_human=§l绰号：§r Sim §l|§r §o与大多数被感染的同类相比，这类个体保留着更多可辨认的行为。有些样本会在门口犹豫，循声张望，或在突然遇到高温时退缩，然后才重新发起攻击。这些反应暗示它们的意识尚未被完全抹除。它们很难被长期研究，因为其行动往往既像敌意，也像恐慌。
+lore.srparasites.sim_pig=§l绰号：§r Sim §l|§r §o从远处看，它仍能伪装成一只普通动物，尤其是在静止不动的时候。靠近观察则会发现它不断咀嚼的动作和注意力的突然转移。它在翻找有机垃圾、残骸和受污染的植被时，表现出一视同仁的兴趣。除了那令人印象深刻的智力之外，原本的性情几乎所剩无几。我曾见过它无意识地在泥土里打滚，刨出胡萝卜，但这些胡萝卜只是从它的嘴里掉出来，它似乎并不愿意真正把它们吃下去。
+lore.srparasites.sim_sheep=§l绰号：§r Sim §l|§r §o它的哭声是被感染的牲畜中记录到的最可怕的声音之一。这种叫声听起来像普通的羊叫，但长时间倾听会发现其中带有一种紧张的、湿漉漉的特质，绝非自然之声。当它哭泣时，附近的样本有时会变得更加活跃。这究竟是交流还是单纯的焦躁，仍不得而知。我注意到，它们可以被染成几种特定的颜色。至于为什么会有人想这么做，那我就不知道了。
+lore.srparasites.sim_squid=§l绰号：§r Sim §l|§r §o它在水中游动时带着一种近乎被动的优雅，随着漂流不断脱落腐烂物、碎屑和感染物质。它经常出没的区域会随着时间的推移而明显变得污浊。当靠近时，它几乎不表现出任何急迫感。周围的水流常常将它的碎片带到比本体漂流更远的地方。我分不清哪一端是它的嘴。也许它有两个嘴。
+lore.srparasites.sim_villager=§l绰号：§r Sim §l|§r §o它仍会以与普通村民相同的好奇节奏，将头转向有动静的方向。有些被观察到在门边、工作站点和昔日的聚集处附近徘徊。一旦拉近距离，这种相似便瞬间消失。残存的社会本能已被掏空，转而重塑成一种怪诞的模仿。我曾见过一个个体，它并没有以公开的敌意靠近，尽管它看起来一点也不像村民。六条腿，长长的毛发，还有一张奇怪的“脸”。脖颈后方长着一个高大的、脉动的东西。我曾目睹它将某种奇怪的东西放到附近另一个生物的手中，仿佛在进行某种交换。我觉得它试图在表达什么，但我无法理解它那空洞的声音——至少现在还不能。
+lore.srparasites.sim_wolf=§l绰号：§r Sim §l|§r §o对移动反应迅速，且很少在未先试探距离的情况下发起攻击。即使没有明确的领头者，多个样本也会开始绕圈行为，暗示着旧有的本能以破碎的形式残存下来。也许它是在追自己的尾巴？撕咬动作快速、重复，且往往瞄准低处，朝着脚踝。我曾见过一些样本的脖子上还系着项圈，当有人喊出印在项圈上的它们从前的名字时，它们的反应会变得古怪。
 
 #DETACHED HEADS
 lore.srparasites.sim_cowhead=§l绰号：§r Desim §l|§r §o由爬行的肌腱驱动的断头宿主。闻起来像胃酸和牛肉。会试图与任何肉块重组以进行操纵。
@@ -2156,16 +2315,16 @@ lore.srparasites.fer_villager=§l绰号：§r Fer §l|§r §o社区本能已被�
 lore.srparasites.fer_wolf=§l绰号：§r Fer §l|§r §o顶级掠食者；无情的猎手。
 
 # CRUDE
-lore.srparasites.crux=§l绰号：§r Cruxa §l|§r §o仍在持续构建自身的框架生物。其永恒的愤怒随每一具尸体的堆积而膨胀。
-lore.srparasites.crux_incomplete=§l绰号：§r Cruxa §l|§r §o仅存獠牙的焦黑轮廓，曾是完整存在的残骸。
-lore.srparasites.heed=§l绰号：§r Heed §l|§r §o传达它者意志的侦察员。
-lore.srparasites.host=§l绰号：§r Host §l|§r §o等待着转化的运载体。
-lore.srparasites.hostii=§l绰号：§r Hostii §l|§r §o群体如一体般行动着。
-lore.srparasites.incompleteform_medium=§l绰号：§r Inhoo §l|§r §o半形已具，杀意十足。
-lore.srparasites.incompleteform_small=§l绰号：§r Inhoo §l|§r §o身形小巧，切割迅速。体重与小型犬相仿。
-lore.srparasites.thrall=§l绰号：§r Mes §l|§r §o顺从化为血肉之躯。
-lore.srparasites.dredge=§l绰号：§r Done §l|§r §o从战场上挖掘血肉与记忆。难以捉摸的窒息者。
-lore.srparasites.airscrew=§l绰号：§r Leer §l|§r §o它的长鼻子有足够的力量来轻松抬起一辆货车。
+lore.srparasites.crux=§l绰号：§r Cruxa §l|§r §o这个生物的骨架呈现出一种凶蛮且无我的特质，仍在不断地自我拼合。它所留下的每一具尸体，都会加深它的愤怒。我曾目睹它将同伴抛向逃跑的猎物，几乎不在乎冲击是否会将它们砸死。在极大的压力下，它的身体会分泌出一种奇怪的沸腾着的橙色物质；当它被驱使到高速移动时，周身会蒸腾出蒸汽，仿佛整个躯体就要燃烧起来。我无法想象，要维持这样一具躯体持续运动，需要多么巨大的力量。
+lore.srparasites.crux_incomplete=§l绰号：§r Cruxa §l|§r §o一副由牙齿笨拙拼合而成的轮廓。残存的不过是一具烧焦的、尚未成形的骨架，靠着时间和血肉拖延，直到更完整的躯体强行破茧而出。它常常停留在浅溪和河流中给自己降温，仿佛水流能加速修复它那粗糙畸形的、蛹一般的身体。
+lore.srparasites.heed=§l绰号：§r Heed §l|§r §o五头侦察员，承载于蚂蚁般的躯干之上，一张巨口横向裂开在脸上。它自己很少带头行动，而是负责传递信号，并在遇到抵抗之处煽动狩猎。我曾见过它与更小、更匮乏的寄生体进行交哺行为。
+lore.srparasites.host=§l绰号：§r Host §l|§r §o常言道，地震预示着灾祸。它的大部分仍埋藏在地下，唯有那非人的呻吟和上方翻动的地面，才暴露了其余部分的去向。尸体被降解成一种奇异的黑色焦油状物质，这种物质贯穿其躯体，使庞大的身体保持柔韧。每条触手的末端都有一个中空的开口，可用于多种用途，从修补撕裂的血肉到取食倒下的猎物。
+lore.srparasites.hostii=§l绰号：§r Hostii §l|§r §o整群生物在柔软而参差的地面下移动，仿佛它的身体能够顺应受污染土壤中每一道尖锐的裂隙。曾经埋藏于地下的载体，已膨胀成更沉重的集群形态，快速喷射出饱胀的炸弹，每一枚都携带着未知的毒液与疫病。在它穿行而过的声响之下，常常能听到反复的低语，暗示着某种低等的集群智能，尽管其中尚未有任何内容能被理解。
+lore.srparasites.incompleteform_medium=§l绰号：§r Inhoo §l|§r §o半形已具，杀意十足。这种东西，你本以为只会发现它在某具躯体的内壁上抓挠，而不是在没有躯壳的情况下四处游荡。
+lore.srparasites.incompleteform_small=§l绰号：§r Inhoo §l|§r §o身形小巧，切割迅速。双臂轻盈，受冲击时却面相可憎，就像接住了一个装满牙齿的袋子。气味令人作呕，最好尽快处理掉。
+lore.srparasites.thrall=§l绰号：§r Mes §l|§r §o顺从化为血肉之躯。它的身体如同一具被屠宰后又被强行扶正的东西般勉强拼凑在一起，身后甩动着黑色的丝状物，如同断裂的缰绳。它们常常出现在曾经人声鼎沸的地方，对着早已消失的日常之物反复揉捏、焦虑不安。双脚已扭曲成坚硬的蹄状残桩，面孔则收缩成一副融化的表情，损毁得已称不上人类，却仍依稀可辨地试图维持人的模样。。
+lore.srparasites.dredge=§l绰号：§r Done §l|§r §o它施展的是审慎的暴力。在那副异界刽子手般的颅骨之下，它的身体以刻意迂回的步调逼近，从容而精准地试探着肋骨、喉咙和脊柱——仿佛早已知道人类的躯体与精神会在何处率先崩溃。那条尾巴缠绕、勒绞，让猎物窒息，使其在死亡到来之前就因剧烈的失衡感而踉跄崩溃。受害者最终呈现出的状态类似于“§4共济失调性毛细血管扩张症§o§0”，§o但这种过程被加速成了残酷的即时发作。挣扎被刻意拉长，细致得绝非偶然。在这一层级的寄生体中，没有哪一种会如此执着地让猎物在最痛苦的阶段保持清醒。它是以恐慌中的化学物质为食，还是以痛苦中摇落的记忆为食——我尚无法断定。
+lore.srparasites.airscrew=§l绰号：§r Leer §l|§r §o它的喙部力量足以轻松抬起一辆货车。它身体上方的囊袋使其如同悬挂的变质鱿鱼，囊内很可能充满了由其自身组织过量产生的挥发性低密度气体，并在足够的压力下维持，以抵消该生物的体重。下方的口器会喷出湿冷的、令人窒息的高浓度COTH气流。被它网状投射物捕获的猎物会被向上拉拽，并以某种类似于剔骨的手法，在它脱臼般下颚的钩状内面上反复摩擦。我多次目睹两个或更多个体为争夺同一猎物而争斗，它们盲目地用力拉扯，以至于猎物被撕成碎片。那些在捕食中幸存下来的，心智未必能保持完整；被转化后的变体有时会被抛弃，任其坠落而死。
 
 #ASSIMARA
 lore.srparasites.mar_bear=§l绰号：§r Mar §l|§r §o其躯体构造全然违背常理。内部栖息着蜘蛛群。
@@ -2176,7 +2335,7 @@ lore.srparasites.mar_sheep=§l绰号：§r Mar §l|§r §o其躯体构造全然�
 lore.srparasites.mar_villager=§l绰号：§r Mar §l|§r §o其躯体构造全然违背常理。遗忘之面。
 
 #HIJACKED
-lore.srparasites.hi_blaze=§l绰号：§r Hi §l|§r §o不可能发生了。
+lore.srparasites.hi_blaze=§l绰号：§r Hi §l|§r §o不可能之事发生了。
 lore.srparasites.hi_skeleton=§l绰号：§r Hi §l|§r §o用来承载某物的框架。
 lore.srparasites.hi_golem=§l绰号：§r Hi §l|§r §o从保护者到压迫者。
 
@@ -2231,7 +2390,7 @@ lore.srparasites.carrier_colony=§l绰号：§r Vesta §l|§r §o一座由嘴巴
 lore.srparasites.haunter=§l绰号：§r Pheon §l|§r §o未见其形，先闻其迹。
 lore.srparasites.bomber_heavy=§l绰号：§r Jinjo §l|§r §o它一来便是行走的裁决者，所到之处，一切重写。这场景我之前是不是在哪里看到过？
 lore.srparasites.wraith=§l绰号：§r Elvia §l|§r §o半身锚定于血肉，半身沉沦于噩梦；穿墙越壁。发射的弹药让人头疼欲裂。
-lore.srparasites.succor=§l绰号：§r Flam §l|§r §o小兄弟。
+lore.srparasites.succor=§l绰号：§r Flam §l|§r §o小家伙。
 
 #ANCIENT
 lore.srparasites.anc_dreadnaut=§l绰号：§r Oronco §l|§r §oNULL EXISTENCE
@@ -2276,6 +2435,14 @@ gui.srparasites.worldsettings.difficulty.normal=§e普通
 gui.srparasites.worldsettings.difficulty.easy=§a简单
 gui.srparasites.worldsettings.difficulty.hard=§4困难
 gui.srparasites.worldsettings.difficulty.impossible=§4§l不可能
+
+# Vectors Option
+gui.srparasites.worldsettings.vectors=寄生体侵染源区
+gui.srparasites.worldsettings.vectors.enabled=§a开
+gui.srparasites.worldsettings.vectors.disabled=§4关
+
+gui.srparasites.worldsettings.tooltip.vectors.enabled=寄生体侵染源区已启用。寄生体的自然生成仅限于源区，这些源区可以随时间扩大。寄生体不能在侵染源区之外自然生成。
+gui.srparasites.worldsettings.tooltip.vectors.disabled=该按钮暂无实际功能（开发中）。新生寄生体侵染源区已禁用，寄生体可在全世界自然生成，不再受侵染源区限制。
 
 # Challenge options
 gui.srparasites.worldsettings.challenge.c1=配置 §a1
@@ -2391,7 +2558,7 @@ command.srpevolution.getphase.gen_ticks=§7 -> 下一个演化迭代所需要的
 command.srpevolution.getphase.udl=§7 -> 泛演化发展等级：§d%d§r
 command.srpevolution.getphase.parasite_count=§7 -> 寄生体数量：§c%d§r
 command.srpevolution.getphase.coth_count=§7 -> 感染寄巢之唤的生物数量：§5%d§r
-command.srpevolution.getphase.eivs=§7 -> 当前世界的EIV数量：§6%d§r
+command.srpevolution.getphase.eivs=§7 -> 当前世界的 EIV 数量：§6%d§r
 
 command.srpevolution.getphase.footer=§8§m----------------------§r
 command.srpevolution.getphase.all=§8§m-----§r §dSRP 演化§r §8§m-----§r\n§7 -> 维度：§e%d§r\n§7 -> 演化阶段：§b%d§r\n§7 -> 总点数：§a%d§r\n§7 -> 下一个阶段所需要的演化点数：§a%d§r\n§7 -> 进度：§e%s%%§r\n§7 -> 演化冷却：§e%d§7 second(s) remaining§r\n§7 -> srpevolutiongaining: §f%s §8(§7True = can gain points§8)§r\n§7 -> srpevolutionloss: §f%s §8(§7True = can lose points§8)§r\n§7 -> 扰动代码：§r\n§f%s§r\n§7 -> 寄生体生物数量上限：§e%d§r\n§7 -> 演化迭代：§b%d§r\n§7 -> Ticks needed for next Generation：§e%d§r\n§7 -> 泛演化发展等级：§d%d§r\n§7 -> 寄生体数量：§c%d§r\n§7 -> 感染寄巢之唤的生物数量：§5%d§r\n§7 -> 当前世界的EIV数量：§6%d§r\n§8§m----------------------§r

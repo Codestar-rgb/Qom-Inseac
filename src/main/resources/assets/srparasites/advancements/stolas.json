@@ -2,7 +2,7 @@
   "parent": "srparasites:columbus",
   "display": {
     "icon": {
-      "item": "srparasites:vector_map"
+      "item": "srparasites:potion_stolas_icon"
     },
     "title": {
       "translate": "advancements.srparasites.stolas.title"

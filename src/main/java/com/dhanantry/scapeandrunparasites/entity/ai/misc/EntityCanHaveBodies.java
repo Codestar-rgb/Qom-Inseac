@@ -1,16 +1,5 @@
-/*
- * Decompiled with CFR 0.152.
- * 
- * Could not load the following classes:
- *  net.minecraft.entity.Entity
- *  net.minecraft.entity.IEntityLivingData
- *  net.minecraft.util.math.BlockPos
- *  net.minecraft.world.DifficultyInstance
- *  net.minecraft.world.World
- */
 package com.dhanantry.scapeandrunparasites.entity.ai.misc;
 
-import com.dhanantry.scapeandrunparasites.entity.ai.misc.EntityParasiteBase;
 import java.util.UUID;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.IEntityLivingData;
@@ -19,56 +8,55 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 
 public interface EntityCanHaveBodies {
-    public void setFollowing(EntityCanHaveBodies var1);
+   void setFollowing(EntityCanHaveBodies var1);
 
-    public int getBodyLength();
+   int getBodyLength();
 
-    public EntityCanHaveBodies getAnotherBody(World var1);
+   EntityCanHaveBodies getAnotherBody(World var1);
 
-    public void copyCopy(EntityCanHaveBodies var1);
+   void copyCopy(EntityCanHaveBodies var1);
 
-    public void onSpawn(DifficultyInstance var1, IEntityLivingData var2);
+   void onSpawn(DifficultyInstance var1, IEntityLivingData var2);
 
-    public Entity getEntity();
+   Entity getEntity();
 
-    public void setCanF(boolean var1);
+   void setCanF(boolean var1);
 
-    public boolean getCanF();
+   boolean getCanF();
 
-    public byte getBodyNumber();
+   byte getBodyNumber();
 
-    public void setBodyNumber(int var1);
+   void setBodyNumber(int var1);
 
-    public boolean getBodyTail();
+   boolean getBodyTail();
 
-    public void setBodyTail(boolean var1);
+   void setBodyTail(boolean var1);
 
-    public UUID getFollowing();
+   UUID getFollowing();
 
-    public boolean getDigging();
+   boolean getDigging();
 
-    public void setDigging(boolean var1);
+   void setDigging(boolean var1);
 
-    public void setTargetPos(BlockPos var1);
+   void setTargetPos(BlockPos var1);
 
-    public BlockPos getTargetPos();
+   BlockPos getTargetPos();
 
-    public int getBodiesT();
+   int getBodiesT();
 
-    public void setBodiesT(int var1);
+   void setBodiesT(int var1);
 
-    public float getDigModel();
+   float getDigModel();
 
-    public void bodyPartEffect();
+   void bodyPartEffect();
 
-    public double getKillPoints();
+   double getKillPoints();
 
-    public EntityParasiteBase getEvolution(World var1);
+   EntityParasiteBase getEvolution(World var1);
 
-    public EntityParasiteBase getHead();
+   EntityParasiteBase getHead();
 
-    public Entity getFather(UUID var1);
+   Entity getFather(UUID var1);
 
-    public void handleDigging();
+   void handleDigging();
 }
-

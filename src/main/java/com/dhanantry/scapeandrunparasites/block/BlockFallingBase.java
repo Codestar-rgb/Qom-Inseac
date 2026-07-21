@@ -1,23 +1,6 @@
-/*
- * Decompiled with CFR 0.152.
- * 
- * Could not load the following classes:
- *  net.minecraft.block.Block
- *  net.minecraft.block.BlockFalling
- *  net.minecraft.block.material.Material
- *  net.minecraft.block.state.IBlockState
- *  net.minecraft.entity.Entity
- *  net.minecraft.entity.player.EntityPlayer
- *  net.minecraft.item.Item
- *  net.minecraft.item.ItemBlock
- *  net.minecraft.potion.PotionEffect
- *  net.minecraft.util.math.BlockPos
- *  net.minecraft.world.World
- */
 package com.dhanantry.scapeandrunparasites.block;
 
 import com.dhanantry.scapeandrunparasites.SRPMain;
-import com.dhanantry.scapeandrunparasites.block.IMetaName;
 import com.dhanantry.scapeandrunparasites.entity.ai.misc.EntityParasiteBase;
 import com.dhanantry.scapeandrunparasites.init.SRPBlocks;
 import com.dhanantry.scapeandrunparasites.init.SRPItems;
@@ -28,11 +11,9 @@ import com.dhanantry.scapeandrunparasites.util.SRPAttributes;
 import com.dhanantry.scapeandrunparasites.util.config.SRPConfigSystems;
 import com.dhanantry.scapeandrunparasites.world.SRPSaveData;
 import java.util.Objects;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -40,53 +21,61 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class BlockFallingBase
-extends BlockFalling {
-    public BlockFallingBase(Material material, String name, float hardness, boolean creative, boolean tickRandom) {
-        super(material);
-        this.setRegistryName(name);
-        this.func_149663_c("srparasites." + name);
-        this.func_149711_c(hardness);
-        this.func_149675_a(tickRandom);
-        if (creative) {
-            this.func_149647_a(SRPMain.SRP_CREATIVETAB);
-        }
-        SRPBlocks.SRP_BLOCKS.add((Block)this);
-        ItemBlock itemBlock = this instanceof IMetaName ? ((IMetaName)((Object)this)).getItemBlock() : new ItemBlock((Block)this);
-        SRPItems.SRP_ITEMS.add((Item)itemBlock.setRegistryName(Objects.requireNonNull(this.getRegistryName())));
-    }
+public class BlockFallingBase extends BlockFalling {
+   public BlockFallingBase(Material material, String name, float hardness, boolean creative, boolean tickRandom) {
+      super(material);
+      this.setRegistryName(name);
+      this.func_149663_c("srparasites." + name);
+      this.func_149711_c(hardness);
+      this.func_149675_a(tickRandom);
+      if (creative) {
+         this.func_149647_a(SRPMain.SRP_CREATIVETAB);
+      }
 
-    public BlockFallingBase(Material material, String name, float hardness, boolean creative, boolean tickRandom, float resistance) {
-        this(material, name, hardness, creative, tickRandom);
-        this.func_149752_b(resistance);
-    }
+      SRPBlocks.SRP_BLOCKS.add(this);
+      Item itemBlock;
+      if (this instanceof IMetaName) {
+         itemBlock = ((IMetaName)this).getItemBlock();
+      } else {
+         itemBlock = new ItemBlock(this);
+      }
 
-    public boolean removedByPlayer(IBlockState state, World world, BlockPos pos, EntityPlayer player, boolean willHarvest) {
-        if (!world.field_72995_K) {
-            int goo;
-            ParasiteEventWorld.setDisloWorldPhase(world, SRPAttributes.EVENTPARABLOCKBR, SRPConfigSystems.chanceEventParaBlockB, 0, null);
-            SRPSaveData dataLol = SRPSaveData.get(world, 1);
-            int n = goo = SRPConfigSystems.disloParasiteBlock ? dataLol.getCurrentCode(world.field_73011_w.getDimension(), 25) : 0;
-            if (goo != 0 && world.field_73012_v.nextDouble() < SRPConfigSystems.disloParasiteBlockChance) {
-                EntityParasiteBase halo = ParasiteEventEntity.getRandomFeral(world);
-                if (goo >= SRPConfigSystems.disloParasiteBlockValue1) {
-                    halo = ParasiteEventEntity.getRandomPrimitive(world);
-                }
-                if (goo >= SRPConfigSystems.disloParasiteBlockValue2) {
-                    halo = ParasiteEventEntity.getRandomAdapted(world);
-                }
-                if (goo >= SRPConfigSystems.disloParasiteBlockValue3) {
-                    halo = ParasiteEventEntity.getRandomPure(world);
-                }
-                halo.func_70107_b((double)pos.func_177958_n() + 0.5, pos.func_177956_o(), (double)pos.func_177952_p() + 0.5);
-                halo.func_180482_a(world.func_175649_E(new BlockPos((Entity)halo)), null);
-                world.func_72838_d((Entity)halo);
-                world.func_180498_a(null, 1026, new BlockPos((Entity)halo), 0);
-                halo.particleStatus((byte)7);
-                halo.func_70690_d(new PotionEffect(SRPPotions.EPEL_E, 600, 0, false, false));
+      SRPItems.SRP_ITEMS.add(itemBlock.setRegistryName(Objects.requireNonNull(this.getRegistryName())));
+   }
+
+   public BlockFallingBase(Material material, String name, float hardness, boolean creative, boolean tickRandom, float resistance) {
+      this(material, name, hardness, creative, tickRandom);
+      this.func_149752_b(resistance);
+   }
+
+   public boolean removedByPlayer(IBlockState state, World world, BlockPos pos, EntityPlayer player, boolean willHarvest) {
+      if (!world.field_72995_K) {
+         ParasiteEventWorld.setDisloWorldPhase(world, SRPAttributes.EVENTPARABLOCKBR, SRPConfigSystems.chanceEventParaBlockB, 0, null);
+         SRPSaveData dataLol = SRPSaveData.get(world, 1);
+         int goo = SRPConfigSystems.disloParasiteBlock ? dataLol.getCurrentCode(world.field_73011_w.getDimension(), 25) : 0;
+         if (goo != 0 && world.field_73012_v.nextDouble() < SRPConfigSystems.disloParasiteBlockChance) {
+            EntityParasiteBase halo = ParasiteEventEntity.getRandomFeral(world);
+            if (goo >= SRPConfigSystems.disloParasiteBlockValue1) {
+               halo = ParasiteEventEntity.getRandomPrimitive(world);
             }
-        }
-        return super.removedByPlayer(state, world, pos, player, willHarvest);
-    }
-}
 
+            if (goo >= SRPConfigSystems.disloParasiteBlockValue2) {
+               halo = ParasiteEventEntity.getRandomAdapted(world);
+            }
+
+            if (goo >= SRPConfigSystems.disloParasiteBlockValue3) {
+               halo = ParasiteEventEntity.getRandomPure(world);
+            }
+
+            halo.func_70107_b(pos.func_177958_n() + 0.5, pos.func_177956_o(), pos.func_177952_p() + 0.5);
+            halo.func_180482_a(world.func_175649_E(new BlockPos(halo)), null);
+            world.func_72838_d(halo);
+            world.func_180498_a(null, 1026, new BlockPos(halo), 0);
+            halo.particleStatus((byte)7);
+            halo.func_70690_d(new PotionEffect(SRPPotions.EPEL_E, 600, 0, false, false));
+         }
+      }
+
+      return super.removedByPlayer(state, world, pos, player, willHarvest);
+   }
+}

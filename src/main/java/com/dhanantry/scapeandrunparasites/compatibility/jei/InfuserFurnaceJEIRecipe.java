@@ -1,13 +1,3 @@
-/*
- * Decompiled with CFR 0.152.
- * 
- * Could not load the following classes:
- *  javax.annotation.Nonnull
- *  mezz.jei.api.ingredients.IIngredients
- *  mezz.jei.api.ingredients.VanillaTypes
- *  mezz.jei.api.recipe.IRecipeWrapper
- *  net.minecraft.item.ItemStack
- */
 package com.dhanantry.scapeandrunparasites.compatibility.jei;
 
 import com.dhanantry.scapeandrunparasites.recipes.InfuserFurnaceRecipe;
@@ -19,23 +9,21 @@ import mezz.jei.api.ingredients.VanillaTypes;
 import mezz.jei.api.recipe.IRecipeWrapper;
 import net.minecraft.item.ItemStack;
 
-public class InfuserFurnaceJEIRecipe
-implements IRecipeWrapper {
-    private final InfuserFurnaceRecipe recipe;
+public class InfuserFurnaceJEIRecipe implements IRecipeWrapper {
+   private final InfuserFurnaceRecipe recipe;
 
-    public InfuserFurnaceJEIRecipe(InfuserFurnaceRecipe recipe) {
-        this.recipe = recipe;
-    }
+   public InfuserFurnaceJEIRecipe(InfuserFurnaceRecipe recipe) {
+      this.recipe = recipe;
+   }
 
-    public InfuserFurnaceRecipe getRecipe() {
-        return this.recipe;
-    }
+   public InfuserFurnaceRecipe getRecipe() {
+      return this.recipe;
+   }
 
-    public void getIngredients(@Nonnull IIngredients ingredients) {
-        List<ItemStack> smeltInputs = Arrays.asList(this.recipe.smeltIn.func_193365_a());
-        List<ItemStack> infuseInputs = Arrays.asList(this.recipe.infuseIn.func_193365_a());
-        ingredients.setInputLists(VanillaTypes.ITEM, Arrays.asList(smeltInputs, infuseInputs));
-        ingredients.setOutputs(VanillaTypes.ITEM, Arrays.asList(this.recipe.infusedOut, this.recipe.bottleOut));
-    }
+   public void getIngredients(@Nonnull IIngredients ingredients) {
+      List<ItemStack> smeltInputs = Arrays.asList(this.recipe.smeltIn.func_193365_a());
+      List<ItemStack> infuseInputs = Arrays.asList(this.recipe.infuseIn.func_193365_a());
+      ingredients.setInputLists(VanillaTypes.ITEM, Arrays.asList(smeltInputs, infuseInputs));
+      ingredients.setOutputs(VanillaTypes.ITEM, Arrays.asList(this.recipe.infusedOut, this.recipe.bottleOut));
+   }
 }
-

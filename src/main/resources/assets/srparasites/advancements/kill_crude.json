@@ -2,7 +2,7 @@
   "parent": "srparasites:kill_adapted",
   "display": {
     "icon": {
-      "item": "srparasites:ada_yelloweye_drop"
+      "item": "srparasites:crude_icon"
     },
     "title": {
       "translate": "advancements.srparasites.kill_crude.title"

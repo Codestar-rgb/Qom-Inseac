@@ -1,39 +1,3 @@
-/*
- * Decompiled with CFR 0.152.
- * 
- * Could not load the following classes:
- *  javax.annotation.Nullable
- *  net.minecraft.block.Block
- *  net.minecraft.block.BlockLiquid
- *  net.minecraft.block.state.IBlockState
- *  net.minecraft.client.util.ITooltipFlag
- *  net.minecraft.entity.Entity
- *  net.minecraft.entity.EntityLivingBase
- *  net.minecraft.entity.IEntityLivingData
- *  net.minecraft.entity.monster.EntityZombie
- *  net.minecraft.entity.player.EntityPlayer
- *  net.minecraft.init.Blocks
- *  net.minecraft.init.Items
- *  net.minecraft.inventory.EntityEquipmentSlot
- *  net.minecraft.item.Item
- *  net.minecraft.item.ItemStack
- *  net.minecraft.nbt.NBTTagCompound
- *  net.minecraft.server.MinecraftServer
- *  net.minecraft.stats.StatList
- *  net.minecraft.tileentity.TileEntity
- *  net.minecraft.util.ActionResult
- *  net.minecraft.util.EnumActionResult
- *  net.minecraft.util.EnumFacing
- *  net.minecraft.util.EnumHand
- *  net.minecraft.util.math.AxisAlignedBB
- *  net.minecraft.util.math.BlockPos
- *  net.minecraft.util.math.MathHelper
- *  net.minecraft.util.math.RayTraceResult
- *  net.minecraft.util.math.RayTraceResult$Type
- *  net.minecraft.world.World
- *  net.minecraftforge.fml.relauncher.Side
- *  net.minecraftforge.fml.relauncher.SideOnly
- */
 package com.dhanantry.scapeandrunparasites.item;
 
 import com.dhanantry.scapeandrunparasites.SRPMain;
@@ -155,7 +119,6 @@ import com.dhanantry.scapeandrunparasites.entity.monster.pure.preeminent.EntityP
 import com.dhanantry.scapeandrunparasites.entity.monster.pure.preeminent.EntityVesta;
 import com.dhanantry.scapeandrunparasites.entity.projectile.EntityDropPod;
 import com.dhanantry.scapeandrunparasites.init.SRPItems;
-import com.dhanantry.scapeandrunparasites.item.ItemBase;
 import com.dhanantry.scapeandrunparasites.util.config.SRPConfig;
 import com.dhanantry.scapeandrunparasites.util.config.SRPConfigMobs;
 import com.dhanantry.scapeandrunparasites.util.config.SRPConfigSystems;
@@ -167,6 +130,7 @@ import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.monster.EntityZombie;
@@ -174,7 +138,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.server.MinecraftServer;
@@ -188,415 +151,437 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.RayTraceResult.Type;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemMobSpawner
-extends ItemBase
-implements IModelSRP {
-    private String name;
+public class ItemMobSpawner extends ItemBase implements IModelSRP {
+   private String name;
 
-    public ItemMobSpawner(String name) {
-        super("itemmobspawner_" + name, 64, (byte)0);
-        this.name = name;
-        SRPItems.SRP_ITEMS.add(this);
-    }
+   public ItemMobSpawner(String name) {
+      super("itemmobspawner_" + name, 64, (byte)0);
+      this.name = name;
+      SRPItems.SRP_ITEMS.add(this);
+   }
 
-    public EnumActionResult func_180614_a(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-        ItemStack itemstack = player.func_184586_b(hand);
-        if (worldIn.field_72995_K) {
-            return EnumActionResult.SUCCESS;
-        }
-        if (!player.func_175151_a(pos.func_177972_a(facing), facing, itemstack)) {
-            return EnumActionResult.FAIL;
-        }
-        IBlockState iblockstate = worldIn.func_180495_p(pos);
-        Block block = iblockstate.func_177230_c();
-        if (block == Blocks.field_150474_ac) {
-            TileEntity tileEntity = worldIn.func_175625_s(pos);
-        }
-        BlockPos blockpos = pos.func_177972_a(facing);
-        double d0 = this.getYOffset(worldIn, blockpos);
-        Entity entity = this.spawnEntity(worldIn, (double)blockpos.func_177958_n() + 0.5, (double)blockpos.func_177956_o() + d0, (double)blockpos.func_177952_p() + 0.5, player);
-        if (entity != null) {
+   public EnumActionResult func_180614_a(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+      ItemStack itemstack = player.func_184586_b(hand);
+      if (worldIn.field_72995_K) {
+         return EnumActionResult.SUCCESS;
+      } else if (!player.func_175151_a(pos.func_177972_a(facing), facing, itemstack)) {
+         return EnumActionResult.FAIL;
+      } else {
+         IBlockState iblockstate = worldIn.func_180495_p(pos);
+         Block block = iblockstate.func_177230_c();
+         if (block == Blocks.field_150474_ac) {
+            TileEntity blockpos = worldIn.func_175625_s(pos);
+         }
+
+         BlockPos blockpos = pos.func_177972_a(facing);
+         double d0 = this.getYOffset(worldIn, blockpos);
+         Entity entity = this.spawnEntity(worldIn, blockpos.func_177958_n() + 0.5, blockpos.func_177956_o() + d0, blockpos.func_177952_p() + 0.5, player);
+         if (entity != null) {
             if (entity instanceof EntityLivingBase && itemstack.func_82837_s()) {
-                entity.func_96094_a(itemstack.func_82833_r());
+               entity.func_96094_a(itemstack.func_82833_r());
             }
-            ItemMobSpawner.applyItemEntityDataToEntity(worldIn, player, itemstack, entity);
+
+            applyItemEntityDataToEntity(worldIn, player, itemstack, entity);
             if (!player.field_71075_bZ.field_75098_d) {
-                itemstack.func_190918_g(1);
+               itemstack.func_190918_g(1);
             }
-        }
-        return EnumActionResult.SUCCESS;
-    }
+         }
 
-    protected double getYOffset(World p_190909_1_, BlockPos p_190909_2_) {
-        AxisAlignedBB axisalignedbb = new AxisAlignedBB(p_190909_2_).func_72321_a(0.0, -1.0, 0.0);
-        List list = p_190909_1_.func_184144_a((Entity)null, axisalignedbb);
-        if (list.isEmpty()) {
-            return 0.0;
-        }
-        double d0 = axisalignedbb.field_72338_b;
-        for (AxisAlignedBB axisalignedbb1 : list) {
+         return EnumActionResult.SUCCESS;
+      }
+   }
+
+   protected double getYOffset(World p_190909_1_, BlockPos p_190909_2_) {
+      AxisAlignedBB axisalignedbb = new AxisAlignedBB(p_190909_2_).func_72321_a(0.0, -1.0, 0.0);
+      List<AxisAlignedBB> list = p_190909_1_.func_184144_a((Entity)null, axisalignedbb);
+      if (list.isEmpty()) {
+         return 0.0;
+      } else {
+         double d0 = axisalignedbb.field_72338_b;
+
+         for (AxisAlignedBB axisalignedbb1 : list) {
             d0 = Math.max(axisalignedbb1.field_72337_e, d0);
-        }
-        return d0 - (double)p_190909_2_.func_177956_o();
-    }
+         }
 
-    public static void applyItemEntityDataToEntity(World entityWorld, @Nullable EntityPlayer player, ItemStack stack, @Nullable Entity targetEntity) {
-        NBTTagCompound nbttagcompound;
-        MinecraftServer minecraftserver = entityWorld.func_73046_m();
-        if (minecraftserver != null && targetEntity != null && (nbttagcompound = stack.func_77978_p()) != null && nbttagcompound.func_150297_b("EntityTag", 10)) {
-            if (!(entityWorld.field_72995_K || !targetEntity.func_184213_bq() || player != null && minecraftserver.func_184103_al().func_152596_g(player.func_146103_bH()))) {
-                return;
+         return d0 - p_190909_2_.func_177956_o();
+      }
+   }
+
+   public static void applyItemEntityDataToEntity(World entityWorld, @Nullable EntityPlayer player, ItemStack stack, @Nullable Entity targetEntity) {
+      MinecraftServer minecraftserver = entityWorld.func_73046_m();
+      if (minecraftserver != null && targetEntity != null) {
+         NBTTagCompound nbttagcompound = stack.func_77978_p();
+         if (nbttagcompound != null && nbttagcompound.func_150297_b("EntityTag", 10)) {
+            if (!entityWorld.field_72995_K
+               && targetEntity.func_184213_bq()
+               && (player == null || !minecraftserver.func_184103_al().func_152596_g(player.func_146103_bH()))) {
+               return;
             }
+
             NBTTagCompound nbttagcompound1 = targetEntity.func_189511_e(new NBTTagCompound());
             UUID uuid = targetEntity.func_110124_au();
             nbttagcompound1.func_179237_a(nbttagcompound.func_74775_l("EntityTag"));
             targetEntity.func_184221_a(uuid);
             targetEntity.func_70020_e(nbttagcompound1);
-        }
-    }
+         }
+      }
+   }
 
-    public ActionResult<ItemStack> func_77659_a(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
-        ItemStack itemstack = playerIn.func_184586_b(handIn);
-        if (worldIn.field_72995_K) {
-            return new ActionResult(EnumActionResult.PASS, (Object)itemstack);
-        }
-        RayTraceResult raytraceresult = this.func_77621_a(worldIn, playerIn, true);
-        if (raytraceresult != null && raytraceresult.field_72313_a == RayTraceResult.Type.BLOCK) {
+   public ActionResult<ItemStack> func_77659_a(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
+      ItemStack itemstack = playerIn.func_184586_b(handIn);
+      if (worldIn.field_72995_K) {
+         return new ActionResult(EnumActionResult.PASS, itemstack);
+      } else {
+         RayTraceResult raytraceresult = this.func_77621_a(worldIn, playerIn, true);
+         if (raytraceresult != null && raytraceresult.field_72313_a == Type.BLOCK) {
             BlockPos blockpos = raytraceresult.func_178782_a();
             if (!(worldIn.func_180495_p(blockpos).func_177230_c() instanceof BlockLiquid)) {
-                return new ActionResult(EnumActionResult.PASS, (Object)itemstack);
-            }
-            if (worldIn.func_175660_a(playerIn, blockpos) && playerIn.func_175151_a(blockpos, raytraceresult.field_178784_b, itemstack)) {
-                Entity entity = this.spawnEntity(worldIn, (double)blockpos.func_177958_n() + 0.5, (double)blockpos.func_177956_o() + 0.5, (double)blockpos.func_177952_p() + 0.5, playerIn);
-                if (entity == null) {
-                    return new ActionResult(EnumActionResult.PASS, (Object)itemstack);
-                }
-                if (entity instanceof EntityLivingBase && itemstack.func_82837_s()) {
-                    entity.func_96094_a(itemstack.func_82833_r());
-                }
-                ItemMobSpawner.applyItemEntityDataToEntity(worldIn, playerIn, itemstack, entity);
-                if (!playerIn.field_71075_bZ.field_75098_d) {
-                    itemstack.func_190918_g(1);
-                }
-                playerIn.func_71029_a(StatList.func_188057_b((Item)this));
-                return new ActionResult(EnumActionResult.SUCCESS, (Object)itemstack);
-            }
-            return new ActionResult(EnumActionResult.FAIL, (Object)itemstack);
-        }
-        return new ActionResult(EnumActionResult.PASS, (Object)itemstack);
-    }
+               return new ActionResult(EnumActionResult.PASS, itemstack);
+            } else if (worldIn.func_175660_a(playerIn, blockpos) && playerIn.func_175151_a(blockpos, raytraceresult.field_178784_b, itemstack)) {
+               Entity entity = this.spawnEntity(
+                  worldIn, blockpos.func_177958_n() + 0.5, blockpos.func_177956_o() + 0.5, blockpos.func_177952_p() + 0.5, playerIn
+               );
+               if (entity == null) {
+                  return new ActionResult(EnumActionResult.PASS, itemstack);
+               } else {
+                  if (entity instanceof EntityLivingBase && itemstack.func_82837_s()) {
+                     entity.func_96094_a(itemstack.func_82833_r());
+                  }
 
-    private Entity spawnEntity(World worldIn, double x, double y, double z, EntityPlayer playerIn) {
-        Object entity = new EntityZombie(worldIn);
-        if (!SRPConfig.allowMobs) {
-            return entity;
-        }
-        if (this.name.equals("pod")) {
+                  applyItemEntityDataToEntity(worldIn, playerIn, itemstack, entity);
+                  if (!playerIn.field_71075_bZ.field_75098_d) {
+                     itemstack.func_190918_g(1);
+                  }
+
+                  playerIn.func_71029_a(StatList.func_188057_b(this));
+                  return new ActionResult(EnumActionResult.SUCCESS, itemstack);
+               }
+            } else {
+               return new ActionResult(EnumActionResult.FAIL, itemstack);
+            }
+         } else {
+            return new ActionResult(EnumActionResult.PASS, itemstack);
+         }
+      }
+   }
+
+   private Entity spawnEntity(World worldIn, double x, double y, double z, EntityPlayer playerIn) {
+      EntityLiving entity = new EntityZombie(worldIn);
+      if (!SRPConfig.allowMobs) {
+         return entity;
+      } else {
+         if (this.name.equals("pod")) {
             entity = new EntityDropPod(worldIn);
             y += 25.0;
-        } else {
+         } else {
             if (this.name.equals("mes") && SRPConfigMobs.cruxaEnabled) {
-                return this.spawnPlayer2(worldIn, x, y, z, playerIn);
+               return this.spawnPlayer2(worldIn, x, y, z, playerIn);
             }
+
             if (this.name.equals("cruxa") && SRPConfigMobs.cruxaEnabled) {
-                entity = new EntityCruxA(worldIn);
+               entity = new EntityCruxA(worldIn);
             } else if (this.name.equals("cruxb") && SRPConfigMobs.cruxaEnabled) {
-                entity = new EntityCruxB(worldIn);
+               entity = new EntityCruxB(worldIn);
             } else if (this.name.equals("heed") && SRPConfigMobs.heedEnabled) {
-                entity = new EntityHeed(worldIn);
+               entity = new EntityHeed(worldIn);
             } else if (this.name.equals("done") && SRPConfigMobs.heedEnabled) {
-                entity = new EntityDone(worldIn);
+               entity = new EntityDone(worldIn);
             } else if (this.name.equals("jinjo") && SRPConfigMobs.jinjoEnabled) {
-                entity = new EntityJinjo(worldIn);
+               entity = new EntityJinjo(worldIn);
             } else if (this.name.equals("elvia") && SRPConfigMobs.jinjoEnabled) {
-                entity = new EntityElvia(worldIn);
+               entity = new EntityElvia(worldIn);
             } else if (this.name.equals("pheon") && SRPConfigMobs.jinjoEnabled) {
-                entity = new EntityPheon(worldIn);
+               entity = new EntityPheon(worldIn);
             } else if (this.name.equals("lencia") && SRPConfigMobs.jinjoEnabled) {
-                entity = new EntityLencia(worldIn);
+               entity = new EntityLencia(worldIn);
             } else if (this.name.equals("vesta") && SRPConfigMobs.jinjoEnabled) {
-                entity = new EntityVesta(worldIn);
+               entity = new EntityVesta(worldIn);
             } else if (this.name.equals("rathol") && SRPConfigMobs.ratholEnabled) {
-                entity = new EntityRathol(worldIn);
+               entity = new EntityRathol(worldIn);
             } else if (this.name.equals("gothol") && SRPConfigMobs.ratholEnabled) {
-                entity = new EntityGothol(worldIn);
+               entity = new EntityGothol(worldIn);
             } else if (this.name.equals("lodo") && SRPConfigMobs.lodoEnabled) {
-                entity = new EntityLodo(worldIn);
+               entity = new EntityLodo(worldIn);
             } else if (this.name.equals("mudo") && SRPConfigMobs.mudoEnabled) {
-                entity = new EntityMudo(worldIn);
+               entity = new EntityMudo(worldIn);
             } else if (this.name.equals("nuuh") && SRPConfigMobs.mudoEnabled) {
-                entity = new EntityNuuh(worldIn);
+               entity = new EntityNuuh(worldIn);
             } else if (this.name.equals("ata")) {
-                entity = new EntityAta(worldIn);
+               entity = new EntityAta(worldIn);
             } else if (this.name.equals("viin")) {
-                entity = new EntityViin(worldIn);
+               entity = new EntityViin(worldIn);
             } else if (this.name.equals("venkrol") && SRPConfigSystems.rsEnabled) {
-                entity = new EntityVenkrol(worldIn);
+               entity = new EntityVenkrol(worldIn);
             } else if (this.name.equals("venkrolsii") && SRPConfigSystems.rsEnabled) {
-                entity = new EntityVenkrolSII(worldIn);
+               entity = new EntityVenkrolSII(worldIn);
             } else if (this.name.equals("venkrolsiii") && SRPConfigSystems.rsEnabled) {
-                entity = new EntityVenkrolSIII(worldIn);
+               entity = new EntityVenkrolSIII(worldIn);
             } else if (this.name.equals("venkrolsiv") && SRPConfigSystems.rsEnabled) {
-                entity = new EntityVenkrolSIV(worldIn);
+               entity = new EntityVenkrolSIV(worldIn);
             } else if (this.name.equals("venkrolsv") && SRPConfigSystems.rsEnabled) {
-                entity = new EntityVenkrolSV(worldIn);
+               entity = new EntityVenkrolSV(worldIn);
             } else if (this.name.equals("nak") && SRPConfigSystems.rsEnabled) {
-                entity = new EntityNak(worldIn);
+               entity = new EntityNak(worldIn);
             } else if (this.name.equals("leem") && SRPConfigSystems.rsEnabled) {
-                entity = new EntityLeem(worldIn);
+               entity = new EntityLeem(worldIn);
             } else if (this.name.equals("leemsii") && SRPConfigSystems.rsEnabled) {
-                entity = new EntityLeemSII(worldIn);
+               entity = new EntityLeemSII(worldIn);
             } else if (this.name.equals("leemsiii") && SRPConfigSystems.rsEnabled) {
-                entity = new EntityLeemSIII(worldIn);
+               entity = new EntityLeemSIII(worldIn);
             } else if (this.name.equals("leemsiv") && SRPConfigSystems.rsEnabled) {
-                entity = new EntityLeemSIV(worldIn);
+               entity = new EntityLeemSIV(worldIn);
             } else if (this.name.equals("dod") && SRPConfigSystems.rsEnabled) {
-                entity = new EntityDod(worldIn);
+               entity = new EntityDod(worldIn);
             } else if (this.name.equals("dodsii") && SRPConfigSystems.rsEnabled) {
-                entity = new EntityDodSII(worldIn);
+               entity = new EntityDodSII(worldIn);
             } else if (this.name.equals("dodsiii") && SRPConfigSystems.rsEnabled) {
-                entity = new EntityDodSIII(worldIn);
+               entity = new EntityDodSIII(worldIn);
             } else if (this.name.equals("dodsiv") && SRPConfigSystems.rsEnabled) {
-                entity = new EntityDodSIV(worldIn);
+               entity = new EntityDodSIV(worldIn);
             } else if (this.name.equals("dorpa") && SRPConfigMobs.dorpaEnabled) {
-                entity = new EntityDorpa(worldIn);
+               entity = new EntityDorpa(worldIn);
             } else if (this.name.equals("infhuman") && SRPConfigMobs.infhumanEnabled) {
-                entity = new EntityInfHuman(worldIn);
+               entity = new EntityInfHuman(worldIn);
             } else if (this.name.equals("infhumanhead") && SRPConfigMobs.infhumanEnabled) {
-                entity = new EntityInfHumanHead(worldIn);
+               entity = new EntityInfHumanHead(worldIn);
             } else if (this.name.equals("infcow") && SRPConfigMobs.infcowEnabled) {
-                entity = new EntityInfCow(worldIn);
+               entity = new EntityInfCow(worldIn);
             } else if (this.name.equals("infcowhead") && SRPConfigMobs.infcowEnabled) {
-                entity = new EntityInfCowHead(worldIn);
+               entity = new EntityInfCowHead(worldIn);
             } else if (this.name.equals("infsheep") && SRPConfigMobs.infsheepEnabled) {
-                entity = new EntityInfSheep(worldIn);
+               entity = new EntityInfSheep(worldIn);
             } else if (this.name.equals("infsquid") && SRPConfigMobs.infsquidEnabled) {
-                entity = new EntityInfSquid(worldIn);
+               entity = new EntityInfSquid(worldIn);
             } else if (this.name.equals("infsheephead") && SRPConfigMobs.infsheepEnabled) {
-                entity = new EntityInfSheepHead(worldIn);
+               entity = new EntityInfSheepHead(worldIn);
             } else if (this.name.equals("infwolf") && SRPConfigMobs.infwolfEnabled) {
-                entity = new EntityInfWolf(worldIn);
+               entity = new EntityInfWolf(worldIn);
             } else if (this.name.equals("infwolfhead") && SRPConfigMobs.infwolfEnabled) {
-                entity = new EntityInfWolfHead(worldIn);
+               entity = new EntityInfWolfHead(worldIn);
             } else if (this.name.equals("infpig") && SRPConfigMobs.infpigEnabled) {
-                entity = new EntityInfPig(worldIn);
+               entity = new EntityInfPig(worldIn);
             } else if (this.name.equals("infpighead") && SRPConfigMobs.infpigEnabled) {
-                entity = new EntityInfPigHead(worldIn);
+               entity = new EntityInfPigHead(worldIn);
             } else if (this.name.equals("infvillager") && SRPConfigMobs.infvillagerEnabled) {
-                entity = new EntityInfVillager(worldIn);
+               entity = new EntityInfVillager(worldIn);
             } else if (this.name.equals("infvillagerhead") && SRPConfigMobs.infvillagerEnabled) {
-                entity = new EntityInfVillagerHead(worldIn);
+               entity = new EntityInfVillagerHead(worldIn);
             } else {
-                if (this.name.equals("infplayer") && SRPConfigMobs.infadventurerEnabled) {
-                    return this.spawnPlayer(worldIn, x, y, z, playerIn);
-                }
-                if (this.name.equals("infplayerhead") && SRPConfigMobs.infadventurerEnabled) {
-                    return this.spawnPlayerHead(worldIn, x, y, z, playerIn);
-                }
-                if (this.name.equals("inhoos")) {
-                    entity = new EntityInhooS(worldIn);
-                } else if (this.name.equals("inhoom")) {
-                    entity = new EntityInhooM(worldIn);
-                } else if (this.name.equals("infhorse") && SRPConfigMobs.infhorseEnabled) {
-                    entity = new EntityInfHorse(worldIn);
-                } else if (this.name.equals("infhorsehead") && SRPConfigMobs.infhorseEnabled) {
-                    entity = new EntityInfHorseHead(worldIn);
-                } else if (this.name.equals("infenderman") && SRPConfigMobs.infendermanEnabled) {
-                    entity = new EntityInfEnderman(worldIn);
-                } else if (this.name.equals("infendermanhead") && SRPConfigSystems.rsEnabled) {
-                    entity = new EntityInfEndermanHead(worldIn);
-                } else if (this.name.equals("infbear") && SRPConfigMobs.infbearEnabled) {
-                    entity = new EntityInfBear(worldIn);
-                } else if (this.name.equals("infdragone")) {
-                    entity = new EntityInfDragonE(worldIn);
-                } else if (this.name.equals("infdragonehead") && SRPConfigSystems.rsEnabled) {
-                    entity = new EntityInfDragonEHead(worldIn);
-                } else if (this.name.equals("host") && SRPConfigMobs.hostEnabled) {
-                    entity = new EntityHost(worldIn);
-                } else if (this.name.equals("hostii") && SRPConfigMobs.hostEnabled) {
-                    entity = new EntityHostII(worldIn);
-                } else if (this.name.equals("hull") && SRPConfigMobs.hullEnabled) {
-                    entity = new EntityHull(worldIn);
-                } else if (this.name.equals("hulladapted") && SRPConfigMobs.hullEnabled) {
-                    entity = new EntityHullAdapted(worldIn);
-                } else if (this.name.equals("canra") && SRPConfigMobs.canraEnabled) {
-                    entity = new EntityCanra(worldIn);
-                } else if (this.name.equals("canraadapted") && SRPConfigMobs.canraEnabled) {
-                    entity = new EntityCanraAdapted(worldIn);
-                } else if (this.name.equals("nogla") && SRPConfigMobs.noglaEnabled) {
-                    entity = new EntityNogla(worldIn);
-                } else if (this.name.equals("noglaadapted") && SRPConfigMobs.noglaEnabled) {
-                    entity = new EntityNoglaAdapted(worldIn);
-                } else if (this.name.equals("gim") && SRPConfigMobs.gimEnabled) {
-                    entity = new EntityGim(worldIn);
-                } else if (this.name.equals("gimadapted") && SRPConfigMobs.gimEnabled) {
-                    entity = new EntityGimAdapted(worldIn);
-                } else if (this.name.equals("zaa") && SRPConfigMobs.zaaEnabled) {
-                    entity = new EntityZaa(worldIn);
-                } else if (this.name.equals("bano") && SRPConfigMobs.zetmoEnabled) {
-                    entity = new EntityBano(worldIn);
-                } else if (this.name.equals("banoadapted") && SRPConfigMobs.zetmoEnabled) {
-                    entity = new EntityBanoAdapted(worldIn);
-                } else if (this.name.equals("ranrac") && SRPConfigMobs.arachnidaEnabled) {
-                    entity = new EntityRanrac(worldIn);
-                } else if (this.name.equals("ranracadapted") && SRPConfigMobs.arachnidaEnabled) {
-                    entity = new EntityRanracAdapted(worldIn);
-                } else if (this.name.equals("lum") && SRPConfigMobs.lumEnabled) {
-                    entity = new EntityLum(worldIn);
-                } else if (this.name.equals("lumadapted") && SRPConfigMobs.lumEnabled) {
-                    entity = new EntityLumAdapted(worldIn);
-                } else if (this.name.equals("shyco") && SRPConfigMobs.shycoEnabled) {
-                    entity = new EntityShyco(worldIn);
-                } else if (this.name.equals("shycoadapted") && SRPConfigMobs.shycoEnabled) {
-                    entity = new EntityShycoAdapted(worldIn);
-                } else if (this.name.equals("emana") && SRPConfigMobs.emanaEnabled) {
-                    entity = new EntityEmana(worldIn);
-                } else if (this.name.equals("emanaadapted") && SRPConfigMobs.emanaEnabled) {
-                    entity = new EntityEmanaAdapted(worldIn);
-                } else if (this.name.equals("iki")) {
-                    entity = new EntityIki(worldIn);
-                } else if (this.name.equals("ikiadapted")) {
-                    entity = new EntityIkiAdapted(worldIn);
-                } else if (this.name.equals("wymo")) {
-                    entity = new EntityWymo(worldIn);
-                } else if (this.name.equals("buthol") && SRPConfigMobs.butholEnabled) {
-                    entity = new EntityButhol(worldIn);
-                } else if (this.name.equals("alafha") && SRPConfigMobs.alafhaEnabled) {
-                    entity = new EntityAlafha(worldIn);
-                } else if (this.name.equals("oronco") && SRPConfigMobs.oroncoEnabled) {
-                    entity = new EntityOronco(worldIn);
-                } else if (this.name.equals("terla") && SRPConfigMobs.terlaEnabled) {
-                    entity = new EntityTerla(worldIn);
-                } else if (this.name.equals("anged") && SRPConfigMobs.angedEnabled) {
-                    entity = new EntityAnged(worldIn);
-                } else if (this.name.equals("lesh")) {
-                    entity = new EntityLesh(worldIn);
-                } else if (this.name.equals("leer")) {
-                    entity = new EntityLeer(worldIn);
-                } else if (this.name.equals("tonro") && SRPConfigMobs.tonroEnabled) {
-                    entity = new EntityTonro(worldIn);
-                } else if (this.name.equals("unvo") && SRPConfigMobs.unvoEnabled) {
-                    entity = new EntityUnvo(worldIn);
-                } else if (this.name.equals("ganro") && SRPConfigMobs.ganroEnabled) {
-                    entity = new EntityGanro(worldIn);
-                } else if (this.name.equals("omboo") && SRPConfigMobs.ombooEnabled) {
-                    entity = new EntityOmboo(worldIn);
-                } else if (this.name.equals("esor") && SRPConfigMobs.esorEnabled) {
-                    entity = new EntityEsor(worldIn);
-                } else if (this.name.equals("orch") && SRPConfigMobs.esorEnabled) {
-                    entity = new EntityOrch(worldIn);
-                } else if (this.name.equals("flog") && SRPConfigMobs.flogEnabled) {
-                    entity = new EntityFlog(worldIn);
-                } else if (this.name.equals("ferbear") && SRPConfigMobs.ferbearEnabled) {
-                    entity = new EntityFerBear(worldIn);
-                } else if (this.name.equals("fercow") && SRPConfigMobs.fercowEnabled) {
-                    entity = new EntityFerCow(worldIn);
-                } else if (this.name.equals("ferenderman") && SRPConfigMobs.ferendermanEnabled) {
-                    entity = new EntityFerEnderman(worldIn);
-                } else if (this.name.equals("ferhuman") && SRPConfigMobs.ferhumanEnabled) {
-                    entity = new EntityFerHuman(worldIn);
-                } else if (this.name.equals("ferhorse") && SRPConfigMobs.ferhorseEnabled) {
-                    entity = new EntityFerHorse(worldIn);
-                } else if (this.name.equals("fersheep") && SRPConfigMobs.fersheepEnabled) {
-                    entity = new EntityFerSheep(worldIn);
-                } else if (this.name.equals("ferpig") && SRPConfigMobs.ferpigEnabled) {
-                    entity = new EntityFerPig(worldIn);
-                } else if (this.name.equals("ferwolf")) {
-                    entity = new EntityFerWolf(worldIn);
-                } else if (this.name.equals("fervillager") && SRPConfigMobs.fervillagerEnabled) {
-                    entity = new EntityFerVillager(worldIn);
-                } else if (this.name.equals("marcow")) {
-                    entity = new EntitySpeCow(worldIn);
-                } else if (this.name.equals("marenderman")) {
-                    entity = new EntitySpeEnderman(worldIn);
-                } else if (this.name.equals("marvillager")) {
-                    entity = new EntitySpeVillager(worldIn);
-                } else if (this.name.equals("marhuman")) {
-                    entity = new EntitySpeHuman(worldIn);
-                } else if (this.name.equals("marsheep")) {
-                    entity = new EntitySpeSheep(worldIn);
-                } else if (this.name.equals("marbear")) {
-                    entity = new EntitySpeBear(worldIn);
-                } else if (this.name.equals("abobodies")) {
-                    entity = new EntityAboBodies(worldIn);
-                } else if (this.name.equals("higolem") && SRPConfigMobs.higolemEnabled) {
-                    entity = new EntityHiGolem(worldIn);
-                } else if (this.name.equals("hiblaze")) {
-                    entity = new EntityHiBlaze(worldIn);
-                } else if (this.name.equals("hiskeleton")) {
-                    entity = new EntityHiSkeleton(worldIn);
-                } else if (this.name.equals("kirin")) {
-                    entity = new EntityKirin(worldIn);
-                } else if (this.name.equals("heblu") && SRPConfigMobs.hebluEnabled) {
-                    entity = new EntityHeblu(worldIn);
-                }
+               if (this.name.equals("infplayer") && SRPConfigMobs.infadventurerEnabled) {
+                  return this.spawnPlayer(worldIn, x, y, z, playerIn);
+               }
+
+               if (this.name.equals("infplayerhead") && SRPConfigMobs.infadventurerEnabled) {
+                  return this.spawnPlayerHead(worldIn, x, y, z, playerIn);
+               }
+
+               if (this.name.equals("inhoos")) {
+                  entity = new EntityInhooS(worldIn);
+               } else if (this.name.equals("inhoom")) {
+                  entity = new EntityInhooM(worldIn);
+               } else if (this.name.equals("infhorse") && SRPConfigMobs.infhorseEnabled) {
+                  entity = new EntityInfHorse(worldIn);
+               } else if (this.name.equals("infhorsehead") && SRPConfigMobs.infhorseEnabled) {
+                  entity = new EntityInfHorseHead(worldIn);
+               } else if (this.name.equals("infenderman") && SRPConfigMobs.infendermanEnabled) {
+                  entity = new EntityInfEnderman(worldIn);
+               } else if (this.name.equals("infendermanhead") && SRPConfigSystems.rsEnabled) {
+                  entity = new EntityInfEndermanHead(worldIn);
+               } else if (this.name.equals("infbear") && SRPConfigMobs.infbearEnabled) {
+                  entity = new EntityInfBear(worldIn);
+               } else if (this.name.equals("infdragone")) {
+                  entity = new EntityInfDragonE(worldIn);
+               } else if (this.name.equals("infdragonehead") && SRPConfigSystems.rsEnabled) {
+                  entity = new EntityInfDragonEHead(worldIn);
+               } else if (this.name.equals("host") && SRPConfigMobs.hostEnabled) {
+                  entity = new EntityHost(worldIn);
+               } else if (this.name.equals("hostii") && SRPConfigMobs.hostEnabled) {
+                  entity = new EntityHostII(worldIn);
+               } else if (this.name.equals("hull") && SRPConfigMobs.hullEnabled) {
+                  entity = new EntityHull(worldIn);
+               } else if (this.name.equals("hulladapted") && SRPConfigMobs.hullEnabled) {
+                  entity = new EntityHullAdapted(worldIn);
+               } else if (this.name.equals("canra") && SRPConfigMobs.canraEnabled) {
+                  entity = new EntityCanra(worldIn);
+               } else if (this.name.equals("canraadapted") && SRPConfigMobs.canraEnabled) {
+                  entity = new EntityCanraAdapted(worldIn);
+               } else if (this.name.equals("nogla") && SRPConfigMobs.noglaEnabled) {
+                  entity = new EntityNogla(worldIn);
+               } else if (this.name.equals("noglaadapted") && SRPConfigMobs.noglaEnabled) {
+                  entity = new EntityNoglaAdapted(worldIn);
+               } else if (this.name.equals("gim") && SRPConfigMobs.gimEnabled) {
+                  entity = new EntityGim(worldIn);
+               } else if (this.name.equals("gimadapted") && SRPConfigMobs.gimEnabled) {
+                  entity = new EntityGimAdapted(worldIn);
+               } else if (this.name.equals("zaa") && SRPConfigMobs.zaaEnabled) {
+                  entity = new EntityZaa(worldIn);
+               } else if (this.name.equals("bano") && SRPConfigMobs.zetmoEnabled) {
+                  entity = new EntityBano(worldIn);
+               } else if (this.name.equals("banoadapted") && SRPConfigMobs.zetmoEnabled) {
+                  entity = new EntityBanoAdapted(worldIn);
+               } else if (this.name.equals("ranrac") && SRPConfigMobs.arachnidaEnabled) {
+                  entity = new EntityRanrac(worldIn);
+               } else if (this.name.equals("ranracadapted") && SRPConfigMobs.arachnidaEnabled) {
+                  entity = new EntityRanracAdapted(worldIn);
+               } else if (this.name.equals("lum") && SRPConfigMobs.lumEnabled) {
+                  entity = new EntityLum(worldIn);
+               } else if (this.name.equals("lumadapted") && SRPConfigMobs.lumEnabled) {
+                  entity = new EntityLumAdapted(worldIn);
+               } else if (this.name.equals("shyco") && SRPConfigMobs.shycoEnabled) {
+                  entity = new EntityShyco(worldIn);
+               } else if (this.name.equals("shycoadapted") && SRPConfigMobs.shycoEnabled) {
+                  entity = new EntityShycoAdapted(worldIn);
+               } else if (this.name.equals("emana") && SRPConfigMobs.emanaEnabled) {
+                  entity = new EntityEmana(worldIn);
+               } else if (this.name.equals("emanaadapted") && SRPConfigMobs.emanaEnabled) {
+                  entity = new EntityEmanaAdapted(worldIn);
+               } else if (this.name.equals("iki")) {
+                  entity = new EntityIki(worldIn);
+               } else if (this.name.equals("ikiadapted")) {
+                  entity = new EntityIkiAdapted(worldIn);
+               } else if (this.name.equals("wymo")) {
+                  entity = new EntityWymo(worldIn);
+               } else if (this.name.equals("buthol") && SRPConfigMobs.butholEnabled) {
+                  entity = new EntityButhol(worldIn);
+               } else if (this.name.equals("alafha") && SRPConfigMobs.alafhaEnabled) {
+                  entity = new EntityAlafha(worldIn);
+               } else if (this.name.equals("oronco") && SRPConfigMobs.oroncoEnabled) {
+                  entity = new EntityOronco(worldIn);
+               } else if (this.name.equals("terla") && SRPConfigMobs.terlaEnabled) {
+                  entity = new EntityTerla(worldIn);
+               } else if (this.name.equals("anged") && SRPConfigMobs.angedEnabled) {
+                  entity = new EntityAnged(worldIn);
+               } else if (this.name.equals("lesh")) {
+                  entity = new EntityLesh(worldIn);
+               } else if (this.name.equals("leer")) {
+                  entity = new EntityLeer(worldIn);
+               } else if (this.name.equals("tonro") && SRPConfigMobs.tonroEnabled) {
+                  entity = new EntityTonro(worldIn);
+               } else if (this.name.equals("unvo") && SRPConfigMobs.unvoEnabled) {
+                  entity = new EntityUnvo(worldIn);
+               } else if (this.name.equals("ganro") && SRPConfigMobs.ganroEnabled) {
+                  entity = new EntityGanro(worldIn);
+               } else if (this.name.equals("omboo") && SRPConfigMobs.ombooEnabled) {
+                  entity = new EntityOmboo(worldIn);
+               } else if (this.name.equals("esor") && SRPConfigMobs.esorEnabled) {
+                  entity = new EntityEsor(worldIn);
+               } else if (this.name.equals("orch") && SRPConfigMobs.esorEnabled) {
+                  entity = new EntityOrch(worldIn);
+               } else if (this.name.equals("flog") && SRPConfigMobs.flogEnabled) {
+                  entity = new EntityFlog(worldIn);
+               } else if (this.name.equals("ferbear") && SRPConfigMobs.ferbearEnabled) {
+                  entity = new EntityFerBear(worldIn);
+               } else if (this.name.equals("fercow") && SRPConfigMobs.fercowEnabled) {
+                  entity = new EntityFerCow(worldIn);
+               } else if (this.name.equals("ferenderman") && SRPConfigMobs.ferendermanEnabled) {
+                  entity = new EntityFerEnderman(worldIn);
+               } else if (this.name.equals("ferhuman") && SRPConfigMobs.ferhumanEnabled) {
+                  entity = new EntityFerHuman(worldIn);
+               } else if (this.name.equals("ferhorse") && SRPConfigMobs.ferhorseEnabled) {
+                  entity = new EntityFerHorse(worldIn);
+               } else if (this.name.equals("fersheep") && SRPConfigMobs.fersheepEnabled) {
+                  entity = new EntityFerSheep(worldIn);
+               } else if (this.name.equals("ferpig") && SRPConfigMobs.ferpigEnabled) {
+                  entity = new EntityFerPig(worldIn);
+               } else if (this.name.equals("ferwolf")) {
+                  entity = new EntityFerWolf(worldIn);
+               } else if (this.name.equals("fervillager") && SRPConfigMobs.fervillagerEnabled) {
+                  entity = new EntityFerVillager(worldIn);
+               } else if (this.name.equals("marcow")) {
+                  entity = new EntitySpeCow(worldIn);
+               } else if (this.name.equals("marenderman")) {
+                  entity = new EntitySpeEnderman(worldIn);
+               } else if (this.name.equals("marvillager")) {
+                  entity = new EntitySpeVillager(worldIn);
+               } else if (this.name.equals("marhuman")) {
+                  entity = new EntitySpeHuman(worldIn);
+               } else if (this.name.equals("marsheep")) {
+                  entity = new EntitySpeSheep(worldIn);
+               } else if (this.name.equals("marbear")) {
+                  entity = new EntitySpeBear(worldIn);
+               } else if (this.name.equals("abobodies")) {
+                  entity = new EntityAboBodies(worldIn);
+               } else if (this.name.equals("higolem") && SRPConfigMobs.higolemEnabled) {
+                  entity = new EntityHiGolem(worldIn);
+               } else if (this.name.equals("hiblaze")) {
+                  entity = new EntityHiBlaze(worldIn);
+               } else if (this.name.equals("hiskeleton")) {
+                  entity = new EntityHiSkeleton(worldIn);
+               } else if (this.name.equals("kirin")) {
+                  entity = new EntityKirin(worldIn);
+               } else if (this.name.equals("heblu") && SRPConfigMobs.hebluEnabled) {
+                  entity = new EntityHeblu(worldIn);
+               }
             }
-        }
-        entity.func_70012_b(x, y, z, MathHelper.func_76142_g((float)(worldIn.field_73012_v.nextFloat() * 360.0f)), 0.0f);
-        entity.field_70759_as = entity.field_70177_z;
-        entity.field_70761_aq = entity.field_70177_z;
-        entity.func_180482_a(worldIn.func_175649_E(new BlockPos((Entity)entity)), (IEntityLivingData)null);
-        worldIn.func_72838_d((Entity)entity);
-        return entity;
-    }
+         }
 
-    private Entity spawnPlayer(World worldIn, double x, double y, double z, EntityPlayer playerIn) {
-        EntityInfPlayer entity = new EntityInfPlayer(worldIn);
-        ItemStack head = new ItemStack(playerIn.func_184582_a(EntityEquipmentSlot.HEAD).func_77973_b());
-        ItemStack legs = new ItemStack(playerIn.func_184582_a(EntityEquipmentSlot.LEGS).func_77973_b());
-        ItemStack feet = new ItemStack(playerIn.func_184582_a(EntityEquipmentSlot.FEET).func_77973_b());
-        if (head.func_77973_b() != Items.field_190931_a) {
-            entity.func_184201_a(EntityEquipmentSlot.HEAD, head);
-            entity.setHelmetSlot(true);
-        }
-        entity.func_184201_a(EntityEquipmentSlot.LEGS, legs);
-        entity.func_184201_a(EntityEquipmentSlot.FEET, feet);
-        entity.func_70012_b(x, y, z, MathHelper.func_76142_g((float)(worldIn.field_73012_v.nextFloat() * 360.0f)), 0.0f);
-        entity.field_70759_as = entity.field_70177_z;
-        entity.field_70761_aq = entity.field_70177_z;
-        entity.func_180482_a(worldIn.func_175649_E(new BlockPos((Entity)entity)), null);
-        entity.func_96094_a(playerIn.func_70005_c_());
-        entity.func_174805_g(true);
-        worldIn.func_72838_d((Entity)entity);
-        return entity;
-    }
+         entity.func_70012_b(x, y, z, MathHelper.func_76142_g(worldIn.field_73012_v.nextFloat() * 360.0F), 0.0F);
+         entity.field_70759_as = entity.field_70177_z;
+         entity.field_70761_aq = entity.field_70177_z;
+         entity.func_180482_a(worldIn.func_175649_E(new BlockPos(entity)), (IEntityLivingData)null);
+         worldIn.func_72838_d(entity);
+         return entity;
+      }
+   }
 
-    private Entity spawnPlayer2(World worldIn, double x, double y, double z, EntityPlayer playerIn) {
-        EntityMes entity = new EntityMes(worldIn);
-        entity.func_70012_b(x, y, z, MathHelper.func_76142_g((float)(worldIn.field_73012_v.nextFloat() * 360.0f)), 0.0f);
-        entity.field_70759_as = entity.field_70177_z;
-        entity.field_70761_aq = entity.field_70177_z;
-        entity.func_180482_a(worldIn.func_175649_E(new BlockPos((Entity)entity)), null);
-        entity.func_96094_a(playerIn.func_70005_c_());
-        entity.func_174805_g(true);
-        worldIn.func_72838_d((Entity)entity);
-        return entity;
-    }
+   private Entity spawnPlayer(World worldIn, double x, double y, double z, EntityPlayer playerIn) {
+      EntityInfPlayer entity = new EntityInfPlayer(worldIn);
+      ItemStack head = new ItemStack(playerIn.func_184582_a(EntityEquipmentSlot.HEAD).func_77973_b());
+      ItemStack legs = new ItemStack(playerIn.func_184582_a(EntityEquipmentSlot.LEGS).func_77973_b());
+      ItemStack feet = new ItemStack(playerIn.func_184582_a(EntityEquipmentSlot.FEET).func_77973_b());
+      if (head.func_77973_b() != Items.field_190931_a) {
+         entity.func_184201_a(EntityEquipmentSlot.HEAD, head);
+         entity.setHelmetSlot(true);
+      }
 
-    private Entity spawnPlayerHead(World worldIn, double x, double y, double z, EntityPlayer playerIn) {
-        EntityInfPlayerHead entity = new EntityInfPlayerHead(worldIn);
-        entity.func_70012_b(x, y, z, MathHelper.func_76142_g((float)(worldIn.field_73012_v.nextFloat() * 360.0f)), 0.0f);
-        entity.field_70759_as = entity.field_70177_z;
-        entity.field_70761_aq = entity.field_70177_z;
-        entity.func_180482_a(worldIn.func_175649_E(new BlockPos((Entity)entity)), null);
-        entity.func_96094_a(playerIn.func_70005_c_());
-        entity.func_174805_g(true);
-        worldIn.func_72838_d((Entity)entity);
-        return entity;
-    }
+      entity.func_184201_a(EntityEquipmentSlot.LEGS, legs);
+      entity.func_184201_a(EntityEquipmentSlot.FEET, feet);
+      entity.func_70012_b(x, y, z, MathHelper.func_76142_g(worldIn.field_73012_v.nextFloat() * 360.0F), 0.0F);
+      entity.field_70759_as = entity.field_70177_z;
+      entity.field_70761_aq = entity.field_70177_z;
+      entity.func_180482_a(worldIn.func_175649_E(new BlockPos(entity)), (IEntityLivingData)null);
+      entity.func_96094_a(playerIn.func_70005_c_());
+      entity.func_174805_g(true);
+      worldIn.func_72838_d(entity);
+      return entity;
+   }
 
-    @Override
-    @SideOnly(value=Side.CLIENT)
-    public void func_77624_a(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-    }
+   private Entity spawnPlayer2(World worldIn, double x, double y, double z, EntityPlayer playerIn) {
+      EntityMes entity = new EntityMes(worldIn);
+      entity.func_70012_b(x, y, z, MathHelper.func_76142_g(worldIn.field_73012_v.nextFloat() * 360.0F), 0.0F);
+      entity.field_70759_as = entity.field_70177_z;
+      entity.field_70761_aq = entity.field_70177_z;
+      entity.func_180482_a(worldIn.func_175649_E(new BlockPos(entity)), (IEntityLivingData)null);
+      entity.func_96094_a(playerIn.func_70005_c_());
+      entity.func_174805_g(true);
+      worldIn.func_72838_d(entity);
+      return entity;
+   }
 
-    @Override
-    public void registerModels() {
-        SRPMain.proxy.modelReg(this, 0, "inventory");
-    }
+   private Entity spawnPlayerHead(World worldIn, double x, double y, double z, EntityPlayer playerIn) {
+      EntityInfPlayerHead entity = new EntityInfPlayerHead(worldIn);
+      entity.func_70012_b(x, y, z, MathHelper.func_76142_g(worldIn.field_73012_v.nextFloat() * 360.0F), 0.0F);
+      entity.field_70759_as = entity.field_70177_z;
+      entity.field_70761_aq = entity.field_70177_z;
+      entity.func_180482_a(worldIn.func_175649_E(new BlockPos(entity)), (IEntityLivingData)null);
+      entity.func_96094_a(playerIn.func_70005_c_());
+      entity.func_174805_g(true);
+      worldIn.func_72838_d(entity);
+      return entity;
+   }
+
+   @SideOnly(Side.CLIENT)
+   @Override
+   public void func_77624_a(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
+   }
+
+   @Override
+   public void registerModels() {
+      SRPMain.proxy.modelReg(this, 0, "inventory");
+   }
 }
-

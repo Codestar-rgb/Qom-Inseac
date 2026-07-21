@@ -1,31 +1,3 @@
-/*
- * Decompiled with CFR 0.152.
- * 
- * Could not load the following classes:
- *  net.minecraft.entity.Entity
- *  net.minecraft.entity.EntityCreature
- *  net.minecraft.entity.EntityLiving
- *  net.minecraft.entity.EntityLivingBase
- *  net.minecraft.entity.IEntityLivingData
- *  net.minecraft.entity.MoverType
- *  net.minecraft.entity.SharedMonsterAttributes
- *  net.minecraft.entity.ai.EntityAIBase
- *  net.minecraft.entity.ai.EntityAIHurtByTarget
- *  net.minecraft.entity.ai.EntityMoveHelper
- *  net.minecraft.entity.ai.EntityMoveHelper$Action
- *  net.minecraft.init.Blocks
- *  net.minecraft.network.datasync.DataParameter
- *  net.minecraft.network.datasync.DataSerializer
- *  net.minecraft.network.datasync.DataSerializers
- *  net.minecraft.network.datasync.EntityDataManager
- *  net.minecraft.util.DamageSource
- *  net.minecraft.util.SoundEvent
- *  net.minecraft.util.math.BlockPos
- *  net.minecraft.util.math.MathHelper
- *  net.minecraft.util.math.Vec3d
- *  net.minecraft.world.DifficultyInstance
- *  net.minecraft.world.World
- */
 package com.dhanantry.scapeandrunparasites.entity.monster.pure;
 
 import com.dhanantry.scapeandrunparasites.entity.ai.EntityAIFlightAttack;
@@ -39,9 +11,6 @@ import com.dhanantry.scapeandrunparasites.util.SRPAttributes;
 import com.dhanantry.scapeandrunparasites.util.config.SRPConfig;
 import com.dhanantry.scapeandrunparasites.util.config.SRPConfigMobs;
 import com.dhanantry.scapeandrunparasites.util.config.SRPConfigSystems;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityCreature;
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.MoverType;
@@ -49,9 +18,9 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityMoveHelper;
+import net.minecraft.entity.ai.EntityMoveHelper.Action;
 import net.minecraft.init.Blocks;
 import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.network.datasync.DataSerializer;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
@@ -62,295 +31,315 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 
-public class EntityOmboo
-extends EntityPPure
-implements EntityCanFly {
-    protected static final DataParameter<Byte> VEX_FLAGS = EntityDataManager.func_187226_a(EntityOmboo.class, (DataSerializer)DataSerializers.field_187191_a);
+public class EntityOmboo extends EntityPPure implements EntityCanFly {
+   protected static final DataParameter<Byte> VEX_FLAGS = EntityDataManager.func_187226_a(EntityOmboo.class, DataSerializers.field_187191_a);
 
-    public EntityOmboo(World worldIn) {
-        super(worldIn);
-        this.field_70765_h = new AIMoveControl(this);
-        this.func_70105_a(1.7f, 2.4f);
-        this.func_189654_d(true);
-        this.field_70714_bg.func_85156_a((EntityAIBase)this.folow);
-        this.borderOrb = -1;
-        if (SRPConfigMobs.ombooMaxY != 256) {
-            this.field_70714_bg.func_75776_a(3, (EntityAIBase)new EntityAIFlightLimits(this, SRPConfigMobs.ombooMaxY, true));
-        }
-        this.adaptationCap = 0.95f;
-    }
+   public EntityOmboo(World worldIn) {
+      super(worldIn);
+      this.field_70765_h = new EntityOmboo.AIMoveControl(this);
+      this.func_70105_a(1.7F, 2.4F);
+      this.func_189654_d(true);
+      this.field_70714_bg.func_85156_a(this.folow);
+      this.borderOrb = -1;
+      if (SRPConfigMobs.ombooMaxY != 256) {
+         this.field_70714_bg.func_75776_a(3, new EntityAIFlightLimits(this, SRPConfigMobs.ombooMaxY, true));
+      }
 
-    @Override
-    public int getParasiteIDRegister() {
-        return 47;
-    }
+      this.adaptationCap = 0.95F;
+   }
 
-    protected void func_184651_r() {
-        super.func_184651_r();
-        this.field_70715_bh.func_75776_a(1, (EntityAIBase)new EntityAIHurtByTarget((EntityCreature)this, true, new Class[0]));
-        this.field_70714_bg.func_75776_a(3, (EntityAIBase)new EntityAIFlightAttack(this, SRPConfig.pureFollow));
-        this.field_70714_bg.func_75776_a(4, (EntityAIBase)new AIChargeAttack());
-        this.field_70714_bg.func_75776_a(6, (EntityAIBase)new AIMoveRandom());
-        this.field_70714_bg.func_75776_a(5, (EntityAIBase)new AIBomb(this));
-        this.field_70714_bg.func_75776_a(4, (EntityAIBase)new EntityAIFlightLimits(this, 7, false));
-        this.field_70714_bg.func_75776_a(4, (EntityAIBase)new EntityAIFlightLimits(this, 20, true));
-    }
+   @Override
+   public int getParasiteIDRegister() {
+      return 47;
+   }
 
-    protected void func_110147_ax() {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(SRPAttributes.OMBOO_HEALTH);
-        this.func_110148_a(SharedMonsterAttributes.field_188791_g).func_111128_a(SRPAttributes.OMBOO_ARMOR);
-        this.func_110148_a(SharedMonsterAttributes.field_111266_c).func_111128_a(SRPAttributes.OMBOO_KD_RESISTANCE);
-        this.func_110148_a(SharedMonsterAttributes.field_111265_b).func_111128_a(SRPConfig.pureFollow);
-    }
+   protected void func_184651_r() {
+      super.func_184651_r();
+      this.field_70715_bh.func_75776_a(1, new EntityAIHurtByTarget(this, true, new Class[0]));
+      this.field_70714_bg.func_75776_a(3, new EntityAIFlightAttack(this, SRPConfig.pureFollow));
+      this.field_70714_bg.func_75776_a(4, new EntityOmboo.AIChargeAttack());
+      this.field_70714_bg.func_75776_a(6, new EntityOmboo.AIMoveRandom());
+      this.field_70714_bg.func_75776_a(5, new EntityOmboo.AIBomb(this));
+      this.field_70714_bg.func_75776_a(4, new EntityAIFlightLimits(this, 7, false));
+      this.field_70714_bg.func_75776_a(4, new EntityAIFlightLimits(this, 20, true));
+   }
 
-    @Override
-    public void func_70636_d() {
-        super.func_70636_d();
-        if (!this.field_70170_p.field_72995_K && this.srpTicks == 10) {
-            if (this.field_70122_E) {
-                this.field_70765_h.func_75642_a(this.field_70165_t, this.field_70163_u + 5.0, this.field_70161_v, 0.5);
-            }
-            if ((this.field_70170_p.func_180495_p(this.func_180425_c().func_177979_c(1)).func_177230_c() != Blocks.field_150350_a || this.field_70170_p.func_180495_p(this.func_180425_c().func_177979_c(2)).func_177230_c() != Blocks.field_150350_a) && this.func_70638_az() != null) {
-                this.field_70181_x = 0.5;
-            }
-        }
-    }
+   protected void func_110147_ax() {
+      super.func_110147_ax();
+      this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(SRPAttributes.OMBOO_HEALTH);
+      this.func_110148_a(SharedMonsterAttributes.field_188791_g).func_111128_a(SRPAttributes.OMBOO_ARMOR);
+      this.func_110148_a(SharedMonsterAttributes.field_111266_c).func_111128_a(SRPAttributes.OMBOO_KD_RESISTANCE);
+      this.func_110148_a(SharedMonsterAttributes.field_111265_b).func_111128_a(SRPConfig.pureFollow);
+   }
 
-    public void func_70071_h_() {
-        super.func_70071_h_();
-        this.func_189654_d(true);
-    }
+   @Override
+   public void func_70636_d() {
+      super.func_70636_d();
+      if (!this.field_70170_p.field_72995_K && this.srpTicks == 10) {
+         if (this.field_70122_E) {
+            this.field_70765_h.func_75642_a(this.field_70165_t, this.field_70163_u + 5.0, this.field_70161_v, 0.5);
+         }
 
-    @Override
-    public void func_180430_e(float distance, float damageMultiplier) {
-    }
+         if ((
+               this.field_70170_p.func_180495_p(this.func_180425_c().func_177979_c(1)).func_177230_c() != Blocks.field_150350_a
+                  || this.field_70170_p.func_180495_p(this.func_180425_c().func_177979_c(2)).func_177230_c() != Blocks.field_150350_a
+            )
+            && this.func_70638_az() != null) {
+            this.field_70181_x = 0.5;
+         }
+      }
+   }
 
-    public float func_70047_e() {
-        return 2.4f;
-    }
+   public void func_70071_h_() {
+      super.func_70071_h_();
+      this.func_189654_d(true);
+   }
 
-    protected SoundEvent func_184639_G() {
-        if (this.getParasiteStatus() != 0) {
-            return SRPSounds.MOBSILENCE;
-        }
-        return SRPSounds.OMBOO_GROWL;
-    }
+   @Override
+   public void func_180430_e(float distance, float damageMultiplier) {
+   }
 
-    protected SoundEvent func_184601_bQ(DamageSource damageSourceIn) {
-        if (this.field_70146_Z.nextBoolean() && this.getHitStatus() > 0) {
-            return SRPSounds.MOBSILENCE;
-        }
-        return SRPSounds.OMBOO_HURT;
-    }
+   public float func_70047_e() {
+      return 2.4F;
+   }
 
-    protected SoundEvent func_184615_bR() {
-        return SRPSounds.OMBOO_DEATH;
-    }
+   protected SoundEvent func_184639_G() {
+      return this.getParasiteStatus() != 0 ? SRPSounds.MOBSILENCE : SRPSounds.OMBOO_GROWL;
+   }
 
-    @Override
-    public IEntityLivingData func_180482_a(DifficultyInstance difficulty, IEntityLivingData livingdata) {
-        IEntityLivingData floo = super.func_180482_a(difficulty, livingdata);
-        if (this.field_70146_Z.nextDouble() < SRPConfig.variantChance || this.phaseCreated >= SRPConfigSystems.evolutionParasiteAlwaysVariant || this.canChangeVariant) {
-            switch (this.field_70146_Z.nextInt(1)) {
-                case 0: {
-                    this.setSkin(7);
-                }
-            }
-        }
-        return floo;
-    }
+   protected SoundEvent func_184601_bQ(DamageSource damageSourceIn) {
+      return this.field_70146_Z.nextBoolean() && this.getHitStatus() > 0 ? SRPSounds.MOBSILENCE : SRPSounds.OMBOO_HURT;
+   }
 
-    public void func_70091_d(MoverType type, double x, double y, double z) {
-        super.func_70091_d(type, x, y, z);
-        this.func_145775_I();
-    }
+   protected SoundEvent func_184615_bR() {
+      return SRPSounds.OMBOO_DEATH;
+   }
 
-    @Override
-    protected void func_70088_a() {
-        super.func_70088_a();
-        this.field_70180_af.func_187214_a(VEX_FLAGS, (Object)0);
-    }
+   @Override
+   public IEntityLivingData func_180482_a(DifficultyInstance difficulty, IEntityLivingData livingdata) {
+      IEntityLivingData floo = super.func_180482_a(difficulty, livingdata);
+      if (this.field_70146_Z.nextDouble() < SRPConfig.variantChance
+         || this.phaseCreated >= SRPConfigSystems.evolutionParasiteAlwaysVariant
+         || this.canChangeVariant) {
+         switch (this.field_70146_Z.nextInt(1)) {
+            case 0:
+               this.setSkin(7);
+         }
+      }
 
-    private boolean getVexFlag(int mask) {
-        byte i = (Byte)this.field_70180_af.func_187225_a(VEX_FLAGS);
-        return (i & mask) != 0;
-    }
+      return floo;
+   }
 
-    private void setVexFlag(int mask, boolean value) {
-        int i = ((Byte)this.field_70180_af.func_187225_a(VEX_FLAGS)).byteValue();
-        i = value ? (i |= mask) : (i &= ~mask);
-        this.field_70180_af.func_187227_b(VEX_FLAGS, (Object)((byte)(i & 0xFF)));
-    }
+   public void func_70091_d(MoverType type, double x, double y, double z) {
+      super.func_70091_d(type, x, y, z);
+      this.func_145775_I();
+   }
 
-    public boolean isCharging() {
-        return this.getVexFlag(1);
-    }
+   @Override
+   protected void func_70088_a() {
+      super.func_70088_a();
+      this.field_70180_af.func_187214_a(VEX_FLAGS, (byte)0);
+   }
 
-    public void setCharging(boolean charging) {
-        this.setVexFlag(1, charging);
-    }
+   private boolean getVexFlag(int mask) {
+      int i = (Byte)this.field_70180_af.func_187225_a(VEX_FLAGS);
+      return (i & mask) != 0;
+   }
 
-    class AIBomb
-    extends EntityAIBase {
-        private final EntityParasiteBase parent;
-        private int ccc;
+   private void setVexFlag(int mask, boolean value) {
+      int i = (Byte)this.field_70180_af.func_187225_a(VEX_FLAGS);
+      if (value) {
+         i |= mask;
+      } else {
+         i &= ~mask;
+      }
 
-        public AIBomb(EntityParasiteBase parentIn) {
-            this.parent = parentIn;
+      this.field_70180_af.func_187227_b(VEX_FLAGS, (byte)(i & 0xFF));
+   }
+
+   public boolean isCharging() {
+      return this.getVexFlag(1);
+   }
+
+   public void setCharging(boolean charging) {
+      this.setVexFlag(1, charging);
+   }
+
+   class AIBomb extends EntityAIBase {
+      private final EntityParasiteBase parent;
+      private int ccc;
+
+      public AIBomb(EntityParasiteBase parentIn) {
+         this.parent = parentIn;
+         this.ccc = 0;
+      }
+
+      public boolean func_75250_a() {
+         this.ccc++;
+         if (this.ccc >= 15) {
             this.ccc = 0;
-        }
+            if (this.parent.func_70638_az() != null) {
+               EntityLivingBase target = this.parent.func_70638_az();
+               if (!target.field_70122_E) {
+                  this.ccc = 7;
+                  return false;
+               }
 
-        public boolean func_75250_a() {
-            ++this.ccc;
-            if (this.ccc >= 15) {
-                this.ccc = 0;
-                if (this.parent.func_70638_az() != null) {
-                    EntityLivingBase target = this.parent.func_70638_az();
-                    if (!target.field_70122_E) {
-                        this.ccc = 7;
-                        return false;
-                    }
-                    if (target.func_70092_e(this.parent.field_70165_t, target.field_70163_u, this.parent.field_70161_v) < 25.0) {
-                        return true;
-                    }
-                }
+               if (target.func_70092_e(this.parent.field_70165_t, target.field_70163_u, this.parent.field_70161_v) < 25.0) {
+                  return true;
+               }
             }
-            return false;
-        }
+         }
 
-        public void func_75246_d() {
-            EntityBomb out = new EntityBomb(this.parent.field_70170_p, this.parent, SRPConfigMobs.ombooGriefing);
-            out.func_82149_j((Entity)this.parent);
-            out.setFuse(80);
-            out.setStren(1.0f);
-            out.setDamage((float)SRPAttributes.OMBOO_BOMBDAMAGE, 4);
-            this.parent.field_70170_p.func_72838_d((Entity)out);
-            out.updateSTR();
-        }
-    }
+         return false;
+      }
 
-    class AIChargeAttack
-    extends EntityAIBase {
-        public AIChargeAttack() {
-            this.func_75248_a(1);
-        }
+      public void func_75246_d() {
+         EntityBomb out = new EntityBomb(this.parent.field_70170_p, this.parent, SRPConfigMobs.ombooGriefing);
+         out.func_82149_j(this.parent);
+         out.setFuse(80);
+         out.setStren(1.0F);
+         out.setDamage((float)SRPAttributes.OMBOO_BOMBDAMAGE, 4);
+         this.parent.field_70170_p.func_72838_d(out);
+         out.updateSTR();
+      }
+   }
 
-        public boolean func_75250_a() {
-            if (EntityOmboo.this.func_70638_az() != null && EntityOmboo.this.field_70146_Z.nextInt(7) == 0) {
-                return EntityOmboo.this.func_70068_e((Entity)EntityOmboo.this.func_70638_az()) > 3.0;
+   class AIChargeAttack extends EntityAIBase {
+      public AIChargeAttack() {
+         this.func_75248_a(1);
+      }
+
+      public boolean func_75250_a() {
+         return EntityOmboo.this.func_70638_az() != null && EntityOmboo.this.field_70146_Z.nextInt(7) == 0
+            ? EntityOmboo.this.func_70068_e(EntityOmboo.this.func_70638_az()) > 3.0
+            : false;
+      }
+
+      public boolean func_75253_b() {
+         return EntityOmboo.this.func_70605_aq().func_75640_a()
+            && EntityOmboo.this.isCharging()
+            && EntityOmboo.this.func_70638_az() != null
+            && EntityOmboo.this.func_70638_az().func_70089_S();
+      }
+
+      public void func_75249_e() {
+         EntityLivingBase entitylivingbase = EntityOmboo.this.func_70638_az();
+         Vec3d vec3d = entitylivingbase.func_174824_e(1.0F);
+         EntityOmboo.this.field_70765_h.func_75642_a(vec3d.field_72450_a, vec3d.field_72448_b + 10.0, vec3d.field_72449_c, 1.0);
+         EntityOmboo.this.setCharging(true);
+      }
+
+      public void func_75251_c() {
+         EntityOmboo.this.setCharging(false);
+      }
+
+      public void func_75246_d() {
+         EntityLivingBase entitylivingbase = EntityOmboo.this.func_70638_az();
+         if (entitylivingbase != null && entitylivingbase.func_70089_S()) {
+            if (EntityOmboo.this.func_174813_aQ().func_72326_a(entitylivingbase.func_174813_aQ())) {
+               EntityOmboo.this.func_70652_k(entitylivingbase);
+               EntityOmboo.this.setCharging(false);
+            } else {
+               double d0 = EntityOmboo.this.func_70068_e(entitylivingbase);
+               if (d0 < 9.0) {
+                  Vec3d vec3d = entitylivingbase.func_174824_e(1.0F);
+                  EntityOmboo.this.field_70765_h.func_75642_a(vec3d.field_72450_a, vec3d.field_72448_b + 10.0, vec3d.field_72449_c, 1.0);
+               }
             }
-            return false;
-        }
+         }
+      }
+   }
 
-        public boolean func_75253_b() {
-            return EntityOmboo.this.func_70605_aq().func_75640_a() && EntityOmboo.this.isCharging() && EntityOmboo.this.func_70638_az() != null && EntityOmboo.this.func_70638_az().func_70089_S();
-        }
+   class AIMoveControl extends EntityMoveHelper {
+      public AIMoveControl(EntityOmboo vex) {
+         super(vex);
+      }
 
-        public void func_75249_e() {
-            EntityLivingBase entitylivingbase = EntityOmboo.this.func_70638_az();
-            Vec3d vec3d = entitylivingbase.func_174824_e(1.0f);
-            EntityOmboo.this.field_70765_h.func_75642_a(vec3d.field_72450_a, vec3d.field_72448_b + 10.0, vec3d.field_72449_c, 1.0);
-            EntityOmboo.this.setCharging(true);
-        }
-
-        public void func_75251_c() {
-            EntityOmboo.this.setCharging(false);
-        }
-
-        public void func_75246_d() {
-            EntityLivingBase entitylivingbase = EntityOmboo.this.func_70638_az();
-            if (entitylivingbase != null && entitylivingbase.func_70089_S()) {
-                if (EntityOmboo.this.func_174813_aQ().func_72326_a(entitylivingbase.func_174813_aQ())) {
-                    EntityOmboo.this.func_70652_k((Entity)entitylivingbase);
-                    EntityOmboo.this.setCharging(false);
-                } else {
-                    double d0 = EntityOmboo.this.func_70068_e((Entity)entitylivingbase);
-                    if (d0 < 9.0) {
-                        Vec3d vec3d = entitylivingbase.func_174824_e(1.0f);
-                        EntityOmboo.this.field_70765_h.func_75642_a(vec3d.field_72450_a, vec3d.field_72448_b + 10.0, vec3d.field_72449_c, 1.0);
-                    }
-                }
+      public void func_75641_c() {
+         if (this.field_188491_h == Action.MOVE_TO) {
+            double d0 = this.field_75646_b - EntityOmboo.this.field_70165_t;
+            double d1 = this.field_75647_c - EntityOmboo.this.field_70163_u;
+            double d2 = this.field_75644_d - EntityOmboo.this.field_70161_v;
+            double d3 = d0 * d0 + d1 * d1 + d2 * d2;
+            d3 = MathHelper.func_76133_a(d3);
+            if (d3 < EntityOmboo.this.func_174813_aQ().func_72320_b()) {
+               this.field_188491_h = Action.WAIT;
+               EntityOmboo.this.field_70159_w *= 0.5;
+               EntityOmboo.this.field_70181_x *= 0.5;
+               EntityOmboo.this.field_70179_y *= 0.5;
+            } else {
+               EntityOmboo.this.field_70159_w = EntityOmboo.this.field_70159_w + d0 / d3 * 0.05 * this.field_75645_e;
+               EntityOmboo.this.field_70181_x = EntityOmboo.this.field_70181_x + d1 / d3 * 0.05 * this.field_75645_e;
+               EntityOmboo.this.field_70179_y = EntityOmboo.this.field_70179_y + d2 / d3 * 0.05 * this.field_75645_e;
+               if (EntityOmboo.this.func_70638_az() == null) {
+                  EntityOmboo.this.field_70177_z = -((float)MathHelper.func_181159_b(EntityOmboo.this.field_70159_w, EntityOmboo.this.field_70179_y))
+                     * (180.0F / (float)Math.PI);
+                  EntityOmboo.this.field_70761_aq = EntityOmboo.this.field_70177_z;
+               } else {
+                  double d4 = EntityOmboo.this.func_70638_az().field_70165_t - EntityOmboo.this.field_70165_t;
+                  double d5 = EntityOmboo.this.func_70638_az().field_70161_v - EntityOmboo.this.field_70161_v;
+                  EntityOmboo.this.field_70177_z = -((float)MathHelper.func_181159_b(d4, d5)) * (180.0F / (float)Math.PI);
+                  EntityOmboo.this.field_70761_aq = EntityOmboo.this.field_70177_z;
+               }
             }
-        }
-    }
+         }
+      }
+   }
 
-    class AIMoveRandom
-    extends EntityAIBase {
-        public AIMoveRandom() {
-            this.func_75248_a(1);
-        }
+   class AIMoveRandom extends EntityAIBase {
+      public AIMoveRandom() {
+         this.func_75248_a(1);
+      }
 
-        public boolean func_75250_a() {
-            return !EntityOmboo.this.func_70605_aq().func_75640_a() && EntityOmboo.this.field_70146_Z.nextInt(7) == 0;
-        }
+      public boolean func_75250_a() {
+         return !EntityOmboo.this.func_70605_aq().func_75640_a() && EntityOmboo.this.field_70146_Z.nextInt(7) == 0;
+      }
 
-        public boolean func_75253_b() {
-            return false;
-        }
+      public boolean func_75253_b() {
+         return false;
+      }
 
-        public void func_75246_d() {
-            BlockPos blockpos = new BlockPos((Entity)EntityOmboo.this);
-            int flag = 1;
-            double speed = 0.2;
-            if (EntityOmboo.this.func_70638_az() != null) {
-                if (EntityOmboo.this.func_70068_e((Entity)EntityOmboo.this.func_70638_az()) > 100.0) {
-                    blockpos = new BlockPos((Entity)EntityOmboo.this.func_70638_az());
-                    flag = 2;
-                    speed += 0.1;
-                } else if (EntityOmboo.this.func_70068_e((Entity)EntityOmboo.this.func_70638_az()) < 36.0) {
-                    blockpos = new BlockPos((Entity)EntityOmboo.this.func_70638_az());
-                    flag = 3;
-                    speed += 0.1;
-                }
+      public void func_75246_d() {
+         BlockPos blockpos = new BlockPos(EntityOmboo.this);
+         byte flag = 1;
+         double speed = 0.2;
+         if (EntityOmboo.this.func_70638_az() != null) {
+            if (EntityOmboo.this.func_70068_e(EntityOmboo.this.func_70638_az()) > 100.0) {
+               blockpos = new BlockPos(EntityOmboo.this.func_70638_az());
+               flag = 2;
+               speed += 0.1;
+            } else if (EntityOmboo.this.func_70068_e(EntityOmboo.this.func_70638_az()) < 36.0) {
+               blockpos = new BlockPos(EntityOmboo.this.func_70638_az());
+               flag = 3;
+               speed += 0.1;
             }
-            for (int i = 0; i < 3; ++i) {
-                BlockPos blockpos1 = blockpos.func_177982_a(EntityOmboo.this.field_70146_Z.nextInt(15) - 7, EntityOmboo.this.field_70146_Z.nextInt(11) - 5, EntityOmboo.this.field_70146_Z.nextInt(15) - 7);
-                if (flag == 2) {
-                    blockpos1 = blockpos.func_177982_a(EntityOmboo.this.field_70146_Z.nextInt(6) - 2, EntityOmboo.this.field_70146_Z.nextInt(7) - 2, EntityOmboo.this.field_70146_Z.nextInt(6) - 2);
-                } else if (flag == 3) {
-                    blockpos1 = blockpos.func_177982_a(EntityOmboo.this.field_70146_Z.nextInt(4) + 3, EntityOmboo.this.field_70146_Z.nextInt(5) + 4, EntityOmboo.this.field_70146_Z.nextInt(4) + 3);
-                }
-                if (!EntityOmboo.this.field_70170_p.func_175623_d(blockpos1)) continue;
-                EntityOmboo.this.field_70765_h.func_75642_a((double)blockpos1.func_177958_n() + 0.5, (double)blockpos1.func_177956_o() + 1.0, (double)blockpos1.func_177952_p() + 0.5, speed);
-                if (EntityOmboo.this.func_70638_az() != null) break;
-                EntityOmboo.this.func_70671_ap().func_75650_a((double)blockpos1.func_177958_n() + 0.5, (double)blockpos1.func_177956_o() + 1.0, (double)blockpos1.func_177952_p() + 0.5, 180.0f, 20.0f);
-                break;
-            }
-        }
-    }
+         }
 
-    class AIMoveControl
-    extends EntityMoveHelper {
-        public AIMoveControl(EntityOmboo vex) {
-            super((EntityLiving)vex);
-        }
-
-        public void func_75641_c() {
-            if (this.field_188491_h == EntityMoveHelper.Action.MOVE_TO) {
-                double d0 = this.field_75646_b - EntityOmboo.this.field_70165_t;
-                double d1 = this.field_75647_c - EntityOmboo.this.field_70163_u;
-                double d2 = this.field_75644_d - EntityOmboo.this.field_70161_v;
-                double d3 = d0 * d0 + d1 * d1 + d2 * d2;
-                if ((d3 = (double)MathHelper.func_76133_a((double)d3)) < EntityOmboo.this.func_174813_aQ().func_72320_b()) {
-                    this.field_188491_h = EntityMoveHelper.Action.WAIT;
-                    EntityOmboo.this.field_70159_w *= 0.5;
-                    EntityOmboo.this.field_70181_x *= 0.5;
-                    EntityOmboo.this.field_70179_y *= 0.5;
-                } else {
-                    EntityOmboo.this.field_70159_w += d0 / d3 * 0.05 * this.field_75645_e;
-                    EntityOmboo.this.field_70181_x += d1 / d3 * 0.05 * this.field_75645_e;
-                    EntityOmboo.this.field_70179_y += d2 / d3 * 0.05 * this.field_75645_e;
-                    if (EntityOmboo.this.func_70638_az() == null) {
-                        EntityOmboo.this.field_70761_aq = EntityOmboo.this.field_70177_z = -((float)MathHelper.func_181159_b((double)EntityOmboo.this.field_70159_w, (double)EntityOmboo.this.field_70179_y)) * 57.295776f;
-                    } else {
-                        double d4 = EntityOmboo.this.func_70638_az().field_70165_t - EntityOmboo.this.field_70165_t;
-                        double d5 = EntityOmboo.this.func_70638_az().field_70161_v - EntityOmboo.this.field_70161_v;
-                        EntityOmboo.this.field_70761_aq = EntityOmboo.this.field_70177_z = -((float)MathHelper.func_181159_b((double)d4, (double)d5)) * 57.295776f;
-                    }
-                }
+         for (int i = 0; i < 3; i++) {
+            BlockPos blockpos1 = blockpos.func_177982_a(
+               EntityOmboo.this.field_70146_Z.nextInt(15) - 7, EntityOmboo.this.field_70146_Z.nextInt(11) - 5, EntityOmboo.this.field_70146_Z.nextInt(15) - 7
+            );
+            if (flag == 2) {
+               blockpos1 = blockpos.func_177982_a(
+                  EntityOmboo.this.field_70146_Z.nextInt(6) - 2, EntityOmboo.this.field_70146_Z.nextInt(7) - 2, EntityOmboo.this.field_70146_Z.nextInt(6) - 2
+               );
+            } else if (flag == 3) {
+               blockpos1 = blockpos.func_177982_a(
+                  EntityOmboo.this.field_70146_Z.nextInt(4) + 3, EntityOmboo.this.field_70146_Z.nextInt(5) + 4, EntityOmboo.this.field_70146_Z.nextInt(4) + 3
+               );
             }
-        }
-    }
+
+            if (EntityOmboo.this.field_70170_p.func_175623_d(blockpos1)) {
+               EntityOmboo.this.field_70765_h
+                  .func_75642_a(blockpos1.func_177958_n() + 0.5, blockpos1.func_177956_o() + 1.0, blockpos1.func_177952_p() + 0.5, speed);
+               if (EntityOmboo.this.func_70638_az() == null) {
+                  EntityOmboo.this.func_70671_ap()
+                     .func_75650_a(blockpos1.func_177958_n() + 0.5, blockpos1.func_177956_o() + 1.0, blockpos1.func_177952_p() + 0.5, 180.0F, 20.0F);
+               }
+               break;
+            }
+         }
+      }
+   }
 }
-

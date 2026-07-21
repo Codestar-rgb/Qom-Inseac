@@ -2,8 +2,7 @@
   "parent": "srparasites:controversial",
   "display": {
     "icon": {
-      "item": "minecraft:splash_potion",
-      "nbt": "{Potion:\"srparasites:fear\"}"
+      "item": "srparasites:guerilla_icon"
     },
     "title": {
       "translate": "advancements.srparasites.guerilla.title"

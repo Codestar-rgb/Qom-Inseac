@@ -1,35 +1,3 @@
-/*
- * Decompiled with CFR 0.152.
- * 
- * Could not load the following classes:
- *  javax.annotation.Nonnull
- *  net.minecraft.entity.Entity
- *  net.minecraft.entity.EntityCreature
- *  net.minecraft.entity.EntityLiving
- *  net.minecraft.entity.EntityLivingBase
- *  net.minecraft.entity.MoverType
- *  net.minecraft.entity.SharedMonsterAttributes
- *  net.minecraft.entity.ai.EntityAIBase
- *  net.minecraft.entity.ai.EntityAIHurtByTarget
- *  net.minecraft.entity.ai.EntityAILookIdle
- *  net.minecraft.entity.ai.EntityMoveHelper
- *  net.minecraft.entity.ai.EntityMoveHelper$Action
- *  net.minecraft.entity.projectile.EntityFireball
- *  net.minecraft.init.Blocks
- *  net.minecraft.init.MobEffects
- *  net.minecraft.nbt.NBTTagCompound
- *  net.minecraft.network.datasync.DataParameter
- *  net.minecraft.network.datasync.DataSerializer
- *  net.minecraft.network.datasync.DataSerializers
- *  net.minecraft.network.datasync.EntityDataManager
- *  net.minecraft.potion.PotionEffect
- *  net.minecraft.util.DamageSource
- *  net.minecraft.util.SoundEvent
- *  net.minecraft.util.math.BlockPos
- *  net.minecraft.util.math.MathHelper
- *  net.minecraft.util.math.Vec3d
- *  net.minecraft.world.World
- */
 package com.dhanantry.scapeandrunparasites.entity.monster.pure.preeminent;
 
 import com.dhanantry.scapeandrunparasites.entity.EntityDamage;
@@ -48,8 +16,6 @@ import com.dhanantry.scapeandrunparasites.util.SRPAttributes;
 import com.dhanantry.scapeandrunparasites.util.config.SRPConfig;
 import com.dhanantry.scapeandrunparasites.util.config.SRPConfigMobs;
 import javax.annotation.Nonnull;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.MoverType;
@@ -58,12 +24,12 @@ import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityMoveHelper;
+import net.minecraft.entity.ai.EntityMoveHelper.Action;
 import net.minecraft.entity.projectile.EntityFireball;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.network.datasync.DataSerializer;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.potion.PotionEffect;
@@ -74,377 +40,415 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
-public class EntityLencia
-extends EntityPPreeminent
-implements EntityCanShoot,
-EntityCanColony,
-EntityCanFly {
-    protected static final DataParameter<Byte> VEX_FLAGS = EntityDataManager.func_187226_a(EntityLencia.class, (DataSerializer)DataSerializers.field_187191_a);
-    private int timer = 0;
-    private boolean camu;
+public class EntityLencia extends EntityPPreeminent implements EntityCanShoot, EntityCanColony, EntityCanFly {
+   protected static final DataParameter<Byte> VEX_FLAGS = EntityDataManager.func_187226_a(EntityLencia.class, DataSerializers.field_187191_a);
+   private int timer = 0;
+   private boolean camu;
 
-    public EntityLencia(World worldIn) {
-        super(worldIn);
-        this.func_70105_a(4.0f, 4.0f);
-        this.field_70765_h = new AIMoveControl(this);
-        this.func_189654_d(true);
-        this.field_70714_bg.func_85156_a((EntityAIBase)this.aiWander);
-        this.adaptationCap = 0.95f;
-        this.field_70158_ak = true;
-    }
+   public EntityLencia(World worldIn) {
+      super(worldIn);
+      this.func_70105_a(4.0F, 4.0F);
+      this.field_70765_h = new EntityLencia.AIMoveControl(this);
+      this.func_189654_d(true);
+      this.field_70714_bg.func_85156_a(this.aiWander);
+      this.adaptationCap = 0.95F;
+      this.field_70158_ak = true;
+   }
 
-    @Override
-    public int getParasiteIDRegister() {
-        return 86;
-    }
+   @Override
+   public int getParasiteIDRegister() {
+      return 86;
+   }
 
-    protected void func_184651_r() {
-        super.func_184651_r();
-        this.field_70715_bh.func_75776_a(1, (EntityAIBase)new EntityAIHurtByTarget((EntityCreature)this, true, new Class[0]));
-        this.field_70714_bg.func_75776_a(3, (EntityAIBase)new EntityAIFlightAttack(this, SRPConfig.preeminentFollow, true, 3));
-        this.field_70714_bg.func_75776_a(5, (EntityAIBase)new EntityAIAttackProjectile(this, 60, 30, 3, true));
-        this.field_70714_bg.func_75776_a(4, (EntityAIBase)new AIChargeAttack());
-        this.field_70714_bg.func_75776_a(6, (EntityAIBase)new AIMoveRandom());
-        this.field_70714_bg.func_75776_a(8, (EntityAIBase)new EntityAILookIdle((EntityLiving)this));
-        this.field_70714_bg.func_75776_a(4, (EntityAIBase)new EntityAIFlightLimits(this, 10, false));
-        this.field_70714_bg.func_75776_a(4, (EntityAIBase)new EntityAIFlightLimits(this, 30, true));
-    }
+   protected void func_184651_r() {
+      super.func_184651_r();
+      this.field_70715_bh.func_75776_a(1, new EntityAIHurtByTarget(this, true, new Class[0]));
+      this.field_70714_bg.func_75776_a(3, new EntityAIFlightAttack(this, SRPConfig.preeminentFollow, true, 3));
+      this.field_70714_bg.func_75776_a(5, new EntityAIAttackProjectile(this, 60, 30, 3, true));
+      this.field_70714_bg.func_75776_a(4, new EntityLencia.AIChargeAttack());
+      this.field_70714_bg.func_75776_a(6, new EntityLencia.AIMoveRandom());
+      this.field_70714_bg.func_75776_a(8, new EntityAILookIdle(this));
+      this.field_70714_bg.func_75776_a(4, new EntityAIFlightLimits(this, 10, false));
+      this.field_70714_bg.func_75776_a(4, new EntityAIFlightLimits(this, 30, true));
+   }
 
-    protected void func_110147_ax() {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(SRPAttributes.LENCIA_HEALTH);
-        this.func_110148_a(SharedMonsterAttributes.field_188791_g).func_111128_a(SRPAttributes.LENCIA_ARMOR);
-        this.func_110148_a(SharedMonsterAttributes.field_111266_c).func_111128_a(2.0);
-        this.func_110148_a(SharedMonsterAttributes.field_111265_b).func_111128_a(SRPConfig.preeminentFollow);
-    }
+   protected void func_110147_ax() {
+      super.func_110147_ax();
+      this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(SRPAttributes.LENCIA_HEALTH);
+      this.func_110148_a(SharedMonsterAttributes.field_188791_g).func_111128_a(SRPAttributes.LENCIA_ARMOR);
+      this.func_110148_a(SharedMonsterAttributes.field_111266_c).func_111128_a(2.0);
+      this.func_110148_a(SharedMonsterAttributes.field_111265_b).func_111128_a(SRPConfig.preeminentFollow);
+   }
 
-    @Override
-    public void func_70636_d() {
-        super.func_70636_d();
-        if (!this.field_70170_p.field_72995_K) {
-            if (this.field_70122_E) {
-                this.field_70765_h.func_75642_a(this.field_70165_t, this.field_70163_u + 5.0, this.field_70161_v, 0.5);
+   @Override
+   public void func_70636_d() {
+      super.func_70636_d();
+      if (!this.field_70170_p.field_72995_K) {
+         if (this.field_70122_E) {
+            this.field_70765_h.func_75642_a(this.field_70165_t, this.field_70163_u + 5.0, this.field_70161_v, 0.5);
+         }
+
+         if (this.srpTicks == 10) {
+            if (this.func_70638_az() != null) {
+               for (EntityLivingBase entitylivingbase : this.field_70170_p
+                  .func_72872_a(EntityLivingBase.class, this.func_174813_aQ().func_72314_b(3.0, 3.0, 3.0))) {
+                  if (entitylivingbase != this && !(entitylivingbase instanceof EntityParasiteBase)) {
+                     float f = (float)MathHelper.func_181159_b(
+                        entitylivingbase.field_70161_v - this.field_70161_v, entitylivingbase.field_70165_t - this.field_70165_t
+                     );
+                     EntityDamage damage = new EntityDamage(
+                        this.field_70170_p,
+                        entitylivingbase.field_70165_t,
+                        entitylivingbase.field_70163_u,
+                        entitylivingbase.field_70161_v,
+                        f,
+                        this,
+                        1.0F,
+                        false,
+                        2.5F
+                     );
+                     this.field_70170_p.func_72838_d(damage);
+                  }
+               }
             }
-            if (this.srpTicks == 10) {
-                if (this.func_70638_az() != null) {
-                    for (EntityLivingBase entitylivingbase : this.field_70170_p.func_72872_a(EntityLivingBase.class, this.func_174813_aQ().func_72314_b(3.0, 3.0, 3.0))) {
-                        if (entitylivingbase == this || entitylivingbase instanceof EntityParasiteBase) continue;
-                        float f = (float)MathHelper.func_181159_b((double)(entitylivingbase.field_70161_v - this.field_70161_v), (double)(entitylivingbase.field_70165_t - this.field_70165_t));
-                        EntityDamage damage = new EntityDamage(this.field_70170_p, entitylivingbase.field_70165_t, entitylivingbase.field_70163_u, entitylivingbase.field_70161_v, f, (EntityLivingBase)this, 1.0f, false, 2.5f);
-                        this.field_70170_p.func_72838_d((Entity)damage);
-                    }
-                }
-                if ((this.field_70170_p.func_180495_p(this.func_180425_c().func_177979_c(1)).func_177230_c() != Blocks.field_150350_a || this.field_70170_p.func_180495_p(this.func_180425_c().func_177979_c(2)).func_177230_c() != Blocks.field_150350_a) && this.func_70638_az() != null) {
-                    this.field_70181_x = 0.5;
-                }
-                float currentH = this.func_110143_aJ() / this.func_110138_aP();
-                if (this.getSSS()) {
-                    this.func_70690_d(new PotionEffect(MobEffects.field_76441_p, 25, 1, false, false));
-                    if ((double)currentH < SRPConfigMobs.lencianeededhealth) {
-                        this.setSSS(false);
-                    }
-                } else if ((double)currentH >= SRPConfigMobs.lencianeededhealth) {
-                    ++this.timer;
-                    if (this.timer > 2) {
-                        this.setSSS(true);
-                        this.particleStatus((byte)6);
-                        this.timer = 0;
-                    }
-                }
+
+            if ((
+                  this.field_70170_p.func_180495_p(this.func_180425_c().func_177979_c(1)).func_177230_c() != Blocks.field_150350_a
+                     || this.field_70170_p.func_180495_p(this.func_180425_c().func_177979_c(2)).func_177230_c() != Blocks.field_150350_a
+               )
+               && this.func_70638_az() != null) {
+               this.field_70181_x = 0.5;
             }
-        }
-    }
 
-    public boolean getSSS() {
-        return this.camu;
-    }
+            float currentH = this.func_110143_aJ() / this.func_110138_aP();
+            if (this.getSSS()) {
+               this.func_70690_d(new PotionEffect(MobEffects.field_76441_p, 25, 1, false, false));
+               if (currentH < SRPConfigMobs.lencianeededhealth) {
+                  this.setSSS(false);
+               }
+            } else if (currentH >= SRPConfigMobs.lencianeededhealth) {
+               this.timer++;
+               if (this.timer > 2) {
+                  this.setSSS(true);
+                  this.particleStatus((byte)6);
+                  this.timer = 0;
+               }
+            }
+         }
+      }
+   }
 
-    public void setSSS(boolean in) {
-        this.camu = in;
-    }
+   public boolean getSSS() {
+      return this.camu;
+   }
 
-    @Override
-    protected boolean summonFlam(EntityLivingBase in) {
-        boolean flag = super.summonFlam(in);
-        return flag;
-    }
+   public void setSSS(boolean in) {
+      this.camu = in;
+   }
 
-    @Override
-    public boolean func_70097_a(@Nonnull DamageSource source, float amount) {
-        this.setSSS(false);
-        this.timer = 0;
-        return super.func_70097_a(source, amount);
-    }
+   @Override
+   protected boolean summonFlam(EntityLivingBase in) {
+      return super.summonFlam(in);
+   }
 
-    public void func_70071_h_() {
-        super.func_70071_h_();
-        this.func_189654_d(true);
-    }
+   @Override
+   public boolean func_70097_a(@Nonnull DamageSource source, float amount) {
+      this.setSSS(false);
+      this.timer = 0;
+      return super.func_70097_a(source, amount);
+   }
 
-    @Override
-    protected void func_70619_bc() {
-        super.func_70619_bc();
-    }
+   public void func_70071_h_() {
+      super.func_70071_h_();
+      this.func_189654_d(true);
+   }
 
-    public int func_184649_cE() {
-        return 3;
-    }
+   @Override
+   protected void func_70619_bc() {
+      super.func_70619_bc();
+   }
 
-    public float func_70047_e() {
-        return 2.1f;
-    }
+   public int func_184649_cE() {
+      return 3;
+   }
 
-    protected SoundEvent func_184639_G() {
-        if (this.getParasiteStatus() != 0) {
-            return SRPSounds.MOBSILENCE;
-        }
-        return SRPSounds.LENCIA_GROWL;
-    }
+   public float func_70047_e() {
+      return 2.1F;
+   }
 
-    protected SoundEvent func_184601_bQ(DamageSource damageSourceIn) {
-        if (this.field_70146_Z.nextBoolean() && this.getHitStatus() > 0) {
-            return SRPSounds.MOBSILENCE;
-        }
-        return SRPSounds.LENCIA_HURT;
-    }
+   protected SoundEvent func_184639_G() {
+      return this.getParasiteStatus() != 0 ? SRPSounds.MOBSILENCE : SRPSounds.LENCIA_GROWL;
+   }
 
-    protected SoundEvent func_184615_bR() {
-        return SRPSounds.LENCIA_DEATH;
-    }
+   protected SoundEvent func_184601_bQ(DamageSource damageSourceIn) {
+      return this.field_70146_Z.nextBoolean() && this.getHitStatus() > 0 ? SRPSounds.MOBSILENCE : SRPSounds.LENCIA_HURT;
+   }
 
-    @Override
-    public boolean scaryOrbEffect(EntityLivingBase in, int mobs) {
-        boolean flag = super.scaryOrbEffect(in, mobs);
-        if (flag) {
-            ParasiteEventEntity.orbApplyEffects(in, this, SRPConfigMobs.lenciaOrbEffects, mobs);
-        }
-        return flag;
-    }
+   protected SoundEvent func_184615_bR() {
+      return SRPSounds.LENCIA_DEATH;
+   }
 
-    protected float func_70599_aP() {
-        return 5.0f;
-    }
+   @Override
+   public boolean scaryOrbEffect(EntityLivingBase in, int mobs) {
+      boolean flag = super.scaryOrbEffect(in, mobs);
+      if (flag) {
+         ParasiteEventEntity.orbApplyEffects(in, this, SRPConfigMobs.lenciaOrbEffects, mobs);
+      }
 
-    @Override
-    public void func_70014_b(NBTTagCompound compound) {
-        super.func_70014_b(compound);
-    }
+      return flag;
+   }
 
-    @Override
-    public void func_70037_a(NBTTagCompound compound) {
-        super.func_70037_a(compound);
-    }
+   protected float func_70599_aP() {
+      return 5.0F;
+   }
 
-    @Override
-    public void func_180430_e(float distance, float damageMultiplier) {
-    }
+   @Override
+   public void func_70014_b(NBTTagCompound compound) {
+      super.func_70014_b(compound);
+   }
 
-    public boolean func_70617_f_() {
-        return false;
-    }
+   @Override
+   public void func_70037_a(NBTTagCompound compound) {
+      super.func_70037_a(compound);
+   }
 
-    @Override
-    public boolean onlySpawnInside() {
-        return false;
-    }
+   @Override
+   public void func_180430_e(float distance, float damageMultiplier) {
+   }
 
-    public void func_70091_d(MoverType type, double x, double y, double z) {
-        super.func_70091_d(type, x, y, z);
-        this.func_145775_I();
-    }
+   public boolean func_70617_f_() {
+      return false;
+   }
 
-    @Override
-    protected void func_70088_a() {
-        super.func_70088_a();
-        this.field_70180_af.func_187214_a(VEX_FLAGS, (Object)0);
-    }
+   @Override
+   public boolean onlySpawnInside() {
+      return false;
+   }
 
-    private boolean getVexFlag(int mask) {
-        byte i = (Byte)this.field_70180_af.func_187225_a(VEX_FLAGS);
-        return (i & mask) != 0;
-    }
+   public void func_70091_d(MoverType type, double x, double y, double z) {
+      super.func_70091_d(type, x, y, z);
+      this.func_145775_I();
+   }
 
-    private void setVexFlag(int mask, boolean value) {
-        int i = ((Byte)this.field_70180_af.func_187225_a(VEX_FLAGS)).byteValue();
-        i = value ? (i |= mask) : (i &= ~mask);
-        this.field_70180_af.func_187227_b(VEX_FLAGS, (Object)((byte)(i & 0xFF)));
-    }
+   @Override
+   protected void func_70088_a() {
+      super.func_70088_a();
+      this.field_70180_af.func_187214_a(VEX_FLAGS, (byte)0);
+   }
 
-    public boolean isCharging() {
-        return this.getVexFlag(1);
-    }
+   private boolean getVexFlag(int mask) {
+      int i = (Byte)this.field_70180_af.func_187225_a(VEX_FLAGS);
+      return (i & mask) != 0;
+   }
 
-    public void setCharging(boolean charging) {
-        this.setVexFlag(1, charging);
-    }
+   private void setVexFlag(int mask, boolean value) {
+      int i = (Byte)this.field_70180_af.func_187225_a(VEX_FLAGS);
+      if (value) {
+         i |= mask;
+      } else {
+         i &= ~mask;
+      }
 
-    public EntityFireball getProj(double accelX, double accelY, double accelZ) {
-        this.setSSS(false);
-        this.timer = 0;
-        return new EntityProjectileLenciaBall(this.field_70170_p, (EntityLivingBase)this, accelX, accelY, accelZ);
-    }
+      this.field_70180_af.func_187227_b(VEX_FLAGS, (byte)(i & 0xFF));
+   }
 
-    @Override
-    public void playProjSound() {
-        this.setSSS(false);
-        this.timer = 0;
-    }
+   public boolean isCharging() {
+      return this.getVexFlag(1);
+   }
 
-    class AIBomb
-    extends EntityAIBase {
-        private final EntityLiving parent;
-        private int ccc;
+   public void setCharging(boolean charging) {
+      this.setVexFlag(1, charging);
+   }
 
-        public AIBomb(EntityLiving parentIn) {
-            this.parent = parentIn;
+   public EntityFireball getProj(double accelX, double accelY, double accelZ) {
+      this.setSSS(false);
+      this.timer = 0;
+      return new EntityProjectileLenciaBall(this.field_70170_p, this, accelX, accelY, accelZ);
+   }
+
+   @Override
+   public void playProjSound() {
+      this.setSSS(false);
+      this.timer = 0;
+   }
+
+   class AIBomb extends EntityAIBase {
+      private final EntityLiving parent;
+      private int ccc;
+
+      public AIBomb(EntityLiving parentIn) {
+         this.parent = parentIn;
+         this.ccc = 0;
+      }
+
+      public boolean func_75250_a() {
+         this.ccc++;
+         if (this.ccc >= 100) {
             this.ccc = 0;
-        }
-
-        public boolean func_75250_a() {
-            ++this.ccc;
-            if (this.ccc >= 100) {
-                EntityLivingBase target;
-                this.ccc = 0;
-                if (this.parent.func_70638_az() != null && (target = this.parent.func_70638_az()).func_70092_e(this.parent.field_70165_t, target.field_70163_u, this.parent.field_70161_v) < 256.0) {
-                    return true;
-                }
+            if (this.parent.func_70638_az() != null) {
+               EntityLivingBase target = this.parent.func_70638_az();
+               if (target.func_70092_e(this.parent.field_70165_t, target.field_70163_u, this.parent.field_70161_v) < 256.0) {
+                  return true;
+               }
             }
-            return false;
-        }
+         }
 
-        public void func_75246_d() {
-        }
-    }
+         return false;
+      }
 
-    class AIChargeAttack
-    extends EntityAIBase {
-        public AIChargeAttack() {
-            this.func_75248_a(1);
-        }
+      public void func_75246_d() {
+      }
+   }
 
-        public boolean func_75250_a() {
-            if (EntityLencia.this.func_70638_az() != null && EntityLencia.this.field_70146_Z.nextInt(5) == 0) {
-                return EntityLencia.this.func_70068_e((Entity)EntityLencia.this.func_70638_az()) > 4.0;
+   class AIChargeAttack extends EntityAIBase {
+      public AIChargeAttack() {
+         this.func_75248_a(1);
+      }
+
+      public boolean func_75250_a() {
+         return EntityLencia.this.func_70638_az() != null && EntityLencia.this.field_70146_Z.nextInt(5) == 0
+            ? EntityLencia.this.func_70068_e(EntityLencia.this.func_70638_az()) > 4.0
+            : false;
+      }
+
+      public boolean func_75253_b() {
+         return EntityLencia.this.func_70605_aq().func_75640_a()
+            && EntityLencia.this.isCharging()
+            && EntityLencia.this.func_70638_az() != null
+            && EntityLencia.this.func_70638_az().func_70089_S();
+      }
+
+      public void func_75249_e() {
+         EntityLivingBase entitylivingbase = EntityLencia.this.func_70638_az();
+         Vec3d vec3d = entitylivingbase.func_174824_e(1.0F);
+         EntityLencia.this.field_70765_h.func_75642_a(vec3d.field_72450_a, entitylivingbase.field_70163_u + 20.0, vec3d.field_72449_c, 0.7);
+         EntityLencia.this.setCharging(true);
+      }
+
+      public void func_75251_c() {
+         EntityLencia.this.setCharging(false);
+      }
+
+      public void func_75246_d() {
+         EntityLivingBase entitylivingbase = EntityLencia.this.func_70638_az();
+         if (entitylivingbase != null && entitylivingbase.func_70089_S()) {
+            if (EntityLencia.this.func_174813_aQ().func_72326_a(entitylivingbase.func_174813_aQ())) {
+               EntityLencia.this.func_70652_k(entitylivingbase);
+               EntityLencia.this.setCharging(false);
+            } else {
+               double d0 = EntityLencia.this.func_70068_e(entitylivingbase);
+               if (d0 < 9.0) {
+                  if (EntityLencia.this.func_70685_l(entitylivingbase)) {
+                     Vec3d vec3d = entitylivingbase.func_174824_e(1.0F);
+                     EntityLencia.this.field_70765_h.func_75642_a(vec3d.field_72450_a, vec3d.field_72448_b + 20.0, vec3d.field_72449_c, 0.7);
+                  } else {
+                     Vec3d vec3d = entitylivingbase.func_174824_e(1.0F);
+                     EntityLencia.this.field_70765_h.func_75642_a(vec3d.field_72450_a, vec3d.field_72448_b, vec3d.field_72449_c, 1.1);
+                  }
+               } else {
+                  Vec3d vec3d = entitylivingbase.func_174824_e(1.0F);
+                  EntityLencia.this.field_70765_h.func_75642_a(vec3d.field_72450_a, entitylivingbase.field_70163_u + 20.0, vec3d.field_72449_c, 1.1);
+               }
             }
-            return false;
-        }
+         }
+      }
+   }
 
-        public boolean func_75253_b() {
-            return EntityLencia.this.func_70605_aq().func_75640_a() && EntityLencia.this.isCharging() && EntityLencia.this.func_70638_az() != null && EntityLencia.this.func_70638_az().func_70089_S();
-        }
+   class AIMoveControl extends EntityMoveHelper {
+      public AIMoveControl(EntityLencia vex) {
+         super(vex);
+      }
 
-        public void func_75249_e() {
-            EntityLivingBase entitylivingbase = EntityLencia.this.func_70638_az();
-            Vec3d vec3d = entitylivingbase.func_174824_e(1.0f);
-            EntityLencia.this.field_70765_h.func_75642_a(vec3d.field_72450_a, entitylivingbase.field_70163_u + 20.0, vec3d.field_72449_c, 0.7);
-            EntityLencia.this.setCharging(true);
-        }
-
-        public void func_75251_c() {
-            EntityLencia.this.setCharging(false);
-        }
-
-        public void func_75246_d() {
-            EntityLivingBase entitylivingbase = EntityLencia.this.func_70638_az();
-            if (entitylivingbase != null && entitylivingbase.func_70089_S()) {
-                if (EntityLencia.this.func_174813_aQ().func_72326_a(entitylivingbase.func_174813_aQ())) {
-                    EntityLencia.this.func_70652_k((Entity)entitylivingbase);
-                    EntityLencia.this.setCharging(false);
-                } else {
-                    double d0 = EntityLencia.this.func_70068_e((Entity)entitylivingbase);
-                    if (d0 < 9.0) {
-                        if (EntityLencia.this.func_70685_l((Entity)entitylivingbase)) {
-                            Vec3d vec3d = entitylivingbase.func_174824_e(1.0f);
-                            EntityLencia.this.field_70765_h.func_75642_a(vec3d.field_72450_a, vec3d.field_72448_b + 20.0, vec3d.field_72449_c, 0.7);
-                        } else {
-                            Vec3d vec3d = entitylivingbase.func_174824_e(1.0f);
-                            EntityLencia.this.field_70765_h.func_75642_a(vec3d.field_72450_a, vec3d.field_72448_b, vec3d.field_72449_c, 1.1);
-                        }
-                    } else {
-                        Vec3d vec3d = entitylivingbase.func_174824_e(1.0f);
-                        EntityLencia.this.field_70765_h.func_75642_a(vec3d.field_72450_a, entitylivingbase.field_70163_u + 20.0, vec3d.field_72449_c, 1.1);
-                    }
-                }
+      public void func_75641_c() {
+         if (this.field_188491_h == Action.MOVE_TO) {
+            double d0 = this.field_75646_b - EntityLencia.this.field_70165_t;
+            double d1 = this.field_75647_c - EntityLencia.this.field_70163_u;
+            double d2 = this.field_75644_d - EntityLencia.this.field_70161_v;
+            double d3 = d0 * d0 + d1 * d1 + d2 * d2;
+            d3 = MathHelper.func_76133_a(d3);
+            if (d3 < EntityLencia.this.func_174813_aQ().func_72320_b()) {
+               this.field_188491_h = Action.WAIT;
+               EntityLencia.this.field_70159_w *= 0.5;
+               EntityLencia.this.field_70181_x *= 0.5;
+               EntityLencia.this.field_70179_y *= 0.5;
+            } else {
+               EntityLencia.this.field_70159_w = EntityLencia.this.field_70159_w + d0 / d3 * 0.05 * this.field_75645_e;
+               EntityLencia.this.field_70181_x = EntityLencia.this.field_70181_x + d1 / d3 * 0.05 * this.field_75645_e;
+               EntityLencia.this.field_70179_y = EntityLencia.this.field_70179_y + d2 / d3 * 0.05 * this.field_75645_e;
+               if (EntityLencia.this.func_70638_az() == null) {
+                  EntityLencia.this.field_70177_z = -((float)MathHelper.func_181159_b(EntityLencia.this.field_70159_w, EntityLencia.this.field_70179_y))
+                     * (180.0F / (float)Math.PI);
+                  EntityLencia.this.field_70761_aq = EntityLencia.this.field_70177_z;
+               } else {
+                  double d4 = EntityLencia.this.func_70638_az().field_70165_t - EntityLencia.this.field_70165_t;
+                  double d5 = EntityLencia.this.func_70638_az().field_70161_v - EntityLencia.this.field_70161_v;
+                  EntityLencia.this.field_70177_z = -((float)MathHelper.func_181159_b(d4, d5)) * (180.0F / (float)Math.PI);
+                  EntityLencia.this.field_70761_aq = EntityLencia.this.field_70177_z;
+               }
             }
-        }
-    }
+         }
+      }
+   }
 
-    class AIMoveRandom
-    extends EntityAIBase {
-        public AIMoveRandom() {
-            this.func_75248_a(1);
-        }
+   class AIMoveRandom extends EntityAIBase {
+      public AIMoveRandom() {
+         this.func_75248_a(1);
+      }
 
-        public boolean func_75250_a() {
-            return !EntityLencia.this.func_70605_aq().func_75640_a() && EntityLencia.this.field_70146_Z.nextInt(7) == 0;
-        }
+      public boolean func_75250_a() {
+         return !EntityLencia.this.func_70605_aq().func_75640_a() && EntityLencia.this.field_70146_Z.nextInt(7) == 0;
+      }
 
-        public boolean func_75253_b() {
-            return false;
-        }
+      public boolean func_75253_b() {
+         return false;
+      }
 
-        public void func_75246_d() {
-            BlockPos blockpos = new BlockPos((Entity)EntityLencia.this);
-            int flag = 1;
-            double speed = 0.6;
-            if (EntityLencia.this.func_70638_az() != null) {
-                if (EntityLencia.this.func_70068_e((Entity)EntityLencia.this.func_70638_az()) > 100.0) {
-                    blockpos = new BlockPos((Entity)EntityLencia.this.func_70638_az());
-                    flag = 2;
-                    speed += 0.1;
-                } else if (EntityLencia.this.func_70068_e((Entity)EntityLencia.this.func_70638_az()) < 36.0) {
-                    blockpos = new BlockPos((Entity)EntityLencia.this.func_70638_az());
-                    flag = 3;
-                    speed += 0.15;
-                }
+      public void func_75246_d() {
+         BlockPos blockpos = new BlockPos(EntityLencia.this);
+         byte flag = 1;
+         double speed = 0.6;
+         if (EntityLencia.this.func_70638_az() != null) {
+            if (EntityLencia.this.func_70068_e(EntityLencia.this.func_70638_az()) > 100.0) {
+               blockpos = new BlockPos(EntityLencia.this.func_70638_az());
+               flag = 2;
+               speed += 0.1;
+            } else if (EntityLencia.this.func_70068_e(EntityLencia.this.func_70638_az()) < 36.0) {
+               blockpos = new BlockPos(EntityLencia.this.func_70638_az());
+               flag = 3;
+               speed += 0.15;
             }
-            for (int i = 0; i < 3; ++i) {
-                BlockPos blockpos1 = blockpos.func_177982_a(EntityLencia.this.field_70146_Z.nextInt(15) - 7, EntityLencia.this.field_70146_Z.nextInt(11) - 5, EntityLencia.this.field_70146_Z.nextInt(15) - 7);
-                if (flag == 2) {
-                    blockpos1 = blockpos.func_177982_a(EntityLencia.this.field_70146_Z.nextInt(6) - 2, EntityLencia.this.field_70146_Z.nextInt(7) - 2, EntityLencia.this.field_70146_Z.nextInt(6) - 2);
-                } else if (flag == 3) {
-                    blockpos1 = blockpos.func_177982_a(EntityLencia.this.field_70146_Z.nextInt(4) + 3, EntityLencia.this.field_70146_Z.nextInt(5) + 4, EntityLencia.this.field_70146_Z.nextInt(4) + 3);
-                }
-                if (!EntityLencia.this.field_70170_p.func_175623_d(blockpos1)) continue;
-                EntityLencia.this.field_70765_h.func_75642_a((double)blockpos1.func_177958_n() + 0.5, (double)blockpos1.func_177956_o() + 1.0, (double)blockpos1.func_177952_p() + 0.5, speed);
-                if (EntityLencia.this.func_70638_az() != null) break;
-                EntityLencia.this.func_70671_ap().func_75650_a((double)blockpos1.func_177958_n() + 0.5, (double)blockpos1.func_177956_o() + 1.0, (double)blockpos1.func_177952_p() + 0.5, 180.0f, 20.0f);
-                break;
-            }
-        }
-    }
+         }
 
-    class AIMoveControl
-    extends EntityMoveHelper {
-        public AIMoveControl(EntityLencia vex) {
-            super((EntityLiving)vex);
-        }
-
-        public void func_75641_c() {
-            if (this.field_188491_h == EntityMoveHelper.Action.MOVE_TO) {
-                double d0 = this.field_75646_b - EntityLencia.this.field_70165_t;
-                double d1 = this.field_75647_c - EntityLencia.this.field_70163_u;
-                double d2 = this.field_75644_d - EntityLencia.this.field_70161_v;
-                double d3 = d0 * d0 + d1 * d1 + d2 * d2;
-                if ((d3 = (double)MathHelper.func_76133_a((double)d3)) < EntityLencia.this.func_174813_aQ().func_72320_b()) {
-                    this.field_188491_h = EntityMoveHelper.Action.WAIT;
-                    EntityLencia.this.field_70159_w *= 0.5;
-                    EntityLencia.this.field_70181_x *= 0.5;
-                    EntityLencia.this.field_70179_y *= 0.5;
-                } else {
-                    EntityLencia.this.field_70159_w += d0 / d3 * 0.05 * this.field_75645_e;
-                    EntityLencia.this.field_70181_x += d1 / d3 * 0.05 * this.field_75645_e;
-                    EntityLencia.this.field_70179_y += d2 / d3 * 0.05 * this.field_75645_e;
-                    if (EntityLencia.this.func_70638_az() == null) {
-                        EntityLencia.this.field_70761_aq = EntityLencia.this.field_70177_z = -((float)MathHelper.func_181159_b((double)EntityLencia.this.field_70159_w, (double)EntityLencia.this.field_70179_y)) * 57.295776f;
-                    } else {
-                        double d4 = EntityLencia.this.func_70638_az().field_70165_t - EntityLencia.this.field_70165_t;
-                        double d5 = EntityLencia.this.func_70638_az().field_70161_v - EntityLencia.this.field_70161_v;
-                        EntityLencia.this.field_70761_aq = EntityLencia.this.field_70177_z = -((float)MathHelper.func_181159_b((double)d4, (double)d5)) * 57.295776f;
-                    }
-                }
+         for (int i = 0; i < 3; i++) {
+            BlockPos blockpos1 = blockpos.func_177982_a(
+               EntityLencia.this.field_70146_Z.nextInt(15) - 7,
+               EntityLencia.this.field_70146_Z.nextInt(11) - 5,
+               EntityLencia.this.field_70146_Z.nextInt(15) - 7
+            );
+            if (flag == 2) {
+               blockpos1 = blockpos.func_177982_a(
+                  EntityLencia.this.field_70146_Z.nextInt(6) - 2,
+                  EntityLencia.this.field_70146_Z.nextInt(7) - 2,
+                  EntityLencia.this.field_70146_Z.nextInt(6) - 2
+               );
+            } else if (flag == 3) {
+               blockpos1 = blockpos.func_177982_a(
+                  EntityLencia.this.field_70146_Z.nextInt(4) + 3,
+                  EntityLencia.this.field_70146_Z.nextInt(5) + 4,
+                  EntityLencia.this.field_70146_Z.nextInt(4) + 3
+               );
             }
-        }
-    }
+
+            if (EntityLencia.this.field_70170_p.func_175623_d(blockpos1)) {
+               EntityLencia.this.field_70765_h
+                  .func_75642_a(blockpos1.func_177958_n() + 0.5, blockpos1.func_177956_o() + 1.0, blockpos1.func_177952_p() + 0.5, speed);
+               if (EntityLencia.this.func_70638_az() == null) {
+                  EntityLencia.this.func_70671_ap()
+                     .func_75650_a(blockpos1.func_177958_n() + 0.5, blockpos1.func_177956_o() + 1.0, blockpos1.func_177952_p() + 0.5, 180.0F, 20.0F);
+               }
+               break;
+            }
+         }
+      }
+   }
 }
-

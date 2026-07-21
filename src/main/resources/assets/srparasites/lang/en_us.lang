@@ -136,6 +136,13 @@ advancements.srparasites.columbus.description=Discover half of all celestial eve
 advancements.srparasites.stolas.title=STOLAS
 advancements.srparasites.stolas.description=Discover all celestial events.
 
+advancements.srparasites.tricked_me_did_you.title=TRICKED ME, DID YOU??!!
+advancements.srparasites.tricked_me_did_you.description=Shear Ricardo.
+
+advancements.srparasites.dark_days.title=Dark Days
+advancements.srparasites.dark_days.description=Return from a place without a sun.
+message.srparasites.dark_days.optifine_visuals_disabled=Celestial Displacement representation is unstable with OptiFine. Event visuals may differ.
+
 item.srparasites.shrimp.name=Shrimp
 tooltip.srparasites.shrimp.desc=The greatest delicacy in the multiverse.
 tooltip.srparasites.shrimp.arrow=Sometimes falls from parasites during an Arrow's presence.
@@ -522,7 +529,7 @@ item.srparasites.itemevolve.name=Evolution Wand
 item.srparasites.itemassimilate.name=Assimilation Wand
 item.srparasites.itemdevolve.name=Devolution Wand
 item.srparasites.itemvariant.name=Variant Wand
-item.srparasites.evclock.name=§cBloody Clock
+item.srparasites.evclock.name=§cDoomsday Clock
 item.srparasites.levelclock.name=§bLevel Clock
 item.srparasites.weapon_scythe.name=§eLiving Scythe
 item.srparasites.weapon_scythe_sentient.name=§6Sentient Greatscythe
@@ -635,6 +642,23 @@ death.attack.sepeku=%1$s performed Seppuku
 item.srparasites.nodecompass.name=§cNode Compass
 item.srparasites.colonycompass.name=§cColony Compass
 item.srparasites.origincompass.name=§cVector Compass
+
+item.srparasites.dark_days_icon.name=Dark Days
+item.srparasites.adapted_icon.name=Adapted
+item.srparasites.primitive_icon.name=Primitive
+item.srparasites.crude_icon.name=Crude
+item.srparasites.pure_icon.name=Pure
+item.srparasites.hunt_season_icon.name=Hunt Season
+item.srparasites.guerilla_icon.name=Guerilla
+item.srparasites.ecstasy_icon.name=Ecstasy
+item.srparasites.enemy_of_enemy_icon.name=Enemy of Enemy
+item.srparasites.fog_nullifier_icon.name=Fog Nullifier
+item.srparasites.self_destruct_icon.name=Self Destruct
+item.srparasites.potion_columbus_icon.name=Columbus
+item.srparasites.potion_stolas_icon.name=Stolas
+item.srparasites.hellfire_chemical_warfare_icon.name=Hellfire Chemical Warfare
+item.srparasites.cosmic_structural_failure_icon.name=Cosmic Structural Failure
+item.srparasites.roots_icon.name=Roots
 
 ##Blocks
 
@@ -782,6 +806,13 @@ tile.srparasites.biomeheart.name=Hive Core
 tile.srparasites.colonyheart.name=Parasitic Colony Core
 tile.srparasites.colonyoutpost.name=Parasitic Colony Outpost
 tile.srparasites.biomepurifier.name=§bBiome Purifier
+tile.srparasites.epitome_infestation_warp_diffuser.name=Epitome Infestation Warp Diffuser
+
+message.srparasites.diffuser.started=Unraveling connected parasite matter...
+message.srparasites.diffuser.already_running=This diffuser is already active.
+message.srparasites.diffuser.success=Diffused %s connected parasite blocks.
+message.srparasites.diffuser.fail=No connected parasite blocks found.
+
 tile.srparasites.parasitestructure.name=Incomplete Parasitic Colony Structure
 tile.srparasites.parasitethin.name=Thin Parasitic Log
 tile.srparasites.parasitemouth.name=Maw
@@ -870,6 +901,9 @@ tile.srparasites.cooked_flesh_planks.name=Cooked Flesh Planks
 tooltip.srparasites.parasite_loot=§aStrikes harder the emptier it is.
 item.srparasites.pearl.name=Eye of the Beholder
 tooltip.srparasites.pearl.desc=Gleams with a euphoric shimmer only present around its beholder. Item will disappear if wielder is slain by its beholder.
+tooltip.srparasites.pearl.assimilated=Pink = Assimilated
+tooltip.srparasites.pearl.feral=Red = Feral
+tooltip.srparasites.pearl.assimara=Blue = Assimara
 
 item.srparasites.false_apple.name=False Apple
 tooltip.srparasites.false_apple=§7§o"Is it so wrong that I survived?"
@@ -877,6 +911,9 @@ item.srparasites.fishlin.name=Fishlin
 tooltip.srparasites.fishlin=§7§oFreshly writhing.
 item.srparasites.alveoligrowth.name=Alveoli
 tooltip.srparasites.alveoligrowth=§7§oBreathe easy.
+
+tooltip.srparasites.epitome_infestation_warp_diffuser.desc=[Creative Use Only] Removes connected srparasites blocks in a massive area.
+tooltip.srparasites.epitome_infestation_warp_diffuser.desc2=Activates on use. Only loaded connected blocks are diffused. MAY CAUSE LAG.
 
 tile.srparasites.bruisewood_plank_stairs.name=Bruisewood Plank Stairs
 tile.srparasites.infested_sandstone_stairs.name=Infested Sandstone Stairs
@@ -1104,7 +1141,7 @@ tooltip.relay_roof=§7Top piece of §6Relay Multiblock. §7Antenna head of the r
 
 # Module Names
 item.srparasites.module_inborn.name=Inborn Module
-item.srparasites.module_assimilated.name=Assimilated + Assimara Module
+item.srparasites.module_assimilated.name=Assimilated Module
 item.srparasites.module_hijacked.name=Hijacked Module
 item.srparasites.module_feral.name=Feral Module
 item.srparasites.module_crude.name=Crude Module
@@ -1144,6 +1181,13 @@ splash_potion.effect.srparasites:thornshade_thorns=Splash Potion of §5Thornshad
 potion.effect.srparasites:thornshade_thorns=Potion of §5Thornshade
 lingering_potion.effect.srparasites:thornshade_thorns=Lingering potion of §5Thornshade
 tipped_arrow.effect.srparasites:thornshade_thorns=Tipped Arrow of §5Thornshade
+
+mob_effect.srparasites:distorted_enlightenment=Distorted Enlightenment
+effect.srparasites.distorted_enlightenment=Distorted Enlightenment
+potion.effect.distorted_enlightenment=Potion of Distorted Enlightenment
+splash_potion.effect.distorted_enlightenment=Splash Potion of Distorted Enlightenment
+lingering_potion.effect.distorted_enlightenment=Lingering Potion of Distorted Enlightenment
+tipped_arrow.effect.distorted_enlightenment=Arrow of Distorted Enlightenment
 
 mob_effect.srparasites:coth=§4Call of the Hive
 splash_potion.effect.srparasites:coth=Splash Potion of §4Call of the Hive
@@ -1365,12 +1409,15 @@ tipped_arrow.effect.srparasites:contagion=Arrow of §eContagion
 
 message.srparasites.lureb=Point Cooldown added!
 message.srparasites.lurec=Points reduced!
+message.srparasites.lure_empty_hand=Use this with an empty hand.
+message.srparasites.lure_cooldown=The carcass is still dormant. Wait for the lure cooldown to end before using this setup again.
+message.srparasites.lure_structure_fail=The carcass does not respond. Four Evolution Lures must be placed diagonally, three blocks from the center.
+
 message.srparasites.fearitem=You're panicking!
 message.srparasites.fearblock=You're panicking!
 message.srparasites.feargui=You're panicking!
 message.srparasites.evolutionsleep=You cannot sleep now...
 message.srparasites.armortooltips1=Current Adaptation
-
 tootip.srparasites.quench=§fA warm and malleable substance made of saturated magma cream. Its high concentration of blaze powder makes it incredibly §atoxic §fto parasitic matter.
 
 tootip.srparasites.lurecomp.1=§fChunks of the insides of a §7Rupter§f. A §cLure §fComponent.
@@ -1468,18 +1515,46 @@ item.record.disctwo.desc=We'll Meet Again
 item.record.discthree.desc=§bSerenity
 
 ### SUBTITLES
+subtitles.hi_blaze.shoot=Hijacked blaze shoots
+subtitles.hi_blaze.idle=Warped breathing
+subtitles.hi_blaze.death=Hijacked blaze dies
+subtitles.hi_blaze.hurt=Hijacked blaze clanges
+
+subtitles.hi_blaze.idle=Hijacked golem scrapes
+subtitles.hi_blaze.death=Hijacked golem dies
+subtitles.hi_blaze.hurt=Hijacked golem clanks
+
+subtitles.draconite.shoot=Napalm releases
+subtitles.draconite.idle=Draconite calls
+subtitles.draconite.hurt=Draconite shouts
+subtitles.draconite.death=Draconite dies
+
+subtitles.kirin.blackhole=Blackhole accumulates
+subtitles.kirin.idle=Kirin sings
+subtitles.kirin.hurt=Kirin shouts
+subtitles.kirin.death=Kirin dies
+
+subtitles.abobodies.idle=Bodies scream
+subtitles.abobodies.hurt=Bodies shout
+subtitles.abobodies.death=Bodies stagnate
+
+subtitles.dig=Digging
+
+subtitles.tozoon.idle=Tozoon shrieks
+subtitles.tozoon.hurt=Tozoon hurts
+subtitles.tozoon.death=Tozoon dies
+subtitles.tozoon.special=Tozoon prepares
 
 subtitles.purifier.use=Purifier purifies
 subtitles.lure.use=Lure lures
 subtitles.carcass.use=Carcass crumbles
 
 subtitles.inhoosdeath=Small form dies
-subtitles.inhoosliving=Small form gurgles
+subtitles.inhoosliving=Small form grugles
 subtitles.inhooshurt=Small form hurt
 subtitles.inhoomdeath=Medium form dies
 subtitles.inhoomliving=Medium form gurgles
 subtitles.inhoomhurt=Medium form hurt
-subtitles.inhoomstep=Flesh slides
 
 subtitles.carrierdeath=Carrier perishes
 subtitles.carrierliving=Carrier bubbling
@@ -1522,20 +1597,22 @@ subtitles.assimspiderdeath=Big spider dies
 
 subtitles.headliving=Head screams
 subtitles.headhurt=Head screeches
-subtitles.headdeath=Head dying
+subtitles.headdeath=Head dies
 
 subtitles.verminliving=Vermin craws
 subtitles.verminhurt=Vermin yells
 subtitles.vermindeath=Vermin perishes
 
-subtitles.buglinliving=Buglin hisses
+subtitles.buglinliving=Buglin squeaks
 subtitles.buglinhurt=Buglin squished
 subtitles.buglindeath=Buglin squashed
+subtitles.buglingrow=Buglin grows
+subtitles.buglinemerge=Buglin emerges
 
 subtitles.rupterliving=Rupter clicks
 subtitles.rupterhurt=Rupter screeches
-subtitles.rupterdies=Rupter dying
-subtitles.rupterinfect=Rupter releases COTH
+subtitles.rupterdies=Rupter dies
+subtitles.rupterinfect=Rupter spits
 
 subtitles.wardenliving=Warden growls
 subtitles.wardenhurt=Warden snarls
@@ -1597,10 +1674,10 @@ subtitles.bogleliving=Gargles
 subtitles.boglehurt=Growls
 subtitles.bogledeath=Something perishes
 
-subtitles.hostliving=Host looms
+subtitles.hostidle=Host looms
 subtitles.hosthurt=Host screams
-subtitles.hostdeath=Host dying
-subtitles.hostmerge=Collective groans
+subtitles.hostdeath=Host dies
+subtitles.hostemerge=Host emerges
 
 subtitles.infectedfleshmelt=Moving flesh merges
 subtitles.fleshgrow=Moving flesh grows
@@ -1611,9 +1688,9 @@ subtitles.fleshdeath=Moving flesh decays
 subtitles.fleshhurt=Moving flesh squishes
 
 subtitles.adamaducamo=Ghastly taunting
-subtitles.adavomit=Parasite vomits
+subtitles.adavomit=Vomiting
 
-subtitles.litefleshslide=Flesh slides
+subtitles.litefleshslide=Something slides
 
 subtitles.sentryliving=Sentry growls
 subtitles.sentryhurt=Sentry hisses
@@ -1623,28 +1700,27 @@ subtitles.beckonliving=Beckon whispers
 subtitles.beckonhurt=Beckon hisses
 subtitles.beckondeath=Beckon cries
 
-subtitles.beckonbell=Bell tolls
-subtitles.mobexplodes=Mob explodes
-subtitles.mobswipe=Mob swipes
-subtitles.moblands=Mob lands on ground
+subtitles.beckon.appear=Bell tolls
+subtitles.dispatcher.appear=Harp plunks
+subtitles.rooter.appear=String sings
+
+subtitles.summoner.resurrect=Summoner resurrects
+
+subtitles.mobswipe=Swipe
+subtitles.mobtendril=Tendril falls off
 subtitles.cysteats=Item crunched
 subtitles.adaptationpart=Parasite adapts
 subtitles.adaptationfull=Parasite adapted
-subtitles.biomeheart=§cHeartbeats
+subtitles.biomeheart=Heartbeats
 subtitles.vengeance.chain=Chains clacking
 subtitles.vengeance.paper=Pages Flipping
 subtitles.vengeance.impact=Impact
 subtitles.vengeance.whoosh=Whoosh
-subtitles.vengeance.rock=Impact
 subtitles.orb.idle=Orb Buzzing
 subtitles.orb.summon=Orb Whooshing
-subtitles.beckonvortex=Vortex Accumulating
 
-subtitles.block.unlocked=Block Unlocked In Compendium
-subtitles.item.unlocked=Item Unlocked In Compendium
-subtitles.celestial.unlocked=Celestial Event Unlocked In Compendium
-subtitles.entity.unlocked=Entity Unlocked In Compendium
-subtitles.entity.relaypaper=Slip of paper being printed
+subtitles.compendium.unlocked=Compendium sings
+subtitles.entity.relaypaper=Paper printed
 subtitles.entity.relayscan=Relay Scanning
 subtitles.shrimp.eat=Shrimp Destroyed
 
@@ -1672,7 +1748,14 @@ subtitles.kyphosisliving=Kyphosis howls
 subtitles.kyphosishurt=Kyphosis hisses
 
 subtitles.rof.spitout=Worm spits
-subtitles.rof.emerge=Worm emerges
+
+subtitles.celestial.dark_days.start=§0§k0000
+subtitles.celestial.dark_days.ending=§0§k0000
+subtitles.celestial.dark_days.rumble=§0§k0000
+
+subtitles.draconite.light_impact=Distorted Light bursts
+subtitles.draconite.parry=Distorted Energy deflected
+subtitles.draconite.bell_chargeup=Distorted Engine tolls
 
 ### COMPENDIUM
 
@@ -1751,6 +1834,8 @@ bestiary.celestial.missing_desc=(No description recorded.)
 bestiary.celestial.phase=Phase
 bestiary.celestial.chance=Chance
 
+bestiary.celestial.out_of_range=Celestial Object out of Range
+
 bestiary.celestial.blip.name=Blip
 bestiary.celestial.blip.desc=A brief light in the sky that's existed for as long as you could remember.
 
@@ -1774,6 +1859,9 @@ bestiary.celestial.eighty_three.desc=???
 
 bestiary.celestial.four_comet.name=Comet Four
 bestiary.celestial.four_comet.desc=???
+
+bestiary.celestial.dark_days.name=Dark Days
+bestiary.celestial.dark_days.desc=???
 
 bestiary.celestial.jupiter.name=Jupiter
 bestiary.celestial.jupiter.desc=A swollen giant adrift in the dark. Its bands churn like bruises watching without eyes. So massive that its gravity reshapes the paths of everything around it.
@@ -1825,7 +1913,9 @@ bestiary.nav.mob_list=< Mob List
 
 # Bestiary Mob Detail Controls
 bestiary.controls.greenscreen.on=Greenscreen: ON
-bestiary.controls.greenscreen.off=Greenscreen: OFF
+bestiary.controls.greenscreen.off=Backdrop: Off
+bestiary.controls.greenscreen.green=Backdrop: Green
+bestiary.controls.greenscreen.blue=Backdrop: Blue
 
 bestiary.controls.rotation.on=Rotation: ON
 bestiary.controls.rotation.off=Rotation: OFF
@@ -1878,6 +1968,7 @@ bestiary.effect.pure.desc=Damage dealt to pure parasite variants is reduced whil
 bestiary.effect.crude.desc=Damage dealt to crude parasite variants is reduced while this effect is active.
 bestiary.effect.feral.desc=Damage dealt to feral parasite variants is reduced while this effect is active.
 bestiary.effect.nexus.desc=Damage dealt to nexus-linked parasite entities is reduced while this effect is active.
+bestiary.effect.distorted_enlightenment.desc=The mind is forced to bear witness to a truth it was never built to survive, leaving the body shining like a marked target before entities that should not notice it. While active, the afflicted glows, takes 5x damage from the Draconite, takes 20%% less damage from other parasites, and deals 20%% less damage to parasites. Sentient weapons can deflect projectiles that apply this effect.
 bestiary.effect.pivot.desc=While active, kills contribute increased evolution/progression points (scaled by a multiplier and effect strength), and certain parasite events may treat pivot-marked entities as a stronger "signal" when evaluating spawns or stages.
 bestiary.effect.parate.desc=A mutative surge that boosts core combat stats. While active, the host's maximum health, armor, and attack damage are increased by a percentage of their base values (scaled by effect strength and configuration multiplier).
 bestiary.effect.novision.desc=The host's vision is smothered by a full-screen impairment and mining fatigue is applied; commonly inflicted while a parasite is latched onto host.
@@ -2126,7 +2217,7 @@ srpguide.sounds.on=Field Guide sounds: ON
 srpguide.sounds.off=Field Guide sounds: OFF
 
 tooltip.module_inborn=Scans for Inborn parasites within your dimension. §l|§r §oInsert into the Relay Terminal and press Scan.
-tooltip.module_assimilated=Scans for Assimilated and Assimara parasites within your dimension. §l|§r §oInsert into the Relay Terminal and press Scan.
+tooltip.module_assimilated=Scans for Assimilated parasites within your dimension. §l|§r §oInsert into the Relay Terminal and press Scan.
 tooltip.module_hijacked=Scans for Hijacked parasites within your dimension. §l|§r §oInsert into the Relay Terminal and press Scan.
 tooltip.module_feral=Scans for Feral parasites within your dimension. §l|§r §oInsert into the Relay Terminal and press Scan.
 tooltip.module_crude=Scans for Crude parasites within your dimension. §l|§r §oInsert into the Relay Terminal and press Scan.
@@ -2415,7 +2506,7 @@ lore.srparasites.abo_bodies=§lEpithet:§r Abo §l|§r §oConglomerate of consci
 lore.srparasites.abo_head=§lEpithet:§r Abo §l|§r §oConglomerate of conscious creatures mashed together from some unknown cause. Resembles that of a siphonophore shaped like a head.
 
 #DETERRENT
-lore.srparasites.draconite=§lEpithet:§r Heblu §l|§r §oIt is perpetually caked in ash, burning from the inside out. Its chest and stomach function as a toxic hellforge, cycling extreme heat and corrosive byproducts through its body and the surrounding air. The process melts its own flesh as it runs, rupturing weak points and punching holes clean through its frame. Layers of skin continually char, split, and peel away, giving it a pale, ashy-white appearance. Evidence suggests it was formed from something sealed deep within netherrack, only recently forced back into existence. The growth was so violent and rapid that it shed itself faster than its body could stabilize- its head tearing free from the base of its neck during formation, leaving behind a blunt, stump-like structure. The internal combustion of its core sounds as if a freight train is carrying me through the deepest pits of hell.
+lore.srparasites.draconite=§lEpithet:§r Heblu §l|§r §oIt is perpetually caked in ash, burning from the inside out. Its chest and stomach function as a toxic hellforge, cycling extreme heat and corrosive byproducts through its body and the surrounding air. The process melts its own flesh as it runs, rupturing weak points and punching holes clean through its frame. Layers of skin continually char, split, and peel away, giving it a pale, ashy-white appearance. Evidence suggests it was formed from something sealed deep within netherrack, only recently forced back into existence. The growth was so violent and rapid that it shed itself faster than its body could stabilize- its head tearing free from the base of its neck during formation, leaving behind a blunt, stump-like structure. The internal combustion of its core sounds as if a freight train is carrying me through the deepest pits of hell. At times, the core buried in its chest vents everything it has failed to burn away, releasing compressed bursts of distorted, radiant matter that bend through the air as if pulled toward living targets.
 lore.srparasites.kirin=§lEpithet:§r Kirin §l|§r §oKirin exists in a constant state of structural failure. Its body is perpetually on the verge of tearing itself apart, which explains its bruised, bloodied exterior and unstable movements. Large cavities line each of its hollow arm structures, acting as vents for excess heat and bursts of cosmic radiation generated internally. These openings along their body act as vents or outlets- without them, the entity would likely detonate. The strain placed on its form causes Kirin to molt daily. Each projection it manifests further destabilizes its body, forcing layers of damaged tissue to be shed and replaced at an alarming rate. The creature shows no signs of self-preservation. It has not yet failed completely. Else I would be dead.
 
 #CREATE WORLD MENU OPTIONS

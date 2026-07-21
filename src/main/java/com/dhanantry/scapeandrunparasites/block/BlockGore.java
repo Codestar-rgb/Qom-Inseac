@@ -1,36 +1,6 @@
-/*
- * Decompiled with CFR 0.152.
- * 
- * Could not load the following classes:
- *  javax.annotation.Nullable
- *  net.minecraft.block.Block
- *  net.minecraft.block.BlockBush
- *  net.minecraft.block.material.Material
- *  net.minecraft.block.properties.IProperty
- *  net.minecraft.block.properties.PropertyEnum
- *  net.minecraft.block.state.BlockStateContainer
- *  net.minecraft.block.state.IBlockState
- *  net.minecraft.creativetab.CreativeTabs
- *  net.minecraft.entity.Entity
- *  net.minecraft.entity.EntityLivingBase
- *  net.minecraft.entity.player.EntityPlayer
- *  net.minecraft.item.Item
- *  net.minecraft.item.ItemBlock
- *  net.minecraft.item.ItemStack
- *  net.minecraft.potion.PotionEffect
- *  net.minecraft.tileentity.TileEntity
- *  net.minecraft.util.IStringSerializable
- *  net.minecraft.util.NonNullList
- *  net.minecraft.util.math.AxisAlignedBB
- *  net.minecraft.util.math.BlockPos
- *  net.minecraft.util.math.RayTraceResult
- *  net.minecraft.world.IBlockAccess
- *  net.minecraft.world.World
- */
 package com.dhanantry.scapeandrunparasites.block;
 
 import com.dhanantry.scapeandrunparasites.SRPMain;
-import com.dhanantry.scapeandrunparasites.block.IMetaName;
 import com.dhanantry.scapeandrunparasites.entity.ai.misc.EntityParasiteBase;
 import com.dhanantry.scapeandrunparasites.init.SRPBlocks;
 import com.dhanantry.scapeandrunparasites.init.SRPItems;
@@ -64,151 +34,152 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockGore
-extends BlockBush
-implements IMetaName {
-    protected static final AxisAlignedBB TALL_GRASS_AABB = new AxisAlignedBB(0.09999999403953552, 0.0, 0.09999999403953552, (double)0.9f, (double)0.8f, (double)0.9f);
-    public static final PropertyEnum<EnumType> VARIANT = PropertyEnum.func_177709_a((String)"variant", EnumType.class);
+public class BlockGore extends BlockBush implements IMetaName {
+   protected static final AxisAlignedBB TALL_GRASS_AABB = new AxisAlignedBB(0.099999994F, 0.0, 0.099999994F, 0.9F, 0.8F, 0.9F);
+   public static final PropertyEnum<BlockGore.EnumType> VARIANT = PropertyEnum.func_177709_a("variant", BlockGore.EnumType.class);
 
-    public BlockGore(String name) {
-        super(Material.field_151582_l);
-        this.setRegistryName(name);
-        this.func_149663_c("srparasites." + name);
-        this.func_149672_a(SRPSoundTypes.FLESH);
-        this.func_180632_j(this.field_176227_L.func_177621_b().func_177226_a(VARIANT, (Comparable)((Object)EnumType.SMALL)));
-        this.func_149647_a(SRPMain.SRP_CREATIVETAB);
-        this.func_149675_a(true);
-        this.func_149711_c(0.4f);
-        this.setHarvestLevel("shovel", 0);
-        SRPBlocks.SRP_BLOCKS.add((Block)this);
-        ItemBlock itemBlock = this.getItemBlock();
-        SRPItems.SRP_ITEMS.add((Item)itemBlock.setRegistryName(Objects.requireNonNull(this.getRegistryName())));
-    }
+   public BlockGore(String name) {
+      super(Material.field_151582_l);
+      this.setRegistryName(name);
+      this.func_149663_c("srparasites." + name);
+      this.func_149672_a(SRPSoundTypes.FLESH);
+      this.func_180632_j(this.field_176227_L.func_177621_b().func_177226_a(VARIANT, BlockGore.EnumType.SMALL));
+      this.func_149647_a(SRPMain.SRP_CREATIVETAB);
+      this.func_149675_a(true);
+      this.func_149711_c(0.4F);
+      this.setHarvestLevel("shovel", 0);
+      SRPBlocks.SRP_BLOCKS.add(this);
+      Item itemBlock = this.getItemBlock();
+      SRPItems.SRP_ITEMS.add(itemBlock.setRegistryName(Objects.requireNonNull(this.getRegistryName())));
+   }
 
-    public AxisAlignedBB func_185496_a(IBlockState state, IBlockAccess source, BlockPos pos) {
-        EnumType variant = (EnumType)((Object)state.func_177229_b(VARIANT));
-        return TALL_GRASS_AABB;
-    }
+   public AxisAlignedBB func_185496_a(IBlockState state, IBlockAccess source, BlockPos pos) {
+      BlockGore.EnumType variant = (BlockGore.EnumType)state.func_177229_b(VARIANT);
+      return TALL_GRASS_AABB;
+   }
 
-    public boolean func_180671_f(World worldIn, BlockPos pos, IBlockState state) {
-        return this.checkBush(worldIn.func_180495_p(pos.func_177977_b()));
-    }
+   public boolean func_180671_f(World worldIn, BlockPos pos, IBlockState state) {
+      return this.checkBush(worldIn.func_180495_p(pos.func_177977_b()));
+   }
 
-    public boolean func_176196_c(World worldIn, BlockPos pos) {
-        return this.checkBush(worldIn.func_180495_p(pos.func_177977_b()));
-    }
+   public boolean func_176196_c(World worldIn, BlockPos pos) {
+      return this.checkBush(worldIn.func_180495_p(pos.func_177977_b()));
+   }
 
-    protected boolean checkBush(IBlockState state) {
-        return state.func_185917_h();
-    }
+   protected boolean checkBush(IBlockState state) {
+      return state.func_185917_h();
+   }
 
-    public void func_189540_a(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
-        super.func_189540_a(state, worldIn, pos, blockIn, fromPos);
-        if (!this.func_180671_f(worldIn, fromPos, state)) {
+   public void func_189540_a(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
+      super.func_189540_a(state, worldIn, pos, blockIn, fromPos);
+      if (!this.func_180671_f(worldIn, fromPos, state)) {
+         worldIn.func_175698_g(pos);
+      }
+   }
+
+   public void func_180634_a(World worldIn, BlockPos pos, IBlockState state, Entity entityIn) {
+      if (!worldIn.field_72995_K) {
+         if (worldIn.field_73012_v.nextDouble() < 0.5 && entityIn.field_70173_aa % 20 != 0) {
+            return;
+         }
+
+         if (!(entityIn instanceof EntityParasiteBase) && entityIn instanceof EntityLivingBase) {
+            EntityLivingBase target = (EntityLivingBase)entityIn;
+            if (!target.func_70644_a(SRPPotions.COTH_E) && !target.func_70644_a(SRPPotions.EPEL_E)) {
+               target.func_70690_d(new PotionEffect(SRPPotions.COTH_E, 3600, 0, false, false));
+            }
+         }
+      }
+
+      super.func_180634_a(worldIn, pos, state, entityIn);
+   }
+
+   public void func_180650_b(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+      if (!worldIn.field_72995_K) {
+         int air = 10;
+         BlockGore.EnumType c = (BlockGore.EnumType)state.func_177229_b(VARIANT);
+         if (c == BlockGore.EnumType.BIG) {
+            air = 45;
+         }
+
+         if (worldIn.field_73012_v.nextInt(air) == 0) {
             worldIn.func_175698_g(pos);
-        }
-    }
+         }
+      }
+   }
 
-    public void func_180634_a(World worldIn, BlockPos pos, IBlockState state, Entity entityIn) {
-        if (!worldIn.field_72995_K) {
-            EntityLivingBase target;
-            if (worldIn.field_73012_v.nextDouble() < 0.5 && entityIn.field_70173_aa % 20 != 0) {
-                return;
-            }
-            if (!(entityIn instanceof EntityParasiteBase) && entityIn instanceof EntityLivingBase && !(target = (EntityLivingBase)entityIn).func_70644_a(SRPPotions.COTH_E) && !target.func_70644_a(SRPPotions.EPEL_E)) {
-                target.func_70690_d(new PotionEffect(SRPPotions.COTH_E, 3600, 0, false, false));
-            }
-        }
-        super.func_180634_a(worldIn, pos, state, entityIn);
-    }
+   public void func_176199_a(World worldIn, BlockPos pos, Entity entityIn) {
+      super.func_176199_a(worldIn, pos, entityIn);
+   }
 
-    public void func_180650_b(World worldIn, BlockPos pos, IBlockState state, Random rand) {
-        if (!worldIn.field_72995_K) {
-            int air = 10;
-            EnumType c = (EnumType)((Object)state.func_177229_b(VARIANT));
-            if (c == EnumType.BIG) {
-                air = 45;
-            }
-            if (worldIn.field_73012_v.nextInt(air) == 0) {
-                worldIn.func_175698_g(pos);
-            }
-        }
-    }
+   public boolean func_176200_f(IBlockAccess worldIn, BlockPos pos) {
+      return false;
+   }
 
-    public void func_176199_a(World worldIn, BlockPos pos, Entity entityIn) {
-        super.func_176199_a(worldIn, pos, entityIn);
-    }
+   public Item func_180660_a(IBlockState state, Random rand, int fortune) {
+      return null;
+   }
 
-    public boolean func_176200_f(IBlockAccess worldIn, BlockPos pos) {
-        return false;
-    }
+   public void func_180657_a(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack) {
+      super.func_180657_a(worldIn, player, pos, state, te, stack);
+   }
 
-    public Item func_180660_a(IBlockState state, Random rand, int fortune) {
-        return null;
-    }
+   public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient) {
+      return false;
+   }
 
-    public void func_180657_a(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack) {
-        super.func_180657_a(worldIn, player, pos, state, te, stack);
-    }
+   public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state) {
+      return false;
+   }
 
-    public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient) {
-        return false;
-    }
+   public int func_180651_a(IBlockState state) {
+      return this.func_176201_c(state);
+   }
 
-    public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state) {
-        return false;
-    }
+   public void func_149666_a(CreativeTabs itemIn, NonNullList<ItemStack> items) {
+      for (BlockGore.EnumType variant : BlockGore.EnumType.values()) {
+         items.add(new ItemStack(this, 1, variant.ordinal()));
+      }
+   }
 
-    public int func_180651_a(IBlockState state) {
-        return this.func_176201_c(state);
-    }
+   public IBlockState func_176203_a(int meta) {
+      return this.func_176223_P().func_177226_a(VARIANT, BlockGore.EnumType.values()[meta]);
+   }
 
-    public void func_149666_a(CreativeTabs itemIn, NonNullList<ItemStack> items) {
-        for (EnumType variant : EnumType.values()) {
-            items.add((Object)new ItemStack((Block)this, 1, variant.ordinal()));
-        }
-    }
+   public int func_176201_c(IBlockState state) {
+      return ((BlockGore.EnumType)state.func_177229_b(VARIANT)).ordinal();
+   }
 
-    public IBlockState func_176203_a(int meta) {
-        return this.func_176223_P().func_177226_a(VARIANT, (Comparable)((Object)EnumType.values()[meta]));
-    }
+   public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
+      return new ItemStack(Item.func_150898_a(this), 1, this.func_176201_c(world.func_180495_p(pos)));
+   }
 
-    public int func_176201_c(IBlockState state) {
-        return ((EnumType)((Object)state.func_177229_b(VARIANT))).ordinal();
-    }
+   protected BlockStateContainer func_180661_e() {
+      return new BlockStateContainer(this, new IProperty[]{VARIANT});
+   }
 
-    public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
-        return new ItemStack(Item.func_150898_a((Block)this), 1, this.func_176201_c(world.func_180495_p(pos)));
-    }
+   @Override
+   public Enum[] getVariants() {
+      return BlockGore.EnumType.values();
+   }
 
-    protected BlockStateContainer func_180661_e() {
-        return new BlockStateContainer((Block)this, new IProperty[]{VARIANT});
-    }
+   @Override
+   public ItemBlock getItemBlock() {
+      return new ItemBlockVariant(this);
+   }
 
-    @Override
-    public Enum[] getVariants() {
-        return EnumType.values();
-    }
+   public static enum EnumType implements IStringSerializable {
+      FLAT,
+      SMALL,
+      BIG;
 
-    @Override
-    public ItemBlock getItemBlock() {
-        return new ItemBlockVariant((Block)this);
-    }
+      public String func_176610_l() {
+         return this.name().toLowerCase();
+      }
 
-    public static enum EnumType implements IStringSerializable
-    {
-        FLAT,
-        SMALL,
-        BIG;
-
-
-        public String func_176610_l() {
-            return this.name().toLowerCase();
-        }
-
-        public String toString() {
-            return this.func_176610_l();
-        }
-    }
+      @Override
+      public String toString() {
+         return this.func_176610_l();
+      }
+   }
 }
-

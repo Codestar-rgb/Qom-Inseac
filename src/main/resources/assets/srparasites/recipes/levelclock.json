@@ -7,7 +7,7 @@
   ],
   "key": {
     "Y": { "item": "srparasites:residue_plants" },
-    "Z": { "item": "srparasites:hive_scrap" },
+    "Z": { "item": "srparasites:semiorganic_ingot" },
     "S": { "item": "minecraft:clock" }
   },
   "result": {

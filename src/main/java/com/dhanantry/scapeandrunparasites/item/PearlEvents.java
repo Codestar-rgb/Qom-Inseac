@@ -1,21 +1,3 @@
-/*
- * Decompiled with CFR 0.152.
- * 
- * Could not load the following classes:
- *  net.minecraft.entity.Entity
- *  net.minecraft.entity.EntityList
- *  net.minecraft.entity.EntityLivingBase
- *  net.minecraft.entity.item.EntityItem
- *  net.minecraft.entity.player.EntityPlayer
- *  net.minecraft.item.ItemStack
- *  net.minecraft.util.DamageSource
- *  net.minecraft.util.ResourceLocation
- *  net.minecraft.world.GameRules
- *  net.minecraftforge.event.entity.living.LivingDropsEvent
- *  net.minecraftforge.event.entity.player.PlayerDropsEvent
- *  net.minecraftforge.fml.common.Mod$EventBusSubscriber
- *  net.minecraftforge.fml.common.eventhandler.SubscribeEvent
- */
 package com.dhanantry.scapeandrunparasites.item;
 
 import com.dhanantry.scapeandrunparasites.init.SRPItems;
@@ -32,76 +14,71 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.GameRules;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.player.PlayerDropsEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-@Mod.EventBusSubscriber(modid="srparasites")
+@EventBusSubscriber(modid = "srparasites")
 public class PearlEvents {
-    private static final ResourceLocation SIM = new ResourceLocation("srparasites", "sim_enderman");
-    private static final ResourceLocation FERAL = new ResourceLocation("srparasites", "fer_enderman");
-    private static final ResourceLocation ASSIMARA = new ResourceLocation("srparasites", "mar_enderman");
-    private static final ResourceLocation SIM_HEAD = new ResourceLocation("srparasites", "sim_endermanhead");
+   private static final ResourceLocation SIM = new ResourceLocation("srparasites", "sim_enderman");
+   private static final ResourceLocation FERAL = new ResourceLocation("srparasites", "fer_enderman");
+   private static final ResourceLocation ASSIMARA = new ResourceLocation("srparasites", "mar_enderman");
+   private static final ResourceLocation SIM_HEAD = new ResourceLocation("srparasites", "sim_endermanhead");
 
-    @SubscribeEvent
-    public static void onLivingDrops(LivingDropsEvent e) {
-        if (e.getEntity().field_70170_p.field_72995_K) {
-            return;
-        }
-        ResourceLocation id = EntityList.func_191301_a((Entity)e.getEntity());
-        if (id == null) {
-            return;
-        }
-        float chance = 0.0f;
-        if (id.equals((Object)SIM)) {
-            chance = 0.1f;
-        } else if (id.equals((Object)FERAL)) {
-            chance = 0.3f;
-        } else if (id.equals((Object)ASSIMARA)) {
-            chance = 0.4f;
-        }
-        if (chance <= 0.0f) {
-            return;
-        }
-        if (e.getEntity().field_70170_p.field_73012_v.nextFloat() < chance) {
-            ItemStack drop = new ItemStack(SRPItems.pearl);
-            e.getDrops().add(new EntityItem(e.getEntity().field_70170_p, e.getEntity().field_70165_t, e.getEntity().field_70163_u, e.getEntity().field_70161_v, drop));
-        }
-    }
+   @SubscribeEvent
+   public static void onLivingDrops(LivingDropsEvent e) {
+      if (!e.getEntity().field_70170_p.field_72995_K) {
+         ResourceLocation id = EntityList.func_191301_a(e.getEntity());
+         if (id != null) {
+            float chance = 0.0F;
+            if (id.equals(SIM)) {
+               chance = 0.1F;
+            } else if (id.equals(FERAL)) {
+               chance = 0.3F;
+            } else if (id.equals(ASSIMARA)) {
+               chance = 0.4F;
+            }
 
-    @SubscribeEvent
-    public static void onPlayerDrops(PlayerDropsEvent e) {
-        boolean isBeholder;
-        EntityPlayer player = e.getEntityPlayer();
-        GameRules rules = player.field_70170_p.func_82736_K();
-        if (!SRPConfigMobs.pearlDestroyedOnBeholderKill) {
-            return;
-        }
-        if (rules.func_82766_b("keepInventory")) {
-            return;
-        }
-        DamageSource src = e.getSource();
-        if (src == null) {
-            return;
-        }
-        Entity killer = src.func_76346_g();
-        if (!(killer instanceof EntityLivingBase)) {
-            return;
-        }
-        ResourceLocation killerId = EntityList.func_191301_a((Entity)killer);
-        if (killerId == null) {
-            return;
-        }
-        boolean bl = isBeholder = killerId.equals((Object)SIM) || killerId.equals((Object)SIM_HEAD) || killerId.equals((Object)FERAL) || killerId.equals((Object)ASSIMARA);
-        if (!isBeholder) {
-            return;
-        }
-        Iterator it = e.getDrops().iterator();
-        while (it.hasNext()) {
-            EntityItem ent = (EntityItem)it.next();
-            ItemStack s = ent.func_92059_d();
-            if (s == null || s.func_77973_b() != SRPItems.pearl) continue;
-            it.remove();
-        }
-    }
+            if (!(chance <= 0.0F)) {
+               if (e.getEntity().field_70170_p.field_73012_v.nextFloat() < chance) {
+                  ItemStack drop = new ItemStack(SRPItems.pearl);
+                  e.getDrops()
+                     .add(
+                        new EntityItem(e.getEntity().field_70170_p, e.getEntity().field_70165_t, e.getEntity().field_70163_u, e.getEntity().field_70161_v, drop)
+                     );
+               }
+            }
+         }
+      }
+   }
+
+   @SubscribeEvent
+   public static void onPlayerDrops(PlayerDropsEvent e) {
+      EntityPlayer player = e.getEntityPlayer();
+      GameRules rules = player.field_70170_p.func_82736_K();
+      if (SRPConfigMobs.pearlDestroyedOnBeholderKill) {
+         if (!rules.func_82766_b("keepInventory")) {
+            DamageSource src = e.getSource();
+            if (src != null) {
+               Entity killer = src.func_76346_g();
+               if (killer instanceof EntityLivingBase) {
+                  ResourceLocation killerId = EntityList.func_191301_a(killer);
+                  if (killerId != null) {
+                     boolean isBeholder = killerId.equals(SIM) || killerId.equals(SIM_HEAD) || killerId.equals(FERAL) || killerId.equals(ASSIMARA);
+                     if (isBeholder) {
+                        Iterator<EntityItem> it = e.getDrops().iterator();
+
+                        while (it.hasNext()) {
+                           EntityItem ent = it.next();
+                           ItemStack s = ent.func_92059_d();
+                           if (s != null && s.func_77973_b() == SRPItems.pearl) {
+                              it.remove();
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
 }
-

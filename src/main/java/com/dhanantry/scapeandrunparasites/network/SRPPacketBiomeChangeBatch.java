@@ -1,14 +1,3 @@
-/*
- * Decompiled with CFR 0.152.
- * 
- * Could not load the following classes:
- *  io.netty.buffer.ByteBuf
- *  net.minecraft.util.math.BlockPos
- *  net.minecraftforge.fml.common.FMLCommonHandler
- *  net.minecraftforge.fml.common.network.simpleimpl.IMessage
- *  net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler
- *  net.minecraftforge.fml.common.network.simpleimpl.MessageContext
- */
 package com.dhanantry.scapeandrunparasites.network;
 
 import com.dhanantry.scapeandrunparasites.SRPMain;
@@ -21,74 +10,73 @@ import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
-public class SRPPacketBiomeChangeBatch
-implements IMessage {
-    public static final int MAX_ENTRIES = 1024;
-    private List<Entry> entries = new ArrayList<Entry>();
+public class SRPPacketBiomeChangeBatch implements IMessage {
+   public static final int MAX_ENTRIES = 1024;
+   private List<SRPPacketBiomeChangeBatch.Entry> entries = new ArrayList<>();
 
-    public SRPPacketBiomeChangeBatch() {
-    }
+   public SRPPacketBiomeChangeBatch() {
+   }
 
-    public SRPPacketBiomeChangeBatch(List<Entry> entries) {
-        this.entries = entries.size() > 1024 ? new ArrayList(entries.subList(0, 1024)) : entries;
-    }
+   public SRPPacketBiomeChangeBatch(List<SRPPacketBiomeChangeBatch.Entry> entries) {
+      this.entries = (List<SRPPacketBiomeChangeBatch.Entry>)(entries.size() > 1024 ? new ArrayList<>(entries.subList(0, 1024)) : entries);
+   }
 
-    public void fromBytes(ByteBuf buf) {
-        int count = buf.readInt();
-        this.entries = new ArrayList<Entry>(count);
-        for (int i = 0; i < count; ++i) {
-            int x = buf.readInt();
-            int y = buf.readInt();
-            int z = buf.readInt();
-            boolean convert = buf.readBoolean();
-            int type = buf.readInt();
-            this.entries.add(new Entry(x, y, z, convert, type));
-        }
-    }
+   public void fromBytes(ByteBuf buf) {
+      int count = buf.readInt();
+      this.entries = new ArrayList<>(count);
 
-    public void toBytes(ByteBuf buf) {
-        buf.writeInt(this.entries.size());
-        for (Entry e : this.entries) {
-            buf.writeInt(e.x);
-            buf.writeInt(e.y);
-            buf.writeInt(e.z);
-            buf.writeBoolean(e.convert);
-            buf.writeInt(e.type);
-        }
-    }
+      for (int i = 0; i < count; i++) {
+         int x = buf.readInt();
+         int y = buf.readInt();
+         int z = buf.readInt();
+         boolean convert = buf.readBoolean();
+         int type = buf.readInt();
+         this.entries.add(new SRPPacketBiomeChangeBatch.Entry(x, y, z, convert, type));
+      }
+   }
 
-    public static class Handler
-    implements IMessageHandler<SRPPacketBiomeChangeBatch, IMessage> {
-        public IMessage onMessage(SRPPacketBiomeChangeBatch message, MessageContext ctx) {
-            FMLCommonHandler.instance().getWorldThread(ctx.netHandler).func_152344_a(() -> this.handle(message, ctx));
-            return null;
-        }
+   public void toBytes(ByteBuf buf) {
+      buf.writeInt(this.entries.size());
 
-        private void handle(SRPPacketBiomeChangeBatch message, MessageContext ctx) {
-            for (Entry e : message.entries) {
-                BlockPos bp = new BlockPos(e.x, e.y, e.z);
-                SRPMain.proxy.spreadBiome(bp, e.convert, e.type);
-            }
-        }
-    }
+      for (SRPPacketBiomeChangeBatch.Entry e : this.entries) {
+         buf.writeInt(e.x);
+         buf.writeInt(e.y);
+         buf.writeInt(e.z);
+         buf.writeBoolean(e.convert);
+         buf.writeInt(e.type);
+      }
+   }
 
-    public static class Entry {
-        public int x;
-        public int y;
-        public int z;
-        public boolean convert;
-        public int type;
+   public static class Entry {
+      public int x;
+      public int y;
+      public int z;
+      public boolean convert;
+      public int type;
 
-        public Entry() {
-        }
+      public Entry() {
+      }
 
-        public Entry(int x, int y, int z, boolean convert, int type) {
-            this.x = x;
-            this.y = y;
-            this.z = z;
-            this.convert = convert;
-            this.type = type;
-        }
-    }
+      public Entry(int x, int y, int z, boolean convert, int type) {
+         this.x = x;
+         this.y = y;
+         this.z = z;
+         this.convert = convert;
+         this.type = type;
+      }
+   }
+
+   public static class Handler implements IMessageHandler<SRPPacketBiomeChangeBatch, IMessage> {
+      public IMessage onMessage(SRPPacketBiomeChangeBatch message, MessageContext ctx) {
+         FMLCommonHandler.instance().getWorldThread(ctx.netHandler).func_152344_a(() -> this.handle(message, ctx));
+         return null;
+      }
+
+      private void handle(SRPPacketBiomeChangeBatch message, MessageContext ctx) {
+         for (SRPPacketBiomeChangeBatch.Entry e : message.entries) {
+            BlockPos bp = new BlockPos(e.x, e.y, e.z);
+            SRPMain.proxy.spreadBiome(bp, e.convert, e.type);
+         }
+      }
+   }
 }
-

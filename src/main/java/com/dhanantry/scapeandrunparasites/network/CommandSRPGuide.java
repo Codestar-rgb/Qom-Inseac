@@ -1,17 +1,3 @@
-/*
- * Decompiled with CFR 0.152.
- * 
- * Could not load the following classes:
- *  net.minecraft.command.CommandBase
- *  net.minecraft.command.CommandException
- *  net.minecraft.command.ICommandSender
- *  net.minecraft.entity.player.EntityPlayerMP
- *  net.minecraft.nbt.NBTTagCompound
- *  net.minecraft.server.MinecraftServer
- *  net.minecraft.util.text.ITextComponent
- *  net.minecraft.util.text.TextComponentTranslation
- *  net.minecraftforge.fml.common.network.simpleimpl.IMessage
- */
 package com.dhanantry.scapeandrunparasites.network;
 
 import com.dhanantry.scapeandrunparasites.bestiary.ParasiteTier;
@@ -37,279 +23,295 @@ import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentTranslation;
-import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 
-public class CommandSRPGuide
-extends CommandBase {
-    private static final ConcurrentHashMap<UUID, NBTTagCompound> SNAPSHOTS = new ConcurrentHashMap();
+public class CommandSRPGuide extends CommandBase {
+   private static final ConcurrentHashMap<UUID, NBTTagCompound> SNAPSHOTS = new ConcurrentHashMap<>();
 
-    public String func_71517_b() {
-        return "srpguide";
-    }
+   public String func_71517_b() {
+      return "srpguide";
+   }
 
-    private static void sync(EntityPlayerMP p, IBestiaryProgress prog) {
-        BestiaryNetwork.CH.sendTo((IMessage)new PacketBestiarySync(prog), p);
-    }
+   private static void sync(EntityPlayerMP p, IBestiaryProgress prog) {
+      BestiaryNetwork.CH.sendTo(new PacketBestiarySync(prog), p);
+   }
 
-    public String func_71518_a(ICommandSender sender) {
-        return this.getUsageKey();
-    }
+   public String func_71518_a(ICommandSender sender) {
+      return this.getUsageKey();
+   }
 
-    private String getUsageKey() {
-        return "command.srpguide.usage";
-    }
+   private String getUsageKey() {
+      return "command.srpguide.usage";
+   }
 
-    public int func_82362_a() {
-        return 2;
-    }
+   public int func_82362_a() {
+      return 2;
+   }
 
-    public void func_184881_a(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
-        String sub;
-        if (!(sender instanceof EntityPlayerMP)) {
-            sender.func_145747_a((ITextComponent)new TextComponentTranslation("command.srpguide.players_only", new Object[0]));
-            return;
-        }
-        EntityPlayerMP p = (EntityPlayerMP)sender;
-        if (args.length == 0) {
-            sender.func_145747_a((ITextComponent)new TextComponentTranslation(this.getUsageKey(), new Object[0]));
-            return;
-        }
-        switch (sub = args[0].toLowerCase(Locale.ROOT)) {
-            case "unlockall": {
-                IBestiaryProgress prog = (IBestiaryProgress)p.getCapability(BestiaryCapability.CAP, null);
-                if (prog == null) {
-                    sender.func_145747_a((ITextComponent)new TextComponentTranslation("command.srpguide.cap_missing", new Object[0]));
-                    return;
-                }
-                SNAPSHOTS.put(p.func_110124_au(), prog.serializeNBT());
-                int mobCount = 0;
-                int blockCount = 0;
-                int celestialCount = 0;
-                int effectCount = 0;
-                for (ParasiteTier t : ParasiteTier.values()) {
-                    prog.markTierSeen(t);
-                }
-                for (Object e : SRPBestiaryRegistry.all()) {
-                    try {
-                        Object tierObj;
-                        Field fMobId = e.getClass().getField("mobId");
-                        Field fTier = e.getClass().getField("tier");
-                        Object idObj = fMobId.get(e);
-                        if (!(idObj instanceof String)) continue;
-                        String mobId = (String)idObj;
-                        prog.markMobSeen(mobId);
-                        int have = prog.getKills(mobId);
-                        if (have < 999) {
-                            prog.addKill(mobId, 999 - have);
+   public void func_184881_a(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
+      if (!(sender instanceof EntityPlayerMP)) {
+         sender.func_145747_a(new TextComponentTranslation("command.srpguide.players_only", new Object[0]));
+      } else {
+         EntityPlayerMP p = (EntityPlayerMP)sender;
+         if (args.length == 0) {
+            sender.func_145747_a(new TextComponentTranslation(this.getUsageKey(), new Object[0]));
+         } else {
+            String sub = args[0].toLowerCase(Locale.ROOT);
+            switch (sub) {
+               case "unlockall":
+                  IBestiaryProgress progx = (IBestiaryProgress)p.getCapability(BestiaryCapability.CAP, null);
+                  if (progx == null) {
+                     sender.func_145747_a(new TextComponentTranslation("command.srpguide.cap_missing", new Object[0]));
+                     return;
+                  }
+
+                  SNAPSHOTS.put(p.func_110124_au(), progx.serializeNBT());
+                  int mobCount = 0;
+                  int blockCount = 0;
+                  int celestialCount = 0;
+                  int effectCount = 0;
+
+                  for (ParasiteTier t : ParasiteTier.values()) {
+                     progx.markTierSeen(t);
+                  }
+
+                  for (Object be : SRPBestiaryRegistry.all()) {
+                     try {
+                        Field fMobId = be.getClass().getField("mobId");
+                        Field fTier = be.getClass().getField("tier");
+                        Object idObj = fMobId.get(be);
+                        if (idObj instanceof String) {
+                           String mobId = (String)idObj;
+                           progx.markMobSeen(mobId);
+                           int have = progx.getKills(mobId);
+                           if (have < 999) {
+                              progx.addKill(mobId, 999 - have);
+                           }
+
+                           Object tierObj = fTier.get(be);
+                           if (tierObj instanceof ParasiteTier) {
+                              progx.markTierSeen((ParasiteTier)tierObj);
+                           }
+
+                           mobCount++;
                         }
-                        if ((tierObj = fTier.get(e)) instanceof ParasiteTier) {
-                            prog.markTierSeen((ParasiteTier)((Object)tierObj));
-                        }
-                        ++mobCount;
-                    }
-                    catch (Throwable fMobId) {}
-                }
-                for (BlockBestiaryEntry blockBestiaryEntry : SRPBlockCompendiumRegistry.all()) {
-                    if (prog.hasSeenBlock(blockBestiaryEntry.id)) continue;
-                    prog.markBlockSeen(blockBestiaryEntry.id);
-                    ++blockCount;
-                }
-                for (CelestialObjectDefinition celestialObjectDefinition : CelestialObjectRegistry.getObjects()) {
-                    if (prog.hasSeenCelestial(celestialObjectDefinition.id)) continue;
-                    prog.markCelestialSeen(celestialObjectDefinition.id);
-                    ++celestialCount;
-                }
-                for (SRPStatusEffectRegistry.Entry entry : SRPStatusEffectRegistry.all()) {
-                    if (entry == null || entry.id == null) continue;
-                    try {
-                        if (prog.hasSeenEffect(entry.id)) continue;
-                        prog.markEffectSeen(entry.id);
-                        ++effectCount;
-                    }
-                    catch (Throwable t) {
+                     } catch (Throwable var21) {
+                     }
+                  }
+
+                  for (BlockBestiaryEntry entryx : SRPBlockCompendiumRegistry.all()) {
+                     if (!progx.hasSeenBlock(entryx.id)) {
+                        progx.markBlockSeen(entryx.id);
+                        blockCount++;
+                     }
+                  }
+
+                  for (CelestialObjectDefinition defx : CelestialObjectRegistry.getObjects()) {
+                     if (!progx.hasSeenCelestial(defx.id)) {
+                        progx.markCelestialSeen(defx.id);
+                        celestialCount++;
+                     }
+                  }
+
+                  for (SRPStatusEffectRegistry.Entry ex : SRPStatusEffectRegistry.all()) {
+                     if (ex != null && ex.id != null) {
                         try {
-                            Method has = prog.getClass().getMethod("hasSeenEffect", String.class);
-                            Method mark = prog.getClass().getMethod("markEffectSeen", String.class);
-                            Object ok = has.invoke((Object)prog, entry.id);
-                            if (ok instanceof Boolean && ((Boolean)ok).booleanValue()) continue;
-                            mark.invoke((Object)prog, entry.id);
-                            ++effectCount;
+                           if (!progx.hasSeenEffect(ex.id)) {
+                              progx.markEffectSeen(ex.id);
+                              effectCount++;
+                           }
+                        } catch (Throwable var28) {
+                           try {
+                              Method has = progx.getClass().getMethod("hasSeenEffect", String.class);
+                              Method mark = progx.getClass().getMethod("markEffectSeen", String.class);
+                              Object ok = has.invoke(progx, ex.id);
+                              if (!(ok instanceof Boolean) || !(Boolean)ok) {
+                                 mark.invoke(progx, ex.id);
+                                 effectCount++;
+                              }
+                           } catch (Throwable var27) {
+                           }
                         }
-                        catch (Throwable throwable) {}
-                    }
-                }
-                sender.func_145747_a((ITextComponent)new TextComponentTranslation("command.srpguide.unlockall_ok", new Object[]{mobCount}));
-                sender.func_145747_a((ITextComponent)new TextComponentTranslation("command.srpguide.unlockblocks_ok", new Object[]{blockCount}));
-                sender.func_145747_a((ITextComponent)new TextComponentTranslation("command.srpguide.unlockcelestial_ok", new Object[]{celestialCount}));
-                sender.func_145747_a((ITextComponent)new TextComponentTranslation("command.srpguide.unlockeffects_ok", new Object[]{effectCount}));
-                CommandSRPGuide.sync(p, prog);
-                break;
-            }
-            case "unlockblocks": {
-                IBestiaryProgress prog = (IBestiaryProgress)p.getCapability(BestiaryCapability.CAP, null);
-                if (prog == null) {
-                    sender.func_145747_a((ITextComponent)new TextComponentTranslation("command.srpguide.cap_missing", new Object[0]));
-                    return;
-                }
-                int blockCount = 0;
-                for (BlockBestiaryEntry entry : SRPBlockCompendiumRegistry.all()) {
-                    if (prog.hasSeenBlock(entry.id)) continue;
-                    prog.markBlockSeen(entry.id);
-                    ++blockCount;
-                }
-                sender.func_145747_a((ITextComponent)new TextComponentTranslation("command.srpguide.unlockblocks_ok", new Object[]{blockCount}));
-                CommandSRPGuide.sync(p, prog);
-                break;
-            }
-            case "unlockcelestial": {
-                IBestiaryProgress prog = (IBestiaryProgress)p.getCapability(BestiaryCapability.CAP, null);
-                if (prog == null) {
-                    sender.func_145747_a((ITextComponent)new TextComponentTranslation("command.srpguide.cap_missing", new Object[0]));
-                    return;
-                }
-                int count = 0;
-                for (CelestialObjectDefinition def : CelestialObjectRegistry.getObjects()) {
-                    if (prog.hasSeenCelestial(def.id)) continue;
-                    prog.markCelestialSeen(def.id);
-                    ++count;
-                }
-                sender.func_145747_a((ITextComponent)new TextComponentTranslation("command.srpguide.unlockcelestial_ok", new Object[]{count}));
-                CommandSRPGuide.sync(p, prog);
-                break;
-            }
-            case "unlockeffects": {
-                IBestiaryProgress prog = (IBestiaryProgress)p.getCapability(BestiaryCapability.CAP, null);
-                if (prog == null) {
-                    sender.func_145747_a((ITextComponent)new TextComponentTranslation("command.srpguide.cap_missing", new Object[0]));
-                    return;
-                }
-                int count = 0;
-                for (SRPStatusEffectRegistry.Entry e : SRPStatusEffectRegistry.all()) {
-                    if (e == null || e.id == null) continue;
-                    try {
-                        if (prog.hasSeenEffect(e.id)) continue;
-                        prog.markEffectSeen(e.id);
-                        ++count;
-                    }
-                    catch (Throwable t) {
+                     }
+                  }
+
+                  sender.func_145747_a(new TextComponentTranslation("command.srpguide.unlockall_ok", new Object[]{mobCount}));
+                  sender.func_145747_a(new TextComponentTranslation("command.srpguide.unlockblocks_ok", new Object[]{blockCount}));
+                  sender.func_145747_a(new TextComponentTranslation("command.srpguide.unlockcelestial_ok", new Object[]{celestialCount}));
+                  sender.func_145747_a(new TextComponentTranslation("command.srpguide.unlockeffects_ok", new Object[]{effectCount}));
+                  sync(p, progx);
+                  break;
+               case "unlockblocks":
+                  IBestiaryProgress progx = (IBestiaryProgress)p.getCapability(BestiaryCapability.CAP, null);
+                  if (progx == null) {
+                     sender.func_145747_a(new TextComponentTranslation("command.srpguide.cap_missing", new Object[0]));
+                     return;
+                  }
+
+                  int blockCount = 0;
+
+                  for (BlockBestiaryEntry entry : SRPBlockCompendiumRegistry.all()) {
+                     if (!progx.hasSeenBlock(entry.id)) {
+                        progx.markBlockSeen(entry.id);
+                        blockCount++;
+                     }
+                  }
+
+                  sender.func_145747_a(new TextComponentTranslation("command.srpguide.unlockblocks_ok", new Object[]{blockCount}));
+                  sync(p, progx);
+                  break;
+               case "unlockcelestial":
+                  IBestiaryProgress progx = (IBestiaryProgress)p.getCapability(BestiaryCapability.CAP, null);
+                  if (progx == null) {
+                     sender.func_145747_a(new TextComponentTranslation("command.srpguide.cap_missing", new Object[0]));
+                     return;
+                  }
+
+                  int count = 0;
+
+                  for (CelestialObjectDefinition def : CelestialObjectRegistry.getObjects()) {
+                     if (!progx.hasSeenCelestial(def.id)) {
+                        progx.markCelestialSeen(def.id);
+                        count++;
+                     }
+                  }
+
+                  sender.func_145747_a(new TextComponentTranslation("command.srpguide.unlockcelestial_ok", new Object[]{count}));
+                  sync(p, progx);
+                  break;
+               case "unlockeffects":
+                  IBestiaryProgress progx = (IBestiaryProgress)p.getCapability(BestiaryCapability.CAP, null);
+                  if (progx == null) {
+                     sender.func_145747_a(new TextComponentTranslation("command.srpguide.cap_missing", new Object[0]));
+                     return;
+                  }
+
+                  int count = 0;
+
+                  for (SRPStatusEffectRegistry.Entry e : SRPStatusEffectRegistry.all()) {
+                     if (e != null && e.id != null) {
                         try {
-                            Method has = prog.getClass().getMethod("hasSeenEffect", String.class);
-                            Method method = prog.getClass().getMethod("markEffectSeen", String.class);
-                            Object ok = has.invoke((Object)prog, e.id);
-                            if (ok instanceof Boolean && ((Boolean)ok).booleanValue()) continue;
-                            method.invoke((Object)prog, e.id);
-                            ++count;
+                           if (!progx.hasSeenEffect(e.id)) {
+                              progx.markEffectSeen(e.id);
+                              count++;
+                           }
+                        } catch (Throwable var26) {
+                           try {
+                              Method has = progx.getClass().getMethod("hasSeenEffect", String.class);
+                              Method mark = progx.getClass().getMethod("markEffectSeen", String.class);
+                              Object ok = has.invoke(progx, e.id);
+                              if (!(ok instanceof Boolean) || !(Boolean)ok) {
+                                 mark.invoke(progx, e.id);
+                                 count++;
+                              }
+                           } catch (Throwable var25) {
+                           }
                         }
-                        catch (Throwable throwable) {}
-                    }
-                }
-                sender.func_145747_a((ITextComponent)new TextComponentTranslation("command.srpguide.unlockeffects_ok", new Object[]{count}));
-                CommandSRPGuide.sync(p, prog);
-                break;
-            }
-            case "clear": {
-                IBestiaryProgress prog = (IBestiaryProgress)p.getCapability(BestiaryCapability.CAP, null);
-                if (prog == null) {
-                    sender.func_145747_a((ITextComponent)new TextComponentTranslation("command.srpguide.cap_missing", new Object[0]));
-                    return;
-                }
-                NBTTagCompound snap = SNAPSHOTS.get(p.func_110124_au());
-                if (snap != null) {
-                    prog.deserializeNBT(snap.func_74737_b());
-                    sender.func_145747_a((ITextComponent)new TextComponentTranslation("command.srpguide.clear_restore_ok", new Object[0]));
-                } else {
-                    prog.deserializeNBT(new NBTTagCompound());
-                    sender.func_145747_a((ITextComponent)new TextComponentTranslation("command.srpguide.clear_no_snapshot", new Object[0]));
-                }
-                CommandSRPGuide.sync(p, prog);
-                break;
-            }
-            case "clearall": 
-            case "reset": {
-                IBestiaryProgress prog = (IBestiaryProgress)p.getCapability(BestiaryCapability.CAP, null);
-                if (prog == null) {
-                    sender.func_145747_a((ITextComponent)new TextComponentTranslation("command.srpguide.cap_missing", new Object[0]));
-                    return;
-                }
-                prog.deserializeNBT(new NBTTagCompound());
-                sender.func_145747_a((ITextComponent)new TextComponentTranslation("command.srpguide.clearall_ok", new Object[0]));
-                CommandSRPGuide.sync(p, prog);
-                break;
-            }
-            case "clearblocks": {
-                IBestiaryProgress prog = (IBestiaryProgress)p.getCapability(BestiaryCapability.CAP, null);
-                if (prog == null) {
-                    sender.func_145747_a((ITextComponent)new TextComponentTranslation("command.srpguide.cap_missing", new Object[0]));
-                    return;
-                }
-                prog.getSeenBlocks().clear();
-                sender.func_145747_a((ITextComponent)new TextComponentTranslation("command.srpguide.clearblocks_ok", new Object[0]));
-                CommandSRPGuide.sync(p, prog);
-                break;
-            }
-            case "clearcelestial": {
-                IBestiaryProgress prog = (IBestiaryProgress)p.getCapability(BestiaryCapability.CAP, null);
-                if (prog == null) {
-                    sender.func_145747_a((ITextComponent)new TextComponentTranslation("command.srpguide.cap_missing", new Object[0]));
-                    return;
-                }
-                try {
-                    Method m = prog.getClass().getMethod("getSeenCelestials", new Class[0]);
-                    Object o = m.invoke((Object)prog, new Object[0]);
-                    if (o instanceof Set) {
+                     }
+                  }
+
+                  sender.func_145747_a(new TextComponentTranslation("command.srpguide.unlockeffects_ok", new Object[]{count}));
+                  sync(p, progx);
+                  break;
+               case "clear":
+                  IBestiaryProgress prog = (IBestiaryProgress)p.getCapability(BestiaryCapability.CAP, null);
+                  if (prog == null) {
+                     sender.func_145747_a(new TextComponentTranslation("command.srpguide.cap_missing", new Object[0]));
+                     return;
+                  }
+
+                  NBTTagCompound snap = SNAPSHOTS.get(p.func_110124_au());
+                  if (snap != null) {
+                     prog.deserializeNBT(snap.func_74737_b());
+                     sender.func_145747_a(new TextComponentTranslation("command.srpguide.clear_restore_ok", new Object[0]));
+                  } else {
+                     prog.deserializeNBT(new NBTTagCompound());
+                     sender.func_145747_a(new TextComponentTranslation("command.srpguide.clear_no_snapshot", new Object[0]));
+                  }
+
+                  sync(p, prog);
+                  break;
+               case "clearall":
+               case "reset":
+                  IBestiaryProgress prog = (IBestiaryProgress)p.getCapability(BestiaryCapability.CAP, null);
+                  if (prog == null) {
+                     sender.func_145747_a(new TextComponentTranslation("command.srpguide.cap_missing", new Object[0]));
+                     return;
+                  }
+
+                  prog.deserializeNBT(new NBTTagCompound());
+                  sender.func_145747_a(new TextComponentTranslation("command.srpguide.clearall_ok", new Object[0]));
+                  sync(p, prog);
+                  break;
+               case "clearblocks":
+                  IBestiaryProgress prog = (IBestiaryProgress)p.getCapability(BestiaryCapability.CAP, null);
+                  if (prog == null) {
+                     sender.func_145747_a(new TextComponentTranslation("command.srpguide.cap_missing", new Object[0]));
+                     return;
+                  }
+
+                  prog.getSeenBlocks().clear();
+                  sender.func_145747_a(new TextComponentTranslation("command.srpguide.clearblocks_ok", new Object[0]));
+                  sync(p, prog);
+                  break;
+               case "clearcelestial":
+                  IBestiaryProgress progx = (IBestiaryProgress)p.getCapability(BestiaryCapability.CAP, null);
+                  if (progx == null) {
+                     sender.func_145747_a(new TextComponentTranslation("command.srpguide.cap_missing", new Object[0]));
+                     return;
+                  }
+
+                  try {
+                     Method m = progx.getClass().getMethod("getSeenCelestials");
+                     Object o = m.invoke(progx);
+                     if (o instanceof Set) {
                         ((Set)o).clear();
-                        sender.func_145747_a((ITextComponent)new TextComponentTranslation("command.srpguide.clearcelestial_ok", new Object[0]));
-                        CommandSRPGuide.sync(p, prog);
+                        sender.func_145747_a(new TextComponentTranslation("command.srpguide.clearcelestial_ok", new Object[0]));
+                        sync(p, progx);
                         break;
-                    }
-                }
-                catch (Throwable m) {
-                    // empty catch block
-                }
-                sender.func_145747_a((ITextComponent)new TextComponentTranslation("command.srpguide.clearcelestial_need_getter", new Object[0]));
-                break;
-            }
-            case "cleareffects": {
-                IBestiaryProgress prog = (IBestiaryProgress)p.getCapability(BestiaryCapability.CAP, null);
-                if (prog == null) {
-                    sender.func_145747_a((ITextComponent)new TextComponentTranslation("command.srpguide.cap_missing", new Object[0]));
-                    return;
-                }
-                try {
-                    Method m = prog.getClass().getMethod("getSeenEffects", new Class[0]);
-                    Object o = m.invoke((Object)prog, new Object[0]);
-                    if (o instanceof Set) {
+                     }
+                  } catch (Throwable var24) {
+                  }
+
+                  sender.func_145747_a(new TextComponentTranslation("command.srpguide.clearcelestial_need_getter", new Object[0]));
+                  break;
+               case "cleareffects":
+                  IBestiaryProgress progx = (IBestiaryProgress)p.getCapability(BestiaryCapability.CAP, null);
+                  if (progx == null) {
+                     sender.func_145747_a(new TextComponentTranslation("command.srpguide.cap_missing", new Object[0]));
+                     return;
+                  }
+
+                  try {
+                     Method m = progx.getClass().getMethod("getSeenEffects");
+                     Object o = m.invoke(progx);
+                     if (o instanceof Set) {
                         ((Set)o).clear();
-                        sender.func_145747_a((ITextComponent)new TextComponentTranslation("command.srpguide.cleareffects_ok", new Object[0]));
-                        CommandSRPGuide.sync(p, prog);
+                        sender.func_145747_a(new TextComponentTranslation("command.srpguide.cleareffects_ok", new Object[0]));
+                        sync(p, progx);
                         break;
-                    }
-                }
-                catch (Throwable m) {
-                    // empty catch block
-                }
-                try {
-                    NBTTagCompound tag = prog.serializeNBT();
-                    if (tag.func_74764_b("seenEffects")) {
+                     }
+                  } catch (Throwable var23) {
+                  }
+
+                  try {
+                     NBTTagCompound tag = progx.serializeNBT();
+                     if (tag.func_74764_b("seenEffects")) {
                         tag.func_82580_o("seenEffects");
-                        prog.deserializeNBT(tag);
-                        sender.func_145747_a((ITextComponent)new TextComponentTranslation("command.srpguide.cleareffects_ok", new Object[0]));
-                        CommandSRPGuide.sync(p, prog);
+                        progx.deserializeNBT(tag);
+                        sender.func_145747_a(new TextComponentTranslation("command.srpguide.cleareffects_ok", new Object[0]));
+                        sync(p, progx);
                         break;
-                    }
-                }
-                catch (Throwable throwable) {
-                    // empty catch block
-                }
-                sender.func_145747_a((ITextComponent)new TextComponentTranslation("command.srpguide.cleareffects_need_getter", new Object[0]));
-                break;
-            }
-            default: {
-                sender.func_145747_a((ITextComponent)new TextComponentTranslation(this.getUsageKey(), new Object[0]));
-            }
-        }
-    }
-}
+                     }
+                  } catch (Throwable var22) {
+                  }
 
+                  sender.func_145747_a(new TextComponentTranslation("command.srpguide.cleareffects_need_getter", new Object[0]));
+                  break;
+               default:
+                  sender.func_145747_a(new TextComponentTranslation(this.getUsageKey(), new Object[0]));
+            }
+         }
+      }
+   }
+}

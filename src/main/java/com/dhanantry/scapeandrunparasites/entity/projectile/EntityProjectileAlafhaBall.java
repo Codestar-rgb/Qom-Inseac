@@ -1,18 +1,3 @@
-/*
- * Decompiled with CFR 0.152.
- * 
- * Could not load the following classes:
- *  net.minecraft.entity.Entity
- *  net.minecraft.entity.EntityLivingBase
- *  net.minecraft.entity.player.EntityPlayer
- *  net.minecraft.init.SoundEvents
- *  net.minecraft.potion.PotionEffect
- *  net.minecraft.util.DamageSource
- *  net.minecraft.util.EnumParticleTypes
- *  net.minecraft.util.SoundCategory
- *  net.minecraft.util.math.RayTraceResult
- *  net.minecraft.world.World
- */
 package com.dhanantry.scapeandrunparasites.entity.projectile;
 
 import com.dhanantry.scapeandrunparasites.entity.EntityOrbBoom;
@@ -20,10 +5,8 @@ import com.dhanantry.scapeandrunparasites.entity.EntityToxicCloud;
 import com.dhanantry.scapeandrunparasites.entity.ai.misc.EntityPMalleable;
 import com.dhanantry.scapeandrunparasites.entity.ai.misc.EntityParasiteBase;
 import com.dhanantry.scapeandrunparasites.entity.monster.derived.EntityHeblu;
-import com.dhanantry.scapeandrunparasites.entity.projectile.EntitySRPProjectile;
 import com.dhanantry.scapeandrunparasites.init.SRPPotions;
 import com.dhanantry.scapeandrunparasites.util.SRPAttributes;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
@@ -34,60 +17,76 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
-public class EntityProjectileAlafhaBall
-extends EntitySRPProjectile {
-    public EntityProjectileAlafhaBall(World worldIn) {
-        super(worldIn);
-        this.func_70105_a(0.3f, 0.3f);
-    }
+public class EntityProjectileAlafhaBall extends EntitySRPProjectile {
+   public EntityProjectileAlafhaBall(World worldIn) {
+      super(worldIn);
+      this.func_70105_a(0.3F, 0.3F);
+   }
 
-    public EntityProjectileAlafhaBall(World worldIn, EntityLivingBase shooter, double accelX, double accelY, double accelZ) {
-        super(worldIn, shooter, accelX, accelY, accelZ);
-        this.func_70105_a(0.3f, 0.3f);
-    }
+   public EntityProjectileAlafhaBall(World worldIn, EntityLivingBase shooter, double accelX, double accelY, double accelZ) {
+      super(worldIn, shooter, accelX, accelY, accelZ);
+      this.func_70105_a(0.3F, 0.3F);
+   }
 
-    protected EnumParticleTypes func_184563_j() {
-        return EnumParticleTypes.EXPLOSION_NORMAL;
-    }
+   protected EnumParticleTypes func_184563_j() {
+      return EnumParticleTypes.EXPLOSION_NORMAL;
+   }
 
-    protected void func_70227_a(RayTraceResult result) {
-        if (!this.field_70170_p.field_72995_K) {
-            DamageSource damagesource = this.field_70235_a == null ? DamageSource.func_76356_a((Entity)this, (Entity)this) : DamageSource.func_76356_a((Entity)this, (Entity)this.field_70235_a);
-            for (EntityLivingBase entitylivingbase : this.field_70170_p.func_72872_a(EntityLivingBase.class, this.func_174813_aQ().func_72314_b(3.0, 3.0, 3.0))) {
-                if (entitylivingbase instanceof EntityParasiteBase) continue;
-                SRPPotions.applyStackPotion(SRPPotions.DLER_E, entitylivingbase, 300, 0);
-                entitylivingbase.func_70097_a(damagesource, SRPAttributes.ALAFHA_ATTACK_DAMAGE);
-                this.attackEntityAsMobMinimum((Entity)entitylivingbase, (EntityParasiteBase)this.field_70235_a);
+   protected void func_70227_a(RayTraceResult result) {
+      if (!this.field_70170_p.field_72995_K) {
+         DamageSource damagesource;
+         if (this.field_70235_a == null) {
+            damagesource = DamageSource.func_76356_a(this, this);
+         } else {
+            damagesource = DamageSource.func_76356_a(this, this.field_70235_a);
+         }
+
+         for (EntityLivingBase entitylivingbase : this.field_70170_p.func_72872_a(EntityLivingBase.class, this.func_174813_aQ().func_72314_b(3.0, 3.0, 3.0))) {
+            if (!(entitylivingbase instanceof EntityParasiteBase)) {
+               SRPPotions.applyStackPotion(SRPPotions.DLER_E, entitylivingbase, 300, 0);
+               entitylivingbase.func_70097_a(damagesource, SRPAttributes.ALAFHA_ATTACK_DAMAGE);
+               this.attackEntityAsMobMinimum(entitylivingbase, (EntityParasiteBase)this.field_70235_a);
             }
-            this.field_70170_p.func_184148_a((EntityPlayer)null, this.field_70165_t, this.field_70163_u, this.field_70161_v, SoundEvents.field_187539_bB, SoundCategory.BLOCKS, 4.0f, (1.0f + (this.field_70170_p.field_73012_v.nextFloat() - this.field_70170_p.field_73012_v.nextFloat()) * 0.2f) * 0.7f);
-            this.spawnLingeringCloud();
-            this.func_70106_y();
-        }
-    }
+         }
 
-    private void spawnLingeringCloud() {
-        if (this.field_70235_a != null && this.field_70235_a instanceof EntityHeblu) {
-            EntityToxicCloud entityareaeffectcloud = new EntityToxicCloud(this.field_70170_p, this.field_70165_t, this.field_70163_u, this.field_70161_v);
-            entityareaeffectcloud.setRadius(5.0f, 0.9f);
-            entityareaeffectcloud.setDuration(60);
-            entityareaeffectcloud.setRadiusPerTick(-entityareaeffectcloud.getRadius() / (float)entityareaeffectcloud.getDuration());
-            entityareaeffectcloud.setOwner((EntityParasiteBase)this.field_70235_a);
-            entityareaeffectcloud.addEffect(new PotionEffect(SRPPotions.COTH_E, 300, 0, false, true));
-            this.field_70170_p.func_72838_d((Entity)entityareaeffectcloud);
-            this.field_70170_p.func_72960_a((Entity)entityareaeffectcloud, (byte)77);
-            EntityOrbBoom orb = new EntityOrbBoom(this.field_70170_p, (EntityPMalleable)this.field_70235_a, 15, 1);
-            orb.func_82149_j(entityareaeffectcloud);
-            this.field_70170_p.func_72838_d((Entity)orb);
-            return;
-        }
-        EntityToxicCloud entityareaeffectcloud = new EntityToxicCloud(this.field_70170_p, this.field_70165_t, this.field_70163_u, this.field_70161_v);
-        entityareaeffectcloud.setRadius(2.0f, 0.5f);
-        entityareaeffectcloud.setRadiusOnUse(-0.5f);
-        entityareaeffectcloud.setWaitTime(30);
-        entityareaeffectcloud.setDuration(60);
-        entityareaeffectcloud.setRadiusPerTick(-entityareaeffectcloud.getRadius() / (float)entityareaeffectcloud.getDuration());
-        entityareaeffectcloud.addEffect(new PotionEffect(SRPPotions.DLER_E, 360, 0, false, false));
-        this.field_70170_p.func_72838_d((Entity)entityareaeffectcloud);
-    }
+         this.field_70170_p
+            .func_184148_a(
+               (EntityPlayer)null,
+               this.field_70165_t,
+               this.field_70163_u,
+               this.field_70161_v,
+               SoundEvents.field_187539_bB,
+               SoundCategory.BLOCKS,
+               4.0F,
+               (1.0F + (this.field_70170_p.field_73012_v.nextFloat() - this.field_70170_p.field_73012_v.nextFloat()) * 0.2F) * 0.7F
+            );
+         this.spawnLingeringCloud();
+         this.func_70106_y();
+      }
+   }
+
+   private void spawnLingeringCloud() {
+      if (this.field_70235_a != null && this.field_70235_a instanceof EntityHeblu) {
+         EntityToxicCloud entityareaeffectcloud = new EntityToxicCloud(this.field_70170_p, this.field_70165_t, this.field_70163_u, this.field_70161_v);
+         entityareaeffectcloud.setRadius(5.0F, 0.9F);
+         entityareaeffectcloud.setDuration(60);
+         entityareaeffectcloud.setRadiusPerTick(-entityareaeffectcloud.getRadius() / entityareaeffectcloud.getDuration());
+         entityareaeffectcloud.setOwner((EntityParasiteBase)this.field_70235_a);
+         entityareaeffectcloud.addEffect(new PotionEffect(SRPPotions.COTH_E, 300, 0, false, true));
+         this.field_70170_p.func_72838_d(entityareaeffectcloud);
+         this.field_70170_p.func_72960_a(entityareaeffectcloud, (byte)77);
+         EntityOrbBoom orb = new EntityOrbBoom(this.field_70170_p, (EntityPMalleable)this.field_70235_a, 15, 1);
+         orb.func_82149_j(entityareaeffectcloud);
+         this.field_70170_p.func_72838_d(orb);
+      } else {
+         EntityToxicCloud entityareaeffectcloud = new EntityToxicCloud(this.field_70170_p, this.field_70165_t, this.field_70163_u, this.field_70161_v);
+         entityareaeffectcloud.setRadius(2.0F, 0.5F);
+         entityareaeffectcloud.setRadiusOnUse(-0.5F);
+         entityareaeffectcloud.setWaitTime(30);
+         entityareaeffectcloud.setDuration(60);
+         entityareaeffectcloud.setRadiusPerTick(-entityareaeffectcloud.getRadius() / entityareaeffectcloud.getDuration());
+         entityareaeffectcloud.addEffect(new PotionEffect(SRPPotions.DLER_E, 360, 0, false, false));
+         this.field_70170_p.func_72838_d(entityareaeffectcloud);
+      }
+   }
 }
-

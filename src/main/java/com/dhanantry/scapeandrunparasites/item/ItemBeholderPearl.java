@@ -1,21 +1,3 @@
-/*
- * Decompiled with CFR 0.152.
- * 
- * Could not load the following classes:
- *  javax.annotation.Nullable
- *  net.minecraft.client.resources.I18n
- *  net.minecraft.client.util.ITooltipFlag
- *  net.minecraft.entity.Entity
- *  net.minecraft.entity.EntityList
- *  net.minecraft.item.Item
- *  net.minecraft.item.ItemStack
- *  net.minecraft.util.ResourceLocation
- *  net.minecraft.util.math.AxisAlignedBB
- *  net.minecraft.util.text.TextFormatting
- *  net.minecraft.world.World
- *  net.minecraftforge.fml.relauncher.Side
- *  net.minecraftforge.fml.relauncher.SideOnly
- */
 package com.dhanantry.scapeandrunparasites.item;
 
 import com.dhanantry.scapeandrunparasites.SRPMain;
@@ -36,103 +18,128 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemBeholderPearl
-extends Item {
-    private static final ResourceLocation ID_SIM = new ResourceLocation("srparasites", "sim_enderman");
-    private static final ResourceLocation ID_SIM_HEAD = new ResourceLocation("srparasites", "sim_endermanhead");
-    private static final ResourceLocation ID_FERAL = new ResourceLocation("srparasites", "fer_enderman");
-    private static final ResourceLocation ID_ASSIMARA = new ResourceLocation("srparasites", "mar_enderman");
-    private static final ResourceLocation KEY_PEARL_STATE = new ResourceLocation("srparasites", "pearl_state");
-    private static final double SCAN_RADIUS = 100.0;
-    private static final int UPDATE_INTERVAL = 6;
-    private static final Map<Integer, Cache> CACHE = new HashMap<Integer, Cache>();
+public class ItemBeholderPearl extends Item {
+   private static final ResourceLocation ID_SIM = new ResourceLocation("srparasites", "sim_enderman");
+   private static final ResourceLocation ID_SIM_HEAD = new ResourceLocation("srparasites", "sim_endermanhead");
+   private static final ResourceLocation ID_FERAL = new ResourceLocation("srparasites", "fer_enderman");
+   private static final ResourceLocation ID_ASSIMARA = new ResourceLocation("srparasites", "mar_enderman");
+   private static final ResourceLocation KEY_PEARL_STATE = new ResourceLocation("srparasites", "pearl_state");
+   private static final double SCAN_RADIUS = 100.0;
+   private static final int UPDATE_INTERVAL = 6;
+   private static final Map<Integer, ItemBeholderPearl.Cache> CACHE = new HashMap<>();
 
-    public ItemBeholderPearl() {
-        this.setRegistryName("srparasites", "pearl");
-        this.func_77655_b("srparasites.pearl");
-        this.func_77625_d(64);
-        this.func_77637_a(SRPMain.SRP_CREATIVETAB);
-        this.func_185043_a(KEY_PEARL_STATE, (stack, worldIn, entityIn) -> {
-            float out;
-            boolean holding;
-            if (worldIn == null || entityIn == null) {
-                return 0.0f;
-            }
-            boolean bl = holding = !entityIn.func_184614_ca().func_190926_b() && entityIn.func_184614_ca().func_77973_b() == this || !entityIn.func_184592_cb().func_190926_b() && entityIn.func_184592_cb().func_77973_b() == this;
-            if (!holding) {
-                CACHE.remove(entityIn.func_145782_y());
-                return 0.0f;
-            }
-            long now = worldIn.func_82737_E();
-            Cache c = CACHE.get(entityIn.func_145782_y());
-            if (c == null) {
-                c = new Cache();
-                CACHE.put(entityIn.func_145782_y(), c);
-            }
-            c.lastAccessTick = now;
-            if (now < c.nextScanTick) {
-                return c.lastVal;
-            }
-            c.nextScanTick = now + 6L;
-            if ((now & 0xFFL) == 0L) {
-                long cutoff = now - 600L;
-                CACHE.entrySet().removeIf(e -> ((Cache)e.getValue()).lastAccessTick < cutoff);
-            }
-            double R = 100.0;
-            AxisAlignedBB box = new AxisAlignedBB(entityIn.field_70165_t - 100.0, entityIn.field_70163_u - 100.0, entityIn.field_70161_v - 100.0, entityIn.field_70165_t + 100.0, entityIn.field_70163_u + 100.0, entityIn.field_70161_v + 100.0);
-            List matches = worldIn.func_175647_a(Entity.class, box, e -> {
-                if (e == null || e.field_70128_L || e == entityIn) {
-                    return false;
-                }
-                ResourceLocation id = EntityList.func_191301_a((Entity)e);
-                return id != null && (id.equals((Object)ID_ASSIMARA) || id.equals((Object)ID_FERAL) || id.equals((Object)ID_SIM) || id.equals((Object)ID_SIM_HEAD));
-            });
-            int tier = 0;
-            double nearestSq = Double.POSITIVE_INFINITY;
-            for (Entity e2 : matches) {
-                int candidate;
-                ResourceLocation id = EntityList.func_191301_a((Entity)e2);
-                if (id == null) continue;
-                int n = id.equals((Object)ID_ASSIMARA) ? 3 : (id.equals((Object)ID_FERAL) ? 2 : (candidate = id.equals((Object)ID_SIM) || id.equals((Object)ID_SIM_HEAD) ? 1 : 0));
-                if (candidate == 0) continue;
-                double d2 = e2.func_70068_e((Entity)entityIn);
-                if (candidate <= tier && (candidate != tier || !(d2 < nearestSq))) continue;
-                tier = candidate;
-                nearestSq = d2;
-                if (tier != 3) continue;
-                break;
-            }
-            if (tier == 0) {
-                out = 0.0f;
+   public ItemBeholderPearl() {
+      this.setRegistryName("srparasites", "pearl");
+      this.func_77655_b("srparasites.pearl");
+      this.func_77625_d(64);
+      this.func_77637_a(SRPMain.SRP_CREATIVETAB);
+      this.func_185043_a(
+         KEY_PEARL_STATE,
+         (stack, worldIn, entityIn) -> {
+            if (worldIn != null && entityIn != null) {
+               boolean holding = !entityIn.func_184614_ca().func_190926_b() && entityIn.func_184614_ca().func_77973_b() == this
+                  || !entityIn.func_184592_cb().func_190926_b() && entityIn.func_184592_cb().func_77973_b() == this;
+               if (!holding) {
+                  CACHE.remove(entityIn.func_145782_y());
+                  return 0.0F;
+               } else {
+                  long now = worldIn.func_82737_E();
+                  ItemBeholderPearl.Cache c = CACHE.get(entityIn.func_145782_y());
+                  if (c == null) {
+                     c = new ItemBeholderPearl.Cache();
+                     CACHE.put(entityIn.func_145782_y(), c);
+                  }
+
+                  c.lastAccessTick = now;
+                  if (now < c.nextScanTick) {
+                     return c.lastVal;
+                  } else {
+                     c.nextScanTick = now + 6L;
+                     if ((now & 255L) == 0L) {
+                        long cutoff = now - 600L;
+                        CACHE.entrySet().removeIf(e -> e.getValue().lastAccessTick < cutoff);
+                     }
+
+                     double R = 100.0;
+                     AxisAlignedBB box = new AxisAlignedBB(
+                        entityIn.field_70165_t - 100.0,
+                        entityIn.field_70163_u - 100.0,
+                        entityIn.field_70161_v - 100.0,
+                        entityIn.field_70165_t + 100.0,
+                        entityIn.field_70163_u + 100.0,
+                        entityIn.field_70161_v + 100.0
+                     );
+                     List<Entity> matches = worldIn.func_175647_a(Entity.class, box, e -> {
+                        if (e != null && !e.field_70128_L && e != entityIn) {
+                           ResourceLocation idx = EntityList.func_191301_a(e);
+                           return idx != null && (idx.equals(ID_ASSIMARA) || idx.equals(ID_FERAL) || idx.equals(ID_SIM) || idx.equals(ID_SIM_HEAD));
+                        } else {
+                           return false;
+                        }
+                     });
+                     int tier = 0;
+                     double nearestSq = Double.POSITIVE_INFINITY;
+
+                     for (Entity e : matches) {
+                        ResourceLocation id = EntityList.func_191301_a(e);
+                        if (id != null) {
+                           int candidate = id.equals(ID_ASSIMARA) ? 3 : (id.equals(ID_FERAL) ? 2 : (!id.equals(ID_SIM) && !id.equals(ID_SIM_HEAD) ? 0 : 1));
+                           if (candidate != 0) {
+                              double d2 = e.func_70068_e(entityIn);
+                              if (candidate > tier || candidate == tier && d2 < nearestSq) {
+                                 tier = candidate;
+                                 nearestSq = d2;
+                                 if (candidate == 3) {
+                                    break;
+                                 }
+                              }
+                           }
+                        }
+                     }
+
+                     float out;
+                     if (tier == 0) {
+                        out = 0.0F;
+                     } else {
+                        double dist = Math.sqrt(nearestSq);
+                        float proximity = (float)Math.max(0.0, Math.min(1.0, (100.0 - dist) / 100.0));
+                        long t = now + entityIn.field_70173_aa;
+                        float freq = 1.5F + 1.0F * tier + 4.0F * proximity;
+                        float omega = (float)(freq * 2.0 * Math.PI / 20.0);
+                        float osc = (float)Math.sin((float)t * omega);
+                        float amp = 0.12F + 0.15F * tier + 0.25F * proximity;
+                        float base = tier;
+                        float val = base + 0.1F + amp * osc;
+                        val = Math.max(base + 0.05F, Math.min(base + 0.45F, val));
+                        out = val;
+                     }
+
+                     c.lastVal = out;
+                     return out;
+                  }
+               }
             } else {
-                double dist = Math.sqrt(nearestSq);
-                float proximity = (float)Math.max(0.0, Math.min(1.0, (100.0 - dist) / 100.0));
-                long t = now + (long)entityIn.field_70173_aa;
-                float freq = 1.5f + 1.0f * (float)tier + 4.0f * proximity;
-                float omega = (float)((double)freq * 2.0 * Math.PI / 20.0);
-                float osc = (float)Math.sin((float)t * omega);
-                float amp = 0.12f + 0.15f * (float)tier + 0.25f * proximity;
-                float base = tier;
-                float val = base + 0.1f + amp * osc;
-                out = val = Math.max(base + 0.05f, Math.min(base + 0.45f, val));
+               return 0.0F;
             }
-            c.lastVal = out;
-            return out;
-        });
-    }
+         }
+      );
+   }
 
-    @SideOnly(value=Side.CLIENT)
-    public void func_77624_a(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(TextFormatting.GRAY + I18n.func_135052_a((String)"tooltip.srparasites.pearl.desc", (Object[])new Object[0]));
-    }
+   @SideOnly(Side.CLIENT)
+   public void func_77624_a(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
+      tooltip.add(TextFormatting.GRAY + I18n.func_135052_a("tooltip.srparasites.pearl.desc", new Object[0]));
+      tooltip.add("");
+      tooltip.add(TextFormatting.LIGHT_PURPLE + I18n.func_135052_a("tooltip.srparasites.pearl.assimilated", new Object[0]));
+      tooltip.add(TextFormatting.RED + I18n.func_135052_a("tooltip.srparasites.pearl.feral", new Object[0]));
+      tooltip.add(TextFormatting.BLUE + I18n.func_135052_a("tooltip.srparasites.pearl.assimara", new Object[0]));
+   }
 
-    private static final class Cache {
-        long nextScanTick;
-        long lastAccessTick;
-        float lastVal;
+   private static final class Cache {
+      long nextScanTick;
+      long lastAccessTick;
+      float lastVal;
 
-        private Cache() {
-        }
-    }
+      private Cache() {
+      }
+   }
 }
-

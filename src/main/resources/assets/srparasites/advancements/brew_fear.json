@@ -2,8 +2,7 @@
   "parent": "srparasites:secret_root",
   "display": {
     "icon": {
-      "item": "minecraft:potion",
-      "nbt": "{Potion:\"srparasites:fear\"}"
+      "item": "srparasites:ecstasy_icon"
     },
     "title": {
       "translate": "advancements.srparasites.brew_fear.title"

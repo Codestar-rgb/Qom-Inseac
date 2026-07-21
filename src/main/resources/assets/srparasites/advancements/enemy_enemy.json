@@ -2,8 +2,7 @@
   "parent": "srparasites:thornshade_self_destruct",
   "display": {
     "icon": {
-      "item": "minecraft:skull",
-      "data": 4
+      "item": "srparasites:enemy_of_enemy_icon"
     },
     "title": {
       "translate": "advancements.srparasites.enemy_enemy.title"

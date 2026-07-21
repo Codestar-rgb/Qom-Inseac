@@ -2,7 +2,7 @@
   "parent": "srparasites:kill_root",
   "display": {
     "icon": {
-      "item": "srparasites:dried_tendons"
+      "item": "srparasites:pure_icon"
     },
     "title": {
       "translate": "advancements.srparasites.kill_pure.title"

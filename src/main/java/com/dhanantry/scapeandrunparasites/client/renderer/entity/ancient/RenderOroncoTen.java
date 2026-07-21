@@ -1,10 +1,3 @@
-/*
- * Decompiled with CFR 0.152.
- * 
- * Could not load the following classes:
- *  net.minecraft.client.renderer.entity.RenderManager
- *  net.minecraft.util.ResourceLocation
- */
 package com.dhanantry.scapeandrunparasites.client.renderer.entity.ancient;
 
 import com.dhanantry.scapeandrunparasites.client.model.entity.ancient.ModelOroncoTen;
@@ -13,22 +6,20 @@ import com.dhanantry.scapeandrunparasites.entity.monster.ancient.EntityOroncoTen
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderOroncoTen
-extends RenderSRP<EntityOroncoTen> {
-    public static final ResourceLocation TEXTURE00 = new ResourceLocation("srparasites:textures/entity/monster/oroncoten0.png");
-    public static final ResourceLocation TEXTURE01 = new ResourceLocation("srparasites:textures/entity/monster/oroncoten1.png");
+public class RenderOroncoTen extends RenderSRP<EntityOroncoTen> {
+   public static final ResourceLocation TEXTURE00 = new ResourceLocation("srparasites:textures/entity/monster/oroncoten0.png");
+   public static final ResourceLocation TEXTURE01 = new ResourceLocation("srparasites:textures/entity/monster/oroncoten1.png");
 
-    public RenderOroncoTen(RenderManager manager) {
-        super(manager, new ModelOroncoTen(), 0.8f);
-    }
+   public RenderOroncoTen(RenderManager manager) {
+      super(manager, new ModelOroncoTen(), 0.8F);
+   }
 
-    protected ResourceLocation getEntityTexture(EntityOroncoTen entity) {
-        switch (entity.getSkin()) {
-            case 1: {
-                return TEXTURE01;
-            }
-        }
-        return TEXTURE00;
-    }
+   protected ResourceLocation getEntityTexture(EntityOroncoTen entity) {
+      switch (entity.getSkin()) {
+         case 1:
+            return TEXTURE01;
+         default:
+            return TEXTURE00;
+      }
+   }
 }
-

@@ -1,23 +1,19 @@
-/*
- * Decompiled with CFR 0.152.
- */
 package com.dhanantry.scapeandrunparasites.entity.ai.misc;
 
 public interface EntityCanSummon {
-    public void addID(int var1, int var2);
+   void addID(int var1, int var2);
 
-    public int IDable();
+   int IDable();
 
-    public void checkID();
+   void checkID();
 
-    public int[] getIDList();
+   int[] getIDList();
 
-    public int[] getPointList();
+   int[] getPointList();
 
-    public int getTotalParasites();
+   int getTotalParasites();
 
-    public int getActualParasites();
+   int getActualParasites();
 
-    public void setActualParasites(int var1);
+   void setActualParasites(int var1);
 }
-

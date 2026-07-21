@@ -1,44 +1,39 @@
-/*
- * Decompiled with CFR 0.152.
- * 
- * Could not load the following classes:
- *  net.minecraft.item.ItemStack
- */
 package com.dhanantry.scapeandrunparasites.recipes;
 
-import com.dhanantry.scapeandrunparasites.recipes.InfuserFurnaceRecipe;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import net.minecraft.item.ItemStack;
 
 public final class InfuserFurnaceRecipes {
-    private static final List<InfuserFurnaceRecipe> RECIPES = new ArrayList<InfuserFurnaceRecipe>();
+   private static final List<InfuserFurnaceRecipe> RECIPES = new ArrayList<>();
 
-    private InfuserFurnaceRecipes() {
-    }
+   private InfuserFurnaceRecipes() {
+   }
 
-    public static void add(InfuserFurnaceRecipe recipe) {
-        RECIPES.add(recipe);
-    }
+   public static void add(InfuserFurnaceRecipe recipe) {
+      RECIPES.add(recipe);
+   }
 
-    public static InfuserFurnaceRecipe find(ItemStack smelt, ItemStack infuse) {
-        if (smelt == null || smelt.func_190926_b() || infuse == null || infuse.func_190926_b()) {
-            return null;
-        }
-        for (InfuserFurnaceRecipe r : RECIPES) {
-            if (!r.matches(smelt, infuse)) continue;
-            return r;
-        }
-        return null;
-    }
+   public static InfuserFurnaceRecipe find(ItemStack smelt, ItemStack infuse) {
+      if (smelt != null && !smelt.func_190926_b() && infuse != null && !infuse.func_190926_b()) {
+         for (InfuserFurnaceRecipe r : RECIPES) {
+            if (r.matches(smelt, infuse)) {
+               return r;
+            }
+         }
 
-    public static List<InfuserFurnaceRecipe> all() {
-        return Collections.unmodifiableList(RECIPES);
-    }
+         return null;
+      } else {
+         return null;
+      }
+   }
 
-    public static void clear() {
-        RECIPES.clear();
-    }
+   public static List<InfuserFurnaceRecipe> all() {
+      return Collections.unmodifiableList(RECIPES);
+   }
+
+   public static void clear() {
+      RECIPES.clear();
+   }
 }
-

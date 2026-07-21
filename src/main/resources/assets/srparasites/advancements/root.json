@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "srparasites:itemtab"
+      "item": "srparasites:roots_icon"
     },
     "title": {
       "translate": "advancements.srparasites.root.title"

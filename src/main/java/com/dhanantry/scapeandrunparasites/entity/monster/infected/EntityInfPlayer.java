@@ -1,31 +1,3 @@
-/*
- * Decompiled with CFR 0.152.
- * 
- * Could not load the following classes:
- *  net.minecraft.block.Block
- *  net.minecraft.entity.Entity
- *  net.minecraft.entity.EntityCreature
- *  net.minecraft.entity.EntityLiving
- *  net.minecraft.entity.EntityLivingBase
- *  net.minecraft.entity.IEntityLivingData
- *  net.minecraft.entity.SharedMonsterAttributes
- *  net.minecraft.entity.ai.EntityAIBase
- *  net.minecraft.entity.ai.EntityAIHurtByTarget
- *  net.minecraft.entity.ai.EntityAILookIdle
- *  net.minecraft.init.SoundEvents
- *  net.minecraft.nbt.NBTTagCompound
- *  net.minecraft.network.datasync.DataParameter
- *  net.minecraft.network.datasync.DataSerializer
- *  net.minecraft.network.datasync.DataSerializers
- *  net.minecraft.network.datasync.EntityDataManager
- *  net.minecraft.util.DamageSource
- *  net.minecraft.util.SoundEvent
- *  net.minecraft.util.math.BlockPos
- *  net.minecraft.world.DifficultyInstance
- *  net.minecraft.world.World
- *  net.minecraftforge.fml.relauncher.Side
- *  net.minecraftforge.fml.relauncher.SideOnly
- */
 package com.dhanantry.scapeandrunparasites.entity.monster.infected;
 
 import com.dhanantry.scapeandrunparasites.client.particle.SRPEnumParticle;
@@ -44,19 +16,14 @@ import com.dhanantry.scapeandrunparasites.util.config.SRPConfig;
 import com.dhanantry.scapeandrunparasites.util.config.SRPConfigMobs;
 import com.dhanantry.scapeandrunparasites.util.spawn.ParasiteSummon;
 import net.minecraft.block.Block;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityCreature;
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.network.datasync.DataSerializer;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
@@ -67,220 +34,219 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class EntityInfPlayer
-extends EntityPInfected
-implements EntityCanMelt {
-    private static final DataParameter<Float> HEIGH = EntityDataManager.func_187226_a(EntityInfPlayer.class, (DataSerializer)DataSerializers.field_187193_c);
-    private static final DataParameter<Boolean> MELTING = EntityDataManager.func_187226_a(EntityInfPlayer.class, (DataSerializer)DataSerializers.field_187198_h);
-    private float aSize;
-    private int sound;
-    private static final DataParameter<Boolean> HELM = EntityDataManager.func_187226_a(EntityInfPlayer.class, (DataSerializer)DataSerializers.field_187198_h);
+public class EntityInfPlayer extends EntityPInfected implements EntityCanMelt {
+   private static final DataParameter<Float> HEIGH = EntityDataManager.func_187226_a(EntityInfPlayer.class, DataSerializers.field_187193_c);
+   private static final DataParameter<Boolean> MELTING = EntityDataManager.func_187226_a(EntityInfPlayer.class, DataSerializers.field_187198_h);
+   private float aSize;
+   private int sound;
+   private static final DataParameter<Boolean> HELM = EntityDataManager.func_187226_a(EntityInfPlayer.class, DataSerializers.field_187198_h);
 
-    public EntityInfPlayer(World worldIn) {
-        super(worldIn);
-        this.func_70105_a(0.6f, 1.95f);
-        this.aSize = 1.0f;
-        this.sound = 0;
-        this.canModRender = 1;
-        this.type = (byte)11;
-        this.thisMelting = true;
-    }
+   public EntityInfPlayer(World worldIn) {
+      super(worldIn);
+      this.func_70105_a(0.6F, 1.95F);
+      this.aSize = 1.0F;
+      this.sound = 0;
+      this.canModRender = 1;
+      this.type = 11;
+      this.thisMelting = true;
+   }
 
-    @Override
-    public int getParasiteIDRegister() {
-        return 40;
-    }
+   @Override
+   public int getParasiteIDRegister() {
+      return 40;
+   }
 
-    @Override
-    public int canSpawnByIDData() {
-        return SRPConfigMobs.infhumanCanSpawnAssimilatedNat;
-    }
+   @Override
+   public int canSpawnByIDData() {
+      return SRPConfigMobs.infhumanCanSpawnAssimilatedNat;
+   }
 
-    protected void func_184651_r() {
-        this.field_70715_bh.func_75776_a(1, (EntityAIBase)new EntityAIHurtByTarget((EntityCreature)this, true, new Class[0]));
-        this.field_70714_bg.func_75776_a(0, (EntityAIBase)new EntityAISwimmingDiving((EntityLiving)this, 0.08));
-        this.field_70714_bg.func_75776_a(3, (EntityAIBase)new EntityAIAttackMeleeStatus(this, 1.0, false, 0.0));
-        this.field_70714_bg.func_75776_a(8, (EntityAIBase)new EntityAILookIdle((EntityLiving)this));
-        this.field_70714_bg.func_75776_a(6, (EntityAIBase)new EntityAIGetFollowers(this, 1, 16));
-    }
+   protected void func_184651_r() {
+      this.field_70715_bh.func_75776_a(1, new EntityAIHurtByTarget(this, true, new Class[0]));
+      this.field_70714_bg.func_75776_a(0, new EntityAISwimmingDiving(this, 0.08));
+      this.field_70714_bg.func_75776_a(3, new EntityAIAttackMeleeStatus(this, 1.0, false, 0.0));
+      this.field_70714_bg.func_75776_a(8, new EntityAILookIdle(this));
+      this.field_70714_bg.func_75776_a(6, new EntityAIGetFollowers(this, 1, 16));
+   }
 
-    protected void func_110147_ax() {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(SRPAttributes.INFADVENTURER_HEALTH);
-        this.func_110148_a(SharedMonsterAttributes.field_188791_g).func_111128_a(SRPAttributes.INFADVENTURER_ARMOR);
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.230000004172325);
-        this.func_110148_a(SharedMonsterAttributes.field_111266_c).func_111128_a(SRPAttributes.INFADVENTURER_KD_RESISTANCE);
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(SRPAttributes.INFADVENTURER_ATTACK_DAMAGE);
-        this.func_110148_a(SharedMonsterAttributes.field_111265_b).func_111128_a(SRPConfig.infectedFollow);
-    }
+   protected void func_110147_ax() {
+      super.func_110147_ax();
+      this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(SRPAttributes.INFADVENTURER_HEALTH);
+      this.func_110148_a(SharedMonsterAttributes.field_188791_g).func_111128_a(SRPAttributes.INFADVENTURER_ARMOR);
+      this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.230000004172325);
+      this.func_110148_a(SharedMonsterAttributes.field_111266_c).func_111128_a(SRPAttributes.INFADVENTURER_KD_RESISTANCE);
+      this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(SRPAttributes.INFADVENTURER_ATTACK_DAMAGE);
+      this.func_110148_a(SharedMonsterAttributes.field_111265_b).func_111128_a(SRPConfig.infectedFollow);
+   }
 
-    @Override
-    protected void func_70088_a() {
-        super.func_70088_a();
-        this.field_70180_af.func_187214_a(HEIGH, (Object)Float.valueOf(0.0f));
-        this.field_70180_af.func_187214_a(MELTING, (Object)false);
-        this.field_70180_af.func_187214_a(HELM, (Object)false);
-    }
+   @Override
+   protected void func_70088_a() {
+      super.func_70088_a();
+      this.field_70180_af.func_187214_a(HEIGH, 0.0F);
+      this.field_70180_af.func_187214_a(MELTING, false);
+      this.field_70180_af.func_187214_a(HELM, false);
+   }
 
-    @Override
-    public void func_70636_d() {
-        super.func_70636_d();
-        this.melting();
-        if (!this.field_70170_p.field_72995_K && this.srpTicks == 10 && this.killcount > (double)SRPConfigMobs.infadventurerThrall && ParasiteEventEntity.canSpawnNext) {
-            ParasiteEventEntity.spawnNext(this, new EntityMes(this.field_70170_p), true, true);
-        }
-    }
+   @Override
+   public void func_70636_d() {
+      super.func_70636_d();
+      this.melting();
+      if (!this.field_70170_p.field_72995_K && this.srpTicks == 10 && this.killcount > SRPConfigMobs.infadventurerThrall && ParasiteEventEntity.canSpawnNext) {
+         ParasiteEventEntity.spawnNext(this, new EntityMes(this.field_70170_p), true, true);
+      }
+   }
 
-    protected SoundEvent func_184639_G() {
-        if (this.getParasiteStatus() != 0) {
-            return SRPSounds.MOBSILENCE;
-        }
-        return SRPSounds.ASSIM_ADVENTURER_GROWL;
-    }
+   protected SoundEvent func_184639_G() {
+      return this.getParasiteStatus() != 0 ? SRPSounds.MOBSILENCE : SRPSounds.ASSIM_ADVENTURER_GROWL;
+   }
 
-    protected SoundEvent func_184601_bQ(DamageSource damageSourceIn) {
-        return SRPSounds.ASSIM_ADVENTURER_HURT;
-    }
+   protected SoundEvent func_184601_bQ(DamageSource damageSourceIn) {
+      return SRPSounds.ASSIM_ADVENTURER_HURT;
+   }
 
-    protected SoundEvent func_184615_bR() {
-        return SRPSounds.ASSIM_ADVENTURER_DEATH;
-    }
+   protected SoundEvent func_184615_bR() {
+      return SRPSounds.ASSIM_ADVENTURER_DEATH;
+   }
 
-    @Override
-    public void func_70074_a(EntityLivingBase entityLivingIn) {
-        super.func_70074_a(entityLivingIn);
-        if (!this.field_70170_p.field_72995_K && this.killcount > (double)SRPConfigMobs.infadventurerThrall && !this.field_70128_L && ParasiteEventEntity.canSpawnNext) {
-            ParasiteEventEntity.spawnNext(this, new EntityMes(this.field_70170_p), true, true);
-        }
-    }
+   @Override
+   public void func_70074_a(EntityLivingBase entityLivingIn) {
+      super.func_70074_a(entityLivingIn);
+      if (!this.field_70170_p.field_72995_K && this.killcount > SRPConfigMobs.infadventurerThrall && !this.field_70128_L && ParasiteEventEntity.canSpawnNext) {
+         ParasiteEventEntity.spawnNext(this, new EntityMes(this.field_70170_p), true, true);
+      }
+   }
 
-    @Override
-    protected void func_70609_aI() {
-        super.func_70609_aI();
-        if (this.getTHeigh() < 1.57f && !this.field_70170_p.field_72995_K) {
-            this.setTHeigh(0.17f);
-        }
-        if (this.field_70725_aQ == 20 && !this.field_70170_p.field_72995_K && this.field_70146_Z.nextDouble() <= SRPAttributes.INFADVENTURER_HEADCHANCE) {
-            ParasiteSummon.spawnM(this, new String[]{"srparasites:sim_adventurerhead;1;1"}, 0, false, this.func_95999_t());
-        }
-    }
+   @Override
+   protected void func_70609_aI() {
+      super.func_70609_aI();
+      if (this.getTHeigh() < 1.57F && !this.field_70170_p.field_72995_K) {
+         this.setTHeigh(0.17F);
+      }
 
-    @Override
-    public void melt() {
-        this.setWait(1000);
-        this.field_70180_af.func_187227_b(HEIGH, (Object)Float.valueOf(1.95f));
-        this.field_70180_af.func_187227_b(MELTING, (Object)true);
-    }
+      if (this.field_70725_aQ == 20 && !this.field_70170_p.field_72995_K && this.field_70146_Z.nextDouble() <= SRPAttributes.INFADVENTURER_HEADCHANCE) {
+         ParasiteSummon.spawnM(this, new String[]{"srparasites:sim_adventurerhead;1;1"}, 0, false, this.func_95999_t());
+      }
+   }
 
-    @Override
-    public void melting() {
-        if (this.isMelting()) {
-            if (this.sound % 20 == 0) {
-                this.func_184185_a(SRPSounds.INFECTED_MELT, 1.0f, 1.0f);
+   @Override
+   public void melt() {
+      this.setWait(1000);
+      this.field_70180_af.func_187227_b(HEIGH, 1.95F);
+      this.field_70180_af.func_187227_b(MELTING, true);
+   }
+
+   @Override
+   public void melting() {
+      if (this.isMelting()) {
+         if (this.sound % 20 == 0) {
+            this.func_184185_a(SRPSounds.INFECTED_MELT, 1.0F, 1.0F);
+         }
+
+         this.sound++;
+         if (this.getTHeigh() > 0.7) {
+            this.setaSize(-0.005F);
+            this.setTHeigh(-0.01F);
+            this.func_70105_a(this.field_70130_N, this.getTHeigh());
+         }
+
+         if (!this.field_70170_p.field_72995_K) {
+            if (this.getTHeigh() <= 0.7 || this.sound >= 127) {
+               EntityLesh out = new EntityLesh(this.field_70170_p);
+               out.func_70012_b(this.field_70165_t, this.field_70163_u, this.field_70161_v, this.field_70177_z, this.field_70125_A);
+               if (this.func_95999_t() != null) {
+                  out.func_96094_a(this.func_95999_t());
+               }
+
+               this.func_70106_y();
+               this.field_70170_p.func_72838_d(out);
+               out.setLegs(SRPAttributes.INFADVENTURER_V, false);
             }
-            ++this.sound;
-            if ((double)this.getTHeigh() > 0.7) {
-                this.setaSize(-0.005f);
-                this.setTHeigh(-0.01f);
-                this.func_70105_a(this.field_70130_N, this.getTHeigh());
-            }
-            if (!this.field_70170_p.field_72995_K) {
-                if ((double)this.getTHeigh() <= 0.7 || this.sound >= 127) {
-                    EntityLesh out = new EntityLesh(this.field_70170_p);
-                    out.func_70012_b(this.field_70165_t, this.field_70163_u, this.field_70161_v, this.field_70177_z, this.field_70125_A);
-                    if (this.func_95999_t() != null) {
-                        out.func_96094_a(this.func_95999_t());
-                    }
-                    this.func_70106_y();
-                    this.field_70170_p.func_72838_d((Entity)out);
-                    out.setLegs(SRPAttributes.INFADVENTURER_V, false);
-                }
-            } else {
-                this.spawnParticles(SRPEnumParticle.GCLOUD, 127, 106, 0);
-                this.spawnParticles(SRPEnumParticle.GCLOUD, 127, 0, 0);
-            }
-        }
-    }
+         } else {
+            this.spawnParticles(SRPEnumParticle.GCLOUD, 127, 106, 0);
+            this.spawnParticles(SRPEnumParticle.GCLOUD, 127, 0, 0);
+         }
+      }
+   }
 
-    public boolean helmetSlot() {
-        return (Boolean)this.field_70180_af.func_187225_a(HELM);
-    }
+   public boolean helmetSlot() {
+      return (Boolean)this.field_70180_af.func_187225_a(HELM);
+   }
 
-    public void setHelmetSlot(boolean in) {
-        this.field_70180_af.func_187227_b(HELM, (Object)in);
-    }
+   public void setHelmetSlot(boolean in) {
+      this.field_70180_af.func_187227_b(HELM, in);
+   }
 
-    @Override
-    public boolean isMelting() {
-        return (Boolean)this.field_70180_af.func_187225_a(MELTING);
-    }
+   @Override
+   public boolean isMelting() {
+      return (Boolean)this.field_70180_af.func_187225_a(MELTING);
+   }
 
-    @Override
-    public float getTHeigh() {
-        return ((Float)this.field_70180_af.func_187225_a(HEIGH)).floatValue();
-    }
+   @Override
+   public float getTHeigh() {
+      return (Float)this.field_70180_af.func_187225_a(HEIGH);
+   }
 
-    @Override
-    public void setTHeigh(float in) {
-        this.field_70180_af.func_187227_b(HEIGH, (Object)Float.valueOf(in += this.getTHeigh()));
-    }
+   @Override
+   public void setTHeigh(float in) {
+      in += this.getTHeigh();
+      this.field_70180_af.func_187227_b(HEIGH, in);
+   }
 
-    @Override
-    public float getaSize() {
-        return this.aSize;
-    }
+   @Override
+   public float getaSize() {
+      return this.aSize;
+   }
 
-    @Override
-    public void setaSize(float in) {
-        this.aSize += in;
-    }
+   @Override
+   public void setaSize(float in) {
+      this.aSize += in;
+   }
 
-    @Override
-    @SideOnly(value=Side.CLIENT)
-    public float getSelfeFlashIntensity2() {
-        return this.aSize;
-    }
+   @SideOnly(Side.CLIENT)
+   @Override
+   public float getSelfeFlashIntensity2() {
+      return this.aSize;
+   }
 
-    @Override
-    protected void selfExplode() {
-        super.selfExplode();
-        ParasiteSummon.spawnM(this, new String[]{SRPConfigMobs.infadventurermob}, 0, false, this.func_95999_t());
-    }
+   @Override
+   protected void selfExplode() {
+      super.selfExplode();
+      ParasiteSummon.spawnM(this, new String[]{SRPConfigMobs.infadventurermob}, 0, false, this.func_95999_t());
+   }
 
-    public float func_70047_e() {
-        return 1.73f;
-    }
+   public float func_70047_e() {
+      return 1.73F;
+   }
 
-    protected void func_82160_b(boolean wasRecentlyHit, int lootingModifier) {
-    }
+   protected void func_82160_b(boolean wasRecentlyHit, int lootingModifier) {
+   }
 
-    protected SoundEvent getStepSound() {
-        return SoundEvents.field_187939_hm;
-    }
+   protected SoundEvent getStepSound() {
+      return SoundEvents.field_187939_hm;
+   }
 
-    protected void func_180429_a(BlockPos pos, Block blockIn) {
-        this.func_184185_a(this.getStepSound(), 0.15f, 1.0f);
-    }
+   protected void func_180429_a(BlockPos pos, Block blockIn) {
+      this.func_184185_a(this.getStepSound(), 0.15F, 1.0F);
+   }
 
-    @Override
-    public IEntityLivingData func_180482_a(DifficultyInstance difficulty, IEntityLivingData livingdata) {
-        IEntityLivingData floo = super.func_180482_a(difficulty, livingdata);
-        SRPReference.setSimPlayerName(this);
-        return floo;
-    }
+   @Override
+   public IEntityLivingData func_180482_a(DifficultyInstance difficulty, IEntityLivingData livingdata) {
+      IEntityLivingData floo = super.func_180482_a(difficulty, livingdata);
+      SRPReference.setSimPlayerName(this);
+      return floo;
+   }
 
-    @Override
-    public void func_70014_b(NBTTagCompound compound) {
-        super.func_70014_b(compound);
-        compound.func_74757_a("helmslot", this.helmetSlot());
-    }
+   @Override
+   public void func_70014_b(NBTTagCompound compound) {
+      super.func_70014_b(compound);
+      compound.func_74757_a("helmslot", this.helmetSlot());
+   }
 
-    @Override
-    public void func_70037_a(NBTTagCompound compound) {
-        super.func_70037_a(compound);
-        if (compound.func_150297_b("helmslot", 99)) {
-            this.setHelmetSlot(compound.func_74767_n("helmslot"));
-        }
-    }
+   @Override
+   public void func_70037_a(NBTTagCompound compound) {
+      super.func_70037_a(compound);
+      if (compound.func_150297_b("helmslot", 99)) {
+         this.setHelmetSlot(compound.func_74767_n("helmslot"));
+      }
+   }
 }
-
